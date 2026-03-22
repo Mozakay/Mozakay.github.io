@@ -70,7 +70,7 @@ class PaymentProcessor:
 
 This separation improves clarity because the Order class no longer processes payments directly.
 
-Open/Closed Principle (OCP)
+### Open/Closed Principle (OCP)
 
 The system is open for extension but closed for modification. New payment methods and new discount strategies can be added without changing the main structure of the system.
 
