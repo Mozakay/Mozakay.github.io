@@ -82,11 +82,11 @@ The code was improved without changing the main behaviour of the module. Registr
 
 This project includes both the refactored and pre-refactoring versions of the User Management module, together with the related unit test files.
 
-### Main Implementation
-- [user_management.py](/assets/code/oop/unit%2010/user_management.py)
-
 ### Before Refactoring
 - [user_management_before_refactor.py](/assets/code/oop/unit%2010/user_management_before_refactor.py)
+
+### After Refactoring
+- [user_management.py](/assets/code/oop/unit%2010/user_management.py)
 
 ### Tests
 - [test_user_management.py](/assets/code/oop/unit%2010/test_user_management.py)
