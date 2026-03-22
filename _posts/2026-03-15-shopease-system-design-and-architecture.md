@@ -21,7 +21,7 @@ The ShopEase system was designed using a layered architecture. The architecture 
 
 The presentation layer contains controllers such as `UserController`, `ProductController`, `CartController`, and `OrderController`. These components receive user requests from client applications and pass them to the business logic layer. The business logic layer contains services such as `AuthenticationService`, `UserService`, `ProductCatalogService`, `CartService`, `OrderService`, `PaymentService`, and `NotificationService`. The data access layer contains repositories that isolate database operations from the rest of the system. This separation improves maintainability and reduces complexity.
 
-<img src="/assets/images/oop/unit%209/Figure%201%20-%20architecture%20diagram.drawio.png" alt="Figure 1 - ShopEase layered architecture" width="800">
+<img src="/assets/images/oop/unit%209/Figure%201%20-%20architecture%20diagram.drawio.png" alt="Figure 1 - ShopEase layered architecture" width="500">
 
 **Figure 1.** Layered architecture of the ShopEase system.
 
