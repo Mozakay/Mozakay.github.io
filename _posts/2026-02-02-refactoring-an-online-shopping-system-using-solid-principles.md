@@ -71,22 +71,71 @@ class Order:
 ```
   This snippet shows that Order no longer handles payment logic directly.
 
-  
+
 ### Open/Closed Principle (OCP)
 
-The system is open for extension but closed for modification. New payment methods and new discount strategies can be added without changing the main structure of the system. This allows the shopping system to grow more easily while keeping the core design stable.
+The refactored shopping system applies the Open/Closed Principle by allowing new behaviours to be added without changing the main structure of the existing classes. This is shown through the use of `PaymentMethod` and `DiscountStrategy` as abstractions. New payment methods and discount rules can be added by creating new subclasses, while the core design remains unchanged.
+
+```python
+class PaymentMethod(ABC):
+    @abstractmethod
+    def pay(self, amount: float) -> str:
+        pass
+
+class DiscountStrategy(ABC):
+    @abstractmethod
+    def apply_discount(self, total: float) -> float:
+        pass
+
+class CryptoPayment(PaymentMethod):
+    def pay(self, amount: float) -> str:
+        return f"Processing crypto payment of {amount:.2f}"
+```
+  This code shows that the system can be extended by adding new subclasses without modifying the existing payment or discount processing structure.
 
 ### Liskov Substitution Principle (LSP)
 
-All payment subclasses follow the same contract defined by `PaymentMethod`. This means that `CreditCardPayment`, `PayPalPayment`, and `CryptoPayment` can all be used wherever a `PaymentMethod` is expected without breaking the system. This improves consistency and makes the behaviour of payment processing more reliable.
+The refactored shopping system applies the Liskov Substitution Principle because all payment subclasses follow the same contract defined by `PaymentMethod`. This means that `CreditCardPayment`, `PayPalPayment`, and `CryptoPayment` can all be used wherever a `PaymentMethod` is expected without breaking the system. This improves consistency and makes the behaviour of payment processing more reliable.
+
+```python
+class PaymentMethod(ABC):
+    @abstractmethod
+    def pay(self, amount: float) -> str:
+        pass
+
+class CryptoPayment(PaymentMethod):
+    def pay(self, amount: float) -> str:
+        return f"Processing crypto payment of {amount:.2f}"
+```
+This code shows that `CryptoPayment` follows the same contract as other payment subclasses and can be used in place of any `PaymentMethod` implementation without affecting the behaviour of the system.
 
 ### Interface Segregation Principle (ISP)
 
-The abstractions remain small and focused. `PaymentMethod` contains only the `pay()` method, while `DiscountStrategy` contains only the `apply_discount()` method. This avoids forcing classes to implement methods that they do not need and keeps the design simpler.
+The refactored shopping system applies the Interface Segregation Principle by keeping abstractions small and focused. The `PaymentMethod` abstraction contains only the `pay()` method, while the `DiscountStrategy` abstraction contains only the `apply_discount()` method. This avoids forcing classes to implement methods that they do not need and keeps the design simpler and more maintainable.
 
+```python
+class PaymentMethod(ABC):
+    @abstractmethod
+    def pay(self, amount: float) -> str:
+        pass
+
+class DiscountStrategy(ABC):
+    @abstractmethod
+    def apply_discount(self, total: float) -> float:
+        pass
+```
+  This code shows that each abstraction has a single clear responsibility, so implementing classes only define the behaviour they actually need.
+  
 ### Dependency Inversion Principle (DIP)
 
-The refactored design reduces coupling by making `PaymentProcessor` depend on the `PaymentMethod` abstraction rather than concrete payment classes. This means that high-level payment logic works with abstractions rather than specific implementations such as `CreditCardPayment` or `PayPalPayment`. As a result, the system becomes more flexible and easier to extend.
+The refactored shopping system applies the Dependency Inversion Principle by making `PaymentProcessor` depend on the `PaymentMethod` abstraction rather than concrete payment classes. This means that the payment processing logic is no longer tied to a specific implementation such as `CreditCardPayment` or `PayPalPayment`. As a result, the design becomes more flexible and easier to extend.
+
+```python
+class PaymentProcessor:
+    def __init__(self, payment_method: PaymentMethod):
+        self.payment_method = payment_method
+```
+This code shows that `PaymentProcessor` works with the abstract `PaymentMethod` type rather than relying on a specific payment class.
 
 ## Python Source Code
 
