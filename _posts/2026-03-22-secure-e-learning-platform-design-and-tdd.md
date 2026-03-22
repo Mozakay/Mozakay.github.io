@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Secure E-Learning Platform Design and TDD
-subtitle: Designing, refactoring, and testing a user management module for a secure e-learning platform
+subtitle: Designing a secure e-learning platform using object-oriented architecture and test-driven development
 categories: Software Development
 tags: [unit10, software-architecture, object-oriented-design, tdd, e-learning-platform, python, secure-design]
 ---
