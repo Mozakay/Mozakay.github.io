@@ -21,7 +21,7 @@ The final design uses three main layers:
 - **Repository layer** for `UserRepository` and `InMemoryUserRepository`
 - **Service layer** for `UserService`, registration, login, and password hashing
 
-<img src="/assets/images/oop/unit10/Figure%201%20-%20user%20management%20module%20layered%20architecture.png" alt="Figure 1 - User management module layered architecture" width="900">
+<img src="/assets/images/oop/unit10/Figure%201%20-%20user%20management%20module%20layered%20architecture.png" alt="Figure 1 - User management module layered architecture" width="700">
 
 **Figure 1.** Final layered architecture of the User Management module.
 
