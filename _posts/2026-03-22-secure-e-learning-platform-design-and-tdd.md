@@ -2,7 +2,8 @@
 layout: post
 title: Secure E-Learning Platform Design and TDD
 subtitle: Designing a secure e-learning platform using object-oriented architecture and test-driven development
-categories: Software Development
+categories:
+  - Software Development
 tags: [unit10, software-architecture, object-oriented-design, tdd, e-learning-platform, python, secure-design]
 ---
 
@@ -77,11 +78,49 @@ The code was improved without changing the main behaviour of the module. Registr
 
 **Figure 9.** Improved version of `login()`.
 
-## My Python Code
+## Python Source Code
 
-Paste your actual Python code below in sections.
+This project includes both the refactored and pre-refactoring versions of the User Management module, together with the related unit test files.
 
-### User Class
+### Main Implementation
+- [user_management.py](/assets/code/oop/unit%2010/user_management.py)
 
-```python
-# Paste your User class here
+### Before Refactoring
+- [user_management_before_refactor.py](/assets/code/oop/unit%2010/user_management_before_refactor.py)
+
+### Tests
+- [test_user_management.py](/assets/code/oop/unit%2010/test_user_management.py)
+- [test_user_management_before_refactor.py](/assets/code/oop/unit%2010/test_user_management_before_refactor.py)
+
+## Testing and TDD Evidence
+
+The module was tested using Python `unittest` to verify both functionality and design behaviour after refactoring. The tests covered successful registration, duplicate usernames, empty input, valid login, invalid login, password hashing, repository storage, and missing users. The final results showed that all 10 tests passed successfully.
+
+<img src="/assets/images/oop/unit10/Figure%2012%20-%20Number%20of%20Tests%20Passed%20Successfully.png" alt="Figure 12 - Number of tests passed successfully" width="700">
+
+**Figure 12.** Number of tests passed successfully.
+
+<img src="/assets/images/oop/unit10/Figure%2013%20-%20Test%201%20and%202.png" alt="Figure 13 - Test 1 and 2" width="700">
+
+**Figure 13.** Test 1 verified successful registration, and Test 2 checked rejection of duplicate usernames.
+
+<img src="/assets/images/oop/unit10/Figure%2014%20-%20Test%203%20and%204.png" alt="Figure 14 - Test 3 and 4" width="700">
+
+**Figure 14.** Test 3 checked empty username validation, and Test 4 checked empty password validation.
+
+<img src="/assets/images/oop/unit10/Figure%2015%20-%20Test%205%20and%206.png" alt="Figure 15 - Test 5 and 6" width="700">
+
+**Figure 15.** Test 5 verified successful login, and Test 6 checked login failure with an incorrect password.
+
+<img src="/assets/images/oop/unit10/Figure%2016%20-%20Test%207%20and%208.png" alt="Figure 16 - Test 7 and 8" width="700">
+
+**Figure 16.** Test 7 checked login failure for an unknown user, and Test 8 verified that passwords were stored as hashes rather than plain text.
+
+<img src="/assets/images/oop/unit10/Figure%2017%20-%20Test%209%20and%2010.png" alt="Figure 17 - Test 9 and 10" width="700">
+
+**Figure 17.** Test 9 verified repository storage behaviour, and Test 10 checked retrieval behaviour for a missing user.
+
+
+## Reflection
+
+This work showed how refactoring can improve software design without changing the required behaviour. Moving storage responsibilities from `UserService` into a repository structure created a cleaner layered design and improved maintainability, separation of concerns, and testability. The testing results also confirmed that the refactored module still behaved correctly across the main user management scenarios.
