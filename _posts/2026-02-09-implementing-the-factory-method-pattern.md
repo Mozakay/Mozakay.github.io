@@ -63,7 +63,7 @@ class Car(ABC):
 ```
 This ensures that all car objects follow the same contract.
 
-2. Concrete Products: Sedan, SUV, Hatchback, and ElectricCar
+### 2. Concrete Products: Sedan, SUV, Hatchback, and ElectricCar
 
 The concrete product classes inherit from Car and provide their own implementation of drive(). Each class represents a specific type of car.
 ```python
@@ -85,7 +85,7 @@ class ElectricCar(Car):
 ```
 This shows that different products can be created while still following the same abstract interface.
 
-3. Abstract Creator: CarFactory
+### 3. Abstract Creator: CarFactory
 
 The abstract CarFactory class defines the factory method create_car(). This is the key part of the Factory Method Pattern because object creation is delegated to factory subclasses.
 ```python
@@ -96,7 +96,7 @@ class CarFactory(ABC):
 ```
 This allows the client code to depend on the factory abstraction rather than specific factory classes.
 
-4. Concrete Creators: SedanFactory, SUVFactory, HatchbackFactory, and ElectricFactory
+### 4. Concrete Creators: SedanFactory, SUVFactory, HatchbackFactory, and ElectricFactory
 
 Each concrete factory overrides create_car() and returns a specific car object. This is how the pattern creates different products without changing the client code.
 ```python
@@ -118,7 +118,7 @@ class ElectricFactory(CarFactory):
 ```
 This part demonstrates that each factory is responsible for creating one concrete product.
 
-5. Client Code
+### 5. Client Code
 
 The client code works only with the CarFactory abstraction. It does not directly create Sedan, SUV, or any other concrete car class.
 ```python
@@ -128,7 +128,7 @@ def client_code(factory: CarFactory):
 ```
 This shows the main benefit of the Factory Method Pattern: the client uses the product without knowing its exact class.
 
-6. Demonstration of Flexibility
+### 6. Demonstration of Flexibility
 
 The same client function can work with different factories. Only the factory object changes, while the client logic stays the same.
 ```python
