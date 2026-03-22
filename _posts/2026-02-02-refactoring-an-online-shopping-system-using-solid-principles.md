@@ -148,31 +148,31 @@ This project includes the shopping system and the related unit test file.
 
 The refactored shopping system was tested using Python `unittest` to verify that the main functions worked correctly after refactoring. The tests covered adding items to an order, calculating totals for single and multiple products, applying percentage and fixed discounts, processing payments with different payment methods, adding a new payment method, adding a new discount strategy, applying no discount, preventing totals from falling below zero, and verifying that `CryptoPayment` can substitute `PaymentMethod`. The results showed that all 12 tests passed successfully.
 
-<img src="/assets/images/oop/unit2/Run-tests.png" alt="Figure 1 - All tests passed" width="700">
+<img src="/assets/images/oop/unit2/Run-tests.png" alt="Figure 1 - All tests passed" width="600">
 
 **Figure 1.** Test execution showing that all 12 tests passed successfully.
 
-<img src="/assets/images/oop/unit2/test%201%20and%202.png" alt="Figure 2 - Test 1 and 2" width="700">
+<img src="/assets/images/oop/unit2/test%201%20and%202.png" alt="Figure 2 - Test 1 and 2" width="600">
 
 **Figure 2.** Tests 1 and 2 verified item addition and single-item total calculation.
 
-<img src="/assets/images/oop/unit2/test%203%20and%204.png" alt="Figure 3 - Test 3 and 4" width="700">
+<img src="/assets/images/oop/unit2/test%203%20and%204.png" alt="Figure 3 - Test 3 and 4" width="600">
 
 **Figure 3.** Tests 3 and 4 verified multiple-item total calculation and percentage discount handling.
 
-<img src="/assets/images/oop/unit2/test%205%20and%206.png" alt="Figure 4 - Test 5 and 6" width="700">
+<img src="/assets/images/oop/unit2/test%205%20and%206.png" alt="Figure 4 - Test 5 and 6" width="600">
 
 **Figure 4.** Tests 5 and 6 verified fixed discount calculation and credit card payment.
 
-<img src="/assets/images/oop/unit2/test%207%20and%208.png" alt="Figure 5 - Test 7 and 8" width="700">
+<img src="/assets/images/oop/unit2/test%207%20and%208.png" alt="Figure 5 - Test 7 and 8" width="600">
 
 **Figure 5.** Tests 7 and 8 verified PayPal payment after discount and the addition of a new payment method without modifying the processor.
 
-<img src="/assets/images/oop/unit2/test%209%20and%2010.png" alt="Figure 6 - Test 9 and 10" width="700">
+<img src="/assets/images/oop/unit2/test%209%20and%2010.png" alt="Figure 6 - Test 9 and 10" width="600">
 
 **Figure 6.** Tests 9 and 10 verified a new discount strategy and no-discount behaviour.
 
-<img src="/assets/images/oop/unit2/test%2011%20and%2012.png" alt="Figure 7 - Test 11 and 12" width="700">
+<img src="/assets/images/oop/unit2/test%2011%20and%2012.png" alt="Figure 7 - Test 11 and 12" width="600">
 
 **Figure 7.** Tests 11 and 12 verified that totals do not fall below zero and that `CryptoPayment` can substitute `PaymentMethod`.
 
