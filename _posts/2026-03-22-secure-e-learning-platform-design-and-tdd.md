@@ -29,15 +29,15 @@ The final design uses three main layers:
 
 The earlier design placed storage directly inside `UserService`. This meant that validation, business logic, storage, and password handling were all managed by the same class. After refactoring, storage was moved into a separate repository structure. This made the design cleaner and easier to extend.
 
-<img src="/assets/images/oop/unit10/Figure%202%20-%20Before%20Refactor%20-%20UserService%20with%20Internal%20Storage.png" alt="Figure 2 - Before refactor UserService with internal storage" width="900">
+<img src="/assets/images/oop/unit10/Figure%202%20-%20Before%20Refactor%20-%20UserService%20with%20Internal%20Storage.png" alt="Figure 2 - Before refactor UserService with internal storage" width="700">
 
 **Figure 2.** Before refactoring, `UserService` stored users internally.
 
-<img src="/assets/images/oop/unit10/Figure%203%20-%20After%20Refactor%20-%20UserService%20Using%20Repository.png" alt="Figure 3 - After refactor UserService using repository" width="900">
+<img src="/assets/images/oop/unit10/Figure%203%20-%20After%20Refactor%20-%20UserService%20Using%20Repository.png" alt="Figure 3 - After refactor UserService using repository" width="700">
 
 **Figure 3.** After refactoring, `UserService` depends on a repository.
 
-<img src="/assets/images/oop/unit10/Figure%204%20-%20After%20Refactor%20-%20Abstract%20UserRepository.png" alt="Figure 4 - After refactor abstract UserRepository" width="900">
+<img src="/assets/images/oop/unit10/Figure%204%20-%20After%20Refactor%20-%20Abstract%20UserRepository.png" alt="Figure 4 - After refactor abstract UserRepository" width="700">
 
 **Figure 4.** Abstract `UserRepository`.
 
