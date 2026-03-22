@@ -47,6 +47,99 @@ The Factory Method Pattern was suitable for this task because the system needed 
 
 The addition of `ElectricCar` shows why this pattern is useful. A new car model was added by creating a new product class and a matching factory class. The existing client code did not need to change. This supports extensibility and follows the Open–Closed Principle, where stable parts of the system remain unchanged while new behaviour is added through extension.
 
+## Demonstrating the Factory Method Pattern
+
+The Factory Method Pattern is shown clearly in the structure of the car manufacturing system. The design separates the product interface, concrete products, factory interface, concrete factories, and client code.
+
+### 1. Abstract Product: `Car`
+
+The pattern begins with the abstract `Car` class. This class defines the common interface for all car types through the `drive()` method. Any concrete car must implement this behaviour.
+
+```python
+class Car(ABC):
+    @abstractmethod
+    def drive(self):
+        pass
+```
+This ensures that all car objects follow the same contract.
+
+2. Concrete Products: Sedan, SUV, Hatchback, and ElectricCar
+
+The concrete product classes inherit from Car and provide their own implementation of drive(). Each class represents a specific type of car.
+```python
+class Sedan(Car):
+    def drive(self):
+        return "Driving a Sedan"
+
+class SUV(Car):
+    def drive(self):
+        return "Driving an SUV"
+
+class Hatchback(Car):
+    def drive(self):
+        return "Driving a Hatchback"
+
+class ElectricCar(Car):
+    def drive(self):
+        return "Driving an Electric Car"
+```
+This shows that different products can be created while still following the same abstract interface.
+
+3. Abstract Creator: CarFactory
+
+The abstract CarFactory class defines the factory method create_car(). This is the key part of the Factory Method Pattern because object creation is delegated to factory subclasses.
+```python
+class CarFactory(ABC):
+    @abstractmethod
+    def create_car(self):
+        pass
+```
+This allows the client code to depend on the factory abstraction rather than specific factory classes.
+
+4. Concrete Creators: SedanFactory, SUVFactory, HatchbackFactory, and ElectricFactory
+
+Each concrete factory overrides create_car() and returns a specific car object. This is how the pattern creates different products without changing the client code.
+```python
+class SedanFactory(CarFactory):
+    def create_car(self):
+        return Sedan()
+
+class SUVFactory(CarFactory):
+    def create_car(self):
+        return SUV()
+
+class HatchbackFactory(CarFactory):
+    def create_car(self):
+        return Hatchback()
+
+class ElectricFactory(CarFactory):
+    def create_car(self):
+        return ElectricCar()
+```
+This part demonstrates that each factory is responsible for creating one concrete product.
+
+5. Client Code
+
+The client code works only with the CarFactory abstraction. It does not directly create Sedan, SUV, or any other concrete car class.
+```python
+def client_code(factory: CarFactory):
+    car = factory.create_car()
+    print(car.drive())
+```
+This shows the main benefit of the Factory Method Pattern: the client uses the product without knowing its exact class.
+
+6. Demonstration of Flexibility
+
+The same client function can work with different factories. Only the factory object changes, while the client logic stays the same.
+```python
+if __name__ == "__main__":
+    client_code(SedanFactory())
+    client_code(SUVFactory())
+    client_code(HatchbackFactory())
+    client_code(ElectricFactory())
+```
+This demonstrates that the system is flexible and easy to extend. Adding ElectricCar required a new product class and a matching factory, but the client code did not need to change.
+
 ## Python Source Code
 
 This project includes the Python implementation of the Factory Method Pattern.
