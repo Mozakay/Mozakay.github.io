@@ -39,7 +39,7 @@ author:  Moza Al-Handasi
 #   "Copyright (c) 2017-{currentYear} <a href="https://example.com">{author}</a>"
 #   "Copyright © 2017-2021 Foobar"
 #
-copyright: "Unpublished Work {currentYear} {author}"
+copyright: "Unpublished Work {currentYear} by {author}"
 
 description: >- # this means to ignore newlines until "baseurl:"
   This e-portfolio presents my work in computing and software development. 
