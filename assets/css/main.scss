@@ -32,3 +32,20 @@ $brand-color: map-get($brand-colors, "orangered");
 } @else if str-index($brand-name, "#") == 1 {
   $brand-color: {{ site.brand_color | default: '#ff5100' }};
 }
+
+$content-width: 1280px;
+@import "yat";
+
+/* Widen post/page content and keep it centered */
+.post,
+.post-content,
+.page-content,
+.article-content,
+.main-content,
+.wrapper,
+.container {
+  max-width: 1500px !important;
+  width: 96% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
