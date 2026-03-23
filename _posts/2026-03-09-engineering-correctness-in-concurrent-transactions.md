@@ -64,8 +64,9 @@ Transfers introduce an additional concurrency risk because two threads may each 
 ## Test Plan Summary
 
 <div style="overflow-x:auto;">
+  <div style="zoom: 0.75;">
+    <table style="width: 100%; border-collapse: collapse;">
 
-<table style="font-size: 10px; width: 100%; border-collapse: collapse; table-layout: fixed;">
   <thead>
     <tr>
       <th style="padding: 4px;">Test Number</th>
