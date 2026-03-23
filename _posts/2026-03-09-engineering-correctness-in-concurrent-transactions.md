@@ -29,7 +29,7 @@ At a system level, the design is divided into focused parts with clear responsib
 
 <img src="/assets/images/oop/unit6/Figure%202%20-%20Operation%20and%20OperationFactory%20parts.png" alt="Figure 2 - Operation and OperationFactory parts" width="700">
 
-**Figure 2.** Operation and OperationFactory parts.
+<p style="text-align:center;"><strong>Figure 2.</strong> Operation and OperationFactory parts.</p>
 
 <img src="/assets/images/oop/unit6/Figure%203%20-%20TransactionSimulator%20part.png" alt="Figure 3 - TransactionSimulator part" width="700">
 
