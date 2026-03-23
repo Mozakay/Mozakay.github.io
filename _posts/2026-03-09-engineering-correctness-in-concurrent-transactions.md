@@ -23,9 +23,10 @@ Taken together, the results provide evidence for both safety and liveness. Safet
 
 At a system level, the design is divided into focused parts with clear responsibilities. `TransactionSimulator` coordinates concurrent worker threads and applies actions through the `Account` abstraction. `Operation` objects represent transaction behaviour, while `OperationFactory` creates those operations separately from execution. This structure improves clarity, extensibility, and maintainability.
 
-<img src="/assets/images/oop/unit6/Figure%201%20-%20System%20Architecture.png" alt="Figure 1 - System Architecture" width="700">
-
-<p style="text-align:center;"><strong>Figure 1.</strong> System architecture.</p>
+<div style="text-align:center;">
+  <img src="/assets/images/oop/unit6/Figure%201%20-%20System%20Architecture.png" alt="Figure 1 - System Architecture" width="700">
+  <div style="text-align:center; margin-top:8px;"><strong>Figure 1.</strong> System architecture.</div>
+</div>
 
 <img src="/assets/images/oop/unit6/Figure%202%20-%20Operation%20and%20OperationFactory%20parts.png" alt="Figure 2 - Operation and OperationFactory parts" width="700">
 
