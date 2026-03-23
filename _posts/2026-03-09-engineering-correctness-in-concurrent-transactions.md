@@ -68,10 +68,10 @@ Transfers introduce an additional concurrency risk because two threads may each 
 <table style="font-size: 10px; width: 100%; border-collapse: collapse; table-layout: fixed;">
   <colgroup>
   <col style="width: 7%;">
-  <col style="width: 19%;">
   <col style="width: 12%;">
-  <col style="width: 14%;">
-  <col style="width: 17%;">
+  <col style="width: 12%;">
+  <col style="width: 12%;">
+  <col style="width: 12%;">
   <col style="width: 15%;">
   <col style="width: 16%;">
   </colgroup>
