@@ -61,38 +61,6 @@ Transfers introduce an additional concurrency risk because two threads may each 
 
 **Figure 6.** Deadlock-safe transfer through deterministic lock ordering.
 
-## Verification Strategy and Test Evidence
-
-The test suite was designed to provide clear evidence across different concurrency risks. It included deposits-only tests, unsafe race-condition tests, mixed deposit/withdraw scenarios, failed-withdrawal handling, transfer correctness, integration testing through the simulator, and livelock demonstration. The overall test run completed successfully, and the following figures show the recorded outputs.
-
-<img src="/assets/images/oop/unit6/Figure%208%20-%20Test%20Suite%20Results.png" alt="Figure 8 - Test Suite Results" width="700">
-
-**Figure 8.** Test suite results.
-
-<img src="/assets/images/oop/unit6/Figure%209%20-%20Test%201%20and%202%20results.png" alt="Figure 9 - Test 1 and 2 results" width="700">
-
-**Figure 9.** Test 1 and Test 2 results.
-
-<img src="/assets/images/oop/unit6/Figure%2010%20-%20Test%203%20result.png" alt="Figure 10 - Test 3 result" width="700">
-
-**Figure 10.** Test 3 result.
-
-<img src="/assets/images/oop/unit6/Figure%2011%20-%20Test%204%20result.png" alt="Figure 11 - Test 4 result" width="700">
-
-**Figure 11.** Test 4 result.
-
-<img src="/assets/images/oop/unit6/Figure%2012%20-%20Test%205%20and%206%20results.png" alt="Figure 12 - Test 5 and 6 results" width="700">
-
-**Figure 12.** Test 5 and Test 6 results.
-
-<img src="/assets/images/oop/unit6/Figure%2013%20-%20Test%207%20result.png" alt="Figure 13 - Test 7 result" width="700">
-
-**Figure 13.** Test 7 result.
-
-<img src="/assets/images/oop/unit6/Figure%2014%20-%20Test%208%20result.png" alt="Figure 14 - Test 8 result" width="700">
-
-**Figure 14.** Test 8 result.
-
 ## Test Plan Summary
 
 <div style="overflow-x:auto;">
@@ -186,6 +154,39 @@ The test suite was designed to provide clear evidence across different concurren
 </table>
 
 </div>
+**Table.** Test Plan Summary and Expected Results.
+
+## Verification Strategy and Test Evidence
+
+The test suite was designed to provide clear evidence across different concurrency risks. It included deposits-only tests, unsafe race-condition tests, mixed deposit/withdraw scenarios, failed-withdrawal handling, transfer correctness, integration testing through the simulator, and livelock demonstration. The overall test run completed successfully, and the following figures show the recorded outputs.
+
+<img src="/assets/images/oop/unit6/Figure%208%20-%20Test%20Suite%20Results.png" alt="Figure 8 - Test Suite Results" width="700">
+
+**Figure 8.** Test suite results.
+
+<img src="/assets/images/oop/unit6/Figure%209%20-%20Test%201%20and%202%20results.png" alt="Figure 9 - Test 1 and 2 results" width="700">
+
+**Figure 9.** Test 1 and Test 2 results.
+
+<img src="/assets/images/oop/unit6/Figure%2010%20-%20Test%203%20result.png" alt="Figure 10 - Test 3 result" width="700">
+
+**Figure 10.** Test 3 result.
+
+<img src="/assets/images/oop/unit6/Figure%2011%20-%20Test%204%20result.png" alt="Figure 11 - Test 4 result" width="700">
+
+**Figure 11.** Test 4 result.
+
+<img src="/assets/images/oop/unit6/Figure%2012%20-%20Test%205%20and%206%20results.png" alt="Figure 12 - Test 5 and 6 results" width="700">
+
+**Figure 12.** Test 5 and Test 6 results.
+
+<img src="/assets/images/oop/unit6/Figure%2013%20-%20Test%207%20result.png" alt="Figure 13 - Test 7 result" width="700">
+
+**Figure 13.** Test 7 result.
+
+<img src="/assets/images/oop/unit6/Figure%2014%20-%20Test%208%20result.png" alt="Figure 14 - Test 8 result" width="700">
+
+**Figure 14.** Test 8 result.
 
 ## Python Source Code
 
