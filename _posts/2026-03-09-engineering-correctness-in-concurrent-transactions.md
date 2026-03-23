@@ -25,7 +25,7 @@ At a system level, the design is divided into focused parts with clear responsib
 
 <img src="/assets/images/oop/unit6/Figure%201%20-%20System%20Architecture.png" alt="Figure 1 - System Architecture" width="700">
 
-**Figure 1.** System architecture.
+<p style="text-align:center;"><strong>Figure 1.</strong> System architecture.</p>
 
 <img src="/assets/images/oop/unit6/Figure%202%20-%20Operation%20and%20OperationFactory%20parts.png" alt="Figure 2 - Operation and OperationFactory parts" width="700">
 
