@@ -33,9 +33,9 @@ $brand-color: map-get($brand-colors, "orangered");
   $brand-color: {{ site.brand_color | default: '#ff5100' }};
 }
 
-$content-width: {{ site.content_width | default: '920px' }};
-
+$content-width: 1280px;
 @import "yat";
+
 /* Widen post/page content */
 .post,
 .post-content,
