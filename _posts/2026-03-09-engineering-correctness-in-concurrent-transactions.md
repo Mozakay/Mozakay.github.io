@@ -97,90 +97,90 @@ The test suite was designed to provide clear evidence across different concurren
 
 <div style="overflow-x:auto;">
 
-<table style="font-size: 12px; width: 100%; border-collapse: collapse; table-layout: fixed;">
+<table style="font-size: 11px; width: 100%; border-collapse: collapse; table-layout: fixed;">
   <thead>
     <tr>
-      <th style="padding: 5px;">Test Number</th>
-      <th style="padding: 5px;">Primary Goal</th>
-      <th style="padding: 5px;">Setup</th>
-      <th style="padding: 5px;">Concurrency Method</th>
-      <th style="padding: 5px;">Operations Executed</th>
-      <th style="padding: 5px;">Expected Outcome</th>
-      <th style="padding: 5px;">What It Proves</th>
+      <th style="padding: 4px;">Test Number</th>
+      <th style="padding: 4px;">Primary Goal</th>
+      <th style="padding: 4px;">Setup</th>
+      <th style="padding: 4px;">Concurrency Method</th>
+      <th style="padding: 4px;">Operations Executed</th>
+      <th style="padding: 4px;">Expected Outcome</th>
+      <th style="padding: 4px;">What It Proves</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="padding: 5px;">1</td>
-      <td style="padding: 5px;">Prove deposit is thread-safe under heavy load</td>
-      <td style="padding: 5px;">Start balance = 0.0<br>50 threads, each does 1000 deposits of 1.00</td>
-      <td style="padding: 5px;">Barrier to start at same time + lock inside <code>deposit()</code></td>
-      <td style="padding: 5px;">Deposits only</td>
-      <td style="padding: 5px;">Final balance = 50 × 1000 × 1.00 = 50000.00</td>
-      <td style="padding: 5px;">No lost updates; locking protects shared balance correctly</td>
+      <td style="padding: 4px;">1</td>
+      <td style="padding: 4px;">Prove deposit is thread-safe under heavy load</td>
+      <td style="padding: 4px;">Start balance = 0.0<br>50 threads, each does 1000 deposits of 1.00</td>
+      <td style="padding: 4px;">Barrier to start at same time + lock inside <code>deposit()</code></td>
+      <td style="padding: 4px;">Deposits only</td>
+      <td style="padding: 4px;">Final balance = 50 × 1000 × 1.00 = 50000.00</td>
+      <td style="padding: 4px;">No lost updates; locking protects shared balance correctly</td>
     </tr>
     <tr>
-      <td style="padding: 5px;">2</td>
-      <td style="padding: 5px;">Demonstrate race condition without locking</td>
-      <td style="padding: 5px;"><code>UnsafeBankAccount</code>, 30 threads, 2000 deposits each, amount 1.00, retry up to 5 attempts</td>
-      <td style="padding: 5px;">Barrier start + no lock + forced interleaving using <code>sleep(0)</code></td>
-      <td style="padding: 5px;">Deposits only (unsafe)</td>
-      <td style="padding: 5px;">Actual balance differs from expected total</td>
-      <td style="padding: 5px;">Clear evidence that removing locks causes race condition</td>
+      <td style="padding: 4px;">2</td>
+      <td style="padding: 4px;">Demonstrate race condition without locking</td>
+      <td style="padding: 4px;"><code>UnsafeBankAccount</code>, 30 threads, 2000 deposits each, amount 1.00, retry up to 5 attempts</td>
+      <td style="padding: 4px;">Barrier start + no lock + forced interleaving using <code>sleep(0)</code></td>
+      <td style="padding: 4px;">Deposits only (unsafe)</td>
+      <td style="padding: 4px;">Actual balance differs from expected total</td>
+      <td style="padding: 4px;">Clear evidence that removing locks causes race condition</td>
     </tr>
     <tr>
-      <td style="padding: 5px;">3</td>
-      <td style="padding: 5px;">Validate correct balance with a realistic small scenario</td>
-      <td style="padding: 5px;">Start balance = 5000.00<br>3 threads, each performs exactly 10 predefined operations</td>
-      <td style="padding: 5px;">Barrier + lock-protected methods</td>
-      <td style="padding: 5px;">Predefined list of deposits/withdrawals</td>
-      <td style="padding: 5px;">Final = start + total deposits − total withdrawals</td>
-      <td style="padding: 5px;">Correctness holds even when thread execution order varies</td>
+      <td style="padding: 4px;">3</td>
+      <td style="padding: 4px;">Validate correct balance with a realistic small scenario</td>
+      <td style="padding: 4px;">Start balance = 5000.00<br>3 threads, each performs exactly 10 predefined operations</td>
+      <td style="padding: 4px;">Barrier + lock-protected methods</td>
+      <td style="padding: 4px;">Predefined list of deposits/withdrawals</td>
+      <td style="padding: 4px;">Final = start + total deposits − total withdrawals</td>
+      <td style="padding: 4px;">Correctness holds even when thread execution order varies</td>
     </tr>
     <tr>
-      <td style="padding: 5px;">4</td>
-      <td style="padding: 5px;">Validate handling of failed withdrawals due to insufficient funds and logged pass/fail outcomes</td>
-      <td style="padding: 5px;">Start balance = 200.00<br>2 threads, 5 ops each</td>
-      <td style="padding: 5px;">Two threads + barrier + BankAccount lock + AccountLogger thread-safe log + join()</td>
-      <td style="padding: 5px;">Deposits + withdrawals (some may fail)</td>
-      <td style="padding: 5px;">Expected computed from only successful operations</td>
-      <td style="padding: 5px;">Insufficient funds does not break state; balance reflects only successful withdrawals</td>
+      <td style="padding: 4px;">4</td>
+      <td style="padding: 4px;">Validate handling of failed withdrawals due to insufficient funds and logged pass/fail outcomes</td>
+      <td style="padding: 4px;">Start balance = 200.00<br>2 threads, 5 ops each</td>
+      <td style="padding: 4px;">Two threads + barrier + BankAccount lock + AccountLogger thread-safe log + join()</td>
+      <td style="padding: 4px;">Deposits + withdrawals (some may fail)</td>
+      <td style="padding: 4px;">Expected computed from only successful operations</td>
+      <td style="padding: 4px;">Insufficient funds does not break state; balance reflects only successful withdrawals</td>
     </tr>
     <tr>
-      <td style="padding: 5px;">5</td>
-      <td style="padding: 5px;">Stress test for mixed deposits/withdrawals at scale</td>
-      <td style="padding: 5px;">Start = 100000.00, 30 threads, 200 ops, amounts 1–10, deterministic RNG seed</td>
-      <td style="padding: 5px;">Barrier start + lock-protected deposit/withdraw + join()</td>
-      <td style="padding: 5px;">Random mix of deposits/withdrawals</td>
-      <td style="padding: 5px;">Final = start + total deposits − total withdrawals</td>
-      <td style="padding: 5px;">Atomicity under high concurrency; balance remains consistent</td>
+      <td style="padding: 4px;">5</td>
+      <td style="padding: 4px;">Stress test for mixed deposits/withdrawals at scale</td>
+      <td style="padding: 4px;">Start = 100000.00, 30 threads, 200 ops, amounts 1–10, deterministic RNG seed</td>
+      <td style="padding: 4px;">Barrier start + lock-protected deposit/withdraw + join()</td>
+      <td style="padding: 4px;">Random mix of deposits/withdrawals</td>
+      <td style="padding: 4px;">Final = start + total deposits − total withdrawals</td>
+      <td style="padding: 4px;">Atomicity under high concurrency; balance remains consistent</td>
     </tr>
     <tr>
-      <td style="padding: 5px;">6</td>
-      <td style="padding: 5px;">Prove transfers are deadlock-free under opposing concurrency</td>
-      <td style="padding: 5px;">Two accounts: A = 10000, B = 10000, 2 threads, opposing transfers</td>
-      <td style="padding: 5px;">Barrier + consistent lock ordering by <code>account_number</code> + <code>join(timeout=5)</code></td>
-      <td style="padding: 5px;">A to B and B to A</td>
-      <td style="padding: 5px;">Both threads finish within timeout; total A + B remains 20000.00</td>
-      <td style="padding: 5px;">Lock ordering prevents deadlock and total money is conserved</td>
+      <td style="padding: 4px;">6</td>
+      <td style="padding: 4px;">Prove transfers are deadlock-free under opposing concurrency</td>
+      <td style="padding: 4px;">Two accounts: A = 10000, B = 10000, 2 threads, opposing transfers</td>
+      <td style="padding: 4px;">Barrier + consistent lock ordering by <code>account_number</code> + <code>join(timeout=5)</code></td>
+      <td style="padding: 4px;">A to B and B to A</td>
+      <td style="padding: 4px;">Both threads finish within timeout; total A + B remains 20000.00</td>
+      <td style="padding: 4px;">Lock ordering prevents deadlock and total money is conserved</td>
     </tr>
     <tr>
-      <td style="padding: 5px;">7</td>
-      <td style="padding: 5px;">Integration test of simulator + factory + logger</td>
-      <td style="padding: 5px;">Start balance = 10000.00, fixed operations, 3 threads, 50 ops each, seed 42</td>
-      <td style="padding: 5px;">Threads inside simulator + deterministic RNG choice</td>
-      <td style="padding: 5px;">Deterministic fixed deposit/withdraw operations</td>
-      <td style="padding: 5px;">Balance matches replayed expected result; logger records 150 entries</td>
-      <td style="padding: 5px;">End-to-end correctness + repeatability + logger coverage</td>
+      <td style="padding: 4px;">7</td>
+      <td style="padding: 4px;">Integration test of simulator + factory + logger</td>
+      <td style="padding: 4px;">Start balance = 10000.00, fixed operations, 3 threads, 50 ops each, seed 42</td>
+      <td style="padding: 4px;">Threads inside simulator + deterministic RNG choice</td>
+      <td style="padding: 4px;">Deterministic fixed deposit/withdraw operations</td>
+      <td style="padding: 4px;">Balance matches replayed expected result; logger records 150 entries</td>
+      <td style="padding: 4px;">End-to-end correctness + repeatability + logger coverage</td>
     </tr>
     <tr>
-      <td style="padding: 5px;">8</td>
-      <td style="padding: 5px;">Demonstrate livelock: activity without progress, no deadlock</td>
-      <td style="padding: 5px;">Two locks, 2 threads, 500 attempts, progress counter</td>
-      <td style="padding: 5px;">Barriers keep retries aligned; non-blocking second-lock attempts with retry</td>
-      <td style="padding: 5px;">500 lock-acquire attempts per thread; neither thread ever holds both locks</td>
-      <td style="padding: 5px;">Progress count = 0</td>
-      <td style="padding: 5px;">Livelock concept: retries can prevent progress without deadlock</td>
+      <td style="padding: 4px;">8</td>
+      <td style="padding: 4px;">Demonstrate livelock: activity without progress, no deadlock</td>
+      <td style="padding: 4px;">Two locks, 2 threads, 500 attempts, progress counter</td>
+      <td style="padding: 4px;">Barriers keep retries aligned; non-blocking second-lock attempts with retry</td>
+      <td style="padding: 4px;">500 lock-acquire attempts per thread; neither thread ever holds both locks</td>
+      <td style="padding: 4px;">Progress count = 0</td>
+      <td style="padding: 4px;">Livelock concept: retries can prevent progress without deadlock</td>
     </tr>
   </tbody>
 </table>
