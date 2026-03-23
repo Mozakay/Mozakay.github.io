@@ -75,7 +75,6 @@ Transfers introduce an additional concurrency risk because two threads may each 
   <col style="width: 12%;">
   <col style="width: 12%;">
   <col style="width: 12%;">
-  <col style="width: 12%;">
   </colgroup>
   <thead>
     <tr>
