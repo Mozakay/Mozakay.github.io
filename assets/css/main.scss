@@ -36,3 +36,13 @@ $brand-color: map-get($brand-colors, "orangered");
 $content-width: {{ site.content_width | default: '920px' }};
 
 @import "yat";
+/* Widen post/page content */
+.post,
+.post-content,
+.page-content,
+.article-content,
+.main-content,
+.wrapper,
+.container {
+  max-width: 1500px !important;
+  width: 96% !important;
