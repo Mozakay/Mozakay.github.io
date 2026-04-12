@@ -1,6 +1,6 @@
 <iframe
-  src="{{ '/assets/interactive/pipeline/pipeline_session_rbac_rate_fraud_execute.html' | relative_url }}"
+  src="{{ '/assets/interactive/pipeline_session_rbac_rate_fraud_execute.html' | relative_url }}"
   width="100%"
-  height="520"
-  style="border:1px solid #ddd; border-radius:12px;">
+  height="560"
+  style="border:1px solid #d9d9d9; border-radius:12px;">
 </iframe>
