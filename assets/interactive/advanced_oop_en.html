@@ -1,0 +1,166 @@
+
+<style>
+h2.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.acc-btn{width:100%;text-align:left;padding:11px 14px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:var(--color-background-secondary);color:var(--color-text-primary);font-size:13px;font-weight:500;cursor:pointer;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center;transition:background .15s;line-height:1.4}
+.acc-btn:hover{background:var(--color-background-primary)}
+.acc-btn.open{background:var(--color-background-primary);border-color:var(--color-border-primary)}
+.acc-body{display:none;margin-bottom:10px;padding:14px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-tertiary);background:var(--color-background-primary);font-size:13px;line-height:1.7;color:var(--color-text-primary)}
+.acc-body.open{display:block}
+.badge{display:inline-block;padding:2px 8px;border-radius:var(--border-radius-md);font-size:11px;font-weight:500;margin:1px 2px}
+.b-purple{background:#EEEDFE;color:#3C3489}.b-teal{background:#E1F5EE;color:#085041}.b-amber{background:#FAEEDA;color:#633806}.b-blue{background:#E6F1FB;color:#0C447C}.b-coral{background:#FAECE7;color:#712B13}.b-green{background:#EAF3DE;color:#27500A}.b-gray{background:#F1EFE8;color:#444441}
+@media(prefers-color-scheme:dark){.b-purple{background:#26215C;color:#CECBF6}.b-teal{background:#04342C;color:#9FE1CB}.b-amber{background:#412402;color:#FAC775}.b-blue{background:#042C53;color:#B5D4F4}.b-coral{background:#4A1B0C;color:#F5C4B3}.b-green{background:#173404;color:#C0DD97}.b-gray{background:#2C2C2A;color:#D3D1C7}}
+.code-ref{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:4px;padding:1px 5px;font-family:var(--font-mono);font-size:11.5px;color:var(--color-text-primary)}
+.why-box{border-left:3px solid var(--color-border-info);padding-left:10px;margin-top:10px;color:var(--color-text-secondary);font-size:12.5px}
+.section-hd{font-size:12px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.05em;margin:12px 0 4px}
+</style>
+<h2 class="sr-only">Advanced OOP principles applied to the secure banking project</h2>
+
+<div style="padding:1rem 0">
+
+<div class="acc-btn open" onclick="tog('en1',this)">
+  <span><span class="badge b-purple">1</span> SOLID principles — how they are applied in the project</span>
+  <span id="en1-icon">−</span>
+</div>
+<div class="acc-body open" id="en1">
+  <div class="section-hd">S — Single responsibility</div>
+  Every class in the project is assigned one, and only one, concern. <span class="code-ref">CredentialService</span> validates credentials only. <span class="code-ref">SessionManager</span> manages session lifecycle only. <span class="code-ref">ThreatReportBuilder</span> constructs threat reports only. <span class="code-ref">BoundedSecurityEventStore</span> stores security events only. Should the reporting logic change, only <span class="code-ref">ThreatReportBuilder</span> is modified — no other class is affected.
+  <div class="why-box">Why? — Reduces coupling between components and makes every unit independently testable.</div>
+
+  <div class="section-hd">O — Open/closed</div>
+  A new fraud rule is introduced by creating a class that implements <span class="code-ref">IFraudRule</span> and injecting it into <span class="code-ref">FraudDetectionEngine</span> — not a single line of the engine is modified. The same principle governs adding a new rate-limiting strategy via <span class="code-ref">RateLimiterFactory</span>.
+  <div class="why-box">Why? — The system extends without risk of breaking existing behaviour.</div>
+
+  <div class="section-hd">L — Liskov substitution</div>
+  <span class="code-ref">TokenBucketRateLimiter</span> and <span class="code-ref">StrictWindowRateLimiter</span> both implement <span class="code-ref">IRateLimiter</span> and are fully interchangeable — the calling code is entirely unaware of which is in use. The same holds for all four fraud rule implementations.
+  <div class="why-box">Why? — Complete flexibility to swap strategies at runtime without modifying any consumer.</div>
+
+  <div class="section-hd">I — Interface segregation</div>
+  Interfaces are small and purpose-specific. <span class="code-ref">IClock</span> exposes only <span class="code-ref">now()</span>. <span class="code-ref">IFraudRule</span> exposes only <span class="code-ref">evaluate()</span> and <span class="code-ref">description()</span>. <span class="code-ref">IAccountAuditLogger</span> exposes only what the audit layer requires. No class is forced to implement methods it does not use.
+  <div class="why-box">Why? — Simplifies writing test doubles (e.g. <span class="code-ref">TestClock</span>) and reduces unnecessary coupling.</div>
+
+  <div class="section-hd">D — Dependency inversion</div>
+  <span class="code-ref">FraudDetectionEngine</span> holds no knowledge of any concrete rule — it depends solely on the injected <span class="code-ref">IFraudRule</span> list. <span class="code-ref">SecureBankingServiceFactory</span> serves as the composition root, assembling all dependencies in one place. Inner classes never construct their own collaborators.
+  <div class="why-box">Why? — Full testability: in the test suite, <span class="code-ref">TestClock</span> is injected in place of <span class="code-ref">SystemClock</span> without modifying any production code.</div>
+</div>
+
+<div class="acc-btn" onclick="tog('en2',this)">
+  <span><span class="badge b-teal">2</span> Abstraction &amp; interface-based design</span>
+  <span id="en2-icon">+</span>
+</div>
+<div class="acc-body" id="en2">
+  The <span class="code-ref">Account</span> class in <span class="code-ref">core_banking.py</span> is an abstract base class that defines a contract of four operations (deposit, withdraw, get_balance, account_number) without any implementation. Everything that interacts with accounts depends on this abstraction — not on <span class="code-ref">BankAccount</span> directly.
+  <br><br>
+  Throughout the security layer, every boundary is defined as an ABC: <span class="code-ref">IClock</span>, <span class="code-ref">IFraudRule</span>, <span class="code-ref">IRateLimiter</span>, <span class="code-ref">IPasswordPolicy</span>, <span class="code-ref">IPasswordHasher</span>, <span class="code-ref">ISecurityEventFactory</span>, <span class="code-ref">IAccountAuditLogger</span>, <span class="code-ref">IAlertObserver</span>.
+  <br><br>
+  Collaborating classes address only these interfaces — never the concrete implementations behind them.
+  <div class="why-box">Consequence: any implementation (e.g. replacing <span class="code-ref">PBKDF2PasswordHasher</span> with a different hashing algorithm) may be substituted without modifying any consuming class.</div>
+</div>
+
+<div class="acc-btn" onclick="tog('en3',this)">
+  <span><span class="badge b-coral">3</span> Encapsulation — preserving internal state integrity</span>
+  <span id="en3-icon">+</span>
+</div>
+<div class="acc-body" id="en3">
+  All internal fields across every class are defined as <span class="code-ref">self._field</span> (private by convention in Python). No external class may access or mutate them directly.
+  <br><br>
+  Specific examples from the codebase:
+  <ul style="margin:8px 0;padding-left:18px">
+    <li><span class="code-ref">BankAccount._balance</span> — the balance is modified only through <span class="code-ref">deposit()</span> and <span class="code-ref">withdraw()</span>. <span class="code-ref">_validate_amount()</span> and <span class="code-ref">_round_money()</span> are applied internally before every operation.</li>
+    <li><span class="code-ref">BoundedSecurityEventStore._events</span> — the event list is hidden. No class may append events except through the designated <span class="code-ref">append()</span> method.</li>
+    <li><span class="code-ref">LoginAttemptPolicy._attempts</span> — the failed-attempt counter is hidden and cannot be reset from outside the policy itself.</li>
+    <li><span class="code-ref">SecurityEvent</span> — declared as <span class="code-ref">@dataclass(frozen=True)</span>, which prevents any mutation after creation, even from within the same module.</li>
+  </ul>
+  <div class="why-box">Consequence: no part of the system can corrupt the state of another — each class is solely responsible for the integrity of its own internal state.</div>
+</div>
+
+<div class="acc-btn" onclick="tog('en4',this)">
+  <span><span class="badge b-amber">4</span> Polymorphism</span>
+  <span id="en4-icon">+</span>
+</div>
+<div class="acc-body" id="en4">
+  Polymorphism is employed at three principal points in the design, each of which instantiates the Strategy pattern:
+  <br><br>
+  <strong>A — Fraud rules</strong><br>
+  <span class="code-ref">FraudDetectionEngine.check(context)</span> calls <span class="code-ref">rule.evaluate(context)</span> on every rule in the injected list. Whether the rule is a <span class="code-ref">LargeAmountRule</span>, a <span class="code-ref">BalanceRatioRule</span>, or an <span class="code-ref">UnusualHourRule</span>, the engine treats them identically through the shared interface.
+  <br><br>
+  <strong>B — Rate-limiting strategies</strong><br>
+  <span class="code-ref">RateLimitStep</span> calls <span class="code-ref">limiter.check_rate_limit(username)</span> on whichever limiter has been injected — Token Bucket or Strict Window — through the same <span class="code-ref">IRateLimiter</span> interface.
+  <br><br>
+  <strong>C — Account operations</strong><br>
+  <span class="code-ref">DepositOperation</span> and <span class="code-ref">WithdrawOperation</span> in <span class="code-ref">core_banking.py</span> both implement <span class="code-ref">Operation.apply(account, rng)</span>. <span class="code-ref">TransactionSimulator</span> treats them identically.
+  <div class="why-box">Consequence: introducing new behaviour requires only a new class implementing the relevant interface — no modification to any consuming code.</div>
+</div>
+
+<div class="acc-btn" onclick="tog('en5',this)">
+  <span><span class="badge b-blue">5</span> Composition over inheritance</span>
+  <span id="en5-icon">+</span>
+</div>
+<div class="acc-body" id="en5">
+  The project avoids deep inheritance hierarchies entirely. In their place:
+  <ul style="margin:8px 0;padding-left:18px">
+    <li><span class="code-ref">FraudDetectionEngine</span> receives an injected list of rules — it does not inherit rule logic from any class.</li>
+    <li><span class="code-ref">SecurityOperationPipeline</span> receives an injected list of <span class="code-ref">ISecurityStep</span> instances — it does not inherit step logic.</li>
+    <li><span class="code-ref">AuditedAccountService</span> wraps <span class="code-ref">AccountOperationAdapter</span> — this is the Decorator pattern achieved through composition, not inheritance.</li>
+    <li><span class="code-ref">SecureBankingService</span> (the Façade) receives all its services injected by <span class="code-ref">SecureBankingServiceFactory</span>.</li>
+  </ul>
+  <div class="why-box">Consequence: no fragile inheritance chains are created. Every component may be substituted or tested independently.</div>
+</div>
+
+<div class="acc-btn" onclick="tog('en6',this)">
+  <span><span class="badge b-green">6</span> Immutable value objects</span>
+  <span id="en6-icon">+</span>
+</div>
+<div class="acc-body" id="en6">
+  Four value objects are declared as <span class="code-ref">@dataclass(frozen=True, slots=True)</span>:
+  <ul style="margin:8px 0;padding-left:18px">
+    <li><span class="code-ref">SecurityEvent</span> — the audit record cannot be altered after creation. This guarantees the integrity of the audit trail.</li>
+    <li><span class="code-ref">TransactionContext</span> — the context passed to fraud rules. No rule may modify it.</li>
+    <li><span class="code-ref">TokenBucketConfig</span> / <span class="code-ref">StrictWindowConfig</span> — rate-limiter configuration is fixed after construction.</li>
+    <li><span class="code-ref">SecurityConfig</span> — the full platform configuration is protected against accidental mutation.</li>
+  </ul>
+  <span class="code-ref">frozen=True</span> means Python itself enforces immutability — this is not merely a naming convention.
+  <div class="why-box">Consequence: automatic thread safety and a structural guarantee that no component may falsify the audit record.</div>
+</div>
+
+<div class="acc-btn" onclick="tog('en7',this)">
+  <span><span class="badge b-gray">7</span> Core domain independence</span>
+  <span id="en7-icon">+</span>
+</div>
+<div class="acc-body" id="en7">
+  <span class="code-ref">core_banking.py</span> imports nothing from <span class="code-ref">security_layer.py</span>, <span class="code-ref">secure_banking_services.py</span>, or <span class="code-ref">security_reporting.py</span>.
+  <br><br>
+  <span class="code-ref">BankAccount</span> is entirely unaware of the security layer. It executes <span class="code-ref">deposit()</span> and <span class="code-ref">withdraw()</span> as pure domain operations. The security layer wraps around it externally — via <span class="code-ref">AccountOperationAdapter</span> and <span class="code-ref">AuditedAccountService</span> — without touching the original code.
+  <br><br>
+  This separation is structural, not merely conventional: <span class="code-ref">core_banking.py</span> can be executed in full independence in an environment that contains no security files whatsoever.
+  <div class="why-box">Consequence: banking logic is tested in complete isolation; the security layer is tested in complete isolation. Neither depends on the other.</div>
+</div>
+
+<div class="acc-btn" onclick="tog('en8',this)">
+  <span><span class="badge b-purple">8</span> Design patterns employed</span>
+  <span id="en8-icon">+</span>
+</div>
+<div class="acc-body" id="en8">
+  <table style="width:100%;font-size:12.5px;border-collapse:collapse">
+    <tr style="border-bottom:0.5px solid var(--color-border-tertiary)"><td style="padding:6px 8px;font-weight:500;width:35%">Chain of responsibility</td><td style="padding:6px 8px"><span class="code-ref">SecurityOperationPipeline</span> — ordered steps: Session → Auth → Rate → Fraud → Execute</td></tr>
+    <tr style="border-bottom:0.5px solid var(--color-border-tertiary)"><td style="padding:6px 8px;font-weight:500">Strategy</td><td style="padding:6px 8px">Four fraud rules and two rate-limiting strategies — interchangeable through a shared interface</td></tr>
+    <tr style="border-bottom:0.5px solid var(--color-border-tertiary)"><td style="padding:6px 8px;font-weight:500">Factory method</td><td style="padding:6px 8px"><span class="code-ref">RateLimiterFactory</span>, <span class="code-ref">AuditLoggerFactory</span>, <span class="code-ref">AuthServiceFactory</span>, <span class="code-ref">SecurityEventFactory</span></td></tr>
+    <tr style="border-bottom:0.5px solid var(--color-border-tertiary)"><td style="padding:6px 8px;font-weight:500">Observer</td><td style="padding:6px 8px"><span class="code-ref">CriticalEventPublisher</span> notifies <span class="code-ref">AlertObserver</span>. Observer failures are captured in <span class="code-ref">InMemoryObserverFailureSink</span></td></tr>
+    <tr style="border-bottom:0.5px solid var(--color-border-tertiary)"><td style="padding:6px 8px;font-weight:500">Façade</td><td style="padding:6px 8px"><span class="code-ref">SecureBankingService</span> — a single unified entry point for the entire platform</td></tr>
+    <tr style="border-bottom:0.5px solid var(--color-border-tertiary)"><td style="padding:6px 8px;font-weight:500">Decorator</td><td style="padding:6px 8px"><span class="code-ref">AuditedAccountService</span> adds audit logging without modifying <span class="code-ref">BankAccount</span></td></tr>
+    <tr><td style="padding:6px 8px;font-weight:500">Adapter</td><td style="padding:6px 8px"><span class="code-ref">AuthEventToSecurityEventMapper</span> converts <span class="code-ref">AuthEvent</span> to <span class="code-ref">SecurityEvent</span> for the reporting layer</td></tr>
+  </table>
+</div>
+
+</div>
+
+<script>
+function tog(id,btn){
+  const body=document.getElementById(id);
+  const isOpen=body.classList.contains('open');
+  const iconId=id+'-icon';
+  const icon=document.getElementById(iconId);
+  body.classList.toggle('open',!isOpen);
+  btn.classList.toggle('open',!isOpen);
+  if(icon) icon.textContent=isOpen?'+':'−';
+}
+</script>

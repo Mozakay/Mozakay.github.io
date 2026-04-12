@@ -1,0 +1,197 @@
+
+<style>
+h2.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.layer-card{border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);margin-bottom:14px;overflow:hidden}
+.layer-header{padding:13px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:500;font-size:13.5px;user-select:none}
+.layer-body{display:none;padding:14px 16px;border-top:0.5px solid var(--color-border-tertiary);font-size:13px;line-height:1.75;color:var(--color-text-primary)}
+.layer-body.open{display:block}
+.lh-purple{background:#EEEDFE;color:#3C3489}.lh-teal{background:#E1F5EE;color:#085041}.lh-coral{background:#FAECE7;color:#712B13}.lh-blue{background:#E6F1FB;color:#0C447C}.lh-amber{background:#FAEEDA;color:#633806}.lh-green{background:#EAF3DE;color:#27500A}
+@media(prefers-color-scheme:dark){.lh-purple{background:#26215C;color:#CECBF6}.lh-teal{background:#04342C;color:#9FE1CB}.lh-coral{background:#4A1B0C;color:#F5C4B3}.lh-blue{background:#042C53;color:#B5D4F4}.lh-amber{background:#412402;color:#FAC775}.lh-green{background:#173404;color:#C0DD97}}
+.badge{display:inline-block;padding:2px 7px;border-radius:var(--border-radius-md);font-size:11px;font-weight:500;margin:1px 2px}
+.b-purple{background:#EEEDFE;color:#3C3489}.b-teal{background:#E1F5EE;color:#085041}.b-amber{background:#FAEEDA;color:#633806}.b-blue{background:#E6F1FB;color:#0C447C}.b-coral{background:#FAECE7;color:#712B13}.b-green{background:#EAF3DE;color:#27500A}.b-red{background:#FCEBEB;color:#791F1F}.b-gray{background:#F1EFE8;color:#444441}
+@media(prefers-color-scheme:dark){.b-purple{background:#26215C;color:#CECBF6}.b-teal{background:#04342C;color:#9FE1CB}.b-amber{background:#412402;color:#FAC775}.b-blue{background:#042C53;color:#B5D4F4}.b-coral{background:#4A1B0C;color:#F5C4B3}.b-green{background:#173404;color:#C0DD97}.b-red{background:#501313;color:#F7C1C1}.b-gray{background:#2C2C2A;color:#D3D1C7}}
+.cr{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:4px;padding:1px 5px;font-family:var(--font-mono);font-size:11.5px}
+.attack-box{background:var(--color-background-secondary);border-left:3px solid #E24B4A;border-radius:0 var(--border-radius-md) var(--border-radius-md) 0;padding:8px 12px;margin:8px 0;font-size:12.5px}
+.defence-box{background:var(--color-background-secondary);border-left:3px solid #1D9E75;border-radius:0 var(--border-radius-md) var(--border-radius-md) 0;padding:8px 12px;margin:8px 0;font-size:12.5px}
+.section-lbl{font-size:11px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+@media(max-width:500px){.grid2{grid-template-columns:1fr}}
+</style>
+<h2 class="sr-only">Cybersecurity layer — what it protects, the attacks it prevents, and why each control exists</h2>
+
+<div style="padding:1rem 0">
+
+<!-- LAYER 1 -->
+<div class="layer-card">
+  <div class="layer-header lh-purple" onclick="tog('e1')">
+    <span>Layer 1 — Credential &amp; identity security <span class="badge b-purple">security_layer.py</span></span>
+    <span id="e1-ic">+</span>
+  </div>
+  <div class="layer-body" id="e1">
+    <div class="section-lbl">What it protects</div>
+    The entry point to the entire system. Before any user interaction reaches a banking operation, identity must be established. This layer guards <span class="cr">BankAccount.deposit()</span>, <span class="cr">withdraw()</span>, and <span class="cr">get_balance()</span> from all unauthenticated access.
+
+    <div class="grid2" style="margin-top:12px">
+      <div>
+        <div class="section-lbl" style="color:#A32D2D">Attacks it prevents</div>
+        <div class="attack-box"><strong>Brute force:</strong> Attempting thousands of password combinations until one succeeds.</div>
+        <div class="attack-box"><strong>Credential stuffing:</strong> Replaying leaked username–password pairs from other breached services.</div>
+        <div class="attack-box"><strong>Timing attack:</strong> Measuring response latency to infer whether a submitted password is close to the correct one.</div>
+        <div class="attack-box"><strong>Session hijacking:</strong> Exploiting an open session after a user has ceased to be active.</div>
+      </div>
+      <div>
+        <div class="section-lbl" style="color:#0F6E56">Defence mechanism</div>
+        <div class="defence-box"><strong>PBKDF2-HMAC-SHA256</strong> with 100,000 iterations and a 32-byte random salt: makes offline cracking computationally prohibitive even if the database is stolen.</div>
+        <div class="defence-box"><strong>hmac.compare_digest:</strong> Constant-time comparison — response latency reveals nothing about correctness.</div>
+        <div class="defence-box"><strong>LoginAttemptPolicy:</strong> Account locked for 30 seconds after 3 consecutive failed attempts.</div>
+        <div class="defence-box"><strong>SessionManager:</strong> Automatic session expiry after 300 seconds of inactivity.</div>
+      </div>
+    </div>
+    <div class="section-lbl" style="margin-top:10px">Principal classes</div>
+    <span class="cr">BasicPasswordPolicy</span> <span class="cr">PBKDF2PasswordHasher</span> <span class="cr">CredentialService</span> <span class="cr">AuthLoginService</span> <span class="cr">SessionManager</span> <span class="cr">LoginAttemptPolicy</span>
+  </div>
+</div>
+
+<!-- LAYER 2 -->
+<div class="layer-card">
+  <div class="layer-header lh-teal" onclick="tog('e2')">
+    <span>Layer 2 — Authorisation &amp; RBAC <span class="badge b-teal">security_layer.py</span></span>
+    <span id="e2-ic">+</span>
+  </div>
+  <div class="layer-body" id="e2">
+    <div class="section-lbl">What it protects</div>
+    Authentication alone is insufficient. An authenticated user may lack the privilege to withdraw funds. This layer enforces the principle of <strong>Least Privilege</strong>: each user is granted only the minimum permissions required to fulfil their role.
+
+    <div class="grid2" style="margin-top:12px">
+      <div>
+        <div class="section-lbl" style="color:#A32D2D">Attacks it prevents</div>
+        <div class="attack-box"><strong>Privilege escalation:</strong> A user attempting operations above their assigned authority level.</div>
+        <div class="attack-box"><strong>Insider threat:</strong> An internal actor exploiting authenticated access to perform unauthorised transactions.</div>
+        <div class="attack-box"><strong>Horizontal access:</strong> A user accessing accounts belonging to other customers.</div>
+      </div>
+      <div>
+        <div class="section-lbl" style="color:#0F6E56">Defence mechanism</div>
+        <div class="defence-box"><strong>ROLE_OWNER:</strong> Holds PERM_DEPOSIT, PERM_WITHDRAW, and PERM_TRANSFER.</div>
+        <div class="defence-box"><strong>ROLE_AUDITOR:</strong> Read-only — cannot initiate any financial operation.</div>
+        <div class="defence-box"><strong>AuthorizationStep</strong> verifies the permission before every operation in the pipeline.</div>
+      </div>
+    </div>
+    <div class="section-lbl" style="margin-top:10px">Principal classes</div>
+    <span class="cr">AuthorizationPolicy</span> <span class="cr">InMemoryAccessRepository</span> <span class="cr">AuthorizationStep</span> <span class="cr">ROLE_OWNER</span> <span class="cr">ROLE_AUDITOR</span>
+  </div>
+</div>
+
+<!-- LAYER 3 -->
+<div class="layer-card">
+  <div class="layer-header lh-coral" onclick="tog('e3')">
+    <span>Layer 3 — Fraud detection &amp; transfer protection <span class="badge b-coral">security_layer.py + secure_banking_services.py</span></span>
+    <span id="e3-ic">+</span>
+  </div>
+  <div class="layer-body" id="e3">
+    <div class="section-lbl">What it protects</div>
+    Customer funds from suspicious transactions. Even when a user is both authenticated and authorised, a transfer is blocked if it triggers a fraud rule. All four rules are evaluated against a <span class="cr">TransactionContext</span> before any funds leave the source account.
+
+    <div style="margin-top:12px">
+      <div class="section-lbl" style="color:#A32D2D">Scenarios and attacks it prevents</div>
+      <div class="grid2">
+        <div>
+          <div class="attack-box"><strong>LargeAmountRule:</strong> A sudden large withdrawal exceeding the configured threshold — indicative of an account takeover.</div>
+          <div class="attack-box"><strong>RapidOutgoingTransactionRule:</strong> Multiple outgoing transfers in rapid succession — a classic money-laundering pattern.</div>
+        </div>
+        <div>
+          <div class="attack-box"><strong>BalanceRatioRule:</strong> Withdrawing a disproportionate fraction of the balance in a single operation (e.g. 90%) — a high-risk signal.</div>
+          <div class="attack-box"><strong>UnusualHourRule:</strong> Transactions at atypical hours (e.g. 03:00) — strongly associated with automated fraud and account takeover.</div>
+        </div>
+      </div>
+      <div class="section-lbl" style="color:#0F6E56;margin-top:8px">Defence mechanism</div>
+      <div class="defence-box"><span class="cr">FraudDetectionEngine</span> runs all injected rules against the <span class="cr">TransactionContext</span>. If any rule triggers, <span class="cr">FraudAlertError</span> is raised before the operation executes, a <span class="cr">FRAUD_DETECTED</span> event at Severity.CRITICAL is recorded, and the account balance remains unchanged.</div>
+    </div>
+    <div class="section-lbl" style="margin-top:10px">Principal classes</div>
+    <span class="cr">FraudDetectionEngine</span> <span class="cr">FraudCheckStep</span> <span class="cr">LargeAmountRule</span> <span class="cr">RapidOutgoingTransactionRule</span> <span class="cr">BalanceRatioRule</span> <span class="cr">UnusualHourRule</span> <span class="cr">TransactionMonitor</span>
+  </div>
+</div>
+
+<!-- LAYER 4 -->
+<div class="layer-card">
+  <div class="layer-header lh-blue" onclick="tog('e4')">
+    <span>Layer 4 — Rate limiting &amp; request flooding prevention <span class="badge b-blue">security_layer.py + secure_banking_services.py</span></span>
+    <span id="e4-ic">+</span>
+  </div>
+  <div class="layer-body" id="e4">
+    <div class="section-lbl">What it protects</div>
+    The entire system against volumetric exploitation. All banking operations are guarded against automated abuse through two interchangeable rate-limiting strategies.
+
+    <div class="grid2" style="margin-top:12px">
+      <div>
+        <div class="section-lbl" style="color:#A32D2D">Attacks it prevents</div>
+        <div class="attack-box"><strong>Denial of service / flooding:</strong> Overwhelming the system with thousands of requests per second to degrade availability.</div>
+        <div class="attack-box"><strong>Automated brute force:</strong> High-speed, large-scale credential guessing attempts.</div>
+        <div class="attack-box"><strong>API abuse:</strong> Exploiting endpoints with repeated calls to extract data or exhaust resources.</div>
+      </div>
+      <div>
+        <div class="section-lbl" style="color:#0F6E56">The two strategies</div>
+        <div class="defence-box"><strong>TokenBucketRateLimiter:</strong> Flexible — permits requests as long as tokens are available; replenishes gradually. Suited to production environments.</div>
+        <div class="defence-box"><strong>StrictWindowRateLimiter:</strong> Strict — enforces a hard ceiling within a fixed time window. Suited to regulatory compliance contexts.</div>
+      </div>
+    </div>
+    <div class="section-lbl" style="margin-top:10px">Principal classes</div>
+    <span class="cr">TokenBucketRateLimiter</span> <span class="cr">StrictWindowRateLimiter</span> <span class="cr">RateLimiterFactory</span> <span class="cr">RateLimitStep</span> <span class="cr">TokenBucketConfig</span> <span class="cr">StrictWindowConfig</span>
+  </div>
+</div>
+
+<!-- LAYER 5 -->
+<div class="layer-card">
+  <div class="layer-header lh-amber" onclick="tog('e5')">
+    <span>Layer 5 — Audit, alerting &amp; security reporting <span class="badge b-amber">All files</span></span>
+    <span id="e5-ic">+</span>
+  </div>
+  <div class="layer-body" id="e5">
+    <div class="section-lbl">What it protects</div>
+    Accountability and traceability. Without a reliable audit trail, it is impossible to verify what occurred or to demonstrate regulatory compliance. This layer ensures that every security event — whether a successful operation or a denied request — is preserved and structurally immutable.
+
+    <div class="grid2" style="margin-top:12px">
+      <div>
+        <div class="section-lbl" style="color:#A32D2D">Risks it addresses</div>
+        <div class="attack-box"><strong>Undetected breach:</strong> An intrusion that leaves no traceable record.</div>
+        <div class="attack-box"><strong>Audit tampering:</strong> Modification of log records to conceal suspicious activity.</div>
+        <div class="attack-box"><strong>Compliance gap:</strong> Inability to produce evidence for regulatory auditors.</div>
+      </div>
+      <div>
+        <div class="section-lbl" style="color:#0F6E56">Defence mechanisms</div>
+        <div class="defence-box"><strong>SecurityEvent (frozen=True):</strong> Python itself prevents any mutation after creation — no component may alter a recorded event.</div>
+        <div class="defence-box"><strong>CriticalEventPublisher:</strong> Immediately notifies observers of critical events. Observer failures are themselves captured in <span class="cr">InMemoryObserverFailureSink</span> — no event is silently lost.</div>
+        <div class="defence-box"><strong>ThreatReportBuilder:</strong> Classifies events as HIGH / MODERATE / LOW RISK for operational review.</div>
+      </div>
+    </div>
+    <div class="section-lbl" style="margin-top:10px">Principal classes</div>
+    <span class="cr">SecurityEventRecorder</span> <span class="cr">BoundedSecurityEventStore</span> <span class="cr">CriticalEventPublisher</span> <span class="cr">AlertObserver</span> <span class="cr">ThreatReportBuilder</span> <span class="cr">SystemReportAssembler</span>
+  </div>
+</div>
+
+<!-- LAYER 6 -->
+<div class="layer-card">
+  <div class="layer-header lh-green" onclick="tog('e6')">
+    <span>Layer 6 — Account registry integrity <span class="badge b-green">secure_banking_services.py</span></span>
+    <span id="e6-ic">+</span>
+  </div>
+  <div class="layer-body" id="e6">
+    <div class="section-lbl">What it protects</div>
+    The structural integrity of the account registry — preventing systemic data conflicts that could misdirect transfers or corrupt account balances.
+    <div class="attack-box" style="margin-top:10px"><strong>Risk addressed:</strong> Duplicate account numbers — if two accounts share the same number, a transfer may be routed to the wrong account or its balance may be overwritten.</div>
+    <div class="defence-box"><strong>AccountSecurityRegistry:</strong> Rejects registration of any account whose number already exists in the registry. Fails immediately with a ValueError before any audit logger is created for the duplicate account.</div>
+    <div class="section-lbl" style="margin-top:10px">Principal classes</div>
+    <span class="cr">AccountSecurityRegistry</span> <span class="cr">AuditLoggerFactory</span>
+  </div>
+</div>
+
+</div>
+
+<script>
+function tog(id){
+  const body=document.getElementById(id);
+  const isOpen=body.classList.contains('open');
+  const icon=document.getElementById(id+'-ic');
+  body.classList.toggle('open',!isOpen);
+  if(icon) icon.textContent=isOpen?'+':'−';
+}
+</script>
