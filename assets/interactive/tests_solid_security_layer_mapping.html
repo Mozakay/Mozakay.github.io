@@ -1,0 +1,366 @@
+
+<style>
+h2.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.grp-btn{width:100%;text-align:left;padding:10px 14px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:var(--color-background-secondary);color:var(--color-text-primary);font-size:13px;font-weight:500;cursor:pointer;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center;transition:background .15s}
+.grp-btn:hover{background:var(--color-background-primary)}
+.grp-btn.open{background:var(--color-background-primary);border-color:var(--color-border-primary)}
+.grp-body{display:none;margin-bottom:10px}
+.grp-body.open{display:block}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th{background:var(--color-background-secondary);padding:7px 10px;text-align:left;font-weight:500;font-size:11.5px;color:var(--color-text-secondary);border-bottom:0.5px solid var(--color-border-secondary)}
+td{padding:7px 10px;border-bottom:0.5px solid var(--color-border-tertiary);vertical-align:top;color:var(--color-text-primary);line-height:1.5}
+tr:last-child td{border-bottom:none}
+.badge{display:inline-block;padding:2px 7px;border-radius:var(--border-radius-md);font-size:11px;font-weight:500;margin:1px 1px 2px}
+.b-purple{background:#EEEDFE;color:#3C3489}.b-teal{background:#E1F5EE;color:#085041}.b-amber{background:#FAEEDA;color:#633806}.b-blue{background:#E6F1FB;color:#0C447C}.b-coral{background:#FAECE7;color:#712B13}.b-green{background:#EAF3DE;color:#27500A}.b-gray{background:#F1EFE8;color:#444441}.b-red{background:#FCEBEB;color:#791F1F}
+@media(prefers-color-scheme:dark){.b-purple{background:#26215C;color:#CECBF6}.b-teal{background:#04342C;color:#9FE1CB}.b-amber{background:#412402;color:#FAC775}.b-blue{background:#042C53;color:#B5D4F4}.b-coral{background:#4A1B0C;color:#F5C4B3}.b-green{background:#173404;color:#C0DD97}.b-gray{background:#2C2C2A;color:#D3D1C7}.b-red{background:#501313;color:#F7C1C1}}
+.step-num{font-weight:500;color:var(--color-text-secondary);min-width:28px;display:inline-block}
+.layer-pill{font-size:11px;padding:1px 6px;border-radius:4px;margin-left:4px}
+.arrow-icon{font-size:11px;color:var(--color-text-secondary)}
+</style>
+<h2 class="sr-only">Step-by-step test mapping to security layers and SOLID principles</h2>
+
+<div style="padding:1rem 0">
+
+<div style="font-size:13px;color:var(--color-text-secondary);margin-bottom:14px;border-left:3px solid var(--color-border-info);padding-left:10px">
+  Each accordion below represents one test group. Click to expand and inspect every test step by step — its purpose, the cybersecurity layer it targets, and the SOLID principle it evidences.
+</div>
+
+<!-- GROUP 1 -->
+<button class="grp-btn" onclick="tog('g1',this)">
+  <span><span class="badge b-purple">Tests 01–05</span> &nbsp;Authentication &amp; session management &nbsp;<span class="badge b-gray">Identity layer</span></span>
+  <span class="arrow-icon" id="g1-icon">+</span>
+</button>
+<div class="grp-body" id="g1">
+<table>
+<thead><tr><th>Step</th><th>Test title</th><th>What the test does</th><th>Cybersecurity layer targeted</th><th>SOLID evidence</th></tr></thead>
+<tbody>
+<tr>
+  <td><span class="step-num">01</span></td>
+  <td>Login succeeds with correct password</td>
+  <td>Registers a user and logs in with valid credentials. Asserts that an <code>AuthSession</code> is returned, the session is active, and a <code>LOGIN / PASS</code> event is recorded in the auth event log.</td>
+  <td><span class="badge b-purple">Identity &amp; credential</span><br>Classes: <code>CredentialService</code>, <code>AuthLoginService</code>, <code>BoundedAuthEventLogger</code></td>
+  <td>
+    <span class="badge b-gray">SRP</span> — <code>CredentialService</code> validates only; <code>SessionManager</code> manages session only; <code>BoundedAuthEventLogger</code> records only.<br>
+    <span class="badge b-gray">DIP</span> — <code>IClock</code> is injected, so the test controls time without coupling to <code>datetime.now()</code>.
+  </td>
+</tr>
+<tr>
+  <td><span class="step-num">02</span></td>
+  <td>Login fails with wrong password</td>
+  <td>Attempts login with an incorrect password. Asserts that <code>AuthenticationError</code> is raised and that the failed-attempt counter increments to 1.</td>
+  <td><span class="badge b-purple">Identity &amp; credential</span><br>Classes: <code>LoginAttemptPolicy</code>, <code>AuthenticationError</code></td>
+  <td>
+    <span class="badge b-gray">SRP</span> — <code>LoginAttemptPolicy</code> tracks failed attempts only; it does not validate passwords or manage sessions.<br>
+    <span class="badge b-gray">OCP</span> — The policy is configurable (max attempts, lockout duration) without modifying the class.
+  </td>
+</tr>
+<tr>
+  <td><span class="step-num">03</span></td>
+  <td>Account locks after maximum failed attempts</td>
+  <td>Repeats incorrect login until the configured limit (3) is reached. Asserts that the account is locked and that a <code>LOCKOUT</code> event is recorded in the auth log.</td>
+  <td><span class="badge b-purple">Identity &amp; credential</span><br>Classes: <code>LoginAttemptPolicy</code>, <code>AuthEventRecorder</code>, <code>BoundedAuthEventLogger</code></td>
+  <td>
+    <span class="badge b-gray">SRP</span> — Lockout logic resides solely in <code>LoginAttemptPolicy</code>; event recording resides solely in <code>AuthEventRecorder</code>.<br>
+    <span class="badge b-gray">ISP</span> — <code>BoundedAuthEventLogger</code> exposes only <code>get_auth_events()</code> — no unrelated methods are imposed on its consumer.
+  </td>
+</tr>
+<tr>
+  <td><span class="step-num">04</span></td>
+  <td>Locked account rejects correct password</td>
+  <td>After lockout, attempts login with the correct password. Asserts that <code>AccountLockedError</code> is raised even though the credentials are valid.</td>
+  <td><span class="badge b-purple">Identity &amp; credential</span><br>Classes: <code>LoginAttemptPolicy</code>, <code>AccountLockedError</code></td>
+  <td>
+    <span class="badge b-gray">SRP</span> — Lockout enforcement is an independent check, prior to and separate from credential validation.<br>
+    <span class="badge b-gray">LSP</span> — <code>AccountLockedError</code> and <code>AuthenticationError</code> are both subtypes of <code>PermissionError</code> and are substitutable in caller exception handling.
+  </td>
+</tr>
+<tr>
+  <td><span class="step-num">05</span></td>
+  <td>Session expires after timeout</td>
+  <td>Logs in successfully, then advances the injected <code>TestClock</code> by 6 seconds beyond the configured 5-second timeout. Asserts that <code>is_authenticated_session()</code> returns <code>False</code>.</td>
+  <td><span class="badge b-purple">Identity &amp; credential</span><br>Classes: <code>SessionManager</code>, <code>AuthSessionCoordinator</code>, <code>TestClock</code></td>
+  <td>
+    <span class="badge b-gray">DIP</span> — <code>SessionManager</code> depends on the <code>IClock</code> abstraction, not on <code>datetime.now()</code>. <code>TestClock</code> is a test double that satisfies the same interface.<br>
+    <span class="badge b-gray">SRP</span> — Session expiry logic is isolated inside <code>SessionManager</code>; no other class is responsible for it.
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<!-- GROUP 2 -->
+<button class="grp-btn" onclick="tog('g2',this)">
+  <span><span class="badge b-teal">Tests 06–08</span> &nbsp;Authorisation &amp; RBAC &nbsp;<span class="badge b-gray">Authorisation layer</span></span>
+  <span class="arrow-icon" id="g2-icon">+</span>
+</button>
+<div class="grp-body" id="g2">
+<table>
+<thead><tr><th>Step</th><th>Test title</th><th>What the test does</th><th>Cybersecurity layer targeted</th><th>SOLID evidence</th></tr></thead>
+<tbody>
+<tr>
+  <td><span class="step-num">06</span></td>
+  <td>Auditor cannot withdraw</td>
+  <td>Creates a user with <code>ROLE_AUDITOR</code> and attempts a withdrawal. Asserts that <code>AuthorizationError</code> is raised because <code>PERM_WITHDRAW</code> is not granted to the auditor role.</td>
+  <td><span class="badge b-teal">Authorisation / RBAC</span><br>Classes: <code>AuthorizationPolicy</code>, <code>AuthorizationStep</code>, <code>ROLE_AUDITOR</code></td>
+  <td>
+    <span class="badge b-gray">SRP</span> — <code>AuthorizationPolicy</code> is solely responsible for permission enforcement; it does not authenticate or log.<br>
+    <span class="badge b-gray">ISP</span> — The policy exposes a minimal <code>is_permitted()</code> interface; no unrelated methods exist.
+  </td>
+</tr>
+<tr>
+  <td><span class="step-num">07</span></td>
+  <td>Auditor cannot deposit</td>
+  <td>Creates a user with <code>ROLE_AUDITOR</code> and attempts a deposit. Asserts that <code>AuthorizationError</code> is raised because <code>PERM_DEPOSIT</code> is not granted to the auditor role.</td>
+  <td><span class="badge b-teal">Authorisation / RBAC</span><br>Classes: <code>AuthorizationPolicy</code>, <code>ROLE_AUDITOR</code>, <code>PERM_DEPOSIT</code></td>
+  <td>
+    <span class="badge b-gray">OCP</span> — A new role or permission may be added by extending the access repository, without modifying <code>AuthorizationPolicy</code>.<br>
+    <span class="badge b-gray">DIP</span> — <code>AuthorizationStep</code> depends on the <code>IAuthorizationPolicy</code> abstraction, not on a concrete implementation.
+  </td>
+</tr>
+<tr>
+  <td><span class="step-num">08</span></td>
+  <td>Owner can transfer between accounts</td>
+  <td>Creates a user with <code>ROLE_OWNER</code> and transfers £100 from account 1001 to account 1002. Asserts that source balance reduces to £900 and destination balance increases to £600.</td>
+  <td><span class="badge b-teal">Authorisation / RBAC</span> + <span class="badge b-coral">Transfer &amp; fraud</span><br>Classes: <code>SecureTransferService</code>, <code>BasicTransferValidationPolicy</code>, <code>ROLE_OWNER</code></td>
+  <td>
+    <span class="badge b-gray">LSP</span> — <code>SecureTransferService</code> implements <code>ITransferService</code> and is substitutable without any change to the calling code.<br>
+    <span class="badge b-gray">SRP</span> — Transfer validation logic is isolated in <code>BasicTransferValidationPolicy</code>; the transfer service orchestrates but does not validate.
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<!-- GROUP 3 -->
+<button class="grp-btn" onclick="tog('g3',this)">
+  <span><span class="badge b-coral">Tests 09–12</span> &nbsp;Fraud detection &nbsp;<span class="badge b-gray">Fraud layer</span></span>
+  <span class="arrow-icon" id="g3-icon">+</span>
+</button>
+<div class="grp-body" id="g3">
+<table>
+<thead><tr><th>Step</th><th>Test title</th><th>What the test does</th><th>Cybersecurity layer targeted</th><th>SOLID evidence</th></tr></thead>
+<tbody>
+<tr>
+  <td><span class="step-num">09</span></td>
+  <td>Large transaction blocked by fraud rule</td>
+  <td>Injects only <code>LargeAmountRule(threshold=100.0)</code> and attempts a withdrawal of £200. Asserts that <code>FraudAlertError</code> is raised and the account balance remains unchanged at £1,000.</td>
+  <td><span class="badge b-coral">Fraud detection</span><br>Classes: <code>FraudDetectionEngine</code>, <code>LargeAmountRule</code>, <code>FraudCheckStep</code></td>
+  <td>
+    <span class="badge b-gray">OCP</span> — The engine is not modified; a different rule is simply injected. This is the clearest demonstration of OCP in the test suite.<br>
+    <span class="badge b-gray">DIP</span> — <code>FraudDetectionEngine</code> depends on the <code>IFraudRule</code> list abstraction, never on any concrete rule class.
+  </td>
+</tr>
+<tr>
+  <td><span class="step-num">10</span></td>
+  <td>Fraud alert observer notified on suspicious transaction</td>
+  <td>Triggers a fraudulent transfer (£200 against a £100 threshold). Asserts that the <code>AlertObserver</code> receives at least one event with <code>SecurityAction.FRAUD_DETECTED</code> and <code>Severity.CRITICAL</code>.</td>
+  <td><span class="badge b-coral">Fraud detection</span> + <span class="badge b-amber">Audit &amp; alerting</span><br>Classes: <code>CriticalEventPublisher</code>, <code>AlertObserver</code>, <code>InMemoryObserverFailureSink</code></td>
+  <td>
+    <span class="badge b-gray">OCP</span> — New observers (e.g. an SMS or SIEM observer) may be registered without modifying <code>CriticalEventPublisher</code>.<br>
+    <span class="badge b-gray">SRP</span> — The publisher publishes; the observer stores alerts. Neither takes on the other's responsibility.
+  </td>
+</tr>
+<tr>
+  <td><span class="step-num">11</span></td>
+  <td>Unusual-hour transaction flagged</td>
+  <td>Constructs a <code>TransactionContext</code> with <code>hour_of_day=3</code> and passes it to <code>FraudDetectionEngine</code> injected with <code>UnusualHourRule(7–22)</code>. Asserts that the engine returns a non-empty list of triggered rule descriptions.</td>
+  <td><span class="badge b-coral">Fraud detection</span><br>Classes: <code>FraudDetectionEngine</code>, <code>UnusualHourRule</code>, <code>TransactionContext</code></td>
+  <td>
+    <span class="badge b-gray">LSP</span> — <code>UnusualHourRule</code> satisfies the <code>IFraudRule</code> contract exactly as <code>LargeAmountRule</code> does — both are fully interchangeable inside the engine.<br>
+    <span class="badge b-gray">ISP</span> — <code>IFraudRule</code> exposes a single <code>check(context)</code> method; implementing classes are not forced to implement any unrelated method.
+  </td>
+</tr>
+<tr>
+  <td><span class="step-num">12</span></td>
+  <td>Balance ratio exceeded blocks transfer</td>
+  <td>Injects <code>BalanceRatioRule(max_ratio=0.5)</code> and attempts to transfer £900 from an account holding £1,000. Asserts that <code>FraudAlertError</code> is raised and both account balances remain unchanged.</td>
+  <td><span class="badge b-coral">Fraud detection</span><br>Classes: <code>BalanceRatioRule</code>, <code>FraudDetectionEngine</code>, <code>SecureTransferService</code></td>
+  <td>
+    <span class="badge b-gray">OCP</span> — The ratio threshold is configurable at construction; the rule class itself requires no modification.<br>
+    <span class="badge b-gray">LSP</span> — <code>BalanceRatioRule</code> is a third distinct implementation of <code>IFraudRule</code>, substitutable without any impact on the engine or pipeline.
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<!-- GROUP 4 -->
+<button class="grp-btn" onclick="tog('g4',this)">
+  <span><span class="badge b-amber">Tests 13–18</span> &nbsp;Audit logging &amp; security reporting &nbsp;<span class="badge b-gray">Audit layer</span></span>
+  <span class="arrow-icon" id="g4-icon">+</span>
+</button>
+<div class="grp-body" id="g4">
+<table>
+<thead><tr><th>Step</th><th>Test title</th><th>What the test does</th><th>Cybersecurity layer targeted</th><th>SOLID evidence</th></tr></thead>
+<tbody>
+<tr>
+  <td><span class="step-num">13</span></td>
+  <td>Audit event recorded on failed access</td>
+  <td>Creates a user with no granted permissions and attempts a deposit. Asserts that an <code>ACCESS_DENIED</code> event with <code>EventStatus.DENIED</code> and <code>Severity.WARNING</code> is present in the account's security log.</td>
+  <td><span class="badge b-amber">Audit &amp; alerting</span><br>Classes: <code>AuthorizationStep</code>, <code>SecurityEventRecorder</code>, <code>AuditedAccountService</code></td>
+  <td>
+    <span class="badge b-gray">SRP</span> — <code>AuthorizationStep</code> enforces permissions; <code>SecurityEventRecorder</code> records outcomes. Neither does the other's job.<br>
+    <span class="badge b-gray">ISP</span> — <code>IAccountAuditLogger</code> exposes only <code>get_events()</code> and the relevant write methods — no bloated interface.
+  </td>
+</tr>
+<tr>
+  <td><span class="step-num">14</span></td>
+  <td>Successful deposit produces PASS audit event</td>
+  <td>Performs a successful £50 deposit. Asserts that a <code>SecurityAction.DEPOSIT</code> event with <code>EventStatus.PASS</code> and <code>Severity.INFO</code> is written to the account logger.</td>
+  <td><span class="badge b-amber">Audit &amp; alerting</span><br>Classes: <code>AuditedAccountService</code>, <code>SecurityEventRecorder</code></td>
+  <td>
+    <span class="badge b-gray">SRP</span> — <code>AuditedAccountService</code> is a decorator that adds logging to the account service without altering its domain logic — a textbook application of SRP via the Decorator pattern.<br>
+    <span class="badge b-gray">OCP</span> — Logging behaviour is added by wrapping, not by modifying the underlying account service.
+  </td>
+</tr>
+<tr>
+  <td><span class="step-num">15</span></td>
+  <td>Rate limit exceeded produces WARNING audit event</td>
+  <td>Configures a strict window of 1 request per 60 seconds, performs one deposit, then immediately attempts a second. Asserts that <code>RateLimitExceededError</code> is raised and a <code>RATE_LIMIT_EXCEEDED</code> event with <code>Severity.WARNING</code> is written to the log.</td>
+  <td><span class="badge b-blue">Rate limiting</span> + <span class="badge b-amber">Audit &amp; alerting</span><br>Classes: <code>StrictWindowRateLimiter</code>, <code>RateLimitStep</code>, <code>SecurityEventRecorder</code></td>
+  <td>
+    <span class="badge b-gray">LSP</span> — <code>StrictWindowRateLimiter</code> satisfies the <code>IRateLimiter</code> contract in the same manner as <code>TokenBucketRateLimiter</code>.<br>
+    <span class="badge b-gray">SRP</span> — Rate enforcement and audit recording are distinct responsibilities held by distinct classes.
+  </td>
+</tr>
+<tr>
+  <td><span class="step-num">16</span></td>
+  <td>Threat report builder summarises events</td>
+  <td>Constructs a set of <code>SecurityEvent</code> objects manually and passes them to <code>ThreatReportBuilder</code>. Asserts that the resulting <code>ThreatReport</code> contains correct event counts and a valid risk-level summary.</td>
+  <td><span class="badge b-amber">Audit &amp; reporting</span><br>Classes: <code>ThreatReportBuilder</code>, <code>ThreatReport</code>, <code>SecurityEvent</code>, <code>EventAmount</code></td>
+  <td>
+    <span class="badge b-gray">SRP</span> — <code>ThreatReportBuilder</code> is solely responsible for aggregating events into a report.<br>
+    <span class="badge b-gray">OCP</span> — The immutable <code>SecurityEvent</code> frozen dataclass guarantees that no downstream component can alter recorded events — the audit trail is structurally closed to modification.
+  </td>
+</tr>
+<tr>
+  <td><span class="step-num">17</span></td>
+  <td>System report assembler merges security and authentication events</td>
+  <td>Constructs a set of account security events and a lockout <code>AuthEvent</code>. Passes both to <code>SystemReportAssembler</code>. Asserts that the merged <code>ThreatReport</code> reflects total event counts from both sources.</td>
+  <td><span class="badge b-amber">Audit &amp; reporting</span><br>Classes: <code>SystemReportAssembler</code>, <code>AuthEventToSecurityEventMapper</code>, <code>AuthAction.LOCKOUT</code></td>
+  <td>
+    <span class="badge b-gray">SRP</span> — <code>AuthEventToSecurityEventMapper</code> (Adapter pattern) is solely responsible for translating auth events; <code>SystemReportAssembler</code> is solely responsible for merging.<br>
+    <span class="badge b-gray">DIP</span> — The assembler depends on the <code>IThreatReportGenerator</code> abstraction, not on a concrete generator.
+  </td>
+</tr>
+<tr>
+  <td><span class="step-num">18</span></td>
+  <td>Threat report generator builds report from logger</td>
+  <td>Performs a successful deposit, then calls <code>ThreatReportGenerator</code> directly from the account's logger. Asserts that a valid <code>ThreatReport</code> is produced from the events already recorded.</td>
+  <td><span class="badge b-amber">Audit &amp; reporting</span><br>Classes: <code>ThreatReportGenerator</code>, <code>AuditedAccountService</code></td>
+  <td>
+    <span class="badge b-gray">DIP</span> — <code>ThreatReportGenerator</code> depends on the <code>IAccountAuditLogger</code> abstraction; any conforming logger may be supplied.<br>
+    <span class="badge b-gray">ISP</span> — <code>IThreatReportGenerator</code> exposes only <code>generate()</code>; no unrelated methods are imposed.
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<!-- GROUP 5 -->
+<button class="grp-btn" onclick="tog('g5',this)">
+  <span><span class="badge b-green">Test 19</span> &nbsp;Registry integrity &nbsp;<span class="badge b-gray">Registry layer</span></span>
+  <span class="arrow-icon" id="g5-icon">+</span>
+</button>
+<div class="grp-body" id="g5">
+<table>
+<thead><tr><th>Step</th><th>Test title</th><th>What the test does</th><th>Cybersecurity layer targeted</th><th>SOLID evidence</th></tr></thead>
+<tbody>
+<tr>
+  <td><span class="step-num">19</span></td>
+  <td>Duplicate account numbers are rejected</td>
+  <td>Attempts to register two bank accounts with the same account number within a single <code>AccountSecurityRegistry</code>. Asserts that a <code>ValueError</code> is raised on the second registration, and that the first account remains intact.</td>
+  <td><span class="badge b-green">Registry integrity</span><br>Classes: <code>AccountSecurityRegistry</code>, <code>AuditLoggerFactory</code></td>
+  <td>
+    <span class="badge b-gray">SRP</span> — <code>AccountSecurityRegistry</code> holds a single responsibility: maintaining the integrity of the account registry. It does not validate transactions or manage sessions.<br>
+    <span class="badge b-gray">DIP</span> — The registry depends on the <code>AuditLoggerFactory</code> abstraction to create loggers, rather than instantiating them directly.
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<!-- GROUP 6 -->
+<button class="grp-btn" onclick="tog('g6',this)">
+  <span><span class="badge b-blue">Test 20</span> &nbsp;Token bucket rate limiter &nbsp;<span class="badge b-gray">Rate-limiting layer</span></span>
+  <span class="arrow-icon" id="g6-icon">+</span>
+</button>
+<div class="grp-body" id="g6">
+<table>
+<thead><tr><th>Step</th><th>Test title</th><th>What the test does</th><th>Cybersecurity layer targeted</th><th>SOLID evidence</th></tr></thead>
+<tbody>
+<tr>
+  <td><span class="step-num">20</span></td>
+  <td>Token bucket refills after time advance</td>
+  <td>Exhausts all tokens in a <code>TokenBucketRateLimiter</code>. Advances the injected <code>TestClock</code> sufficiently for the bucket to refill. Asserts that a subsequent request is permitted after the refill interval.</td>
+  <td><span class="badge b-blue">Rate limiting</span><br>Classes: <code>TokenBucketRateLimiter</code>, <code>RateLimiterFactory</code>, <code>TokenBucketConfig</code>, <code>StrictWindowConfig</code>, <code>TestClock</code></td>
+  <td>
+    <span class="badge b-gray">LSP</span> — <code>TokenBucketRateLimiter</code> and <code>StrictWindowRateLimiter</code> both implement <code>IRateLimiter</code>; either may be supplied by the factory without the pipeline being aware of the difference.<br>
+    <span class="badge b-gray">OCP</span> — The factory accepts a new limiter strategy via a configuration object; no factory code requires modification.<br>
+    <span class="badge b-gray">DIP</span> — <code>TokenBucketRateLimiter</code> depends on <code>IClock</code>, enabling <code>TestClock</code> to drive the refill without real time passing.
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<!-- GROUP 7 -->
+<button class="grp-btn" onclick="tog('g7',this)">
+  <span><span class="badge b-purple">Test 21</span> &nbsp;Composition root — full end-to-end integration &nbsp;<span class="badge b-gray">All layers</span></span>
+  <span class="arrow-icon" id="g7-icon">+</span>
+</button>
+<div class="grp-body" id="g7">
+<table>
+<thead><tr><th>Step</th><th>Test title</th><th>What the test does</th><th>Cybersecurity layer targeted</th><th>SOLID evidence</th></tr></thead>
+<tbody>
+<tr>
+  <td><span class="step-num">21</span></td>
+  <td>Secure banking service factory builds full service</td>
+  <td>Calls <code>SecureBankingServiceFactory.create(SecurityConfig(...))</code> with a single configuration object. Executes a deposit through the returned <code>SecureBankingService</code>. Asserts that the balance is correct and that the system report contains at least one event — confirming that authentication, authorisation, fraud detection, rate limiting, audit logging, and reporting are all operational from a single factory call.</td>
+  <td><span class="badge b-purple">Identity</span> <span class="badge b-teal">RBAC</span> <span class="badge b-coral">Fraud</span> <span class="badge b-blue">Rate</span> <span class="badge b-amber">Audit</span><br>Classes: <code>SecureBankingServiceFactory</code>, <code>SecurityConfig</code>, <code>SecureBankingService</code>, <code>AuthServiceFactory</code>, <code>SystemReportAssembler</code>, <code>AlertObserver</code></td>
+  <td>
+    <span class="badge b-gray">DIP</span> — All dependencies are assembled at the composition root; no inner class constructs its own collaborators.<br>
+    <span class="badge b-gray">OCP</span> — Swapping a rate-limiting strategy or adding a fraud rule requires only a configuration change — no factory code is modified.<br>
+    <span class="badge b-gray">SRP</span> — The factory's sole responsibility is composition; it does not perform any banking or security logic itself.
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<!-- GROUP 8 -->
+<button class="grp-btn" onclick="tog('g8',this)">
+  <span><span class="badge b-coral">Test 22</span> &nbsp;Flow demonstration — high-risk 3 AM withdrawal &nbsp;<span class="badge b-gray">All layers (scenario)</span></span>
+  <span class="arrow-icon" id="g8-icon">+</span>
+</button>
+<div class="grp-body" id="g8">
+<table>
+<thead><tr><th>Step</th><th>Test title</th><th>What the test does</th><th>Cybersecurity layer targeted</th><th>SOLID evidence</th></tr></thead>
+<tbody>
+<tr>
+  <td><span class="step-num">22</span></td>
+  <td>High-risk withdrawal request at 3 AM</td>
+  <td>Sets the injected clock to 03:00 UTC. Configures <code>UnusualHourRule(7–22)</code> and <code>BalanceRatioRule(max_ratio=0.5)</code>. Attempts to withdraw £900 from an account holding £1,000 (90% of the available balance). Asserts that: (1) the session is authenticated; (2) the request is not rejected by the RBAC or rate-limiting layers; (3) <code>FraudAlertError</code> is raised specifically at <code>FraudCheckStep</code>; and (4) the account balance remains unchanged.</td>
+  <td><span class="badge b-purple">Identity</span> <span class="badge b-teal">RBAC</span> <span class="badge b-blue">Rate</span> <span class="badge b-coral">Fraud</span><br>Demonstrates pipeline order: Session → Auth → Rate → Fraud → <em>blocked</em></td>
+  <td>
+    <span class="badge b-gray">LSP</span> — Two independently injected fraud rules (<code>UnusualHourRule</code> and <code>BalanceRatioRule</code>) both satisfy <code>IFraudRule</code> and operate correctly side by side within the same engine instance.<br>
+    <span class="badge b-gray">OCP</span> — Both rules were added to the engine constructor without modifying the engine, the pipeline, or any other existing class.<br>
+    <span class="badge b-gray">DIP</span> — The clock is injected via <code>IClock</code>, allowing the test to simulate 3 AM deterministically without sleeping or patching.
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+
+<script>
+function tog(id, btn){
+  const body = document.getElementById(id);
+  const icon = document.getElementById(id+'-icon');
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  btn.classList.toggle('open', !isOpen);
+  icon.textContent = isOpen ? '+' : '−';
+}
+</script>
