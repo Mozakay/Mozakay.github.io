@@ -1,0 +1,188 @@
+
+<style>
+h2.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.step-row{display:flex;align-items:stretch;gap:0;margin-bottom:0}
+.gate{flex:1;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);padding:14px 12px;cursor:pointer;transition:all .15s;min-width:0}
+.gate:hover{border-color:var(--color-border-primary)}
+.gate.active{border-width:1.5px}
+.arrow-col{width:32px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--color-text-tertiary);font-size:18px;font-weight:300}
+.gate-num{font-size:11px;font-weight:500;margin-bottom:4px;opacity:.7}
+.gate-title{font-size:13px;font-weight:500;margin-bottom:3px}
+.gate-class{font-size:11px;font-family:var(--font-mono);opacity:.75;margin-bottom:6px}
+.gate-q{font-size:11.5px;line-height:1.5;color:var(--color-text-secondary)}
+.gate-fail{font-size:11px;margin-top:6px;padding:3px 7px;border-radius:4px;display:inline-block}
+.g-purple{background:#EEEDFE;border-color:#7F77DD}.g-purple.active{background:#CECBF6;border-color:#534AB7}
+.g-teal{background:#E1F5EE;border-color:#5DCAA5}.g-teal.active{background:#9FE1CB;border-color:#0F6E56}
+.g-blue{background:#E6F1FB;border-color:#85B7EB}.g-blue.active{background:#B5D4F4;border-color:#185FA5}
+.g-coral{background:#FAECE7;border-color:#F0997B}.g-coral.active{background:#F5C4B3;border-color:#993C1D}
+.g-green{background:#EAF3DE;border-color:#97C459}.g-green.active{background:#C0DD97;border-color:#3B6D11}
+@media(prefers-color-scheme:dark){
+.g-purple{background:#26215C;border-color:#7F77DD}.g-purple.active{background:#3C3489;border-color:#AFA9EC}
+.g-teal{background:#04342C;border-color:#1D9E75}.g-teal.active{background:#085041;border-color:#5DCAA5}
+.g-blue{background:#042C53;border-color:#378ADD}.g-blue.active{background:#0C447C;border-color:#85B7EB}
+.g-coral{background:#4A1B0C;border-color:#D85A30}.g-coral.active{background:#712B13;border-color:#F0997B}
+.g-green{background:#173404;border-color:#639922}.g-green.active{background:#27500A;border-color:#97C459}}
+.gate-num,.gate-title,.gate-class,.gate-q{color:var(--color-text-primary)}
+.fail-red{background:#FCEBEB;color:#791F1F}
+@media(prefers-color-scheme:dark){.fail-red{background:#501313;color:#F7C1C1}}
+.detail-panel{display:none;margin-top:12px;padding:14px 16px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:var(--color-background-primary);font-size:13px;line-height:1.75}
+.detail-panel.show{display:block}
+.cr{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:4px;padding:1px 5px;font-family:var(--font-mono);font-size:11.5px}
+.dl{font-weight:500;margin-top:10px;margin-bottom:2px;font-size:12px;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.04em}
+.pass-box{background:#EAF3DE;border-left:3px solid #3B6D11;border-radius:0 4px 4px 0;padding:6px 10px;margin:4px 0;font-size:12.5px}
+.fail-box{background:#FCEBEB;border-left:3px solid #A32D2D;border-radius:0 4px 4px 0;padding:6px 10px;margin:4px 0;font-size:12.5px}
+@media(prefers-color-scheme:dark){.pass-box{background:#173404;border-color:#97C459}.fail-box{background:#501313;border-color:#F7C1C1}}
+.execute-box{padding:12px 16px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:var(--color-background-secondary);text-align:center;font-size:13px;font-weight:500;margin-top:0}
+.hint{font-size:11.5px;color:var(--color-text-secondary);margin-bottom:12px}
+</style>
+<h2 class="sr-only">Security pipeline: Session, RBAC, Rate Limit, Fraud, Execute — step-by-step explanation</h2>
+
+<div style="padding:1rem 0">
+<p class="hint">Click any gate to expand the full explanation of what it checks, what it does when it passes, and what it does when it fails.</p>
+
+<div style="display:flex;align-items:stretch;gap:4px;margin-bottom:8px">
+
+  <div class="gate g-purple" id="g1" onclick="sel(1)">
+    <div class="gate-num">Step 1</div>
+    <div class="gate-title">Session check</div>
+    <div class="gate-class">AuthenticatedSessionStep</div>
+    <div class="gate-q">Is this session authenticated and still active?</div>
+    <div class="gate-fail fail-red">Fail → AuthenticationError</div>
+  </div>
+
+  <div class="arrow-col">→</div>
+
+  <div class="gate g-teal" id="g2" onclick="sel(2)">
+    <div class="gate-num">Step 2</div>
+    <div class="gate-title">RBAC check</div>
+    <div class="gate-class">AuthorizationStep</div>
+    <div class="gate-q">Does this user hold the required permission on this account?</div>
+    <div class="gate-fail fail-red">Fail → AuthorizationError</div>
+  </div>
+
+  <div class="arrow-col">→</div>
+
+  <div class="gate g-blue" id="g3" onclick="sel(3)">
+    <div class="gate-num">Step 3</div>
+    <div class="gate-title">Rate limit</div>
+    <div class="gate-class">RateLimitStep</div>
+    <div class="gate-q">Has this user exceeded their request quota in the time window?</div>
+    <div class="gate-fail fail-red">Fail → RateLimitExceededError</div>
+  </div>
+
+  <div class="arrow-col">→</div>
+
+  <div class="gate g-coral" id="g4" onclick="sel(4)">
+    <div class="gate-num">Step 4</div>
+    <div class="gate-title">Fraud check</div>
+    <div class="gate-class">FraudCheckStep</div>
+    <div class="gate-q">Does this transaction trigger any configured fraud rule?</div>
+    <div class="gate-fail fail-red">Fail → FraudAlertError</div>
+  </div>
+
+  <div class="arrow-col">→</div>
+
+  <div class="gate g-green" id="g5" onclick="sel(5)">
+    <div class="gate-num">Step 5</div>
+    <div class="gate-title">Execute</div>
+    <div class="gate-class">BankAccount.deposit / withdraw</div>
+    <div class="gate-q">All checks passed — execute the banking operation.</div>
+    <div class="gate-fail" style="background:#EAF3DE;color:#27500A">→ Balance updated</div>
+  </div>
+
+</div>
+
+<!-- DETAIL PANELS -->
+<div class="detail-panel" id="d1">
+  <div class="dl">What it does</div>
+  <span class="cr">AuthenticatedSessionStep.execute(context)</span> calls <span class="cr">authenticator.is_authenticated_session(context.auth_session)</span>. This checks two things simultaneously: first, that the session ID exists in the active session store; second, that it has not exceeded the configured timeout (default 300 seconds). If the session is still valid, <span class="cr">touch_session()</span> is called to refresh the last-activity timestamp, preventing premature expiry during an active interaction.
+  <div class="dl">If it passes</div>
+  <div class="pass-box">Control moves immediately to Step 2 (RBAC). No event is written for a passing session check — it is silent by design, since every request must pass this gate and logging it would fill the audit log with noise.</div>
+  <div class="dl">If it fails</div>
+  <div class="fail-box"><span class="cr">AuthenticationError</span> is raised. The request is stopped here. <span class="cr">core_banking.py</span> is never touched. No banking operation is attempted. The caller receives an error indicating the session is not authenticated.</div>
+  <div class="dl">Why this step is first</div>
+  There is no point evaluating permissions, rate limits, or fraud rules for a request that has no valid identity. Placing this step first eliminates the computational cost of all subsequent checks for unauthenticated requests, and prevents any downstream component from receiving an untrusted <span class="cr">AuthSession</span>.
+  <div class="dl">Design pattern</div>
+  This is step one of the Chain of Responsibility pattern. <span class="cr">AuthenticatedSessionStep</span> implements <span class="cr">ISecurityStep</span>. The method <span class="cr">supports(OperationType.READ)</span> and <span class="cr">supports(OperationType.MONETARY)</span> both return <span class="cr">True</span> — this step applies to all operation types, read and monetary alike.
+</div>
+
+<div class="detail-panel" id="d2">
+  <div class="dl">What it does</div>
+  <span class="cr">AuthorizationStep.execute(context)</span> calls <span class="cr">authorization_policy.check_permission(user, action, account_number)</span>. The policy looks up the role assigned to this user on this specific account number, then checks whether that role holds the required permission. <span class="cr">ROLE_OWNER</span> holds <span class="cr">PERM_DEPOSIT</span>, <span class="cr">PERM_WITHDRAW</span>, and <span class="cr">PERM_TRANSFER</span>. <span class="cr">ROLE_AUDITOR</span> holds none of these — it is read-only.
+  <div class="dl">If it passes</div>
+  <div class="pass-box">Control moves to Step 3 (Rate Limit). No audit event is written for a passing authorisation check.</div>
+  <div class="dl">If it fails</div>
+  <div class="fail-box">Before re-raising <span class="cr">AuthorizationError</span>, the step writes an <span class="cr">ACCESS_DENIED</span> security event with <span class="cr">EventStatus.DENIED</span> and <span class="cr">Severity.WARNING</span> to the account's audit logger. This event is immutable and permanently preserved. The request stops here.</div>
+  <div class="dl">Why this step is second</div>
+  Authorisation is meaningless without a verified identity. Conversely, it must precede rate limiting because a user who has no permission at all should never consume rate-limit quota — rejecting them at this gate is cheaper and more informative than letting them reach Step 3.
+  <div class="dl">Design pattern</div>
+  <span class="cr">AuthorizationStep</span> implements <span class="cr">ISecurityStep</span>. <span class="cr">supports(OperationType.READ)</span> and <span class="cr">supports(OperationType.MONETARY)</span> both return <span class="cr">True</span> — RBAC applies to both read and write operations.
+</div>
+
+<div class="detail-panel" id="d3">
+  <div class="dl">What it does</div>
+  <span class="cr">RateLimitStep.execute(context)</span> calls <span class="cr">rate_limiter.is_allowed(username, action)</span>. The rate limiter is user-scoped (not session-scoped), meaning the limit applies to the user across all their sessions simultaneously. Two interchangeable strategies are available: <span class="cr">TokenBucketRateLimiter</span> permits requests as long as tokens remain and refills gradually; <span class="cr">StrictWindowRateLimiter</span> enforces a hard ceiling within a fixed time window and resets at the window boundary.
+  <div class="dl">If it passes</div>
+  <div class="pass-box">Control moves to Step 4 (Fraud). One token is consumed from the bucket, or one request is counted within the current window. No audit event is written for a passing rate check.</div>
+  <div class="dl">If it fails</div>
+  <div class="fail-box">The step writes a <span class="cr">RATE_LIMIT_EXCEEDED</span> security event with <span class="cr">EventStatus.BLOCKED</span> and <span class="cr">Severity.WARNING</span> to the audit logger. Then <span class="cr">RateLimitExceededError</span> is raised. The request stops here. The account balance is untouched.</div>
+  <div class="dl">Why this step is third — not last</div>
+  Rate limiting must precede fraud detection because the fraud engine performs actual computation (building a <span class="cr">TransactionContext</span>, querying <span class="cr">TransactionMonitor</span>, evaluating four rules). An attacker flooding the system with requests must be stopped before they consume the cost of fraud evaluation. Rate limiting is cheap; fraud detection is relatively expensive.
+  <div class="dl">Design pattern</div>
+  <span class="cr">RateLimitStep</span> implements <span class="cr">ISecurityStep</span>. <span class="cr">supports(OperationType.MONETARY)</span> returns <span class="cr">True</span>; <span class="cr">supports(OperationType.READ)</span> returns <span class="cr">False</span> — rate limiting is applied only to monetary operations, not to balance enquiries.
+</div>
+
+<div class="detail-panel" id="d4">
+  <div class="dl">What it does</div>
+  <span class="cr">FraudCheckStep.execute(context)</span> constructs an immutable <span class="cr">TransactionContext</span> — a frozen dataclass containing the username, account number, action, current balance, requested amount, recent action count (from <span class="cr">TransactionMonitor</span>), and the current hour of day (from the injected <span class="cr">IClock</span>). This context is passed to <span class="cr">FraudDetectionEngine.check(tx_context)</span>, which evaluates every injected fraud rule against it via polymorphic dispatch.
+  <div class="dl">The four fraud rules</div>
+  <div class="pass-box" style="background:var(--color-background-secondary);border-color:var(--color-border-secondary)">
+    <strong>LargeAmountRule</strong> — amount exceeds the configured threshold.<br>
+    <strong>RapidOutgoingTransactionRule</strong> — recent_action_count exceeds the velocity limit.<br>
+    <strong>BalanceRatioRule</strong> — amount / current_balance exceeds max_ratio.<br>
+    <strong>UnusualHourRule</strong> — hour_of_day falls outside the permitted window.
+  </div>
+  <div class="dl">If all rules pass (no rule triggers)</div>
+  <div class="pass-box">Control moves to Step 5 (Execute). No fraud event is written.</div>
+  <div class="dl">If any rule triggers</div>
+  <div class="fail-box">A <span class="cr">FRAUD_DETECTED</span> security event with <span class="cr">EventStatus.FLAGGED</span> and <span class="cr">Severity.CRITICAL</span> is written to the audit logger. <span class="cr">CriticalEventPublisher</span> immediately notifies all registered <span class="cr">AlertObserver</span> instances. <span class="cr">FraudAlertError</span> is raised. The account balance is not modified — no funds leave the account.</div>
+  <div class="dl">Why this step is fourth — just before execution</div>
+  Fraud evaluation requires knowing the current account balance and recent transaction history — information that only makes sense at the point of execution. It cannot be performed earlier in the pipeline without those values. It must, however, run before the actual <span class="cr">deposit()</span> or <span class="cr">withdraw()</span> call so that suspicious transactions are blocked before any money moves.
+  <div class="dl">Design pattern</div>
+  <span class="cr">FraudCheckStep</span> implements <span class="cr">ISecurityStep</span>. The engine uses polymorphism (Strategy pattern) — it calls <span class="cr">rule.evaluate(context)</span> on every <span class="cr">IFraudRule</span> without knowing which concrete rule is being evaluated. Each rule is independently replaceable (LSP) and new rules may be added without modifying the engine (OCP).
+</div>
+
+<div class="detail-panel" id="d5">
+  <div class="dl">What happens at execution</div>
+  All four security gates have passed. <span class="cr">SecureAccountOperationService</span> calls the banking operation directly on the <span class="cr">Account</span> object — either <span class="cr">account.deposit(amount)</span> or <span class="cr">account.withdraw(amount)</span>. This is the only point in the entire system where <span class="cr">core_banking.py</span> is invoked.
+  <div class="dl">What happens immediately after</div>
+  <div class="pass-box">
+    1. The account's audit logger records a <span class="cr">DEPOSIT</span> or <span class="cr">WITHDRAW</span> event with <span class="cr">EventStatus.PASS</span> and <span class="cr">Severity.INFO</span>.<br>
+    2. <span class="cr">TransactionMonitor.record()</span> logs this operation for future use by <span class="cr">RapidOutgoingTransactionRule</span>.<br>
+    3. The updated balance is returned to the caller.
+  </div>
+  <div class="dl">The critical design point</div>
+  <span class="cr">core_banking.py</span> has no knowledge of the four gates that preceded this call. <span class="cr">BankAccount.deposit()</span> simply validates the amount and adds it to the balance. The security guarantee is entirely structural — it comes from the pipeline architecture, not from any logic inside the banking domain itself. This is the practical realisation of keeping the core domain independent from the cybersecurity layer.
+  <div class="dl">What about a read operation (get_balance)?</div>
+  <div class="pass-box">A balance enquiry only passes through Steps 1 and 2 (Session and RBAC). Steps 3 and 4 — rate limiting and fraud detection — return <span class="cr">False</span> from <span class="cr">supports(OperationType.READ)</span> and are skipped entirely. <span class="cr">SecurityStepResolver</span> filters the applicable steps at runtime based on the operation type.</div>
+</div>
+
+</div>
+
+<script>
+function sel(n){
+  for(let i=1;i<=5;i++){
+    document.getElementById('g'+i).classList.remove('active');
+    document.getElementById('d'+i).classList.remove('show');
+  }
+  const g=document.getElementById('g'+n);
+  const d=document.getElementById('d'+n);
+  if(d.classList.contains('show')){
+    g.classList.remove('active');
+    d.classList.remove('show');
+  } else {
+    g.classList.add('active');
+    d.classList.add('show');
+  }
+}
+</script>
