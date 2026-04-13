@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: Secure Banking System Design and Verification
@@ -7,6 +6,7 @@ categories:
   - Software Development
 tags: [unit12, software-architecture, object-oriented-design, cybersecurity, secure-banking, python, secure-design, layered-architecture, tdd]
 ---
+
 
 ## Overview
 
