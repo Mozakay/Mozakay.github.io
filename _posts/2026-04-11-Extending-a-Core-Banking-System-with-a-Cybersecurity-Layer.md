@@ -105,6 +105,91 @@ The widget below highlights how advanced object-oriented principles support the 
   </iframe>
 </div>
 
+## Pattern-Based Security Design in `security_layer.py`
+
+Two of the most important design ideas in the secure banking platform appear in `security_layer.py`. The first is the fraud-detection design, where suspicious transaction rules are implemented as interchangeable strategies. The second is the secured operation pipeline, where each protected request is processed through an ordered sequence of security steps before execution is allowed to reach the core banking domain.
+
+Together, these two structures show how advanced object-oriented design supports extensibility, maintainability, and secure control flow in the system.
+
+### Fraud Detection as a Strategy-Based Design
+
+The fraud-detection subsystem is built around the abstract `FraudRule` base class. Each concrete rule encapsulates one independent fraud-checking condition, while `FraudDetectionEngine` evaluates all configured rules dynamically against a shared `TransactionContext`. This means that new fraud rules can be added as new classes without changing the fraud engine itself.
+
+```python
+@dataclass(frozen=True, slots=True)
+class TransactionContext:
+    username: str
+    account_number: int
+    action: Permission
+    current_balance: float
+    amount: float
+    recent_action_count: int
+    hour_of_day: int
+
+
+class FraudRule(ABC):
+    @abstractmethod
+    def evaluate(self, context: TransactionContext) -> bool:
+        pass
+
+    @abstractmethod
+    def description(self) -> str:
+        pass
+
+
+class LargeAmountRule(FraudRule):
+    def evaluate(self, context: TransactionContext) -> bool:
+        if context.action not in self._applicable_actions:
+            return False
+        return context.amount > self._threshold
+
+    def description(self) -> str:
+        return f"Amount exceeds {self._threshold:.2f}"
+
+
+class RapidOutgoingTransactionRule(FraudRule):
+    def evaluate(self, context: TransactionContext) -> bool:
+        if context.action not in _OUTGOING_PERMISSIONS:
+            return False
+        return context.recent_action_count >= self._max_recent
+
+    def description(self) -> str:
+        return f"Rapid outgoing transaction frequency >= {self._max_recent}"
+
+
+class BalanceRatioRule(FraudRule):
+    def evaluate(self, context: TransactionContext) -> bool:
+        if context.action not in self._applicable_actions:
+            return False
+        if context.current_balance <= 0:
+            return False
+        return (context.amount / context.current_balance) > self._max_ratio
+
+    def description(self) -> str:
+        return f"Amount exceeds {self._max_ratio * 100:.0f}% of current balance"
+
+
+class UnusualHourRule(FraudRule):
+    def evaluate(self, context: TransactionContext) -> bool:
+        if self._applicable_actions is not None and context.action not in self._applicable_actions:
+            return False
+        return not (self._start <= context.hour_of_day < self._end)
+
+    def description(self) -> str:
+        return f"Transaction outside allowed hours {self._start:02d}:00–{self._end:02d}:00"
+
+
+class FraudDetectionEngine(IFraudDetectionEngine):
+    def __init__(self, rules: Iterable[FraudRule]) -> None:
+        materialised_rules = list(rules)
+        self._rules: List[FraudRule] = materialised_rules
+
+    def add_rule(self, rule: FraudRule) -> None:
+        self._rules.append(rule)
+
+    def check(self, context: TransactionContext) -> List[str]:
+        return [rule.description() for rule in self._rules if rule.evaluate(context)]
+
 ## Python Source Code
 
 This project includes the original banking domain together with the security, orchestration, reporting, and testing modules.
