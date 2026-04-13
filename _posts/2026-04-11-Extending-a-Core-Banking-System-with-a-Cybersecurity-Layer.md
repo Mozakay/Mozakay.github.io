@@ -140,7 +140,7 @@ class FraudRule(ABC):
 This first part shows the shared fraud context and the abstract contract used by all fraud rules.
 
 #### Code extract 2 — Concrete fraud rules
-```
+```python
 class LargeAmountRule(FraudRule): ...
 class RapidOutgoingTransactionRule(FraudRule): ...
 class BalanceRatioRule(FraudRule): ...
@@ -161,7 +161,7 @@ The second important design idea is the secured operation pipeline. Instead of a
 
 #### Code extract 3 — Security-step contract and main steps
 
-```
+```python
 class ISecurityStep(ABC):
     @abstractmethod
     def supports(self, operation_type: OperationType) -> bool:
@@ -178,7 +178,7 @@ class FraudCheckStep(ISecurityStep): ...
 This part shows the abstract pipeline contract and the four main security checks used before monetary execution.
 
 #### Code extract 4 — Pipeline execution and assembly
-```
+```python
 class SecurityOperationPipeline(ISecurityOperationPipeline):
     def __init__(self, step_resolver: ISecurityStepResolver) -> None:
         self._step_resolver = step_resolver
@@ -201,7 +201,6 @@ class SecurityOperationPipelineFactory:
         return SecurityOperationPipeline(step_resolver=step_resolver)
 ```
 This part shows how the pipeline is executed in order and how the required steps are assembled before being used by the secured services.
-
 
 
 
