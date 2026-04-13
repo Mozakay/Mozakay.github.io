@@ -29,10 +29,10 @@ The final design uses a layered structure around the original banking domain:
 - **Threat reporting and audit summarisation layer** in `security_reporting.py`
 - **Verification layer** in `tests_security.py`
 
-<div style="text-align:center; margin:30px 0;">
+<div style="text-align:center; margin:40px 0;">
   <img src="{{ '/assets/images/oop/unit12/secure_banking_architecture_layer2_fixed.png' | relative_url }}"
        alt="Figure 1 - Layered architecture of the secure banking system"
-       style="max-width:400px; width:100%; height:auto;">
+       style="max-width:500px; width:100%; height:auto;">
 </div>
 
 **Figure 1.** Layered architecture of the secure banking system.
