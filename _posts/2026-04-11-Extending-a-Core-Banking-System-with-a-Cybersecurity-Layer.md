@@ -138,6 +138,7 @@ class FraudRule(ABC):
     @abstractmethod
     def description(self) -> str:
         pass
+```
 This first part shows the shared fraud context and the abstract contract used by all fraud rules.
 
 #### Code extract 2 — Concrete fraud rules
