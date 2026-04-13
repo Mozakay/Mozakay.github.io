@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Secure Banking System Design and Verification
+title: Extending A Core Banking System With A Cybersecurity Layer
 subtitle: Extending an existing core banking system through a dedicated cybersecurity layer, reporting, and verification
 categories:
   - Software Development
