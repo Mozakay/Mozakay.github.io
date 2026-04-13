@@ -110,7 +110,7 @@ The widget below highlights how advanced object-oriented principles support the 
 
 This section explains two important design ideas in `security_layer.py`. The first is the fraud-detection design, where fraud rules are implemented as separate strategies. The second is the secured operation pipeline, where each request passes through an ordered sequence of security steps before it is allowed to reach the banking domain.
 
-Together, these two designs show how the security layer remains structured, extensible, and easier to maintain.
+These two designs show how the security layer remains structured, extensible, and easier to maintain.
 
 ### Part 1 — Fraud Detection as a Strategy-Based Design
 
@@ -129,12 +129,10 @@ class TransactionContext:
     recent_action_count: int
     hour_of_day: int
 
-
 class FraudRule(ABC):
     @abstractmethod
     def evaluate(self, context: TransactionContext) -> bool:
         pass
-
     @abstractmethod
     def description(self) -> str:
         pass
@@ -143,206 +141,73 @@ This first part shows the shared fraud context and the abstract contract used by
 
 #### Code extract 2 — Concrete fraud rules
 ```
-class LargeAmountRule(FraudRule):
-    def evaluate(self, context: TransactionContext) -> bool:
-        if context.action not in self._applicable_actions:
-            return False
-        return context.amount > self._threshold
+class LargeAmountRule(FraudRule): ...
+class RapidOutgoingTransactionRule(FraudRule): ...
+class BalanceRatioRule(FraudRule): ...
+class UnusualHourRule(FraudRule): ...
 
-    def description(self) -> str:
-        return f"Amount exceeds {self._threshold:.2f}"
-
-
-class RapidOutgoingTransactionRule(FraudRule):
-    def evaluate(self, context: TransactionContext) -> bool:
-        if context.action not in _OUTGOING_PERMISSIONS:
-            return False
-        return context.recent_action_count >= self._max_recent
-
-    def description(self) -> str:
-        return f"Rapid outgoing transaction frequency >= {self._max_recent}"
-
-
-class BalanceRatioRule(FraudRule):
-    def evaluate(self, context: TransactionContext) -> bool:
-        if context.action not in self._applicable_actions:
-            return False
-        if context.current_balance <= 0:
-            return False
-        return (context.amount / context.current_balance) > self._max_ratio
-
-    def description(self) -> str:
-        return f"Amount exceeds {self._max_ratio * 100:.0f}% of current balance"
-
-
-class UnusualHourRule(FraudRule):
-    def evaluate(self, context: TransactionContext) -> bool:
-        if self._applicable_actions is not None and context.action not in self._applicable_actions:
-            return False
-        return not (self._start <= context.hour_of_day < self._end)
-
-    def description(self) -> str:
-        return f"Transaction outside allowed hours {self._start:02d}:00–{self._end:02d}:00"
-```
-This second part shows that each fraud rule applies the same interface, but checks risk in a different way.
-
-#### Code extract 3 — FraudDetectionEngine
-```
 class FraudDetectionEngine(IFraudDetectionEngine):
     def __init__(self, rules: Iterable[FraudRule]) -> None:
-        materialised_rules = list(rules)
-        self._rules: List[FraudRule] = materialised_rules
-
-    def add_rule(self, rule: FraudRule) -> None:
-        self._rules.append(rule)
+        self._rules: List[FraudRule] = list(rules)
 
     def check(self, context: TransactionContext) -> List[str]:
         return [rule.description() for rule in self._rules if rule.evaluate(context)]
 ```
-)]
-
-This final part shows that the engine does not depend on one specific rule. Instead, it evaluates all configured rules through the shared FraudRule abstraction. This makes the fraud layer extensible and easier to maintain.
+This part shows that each fraud rule follows the same interface, while the engine evaluates them through the shared FraudRule abstraction.
 
 ### Part 2 — Security Pipeline as an Ordered Control Flow
 
 The second important design idea is the secured operation pipeline. Instead of allowing a banking request to go directly into execution, the system routes it through an ordered sequence of security steps. Each step performs one specific check, and the request must pass all of them before it can continue into the banking layer.
 
-#### Code extract 4 — Abstract security step
+#### Code extract 3 — Security-step contract and main steps
 
 ```
 class ISecurityStep(ABC):
     @abstractmethod
     def supports(self, operation_type: OperationType) -> bool:
         pass
-
     @abstractmethod
     def execute(self, context: SecurityOperationContext) -> None:
         pass
+
+class AuthenticatedSessionStep(ISecurityStep): ...
+class AuthorizationStep(ISecurityStep): ...
+class RateLimitStep(ISecurityStep): ...
+class FraudCheckStep(ISecurityStep): ...
 ```
-This part defines the shared contract used by all security steps in the pipeline.
+This part shows the abstract pipeline contract and the four main security checks used before monetary execution.
 
-#### Code extract 5 — Individual pipeline steps
+#### Code extract 4 — Pipeline execution and assembly
 ```
-class AuthenticatedSessionStep(ISecurityStep):
-    def supports(self, operation_type: OperationType) -> bool:
-        return operation_type in (OperationType.READ, OperationType.MONETARY)
-
-    def execute(self, context: SecurityOperationContext) -> None:
-        if not self._authenticator.is_authenticated_session(context.auth_session):
-            raise AuthenticationError(...)
-        self._authenticator.touch_session(context.auth_session.session_id)
-
-
-class AuthorizationStep(ISecurityStep):
-    def supports(self, operation_type: OperationType) -> bool:
-        return operation_type in (OperationType.READ, OperationType.MONETARY)
-
-    def execute(self, context: SecurityOperationContext) -> None:
-        try:
-            self._authorization_policy.check_permission(
-                context.auth_session.user,
-                context.action,
-                context.account_number,
-            )
-        except AuthorizationError:
-            context.logger.record(...)
-            raise
-
-
-class RateLimitStep(ISecurityStep):
-    def supports(self, operation_type: OperationType) -> bool:
-        return operation_type == OperationType.MONETARY
-
-    def execute(self, context: SecurityOperationContext) -> None:
-        if not self._rate_limiter.is_allowed(context.auth_session.user.username, context.action):
-            context.logger.record(...)
-            raise RateLimitExceededError(...)
-
-
-class FraudCheckStep(ISecurityStep):
-    def supports(self, operation_type: OperationType) -> bool:
-        return operation_type == OperationType.MONETARY
-
-    def execute(self, context: SecurityOperationContext) -> None:
-        if context.account is None or context.amount is None:
-            return
-
-        tx_context = TransactionContext(
-            username=context.auth_session.user.username,
-            account_number=context.account_number,
-            action=context.action,
-            current_balance=context.account.get_balance(),
-            amount=context.amount,
-            recent_action_count=self._transaction_monitor.recent_count(
-                context.account_number,
-                action=context.action,
-                username=context.auth_session.user.username,
-            ),
-            hour_of_day=self._clock.now().hour,
-        )
-
-        triggered = self._fraud_engine.check(tx_context)
-        if triggered:
-            context.logger.record(...)
-            raise FraudAlertError(...)
-```
-This part shows the four main pipeline checks: authenticated session validation, authorisation, rate limiting, and fraud detection.
-
-#### Code extract 6 — Step resolution and pipeline execution
-```
-class SecurityStepResolver(ISecurityStepResolver):
-    def __init__(self, steps: Iterable[ISecurityStep]) -> None:
-        self._steps = tuple(steps)
-
-    def resolve(self, operation_type: OperationType) -> Sequence[ISecurityStep]:
-        return tuple(step for step in self._steps if step.supports(operation_type))
-
-
 class SecurityOperationPipeline(ISecurityOperationPipeline):
     def __init__(self, step_resolver: ISecurityStepResolver) -> None:
         self._step_resolver = step_resolver
 
-    def _run(
-        self,
-        operation_type: OperationType,
-        context: SecurityOperationContext,
-    ) -> None:
+    def _run(self, operation_type: OperationType, context: SecurityOperationContext) -> None:
         for step in self._step_resolver.resolve(operation_type):
             step.execute(context)
-```
-This part shows how the system resolves the required steps and executes them in order.
 
-#### Code extract 7 — Pipeline factory
-```
 class SecurityOperationPipelineFactory:
     @staticmethod
     def from_legacy_dependencies(...):
         auth_step = AuthenticatedSessionStep(authenticator)
         authorization_step = AuthorizationStep(authorization_policy, resolved_event_factory)
         rate_limit_step = RateLimitStep(rate_limiter, resolved_event_factory)
-        fraud_step = FraudCheckStep(
-            fraud_engine,
-            transaction_monitor,
-            resolved_clock,
-            resolved_event_factory,
-        )
-
+        fraud_step = FraudCheckStep(fraud_engine, transaction_monitor, resolved_clock, resolved_event_factory)
         step_resolver = SecurityStepResolver(
-            steps=(
-                auth_step,
-                authorization_step,
-                rate_limit_step,
-                fraud_step,
-            )
+            steps=(auth_step, authorization_step, rate_limit_step, fraud_step)
         )
 
         return SecurityOperationPipeline(step_resolver=step_resolver)
 ```
-This final part shows how the pipeline is assembled in the required order before being used by the secured services.
+This part shows how the pipeline is executed in order and how the required steps are assembled before being used by the secured services.
+
+
+
 
 ### Architectural Value of These Two Designs
 
-These two designs work together inside the secure banking system. The pipeline controls when a request may continue, while the fraud subsystem controls how suspicious transaction behaviour is evaluated. In practice, FraudCheckStep is one stage inside the wider pipeline, and it delegates fraud analysis to the strategy-based FraudDetectionEngine.
+These two designs work together inside the secure banking system. The pipeline controls when a request may continue, while the fraud subsystem controls how suspicious transaction behaviour is evaluated. In practice, FraudCheckStep is one stage inside the wider pipeline, and it delegates fraud analysis to FraudDetectionEngine.
 
 This is important because it shows that the system does not simply collect separate security features. Instead, it organises them through abstraction, composition, and ordered execution. That is what allows the security layer to protect the original banking domain in a structured and extensible way.
 
