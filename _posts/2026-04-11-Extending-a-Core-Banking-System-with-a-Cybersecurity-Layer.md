@@ -267,35 +267,35 @@ The grouped test evidence shows that the system behaves correctly across both no
 
 <img src="/assets/images/oop/unit12/Figure%2012.%20test%201%20to%203.png" alt="Figure 12 - Tests 1 to 3" width="700">
 
-**Figure 12.** Tests 1 to 3 verified successful login, failed login, and account lockout behaviour.
+**Figure 2.** Tests 1 to 3 verified successful login, failed login, and account lockout behaviour.
 
 <img src="/assets/images/oop/unit12/Figure%2013.%20test%204%20to%206.png" alt="Figure 13 - Tests 4 to 6" width="700">
 
-**Figure 13.** Tests 4 to 6 verified locked-account rejection, session expiry, and auditor withdrawal denial.
+**Figure 3.** Tests 4 to 6 verified locked-account rejection, session expiry, and auditor withdrawal denial.
 
 <img src="/assets/images/oop/unit12/Figure%2014.%20test%207%20to%209.png" alt="Figure 14 - Tests 7 to 9" width="700">
 
-**Figure 14.** Tests 7 to 9 verified auditor deposit denial, owner transfer success, and fraud blocking for large transactions.
+**Figure 4.** Tests 7 to 9 verified auditor deposit denial, owner transfer success, and fraud blocking for large transactions.
 
 <img src="/assets/images/oop/unit12/Figure%2015.%20test%2010%20to%2012.png" alt="Figure 15 - Tests 10 to 12" width="700">
 
-**Figure 15.** Tests 10 to 12 verified fraud alert observation, unusual-hour fraud detection, and balance-ratio transfer blocking.
+**Figure 5.** Tests 10 to 12 verified fraud alert observation, unusual-hour fraud detection, and balance-ratio transfer blocking.
 
 <img src="/assets/images/oop/unit12/Figure%2016.%20test%2013%20and%2015.png" alt="Figure 16 - Tests 13 and 15" width="700">
 
-**Figure 16.** Selected audit and rate-limiting tests verified denial logging and rate-limit warning events.
+**Figure 6.** Selected audit and rate-limiting tests verified denial logging and rate-limit warning events.
 
 <img src="/assets/images/oop/unit12/Figure%2017.%20test%2016%20and%2018.png" alt="Figure 17 - Tests 16 and 18" width="700">
 
-**Figure 17.** Reporting tests verified `ThreatReportBuilder` and `ThreatReportGenerator`.
+**Figure 7.** Reporting tests verified `ThreatReportBuilder` and `ThreatReportGenerator`.
 
 <img src="/assets/images/oop/unit12/Figure%2018.%20test%2019%20to%2021.png" alt="Figure 18 - Tests 19 to 21" width="700">
 
-**Figure 18.** Registry-integrity, token-bucket refill, and final composition-root tests.
+**Figure 8.** Registry-integrity, token-bucket refill, and final composition-root tests.
 
 <img src="/assets/images/oop/unit12/Figure%2019.%20test%2022.png" alt="Figure 19 - Test 22" width="700">
 
-**Figure 19.** Demonstration of the secured lifecycle of a high-risk withdrawal request at 3 AM, showing how the request is blocked at the fraud stage before reaching the core banking execution layer.
+**Figure 9.** Demonstration of the secured lifecycle of a high-risk withdrawal request at 3 AM, showing how the request is blocked at the fraud stage before reaching the core banking execution layer.
 
 ## Reflection
 
