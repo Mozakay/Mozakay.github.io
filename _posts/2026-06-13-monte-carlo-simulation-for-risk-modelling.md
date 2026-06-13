@@ -47,9 +47,3 @@ Fizell, Z. (2022) ‘How to Create a Monte Carlo Simulation using Python’, *To
 
 Metropolis, N. and Ulam, S. (1949) ‘The Monte Carlo method’, *Journal of the American Statistical Association*, 44(247), pp. 335–341.
 
-## Attachment List
-
-Figure 1: Importing Packages and Defining the Dice Roll Function  
-Figure 2: Running the Monte Carlo Simulation  
-Figure 3: Simulated Balance Across 10,000 Runs  
-Figure 4: Summary of Average Simulation Outcomes
