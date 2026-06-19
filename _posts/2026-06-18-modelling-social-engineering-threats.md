@@ -90,7 +90,7 @@ The value of using both models is that the study separates occurrence from succe
 
 ### Methodology Flow
 
-<img src="/assets/images/SRM/AijazNazir/methodology_flow.png" alt="Figure 1 - Methodology flow for modelling social engineering threats" width="800">
+<img src="/assets/images/SRM/Unit8/methodology_flow.png" alt="Figure 1 - Methodology flow for modelling social engineering threats" width="800">
 
 **Figure 1.** Methodology flow for modelling Social Engineering Threats using Attack Tree and Markov Chain models.
 
@@ -98,7 +98,7 @@ The methodology begins with knowledge identification, including modality, persua
 
 ### Markov Chain Attack Progression
 
-<img src="/assets/images/SRM/AijazNazir/markov_progression.png" alt="Figure 2 - Markov chain attack progression from disconnect to success" width="800">
+<img src="/assets/images/SRM/Unit8/markov_progression.png" alt="Figure 2 - Markov chain attack progression from disconnect to success" width="800">
 
 **Figure 2.** Markov Chain attack progression from Disconnect to Connect, Persuade and Success.
 
@@ -106,7 +106,7 @@ The Markov Chain Model represents the attacker’s movement through four states.
 
 ### AOP and ASP Results from the Ten Case Scenarios
 
-<img src="/assets/images/SRM/AijazNazir/aop_asp_results.png" alt="Figure 3 - AOP and ASP results from ten social engineering case scenarios" width="800">
+<img src="/assets/images/SRM/Unit8/aop_asp_results.png" alt="Figure 3 - AOP and ASP results from ten social engineering case scenarios" width="800">
 
 **Figure 3.** AOP and ASP results from ten Social Engineering Threat case scenarios.
 
