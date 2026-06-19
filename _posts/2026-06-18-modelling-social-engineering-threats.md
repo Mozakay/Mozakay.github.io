@@ -90,7 +90,7 @@ The value of using both models is that the study separates occurrence from succe
 
 ### Methodology Flow
 
-<img src="/assets/images/SRM/Unit8/methodology_flow.png" alt="Figure 1 - Methodology flow for modelling social engineering threats" width="800">
+<img src="/assets/images/SRM/Unit8/Proposed%20methodology%20to%20compute%20attack%20occurrence%20and%20success%20probability.png" alt="Figure 1 - Methodology flow for modelling social engineering threats" width="800">
 
 **Figure 1.** Methodology flow for modelling Social Engineering Threats using Attack Tree and Markov Chain models.
 
@@ -98,7 +98,7 @@ The methodology begins with knowledge identification, including modality, persua
 
 ### Markov Chain Attack Progression
 
-<img src="/assets/images/SRM/Unit8/markov_progression.png" alt="Figure 2 - Markov chain attack progression from disconnect to success" width="800">
+<img src="/assets/images/SRM/Unit8/Proposed%20Markov%20chain.png" alt="Figure 2 - Proposed Markov chain model" width="800">
 
 **Figure 2.** Markov Chain attack progression from Disconnect to Connect, Persuade and Success.
 
