@@ -98,7 +98,7 @@ The methodology begins with knowledge identification, including modality, persua
 
 ### Markov Chain Attack Progression
 
-<img src="/assets/images/SRM/Unit8/Proposed%20Markov%20chain.png" alt="Figure 2 - Proposed Markov chain model" width="600">
+<img src="/assets/images/SRM/Unit8/Proposed%20Markov%20chain.png" alt="Figure 2 - Proposed Markov chain model" width="500">
 
 **Figure 2.** Markov Chain attack progression from Disconnect to Connect, Persuade and Success.
 
