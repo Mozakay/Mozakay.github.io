@@ -2,8 +2,7 @@
 layout: post
 title: Refactoring Pricing Logic with Code Smells and Strategy Pattern
 subtitle: Improving readability and maintainability by replacing magic numbers and conditional logic with named constants and object-oriented refactoring
-categories:
-  - Software Development
+categories: ["Advance OOP"]
 tags: [unit8, refactoring, code-smells, strategy-pattern, python, object-oriented-design, maintainability, clean-code]
 ---
  
