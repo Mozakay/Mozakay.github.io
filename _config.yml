@@ -24,7 +24,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Moza Al-Handasi e-Portfolio
+title: Moza e-Portfolio
 author:  Moza Al-Handasi
 
 # Copyright setting
