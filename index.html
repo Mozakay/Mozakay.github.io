@@ -1,8 +1,201 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
-layout: home
+layout: default
 title: Home
 banner: "/assets/images/banners/new-background.jpg"
 ---
+
+<style>
+  .custom-home {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 40px 20px 70px;
+  }
+
+  .home-intro {
+    margin-bottom: 35px;
+    padding: 30px;
+    border-radius: 18px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  .home-intro h1 {
+    margin: 0 0 10px;
+    font-size: 32px;
+  }
+
+  .home-intro p {
+    margin: 0;
+    color: #555;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .subjects-wrapper {
+    display: grid;
+    gap: 28px;
+  }
+
+  .subject-section {
+    padding: 26px;
+    border-radius: 18px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  }
+
+  .subject-header {
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .subject-header h2 {
+    margin: 0 0 6px;
+    font-size: 24px;
+  }
+
+  .subject-header p {
+    margin: 0;
+    color: #666;
+    font-size: 15px;
+  }
+
+  .posts-list {
+    display: grid;
+    gap: 16px;
+  }
+
+  .post-item {
+    padding: 18px;
+    border-radius: 14px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+  }
+
+  .post-item h3 {
+    margin: 0 0 6px;
+    font-size: 19px;
+  }
+
+  .post-item h3 a {
+    color: #1f2937;
+    text-decoration: none;
+  }
+
+  .post-item h3 a:hover {
+    text-decoration: underline;
+  }
+
+  .post-date {
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: #777;
+  }
+
+  .post-excerpt {
+    margin: 0;
+    color: #555;
+    line-height: 1.6;
+    font-size: 14px;
+  }
+
+  .empty-message {
+    color: #777;
+    font-size: 14px;
+  }
+
+  @media (max-width: 768px) {
+    .custom-home {
+      padding: 25px 14px 50px;
+    }
+
+    .home-intro h1 {
+      font-size: 26px;
+    }
+
+    .subject-section {
+      padding: 20px;
+    }
+  }
+</style>
+
+<div class="custom-home">
+
+  <section class="home-intro">
+    <h1>My e-Portfolio</h1>
+    <p>
+      This e-Portfolio is organised by module. Each section includes the posts, activities, reflections, and evidence related to that module.
+    </p>
+  </section>
+
+  <div class="subjects-wrapper">
+
+    <section class="subject-section">
+      <div class="subject-header">
+        <h2>Security and Risk Management</h2>
+        <p>Posts related to risk assessment, quantitative modelling, cybersecurity, business continuity, and disaster recovery.</p>
+      </div>
+
+      <div class="posts-list">
+        {% assign found_security = false %}
+
+        {% for post in site.posts %}
+          {% if post.categories contains "Security and Risk Management" %}
+            {% assign found_security = true %}
+            <article class="post-item">
+              <h3>
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              </h3>
+              <div class="post-date">
+                {{ post.date | date: "%B %d, %Y" }}
+              </div>
+              <p class="post-excerpt">
+                {{ post.excerpt | strip_html | truncate: 180 }}
+              </p>
+            </article>
+          {% endif %}
+        {% endfor %}
+
+        {% if found_security == false %}
+          <p class="empty-message">No posts have been added to this module yet.</p>
+        {% endif %}
+      </div>
+    </section>
+
+    <section class="subject-section">
+      <div class="subject-header">
+        <h2>Software Development</h2>
+        <p>Posts related to programming, software design, testing, secure coding, architecture, and development practice.</p>
+      </div>
+
+      <div class="posts-list">
+        {% assign found_software = false %}
+
+        {% for post in site.posts %}
+          {% if post.categories contains "Software Development" %}
+            {% assign found_software = true %}
+            <article class="post-item">
+              <h3>
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              </h3>
+              <div class="post-date">
+                {{ post.date | date: "%B %d, %Y" }}
+              </div>
+              <p class="post-excerpt">
+                {{ post.excerpt | strip_html | truncate: 180 }}
+              </p>
+            </article>
+          {% endif %}
+        {% endfor %}
+
+        {% if found_software == false %}
+          <p class="empty-message">No posts have been added to this module yet.</p>
+        {% endif %}
+      </div>
+    </section>
+
+  </div>
+
+</div>
