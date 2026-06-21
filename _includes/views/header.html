@@ -32,12 +32,19 @@
     justify-content: space-between;
   }
 
+  /* Site title / logo text */
   .site-title,
   .site-title:visited,
-  .site-title:hover {
+  .site-title:hover,
+  .site-brand .site-title,
+  .site-brand a,
+  .site-brand a:visited,
+  .site-brand a:hover {
     color: #ffffff !important;
     text-decoration: none !important;
-    font-weight: 600;
+    font-weight: 700 !important;
+    font-size: 24px !important;
+    line-height: 1.2 !important;
   }
 
   .site-nav .trigger {
@@ -126,6 +133,18 @@
   @media (max-width: 1024px) {
     .site-header {
       background: rgba(0, 0, 0, 0.75) !important;
+    }
+
+    .site-title,
+    .site-title:visited,
+    .site-title:hover,
+    .site-brand .site-title,
+    .site-brand a,
+    .site-brand a:visited,
+    .site-brand a:hover {
+      color: #ffffff !important;
+      font-size: 20px !important;
+      font-weight: 700 !important;
     }
 
     .site-nav .trigger {
