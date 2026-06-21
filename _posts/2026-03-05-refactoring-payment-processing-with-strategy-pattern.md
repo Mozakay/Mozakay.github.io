@@ -2,8 +2,7 @@
 layout: post
 title: Refactoring Payment Processing with the Strategy Pattern
 subtitle: Improving extensibility and maintainability by replacing conditional logic with interchangeable payment strategies
-categories:
-  - Software Development
+categories: ["Advance OOP"]
 tags: [unit5, strategy-pattern, behavioural-patterns, refactoring, python, object-oriented-design, payment-processing, maintainability]
 ---
 
