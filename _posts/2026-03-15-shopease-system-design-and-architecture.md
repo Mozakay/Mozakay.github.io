@@ -2,8 +2,7 @@
 layout: post
 title: ShopEase System Design and Architecture
 subtitle: Designing an e-commerce platform using layered architecture, modular design, UML, and design patterns
-categories:
-  - Software Development
+categories: ["Advance OOP"]
 tags: [unit9, software-architecture, layered-architecture, uml, object-oriented-design, observer-pattern, dependency-injection, e-commerce]
 ---
 
