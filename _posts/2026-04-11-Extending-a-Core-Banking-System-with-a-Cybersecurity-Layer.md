@@ -2,8 +2,7 @@
 layout: post
 title: Extending A Core Banking System With A Cybersecurity Layer
 subtitle: Extending an existing core banking system through a dedicated cybersecurity layer, reporting, and verification
-categories:
-  - Software Development
+categories: ["Advance OOP"]
 tags: [unit12, software-architecture, object-oriented-design, cybersecurity, secure-banking, python, secure-design, layered-architecture, tdd]
 ---
 
