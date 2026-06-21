@@ -1,0 +1,158 @@
+---
+layout: default
+title: Security and Risk Management
+banner: "/assets/images/banners/new-background.jpg"
+---
+
+<style>
+  .module-page {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px 20px 70px;
+  }
+
+  .module-header,
+  .module-content,
+  .post-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  }
+
+  .module-header {
+    padding: 30px;
+    margin-bottom: 24px;
+  }
+
+  .module-header h1 {
+    margin: 0 0 10px;
+    font-size: 32px;
+  }
+
+  .module-header p {
+    margin: 0;
+    color: #555;
+    line-height: 1.7;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: 18px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .module-content {
+    padding: 28px;
+    margin-bottom: 24px;
+  }
+
+  .module-content h2 {
+    margin-top: 0;
+    font-size: 23px;
+  }
+
+  .module-content p,
+  .module-content li {
+    color: #555;
+    line-height: 1.7;
+    font-size: 15px;
+  }
+
+  .posts-title {
+    margin: 30px 0 16px;
+    font-size: 24px;
+  }
+
+  .posts-list {
+    display: grid;
+    gap: 16px;
+  }
+
+  .post-card {
+    padding: 20px;
+  }
+
+  .post-card h3 {
+    margin: 0 0 8px;
+    font-size: 20px;
+  }
+
+  .post-card h3 a {
+    color: #111827;
+    text-decoration: none;
+  }
+
+  .post-card h3 a:hover {
+    text-decoration: underline;
+  }
+
+  .post-date {
+    color: #777;
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  .post-excerpt {
+    margin: 0;
+    color: #555;
+    line-height: 1.6;
+    font-size: 14px;
+  }
+</style>
+
+<div class="module-page">
+
+  <a class="back-link" href="{{ '/' | relative_url }}">← Back to Home</a>
+
+  <section class="module-header">
+    <h1>Security and Risk Management</h1>
+    <p>
+      This page includes the posts, activities, and reflections related to the Security and Risk Management module.
+    </p>
+  </section>
+
+  <section class="module-content">
+    <h2>Module Summary</h2>
+    <p>
+      This module focused on identifying, analysing, and managing security risks within business and digital environments. It covered qualitative and quantitative risk assessment, risk modelling, cybersecurity controls, business continuity, and disaster recovery planning.
+    </p>
+
+    <h2>What I Learned</h2>
+    <ul>
+      <li>How to identify security risks and connect them to business impact.</li>
+      <li>How to apply quantitative methods such as Monte Carlo simulation and Bayesian analysis.</li>
+      <li>How to evaluate cybersecurity threats using structured models.</li>
+      <li>How to develop recommendations for business continuity and disaster recovery.</li>
+    </ul>
+  </section>
+
+  <h2 class="posts-title">Posts</h2>
+
+  <div class="posts-list">
+    {% assign found_security = false %}
+
+    {% for post in site.posts %}
+      {% if post.categories contains "Security and Risk Management" %}
+        {% assign found_security = true %}
+        <article class="post-card">
+          <h3>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h3>
+          <div class="post-date">
+            {{ post.date | date: "%B %d, %Y" }}
+          </div>
+          <p class="post-excerpt">
+            {{ post.excerpt | strip_html | truncate: 180 }}
+          </p>
+        </article>
+      {% endif %}
+    {% endfor %}
+
+    {% if found_security == false %}
+      <p>No posts have been added to this module yet.</p>
+    {% endif %}
+  </div>
+
+</div>
