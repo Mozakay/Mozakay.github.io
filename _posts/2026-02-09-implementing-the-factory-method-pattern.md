@@ -2,8 +2,7 @@
 layout: post
 title: Implementing the Factory Method Pattern
 subtitle: Designing a car manufacturing system using the Factory Method Pattern in Python
-categories:
-  - Software Development
+categories: ["Advance OOP"]
 tags: [unit3, factory-method, design-patterns, object-oriented-design, python, creational-patterns]
 ---
 
