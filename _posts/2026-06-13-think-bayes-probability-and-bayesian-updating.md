@@ -2,8 +2,7 @@
 layout: post
 title: Think Bayes 2 Probability and Bayesian Updating
 subtitle: Completing Chapter 1 and Chapter 2 exercises using conditional probability and Bayesian tables
-categories:
-  - Security and Risk Management
+categories: ["Security and Risk Management"]
 tags: [unit7, think-bayes, probability, bayesian-updating, conditional-probability, risk-modelling, python]
 ---
 
