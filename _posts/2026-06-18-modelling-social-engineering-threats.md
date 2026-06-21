@@ -2,8 +2,7 @@
 layout: post
 title: Modelling and Analysis of Social Engineering Threats
 subtitle: Reviewing Aijaz and Nazir’s attack tree and Markov chain approach for quantitative social engineering risk modelling
-categories:
-  - Security and Risk Management
+categories: ["Security and Risk Management"]
 tags: [unit8, seminar-preparation, quantitative-risk-modelling, social-engineering, attack-tree, markov-chain, aop, asp, risk-modelling]
 ---
 
