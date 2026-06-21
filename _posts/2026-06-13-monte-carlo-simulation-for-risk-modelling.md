@@ -2,8 +2,7 @@
 layout: post
 title: Monte Carlo Simulation for Risk Modelling
 subtitle: Using Python to model uncertainty through repeated dice game simulations
-categories:
-  - Security and Risk Management
+categories: ["Security and Risk Management"]
 tags: [unit7, risk-modelling, monte-carlo-simulation, python, probability, uncertainty]
 ---
 
