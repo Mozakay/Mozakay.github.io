@@ -6,18 +6,18 @@ banner: "/assets/images/banners/new-background.jpg"
 
 <style>
   .custom-home {
-    max-width: 1050px;
+    max-width: 980px;
     margin: 0 auto;
     padding: 40px 20px 70px;
   }
 
   .home-intro {
-    margin-bottom: 35px;
-    padding: 30px;
+    margin-bottom: 28px;
+    padding: 28px;
     border-radius: 18px;
     background: #ffffff;
     border: 1px solid #e5e7eb;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
   }
 
   .home-intro h1 {
@@ -32,64 +32,123 @@ banner: "/assets/images/banners/new-background.jpg"
     line-height: 1.7;
   }
 
-  .subjects-wrapper {
+  .modules-list {
     display: grid;
-    gap: 28px;
+    gap: 18px;
   }
 
-  .subject-section {
-    padding: 26px;
+  .module-card {
     border-radius: 18px;
     background: #ffffff;
     border: 1px solid #e5e7eb;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
   }
 
-  .subject-header {
-    margin-bottom: 20px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #e5e7eb;
-  }
-
-  .subject-header h2 {
-    margin: 0 0 6px;
-    font-size: 24px;
-  }
-
-  .subject-header p {
-    margin: 0;
-    color: #666;
-    font-size: 15px;
-  }
-
-  .posts-list {
-    display: grid;
+  .module-card summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 22px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     gap: 16px;
+    font-size: 21px;
+    font-weight: 700;
+    color: #1f2937;
   }
 
-  .post-item {
-    padding: 18px;
+  .module-card summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .module-card summary::after {
+    content: "+";
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #374151;
+  }
+
+  .module-card[open] summary::after {
+    content: "−";
+  }
+
+  .module-body {
+    padding: 0 24px 24px;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .module-summary {
+    margin-top: 22px;
+    margin-bottom: 22px;
+    padding: 20px;
     border-radius: 14px;
     background: #f9fafb;
     border: 1px solid #e5e7eb;
   }
 
-  .post-item h3 {
-    margin: 0 0 6px;
-    font-size: 19px;
+  .module-summary h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    color: #111827;
   }
 
-  .post-item h3 a {
-    color: #1f2937;
+  .module-summary p {
+    margin: 0 0 14px;
+    color: #555;
+    line-height: 1.7;
+    font-size: 15px;
+  }
+
+  .module-summary ul {
+    margin: 0;
+    padding-left: 22px;
+    color: #555;
+    line-height: 1.7;
+    font-size: 15px;
+  }
+
+  .posts-title {
+    margin: 0 0 14px;
+    font-size: 18px;
+    color: #111827;
+  }
+
+  .posts-list {
+    display: grid;
+    gap: 12px;
+  }
+
+  .post-item {
+    padding: 16px 18px;
+    border-radius: 13px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+  }
+
+  .post-item h4 {
+    margin: 0 0 6px;
+    font-size: 17px;
+  }
+
+  .post-item h4 a {
+    color: #111827;
     text-decoration: none;
   }
 
-  .post-item h3 a:hover {
+  .post-item h4 a:hover {
     text-decoration: underline;
   }
 
   .post-date {
-    margin-bottom: 8px;
+    margin-bottom: 7px;
     font-size: 13px;
     color: #777;
   }
@@ -115,8 +174,13 @@ banner: "/assets/images/banners/new-background.jpg"
       font-size: 26px;
     }
 
-    .subject-section {
-      padding: 20px;
+    .module-card summary {
+      font-size: 18px;
+      padding: 18px 20px;
+    }
+
+    .module-body {
+      padding: 0 20px 20px;
     }
   }
 </style>
@@ -126,75 +190,113 @@ banner: "/assets/images/banners/new-background.jpg"
   <section class="home-intro">
     <h1>My e-Portfolio</h1>
     <p>
-      This e-Portfolio is organised by module. Each section includes the posts, activities, reflections, and evidence related to that module.
+      This e-Portfolio is organised by module. Each module includes a short summary, key learning points, and related posts.
     </p>
   </section>
 
-  <div class="subjects-wrapper">
+  <div class="modules-list">
 
-    <section class="subject-section">
-      <div class="subject-header">
-        <h2>Security and Risk Management</h2>
-        <p>Posts related to risk assessment, quantitative modelling, cybersecurity, business continuity, and disaster recovery.</p>
-      </div>
+    <!-- Security and Risk Management -->
+    <details class="module-card">
+      <summary>Security and Risk Management</summary>
 
-      <div class="posts-list">
-        {% assign found_security = false %}
+      <div class="module-body">
 
-        {% for post in site.posts %}
-          {% if post.categories contains "Security and Risk Management" %}
-            {% assign found_security = true %}
-            <article class="post-item">
-              <h3>
-                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-              </h3>
-              <div class="post-date">
-                {{ post.date | date: "%B %d, %Y" }}
-              </div>
-              <p class="post-excerpt">
-                {{ post.excerpt | strip_html | truncate: 180 }}
-              </p>
-            </article>
+        <div class="module-summary">
+          <h3>Module Summary</h3>
+          <p>
+            This module focused on identifying, analysing, and managing security risks within business and digital environments. It covered qualitative and quantitative risk assessment, risk modelling, cybersecurity controls, business continuity, and disaster recovery planning.
+          </p>
+
+          <h3>What I Learned</h3>
+          <ul>
+            <li>How to identify security risks and link them to business impact.</li>
+            <li>How to use quantitative methods such as Monte Carlo simulation and Bayesian analysis.</li>
+            <li>How to evaluate cybersecurity threats using structured risk models.</li>
+            <li>How to develop recommendations for business continuity and disaster recovery.</li>
+          </ul>
+        </div>
+
+        <h3 class="posts-title">Posts</h3>
+
+        <div class="posts-list">
+          {% assign found_security = false %}
+
+          {% for post in site.posts %}
+            {% if post.categories contains "Security and Risk Management" %}
+              {% assign found_security = true %}
+              <article class="post-item">
+                <h4>
+                  <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                </h4>
+                <div class="post-date">
+                  {{ post.date | date: "%B %d, %Y" }}
+                </div>
+                <p class="post-excerpt">
+                  {{ post.excerpt | strip_html | truncate: 160 }}
+                </p>
+              </article>
+            {% endif %}
+          {% endfor %}
+
+          {% if found_security == false %}
+            <p class="empty-message">No posts have been added to this module yet.</p>
           {% endif %}
-        {% endfor %}
+        </div>
 
-        {% if found_security == false %}
-          <p class="empty-message">No posts have been added to this module yet.</p>
-        {% endif %}
       </div>
-    </section>
+    </details>
 
-    <section class="subject-section">
-      <div class="subject-header">
-        <h2>Software Development</h2>
-        <p>Posts related to programming, software design, testing, secure coding, architecture, and development practice.</p>
-      </div>
+    <!-- Advance OOP -->
+    <details class="module-card">
+      <summary>Advance OOP</summary>
 
-      <div class="posts-list">
-        {% assign found_software = false %}
+      <div class="module-body">
 
-        {% for post in site.posts %}
-          {% if post.categories contains "Software Development" %}
-            {% assign found_software = true %}
-            <article class="post-item">
-              <h3>
-                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-              </h3>
-              <div class="post-date">
-                {{ post.date | date: "%B %d, %Y" }}
-              </div>
-              <p class="post-excerpt">
-                {{ post.excerpt | strip_html | truncate: 180 }}
-              </p>
-            </article>
+        <div class="module-summary">
+          <h3>Module Summary</h3>
+          <p>
+            This module focused on advanced object-oriented programming concepts and their use in software development. It included software design, refactoring, testing, secure coding, design patterns, and applying programming principles to real-world systems.
+          </p>
+
+          <h3>What I Learned</h3>
+          <ul>
+            <li>How to apply object-oriented programming principles in structured software solutions.</li>
+            <li>How to improve code quality using refactoring and design patterns.</li>
+            <li>How to use testing approaches to validate software behaviour.</li>
+            <li>How to connect software design decisions with maintainability and security.</li>
+          </ul>
+        </div>
+
+        <h3 class="posts-title">Posts</h3>
+
+        <div class="posts-list">
+          {% assign found_oop = false %}
+
+          {% for post in site.posts %}
+            {% if post.categories contains "Advance OOP" %}
+              {% assign found_oop = true %}
+              <article class="post-item">
+                <h4>
+                  <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                </h4>
+                <div class="post-date">
+                  {{ post.date | date: "%B %d, %Y" }}
+                </div>
+                <p class="post-excerpt">
+                  {{ post.excerpt | strip_html | truncate: 160 }}
+                </p>
+              </article>
+            {% endif %}
+          {% endfor %}
+
+          {% if found_oop == false %}
+            <p class="empty-message">No posts have been added to this module yet.</p>
           {% endif %}
-        {% endfor %}
+        </div>
 
-        {% if found_software == false %}
-          <p class="empty-message">No posts have been added to this module yet.</p>
-        {% endif %}
       </div>
-    </section>
+    </details>
 
   </div>
 
