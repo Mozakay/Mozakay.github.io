@@ -2,8 +2,7 @@
 layout: post
 title: Secure E-Learning Platform Design and TDD
 subtitle: Designing a secure e-learning platform using object-oriented architecture and test-driven development
-categories:
-  - Software Development
+categories: ["Advance OOP"]
 tags: [unit10, software-architecture, object-oriented-design, tdd, e-learning-platform, python, secure-design]
 ---
 
