@@ -2,8 +2,7 @@
 layout: post
 title: Dependency Injection and Inversion of Control
 subtitle: Refactoring a user registration system using dependency injection, inversion of control, and unit testing
-categories:
-  - Software Development
+categories: ["Advance OOP"]
 tags: [unit11, dependency-injection, inversion-of-control, solid, python, unit-testing, refactoring]
 ---
 
