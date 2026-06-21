@@ -2,8 +2,7 @@
 layout: post
 title: Online Shopping System Refactoring with SOLID Principles
 subtitle: Refactoring a simple online shopping system using object-oriented design, SOLID principles, and unit testing
-categories:
-  - Software Development
+categories: ["Advance OOP"]
 tags: [unit2, solid, refactoring, object-oriented-design, python, unittest, shopping-system, payment-processing, discounts]
 ---
 
