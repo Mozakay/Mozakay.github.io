@@ -2,8 +2,7 @@
 layout: post
 title: Engineering Correctness in Concurrent Transactions
 subtitle: A thread-safe bank account implementation with concurrency testing, deadlock prevention, and livelock analysis
-categories:
-  - Software Development
+categories: ["Advance OOP"]
 tags: [unit6, concurrency, thread-safety, race-condition, deadlock, livelock, python, testing]
 ---
 
