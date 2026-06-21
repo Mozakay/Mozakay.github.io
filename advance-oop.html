@@ -1,0 +1,158 @@
+---
+layout: default
+title: Advance OOP
+banner: "/assets/images/banners/new-background.jpg"
+---
+
+<style>
+  .module-page {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px 20px 70px;
+  }
+
+  .module-header,
+  .module-content,
+  .post-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  }
+
+  .module-header {
+    padding: 30px;
+    margin-bottom: 24px;
+  }
+
+  .module-header h1 {
+    margin: 0 0 10px;
+    font-size: 32px;
+  }
+
+  .module-header p {
+    margin: 0;
+    color: #555;
+    line-height: 1.7;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: 18px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .module-content {
+    padding: 28px;
+    margin-bottom: 24px;
+  }
+
+  .module-content h2 {
+    margin-top: 0;
+    font-size: 23px;
+  }
+
+  .module-content p,
+  .module-content li {
+    color: #555;
+    line-height: 1.7;
+    font-size: 15px;
+  }
+
+  .posts-title {
+    margin: 30px 0 16px;
+    font-size: 24px;
+  }
+
+  .posts-list {
+    display: grid;
+    gap: 16px;
+  }
+
+  .post-card {
+    padding: 20px;
+  }
+
+  .post-card h3 {
+    margin: 0 0 8px;
+    font-size: 20px;
+  }
+
+  .post-card h3 a {
+    color: #111827;
+    text-decoration: none;
+  }
+
+  .post-card h3 a:hover {
+    text-decoration: underline;
+  }
+
+  .post-date {
+    color: #777;
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  .post-excerpt {
+    margin: 0;
+    color: #555;
+    line-height: 1.6;
+    font-size: 14px;
+  }
+</style>
+
+<div class="module-page">
+
+  <a class="back-link" href="{{ '/' | relative_url }}">← Back to Home</a>
+
+  <section class="module-header">
+    <h1>Advance OOP</h1>
+    <p>
+      This page includes the posts, activities, and reflections related to the Advance Object-Oriented Programming module.
+    </p>
+  </section>
+
+  <section class="module-content">
+    <h2>Module Summary</h2>
+    <p>
+      This module focused on advanced object-oriented programming concepts and their application in software development. It included software design, refactoring, design patterns, testing, maintainability, and secure programming practices.
+    </p>
+
+    <h2>What I Learned</h2>
+    <ul>
+      <li>How to apply object-oriented programming principles in structured software solutions.</li>
+      <li>How to improve code quality through refactoring and design patterns.</li>
+      <li>How to use testing approaches to validate software behaviour.</li>
+      <li>How to connect software design decisions with maintainability and security.</li>
+    </ul>
+  </section>
+
+  <h2 class="posts-title">Posts</h2>
+
+  <div class="posts-list">
+    {% assign found_oop = false %}
+
+    {% for post in site.posts %}
+      {% if post.categories contains "Advance OOP" %}
+        {% assign found_oop = true %}
+        <article class="post-card">
+          <h3>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h3>
+          <div class="post-date">
+            {{ post.date | date: "%B %d, %Y" }}
+          </div>
+          <p class="post-excerpt">
+            {{ post.excerpt | strip_html | truncate: 180 }}
+          </p>
+        </article>
+      {% endif %}
+    {% endfor %}
+
+    {% if found_oop == false %}
+      <p>No posts have been added to this module yet.</p>
+    {% endif %}
+  </div>
+
+</div>
