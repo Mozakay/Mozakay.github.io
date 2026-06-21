@@ -2,8 +2,7 @@
 layout: post
 title: Securing a Python Authentication System with Secure Coding Practices
 subtitle: Refactoring an insecure authentication example by adding password hashing, input validation, strong password rules, and rate limiting
-categories:
-  - Software Development
+categories: ["Advance OOP"]
 tags: [unit7, secure-coding, authentication, python, bcrypt, input-validation, password-policy, rate-limiting]
 ---
 
