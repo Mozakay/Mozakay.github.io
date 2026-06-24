@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Collaborative Learning Discussion 2: CVSS and SSVC
-subtitle: Reflecting on CVSS scoring inconsistencies and stakeholder-specific vulnerability prioritisation
+title: "Collaborative Learning Discussion 2: CVSS and SSVC"
+subtitle: "Reflecting on CVSS scoring inconsistencies and stakeholder-specific vulnerability prioritisation"
 categories: ["Security and Risk Management"]
 tags: [unit7, collaborative-learning, cvss, ssvc, vulnerability-management, peer-feedback, reflection]
 ---
