@@ -74,7 +74,7 @@ Overall, the discussion across Units 1, 2 and 3 indicates that responsible techn
 
 ### Peer responses received
 
-<img src="/assets/images/SRM/Unit1/Peer%20Response%20by%20Payman%20Ghorbani.png" alt="Peer response by Payman Ghorbani" width="800">
+<img src="/assets/images/SRM/Unit1/peer-response-payman.png" alt="Peer response by Payman Ghorbani" width="800">
 
 **Figure 3.** Peer response received from Payman Ghorbani.
 
