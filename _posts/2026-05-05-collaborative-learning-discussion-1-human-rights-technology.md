@@ -62,49 +62,43 @@ Overall, the discussion across Units 1, 2 and 3 indicates that responsible techn
 
 ## Evidence of Discussion
 
-### Discussion topic
-
-<img src="/assets/images/SRM/Unit1/discussion-topic.png" alt="Screenshot of Collaborative Learning Discussion 1 topic and instructions" width="800">
-
-**Figure 1.** Collaborative Learning Discussion 1 topic and instructions.
-
 ### Initial post and summary post
 
-<img src="/assets/images/SRM/Unit1/initial-post.png" alt="Screenshot of the initial post for Collaborative Learning Discussion 1" width="800">
+<img src="/assets/images/SRM/Unit1/Initial%20Post.png" alt="Screenshot of the initial post for Collaborative Learning Discussion 1" width="800">
 
-**Figure 2.** Initial post for Collaborative Learning Discussion 1.
+**Figure 1.** Initial post for Collaborative Learning Discussion 1.
 
-<img src="/assets/images/SRM/Unit1/summary-post.png" alt="Screenshot of the summary post for Collaborative Learning Discussion 1" width="800">
+<img src="/assets/images/SRM/Unit1/Summary%20Post.png" alt="Screenshot of the summary post for Collaborative Learning Discussion 1" width="800">
 
-**Figure 3.** Summary post for Collaborative Learning Discussion 1.
+**Figure 2.** Summary post for Collaborative Learning Discussion 1.
 
 ### Peer responses received
 
-<img src="/assets/images/SRM/Unit1/peer-response-payman.png" alt="Peer response by Payman Ghorbani" width="800">
+<img src="/assets/images/SRM/Unit1/Peer%20Response%20by%20Payman%20Ghorbani.png" alt="Peer response by Payman Ghorbani" width="800">
 
-**Figure 4.** Peer response received from Payman Ghorbani.
+**Figure 3.** Peer response received from Payman Ghorbani.
 
-<img src="/assets/images/SRM/Unit1/peer-response-seba.png" alt="Peer response by Sèba Daher" width="800">
+<img src="/assets/images/SRM/Unit1/Peer%20Response%20by%20seba%20daher.png" alt="Peer response by Sèba Daher" width="800">
 
-**Figure 5.** Peer response received from Sèba Daher.
+**Figure 4.** Peer response received from Sèba Daher.
 
-<img src="/assets/images/SRM/Unit1/peer-response-sopheaktra.png" alt="Peer response by Sopheaktra Chea" width="800">
+<img src="/assets/images/SRM/Unit1/Peer%20Response%20by%20Sopheaktra%20Chea.png" alt="Peer response by Sopheaktra Chea" width="800">
 
-**Figure 6.** Peer response received from Sopheaktra Chea.
+**Figure 5.** Peer response received from Sopheaktra Chea.
 
 ### My peer responses
 
-<img src="/assets/images/SRM/Unit1/my-response-payman.png" alt="My peer response to Payman Ghorbani" width="800">
+<img src="/assets/images/SRM/Unit1/My%20Peer%20Response%20to%20Payman%20Ghorbani.png" alt="My peer response to Payman Ghorbani" width="800">
 
-**Figure 7.** My peer response to Payman Ghorbani.
+**Figure 6.** My peer response to Payman Ghorbani.
 
-<img src="/assets/images/SRM/Unit1/my-response-seba.png" alt="My peer response to Sèba Daher and Payman Ghorbani" width="800">
+<img src="/assets/images/SRM/Unit1/My%20Peer%20Response%20to%20seba%20daher.png" alt="My peer response to Sèba Daher" width="800">
 
-**Figure 8.** My peer response to Sèba Daher and Payman Ghorbani.
+**Figure 7.** My peer response to Sèba Daher.
 
-<img src="/assets/images/SRM/Unit1/my-response-sopheaktra.png" alt="My peer response to Sopheaktra Chea" width="800">
+<img src="/assets/images/SRM/Unit1/My%20Peer%20Response%20to%20Sopheaktra%20Chea.png" alt="My peer response to Sopheaktra Chea" width="800">
 
-**Figure 9.** My peer response to Sopheaktra Chea.
+**Figure 8.** My peer response to Sopheaktra Chea.
 
 ---
 
