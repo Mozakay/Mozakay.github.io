@@ -64,3 +64,46 @@ The University of Limerick case demonstrates that GDPR compliance depends on eff
 Data Protection Commission (2025) Final Decision: Inquiry concerning the University of Limerick. Dublin: Data Protection Commission.
 
 European Parliament and Council (2016) Regulation (EU) 2016/679: General Data Protection Regulation. Official Journal of the European Union.
+
+
+
+## GDPR Incident Flow
+
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 760px; margin: 24px auto;">
+
+  <div style="padding: 16px; border: 1px solid #d5d7d8; border-radius: 12px; background: #ffffff;">
+    <strong>1. Phishing attack</strong><br>
+    Staff received phishing emails and fake login pages designed to capture credentials.
+  </div>
+
+  <div style="text-align: center; font-size: 24px;">↓</div>
+
+  <div style="padding: 16px; border: 1px solid #d5d7d8; border-radius: 12px; background: #ffffff;">
+    <strong>2. Unauthorised email access</strong><br>
+    Third parties gained access to staff email accounts containing personal data.
+  </div>
+
+  <div style="text-align: center; font-size: 24px;">↓</div>
+
+  <div style="padding: 16px; border: 1px solid #d5d7d8; border-radius: 12px; background: #ffffff;">
+    <strong>3. GDPR risk created</strong><br>
+    The incident raised issues around integrity, confidentiality, security of processing, breach notification and communication to affected individuals.
+  </div>
+
+  <div style="text-align: center; font-size: 24px;">↓</div>
+
+  <div style="padding: 16px; border: 1px solid #d5d7d8; border-radius: 12px; background: #ffffff;">
+    <strong>4. Regulatory inquiry</strong><br>
+    The Data Protection Commission investigated the university’s handling of the breaches and security controls.
+  </div>
+
+  <div style="text-align: center; font-size: 24px;">↓</div>
+
+  <div style="padding: 16px; border: 1px solid #d5d7d8; border-radius: 12px; background: #ffffff;">
+    <strong>5. Resolution and remediation</strong><br>
+    The DPC issued a reprimand and administrative fines, while the university later introduced stronger controls such as MFA, email security improvements and awareness training.
+  </div>
+
+</div>
+
+**Figure 1.** Flow of the University of Limerick GDPR incident and response.
