@@ -46,8 +46,6 @@ The key message from my section was that quantum computing should not be treated
 
 ## Key Presentation Points
 
-The presentation made four main arguments. First, quantum computing is Presentation Points
-
 The presentation made four main arguments. First, quantum computing is relevant now because of the **Harvest Now, Decrypt Later** risk. Encrypted data may be collected today and decrypted in the future when quantum computing becomes powerful enough.
 
 Second, the threat affects many sectors. Government, healthcare, banking, finance and corporate organisations may all hold long-lived sensitive data that must remain confidential for years.
