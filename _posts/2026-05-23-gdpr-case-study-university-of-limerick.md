@@ -29,7 +29,7 @@ As shown in Table 1, the case was not limited to a technical phishing incident. 
 
 ## Visual Summary of the GDPR Case
 
-<img src="/assets/images/SRM/Unit5/gdpr_breach_flowchart.png" alt="Flowchart summarising the University of Limerick GDPR breach and security management response" width="800">
+<img src="/assets/images/SRM/Unit5/gdpr_breach_flowchart.png" alt="Flowchart summarising the University of Limerick GDPR breach and security management response" width="600">
 
 **Figure 1.** Summary of the University of Limerick GDPR breach, regulatory outcome and recommended Information Security Manager response.
 
