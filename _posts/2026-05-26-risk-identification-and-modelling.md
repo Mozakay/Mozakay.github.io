@@ -14,21 +14,6 @@ The activity focused on how comprehensive threat modelling can support the ident
 
 ---
 
-## Seminar Activity Summary
-
-| Area | Summary |
-|---|---|
-| Seminar title | Risk Identification and Modelling |
-| Unit | Unit 4 |
-| Main reading | Jbair et al. (2022) |
-| Main topic | Threat modelling for Industrial Cyber-Physical Systems |
-| Context | Smart manufacturing and cyber-physical environments |
-| Main methodology | Six-step threat modelling process |
-| Main concepts | Asset identification, vulnerability analysis, attack modelling, risk evaluation, countermeasure design and digital twin deployment |
-| Key conclusion | Effective ICPS threat modelling should connect risk identification with practical countermeasure deployment |
-
----
-
 ## My Response to the Workshop Activity
 
 My response focused on three seminar questions. First, I identified the key elements and interdependencies that should be captured in a comprehensive cyber-physical system threat model. Second, I explained how threat modelling can help identify attack entry points and system vulnerabilities. Third, I discussed how scenario-specific metrics and risk assessment methodologies can support vulnerability prioritisation and targeted security countermeasures.
