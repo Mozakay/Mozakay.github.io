@@ -14,20 +14,6 @@ The activity focused on the relationship between **cloud vendor lock-in**, **mod
 
 ---
 
-## Seminar Activity Summary
-
-| Area | Summary |
-|---|---|
-| Seminar title | DR Solutions Design and Review |
-| Unit | Unit 10 |
-| Main topic | Cloud vendor lock-in and modern cloud security concerns |
-| Main readings | Kumar (2024), Corbari et al. (2024), and Alhazmi and Malaiya (2013) |
-| Main DR concepts | RTO, RPO, data transfer cost, storage cost and DR tier selection |
-| Main risk focus | Vendor dependency, cloud security weaknesses and operational recovery constraints |
-| Key conclusion | Effective cloud disaster recovery requires both technical portability and mission-based prioritisation |
-
----
-
 ## My Response to the Workshop Activity
 
 My response focused on two main questions. First, I examined the cloud vendor lock-in issues identified by Kumar (2024) and considered how they could affect disaster recovery. Second, I reviewed modern cloud security concerns using the operational defence perspective presented by Corbari et al. (2024).
