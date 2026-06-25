@@ -157,42 +157,6 @@ The distinction between AOP and ASP is also important for policy design. High-AO
 
 ---
 
-## Group Discussion Notes
-
-This section will be completed after the group discussion.
-
-### Main points discussed by the group
-
-- 
-- 
-- 
-
-### Points of agreement
-
-- 
-- 
-- 
-
-### Points of disagreement or critique
-
-- 
-- 
-- 
-
-### Questions raised during the discussion
-
-- 
-- 
-- 
-
-### Actions or learning points to carry forward
-
-- 
-- 
-- 
-
----
-
 ## Critical Reflection
 
 The study provides a useful and structured way to analyse Social Engineering Threats, but it also has limitations. The model focuses mainly on communication modalities and persuasion principles. However, real-world social engineering attacks may also depend on victim profile, organisational culture, workload, attacker capability and the specific context of the interaction.
