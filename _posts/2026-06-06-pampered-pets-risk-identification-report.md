@@ -60,17 +60,20 @@ As shown in Table 2, the e-commerce website, online payment system, CRM/customer
 
 Table 2 demonstrates that digitalisation would introduce High risks in e-commerce, online payments, CRM/customer accounts and international sourcing. However, proportionate controls, phased implementation and documented governance would reduce cyber risk and improve operational resilience.
 
+
 ## Recommendation
 
-Digitalisation is recommended, provided it is implemented through a controlled, phased approach that is aligned with the NIST CSF functions. The current-to-digital risk transition is summarised in Appendix A (see Appendix A). Phase 1 should secure the current environment within 0–30 days. This includes updating or replacing the warehouse computer, installing endpoint protection and firewall controls, applying patches, implementing tested backups, segmenting the wireless network, securing the front-desk POS system, documenting recovery procedures and applying role-based and least-privilege access controls to customer data.
+Digitalisation is recommended, provided it is implemented through a controlled, phased approach aligned with the NIST CSF functions. The current-to-digital risk transition is summarised in Appendix A.
 
-Phase 2 should introduce a low-risk digital presence within months 1–3 through a hosted website or product catalogue selected through vendor due diligence, with HTTPS, security patching, regular vulnerability scanning, website monitoring, DDoS protection and an incident response plan.
+| Phase | Timeline | Main objective | Key actions | Expected benefit |
+|---|---|---|---|---|
+| Phase 1 | 0–30 days | Secure the current environment before digitalisation | Replace or update the warehouse computer; install endpoint protection and firewall controls; apply patches; implement tested backups; segment the wireless network; secure the front-desk POS system; document recovery procedures; apply role-based and least-privilege access controls to customer data. | Reduces inherited risks before new digital systems are introduced. |
+| Phase 2 | Months 1–3 | Introduce a low-risk digital presence | Use a hosted website or product catalogue selected through vendor due diligence; enable HTTPS; apply security patching; conduct regular vulnerability scanning; monitor the website; use DDoS protection; prepare an incident response plan. | Allows digital growth while limiting exposure from public-facing systems. |
+| Phase 3 | Months 3–6 | Introduce transactional digitalisation | Use a PCI DSS-compliant payment gateway; avoid direct card storage; encrypt customer and payment data; apply MFA and least-privilege access for CRM; align privacy and retention policies with UK GDPR; apply RBAC, tested backups, disaster recovery planning and service-level review for cloud inventory. | Supports secure online payments, customer data protection and operational resilience. |
+| Phase 4 | Months 6–12 | Trial international suppliers in a controlled way | Verify international suppliers; apply contractual security and quality requirements; test suppliers only for non-core product lines; retain local suppliers for core pet food products. | Reduces supply chain risk while allowing controlled international expansion. |
 
-Phase 3 should introduce transactional digitalisation within months 3–6. Online payments should use a secure PCI DSS-compliant gateway, encrypted customer and payment data, and no direct card storage. CRM should use MFA, least-privilege access and a UK GDPR-aligned privacy and retention policy. Cloud inventory should require vendor due diligence, RBAC, tested backups, disaster recovery planning and service-level review.
+Overall, the benefits are likely to outweigh the risks if appropriate safeguards are implemented through phased delivery, governance, technical controls and supplier assurance.
 
-Phase 4 should involve a controlled supplier trial within months 6–12. International suppliers should be formally verified, subject to contractual security and quality requirements, and tested only for non-core product lines, while local suppliers remain central to core pet food products.
-
-Overall, the benefits are likely to outweigh the risks if appropriate safeguards are implemented.
 
 
 ## Collaboration and Meeting Evidence
