@@ -91,6 +91,7 @@ A key learning point was that risk identification in ICPS should not focus on in
 The activity also showed that effective risk modelling should connect analysis with practical mitigation. The six-step methodology demonstrates that identifying assets, threats and vulnerabilities is only the starting point. A useful threat model should also support risk evaluation, prioritisation and the design of targeted countermeasures. The use of a digital twin was particularly important because it showed how threat modelling can be linked to the system design lifecycle and, where appropriate, to the deployment of countermeasures.
 
 Overall, this activity strengthened my ability to think about risk in a more structured and practical way. In future work, I would approach cyber-physical risk assessment by considering not only individual vulnerabilities, but also system dependencies, safety impact, operational priorities and the feasibility of implementing countermeasures in live industrial environments.
+
 ---
 
 ## References
