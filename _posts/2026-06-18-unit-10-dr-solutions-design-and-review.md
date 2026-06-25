@@ -42,7 +42,7 @@ My response focused on two main questions. First, I examined the cloud vendor lo
 
 ## Visual Summary
 
-<img src="/assets/images/SRM/Unit10/dr_cloud_security_flowchart.png" alt="Flowchart summarising cloud vendor lock-in, cloud security risks and disaster recovery design" width="800">
+<img src="/assets/images/SRM/Unit10/dr_cloud_security_flowchart.png" alt="Flowchart summarising cloud vendor lock-in, cloud security risks and disaster recovery design" width="600">
 
 **Figure 1.** Disaster recovery framing of cloud vendor lock-in and modern cloud security risks.
 
