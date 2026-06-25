@@ -8,7 +8,7 @@ tags: [unit5, e-portfolio, gdpr, data-protection, phishing, breach-notification]
 
 GDPR Case Study: Inquiry concerning the University of Limerick
 
-Introduction
+#Introduction
 
 This case study examines the Data Protection Commission’s final decision concerning the University of Limerick. The inquiry arose after a series of personal data breaches involving unauthorised access to staff email accounts between November 2018 and January 2020. The case is relevant to information security management because it demonstrates how phishing attacks, weak email security controls and delayed breach handling can create significant GDPR compliance risks. The decision is particularly concerned with the security of processing, breach notification duties and the need for appropriate technical and organisational measures (Data Protection Commission, 2025). 
 
@@ -26,7 +26,7 @@ Table 1 summarises the main GDPR issues identified in the University of Limerick
 
 As shown in Table 1, the case was not limited to a technical phishing incident. It also raised wider governance concerns relating to breach notification, records of processing and the adequacy of organisational security controls. 
 
-Specific aspect of GDPR addressed
+#Specific aspect of GDPR addressed
 
 The main GDPR aspect addressed in this case is the principle of integrity and confidentiality under Article 5(1)(f), together with the requirement for security of processing under Article 32(1). These provisions require organisations to protect personal data against unauthorised or unlawful processing, accidental loss, destruction or damage through appropriate technical and organisational measures (European Parliament and Council, 2016).
 
@@ -34,7 +34,7 @@ In the University of Limerick case, unauthorised third parties gained access to 
 
 The case also addresses Articles 30(1), 33(1) and 34(1) GDPR. Article 30(1) concerns the obligation to maintain records of processing activities. Article 33(1) requires controllers to notify the supervisory authority of a personal data breach without undue delay and, where feasible, within 72 hours. Article 34(1) requires affected individuals to be informed where a breach is likely to result in a high risk to their rights and freedoms. As shown in the decision’s summary table of incidents, several breaches were reported to the DPC after unauthorised access had already occurred, demonstrating the importance of timely detection, escalation and notification. 
 
-How the issue was resolved
+##How the issue was resolved
 
 The issue was resolved through a regulatory inquiry by the Data Protection Commission. The DPC found that the University of Limerick had infringed Articles 5(1)(f), 32(1), 30(1), 33(1) and 34(1) GDPR. The decision concluded that the university had not implemented a level of security appropriate to the risks associated with its staff email system at the time of the breaches (Data Protection Commission, 2025). 
 
@@ -42,7 +42,7 @@ The DPC imposed a reprimand and administrative fines totalling €98,000. This i
 
 Therefore, the resolution was not limited to financial penalties. It also involved recognising the need for improved governance, stronger technical controls and more effective organisational processes. This reflects a wider GDPR principle: compliance requires both security technology and accountable management practices.
 
-Steps an Information Security Manager should take
+###Steps an Information Security Manager should take
 
 If a similar incident occurred in an organisation, the Information Security Manager should take a structured and risk-based response. First, the immediate priority should be containment. Compromised accounts should be disabled, passwords reset, active sessions revoked and suspicious forwarding rules removed. The organisation should also review the affected mailboxes to identify what personal data was accessed, altered or disclosed.
 
@@ -54,11 +54,12 @@ Fourth, organisational controls should be improved. Staff should receive regular
 
 Finally, the organisation should reduce reliance on email as a storage location for personal data. Sensitive information should be stored in controlled systems with appropriate permissions, retention rules and audit logging. Regular risk assessments and data protection impact assessments should be used to ensure that security measures remain proportionate to the nature and volume of personal data being processed. This would support GDPR compliance while also improving the organisation’s overall security maturity.
 
-Conclusion
+#Conclusion
 
 The University of Limerick case demonstrates that GDPR compliance depends on effective technical controls, timely breach management and strong organisational governance. The central issue was the failure to maintain an appropriate level of security for staff email accounts, which led to unauthorised access to personal data. The DPC’s decision shows that organisations must not only respond to incidents after they occur, but also proactively assess risks, strengthen controls and maintain clear accountability for personal data protection.
 
-Reference list
+
+#Reference:
 
 Data Protection Commission (2025) Final Decision: Inquiry concerning the University of Limerick. Dublin: Data Protection Commission.
 
