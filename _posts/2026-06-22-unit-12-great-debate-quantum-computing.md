@@ -1,4 +1,3 @@
-```markdown id="jjtjs3"
 ---
 layout: post
 title: "Unit 12 Seminar: The Great Debate – The Future of SRM"
@@ -110,4 +109,3 @@ NCSC (2025) *Timelines for migration to post-quantum cryptography*. London: Nati
 NIST (2024) *Module-Lattice-Based Key-Encapsulation Mechanism Standard*. FIPS 203. Gaithersburg, MD: National Institute of Standards and Technology.
 
 UK Government (2018) *The Network and Information Systems Regulations 2018*. London: HMSO.
-```
