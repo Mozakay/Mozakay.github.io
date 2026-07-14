@@ -16,24 +16,6 @@ The assignment also required a disaster recovery solution capable of supporting 
 
 ---
 
-## Assignment Activity Summary
-
-| Area | Summary |
-|---|---|
-| Assessment | Individual Executive Summary |
-| Unit | Unit 11 |
-| Business scenario | Pampered Pets post-digitalisation |
-| Main changes assessed | International suppliers, automated warehouses, online operations, WMS, CRM and cloud services |
-| Main outcomes assessed | Product quality, product availability and digital supply-chain security |
-| Quantitative method | Monte Carlo simulation with 10,000 iterations |
-| Supporting methods | Probability-impact scoring, deterministic cross-check and heat-map presentation |
-| Risk response framework | Transfer, Accept, Reduce and Avoid (TARA) |
-| DR requirement | 24/7/365 availability with RTO and RPO below one minute |
-| Recommended platform | Amazon Web Services with Amazon Aurora Global Database |
-| Main evidence | Risk model, Python outputs, quantitative results, DR architecture and final recommendations |
-
----
-
 ## How the Assessment Scope Was Defined
 
 The assessment began by examining the business as a connected digital supply-chain system rather than treating digitalisation as a general technology change. This helped the author identify where failures could occur and how one failure could affect several business outcomes.
@@ -50,7 +32,7 @@ Particular emphasis was placed on **information-flow risks** because the digital
 
 ### Post-digitalisation assessment process
 
-<img src="/assets/images/SRM/Unit11/Post-Digitalisation-Supply-Chain-Risk.png" alt="Post-digitalisation supply-chain risk and disaster recovery assessment process" width="800">
+<img src="/assets/images/SRM/Unit11/Post-Digitalisation-Supply-Chain-Risk.png" alt="Post-digitalisation supply-chain risk and disaster recovery assessment process" width="600">
 
 **Figure 1.** The process followed to move from the digitalisation scenario to risk modelling, prioritisation and disaster recovery recommendations.
 
@@ -119,13 +101,13 @@ The model was developed and tested in Python, and the code was then saved in the
 
 ### Successful execution and reproducibility settings
 
-<img src="/assets/images/SRM/Unit11/Successful-Execution-and-Reproducibility-Settings.png" alt="Python execution showing the random seed and 10000 Monte Carlo iterations" width="800">
+<img src="/assets/images/SRM/Unit11/Successful-Execution-and-Reproducibility-Settings.png" alt="Python execution showing the random seed and 10000 Monte Carlo iterations" width="600">
 
 **Figure 2.** Evidence that the model ran with a documented random seed and 10,000 iterations.
 
 ### Risk assumptions and expected exposure
 
-<img src="/assets/images/SRM/Unit11/Python-Output-for-Risk-Assumptions-and-Exposure.png" alt="Python output showing the risk assumptions, mean probabilities, impacts and expected exposure scores" width="800">
+<img src="/assets/images/SRM/Unit11/Python-Output-for-Risk-Assumptions-and-Exposure.png" alt="Python output showing the risk assumptions, mean probabilities, impacts and expected exposure scores" width="600">
 
 **Figure 3.** Python output showing the assumptions and calculated exposure values.
 
@@ -147,7 +129,7 @@ The individual risk ranking showed that inventory data inaccuracy was the highes
 
 ### Probability and impact ranking
 
-<img src="/assets/images/SRM/Unit11/Probability × impact results.png" alt="Probability multiplied by impact ranking for the five digital supply-chain risks" width="800">
+<img src="/assets/images/SRM/Unit11/Probability × impact results.png" alt="Probability multiplied by impact ranking for the five digital supply-chain risks" width="600">
 
 **Figure 4.** The probability and impact ranking used to prioritise the five risks.
 
@@ -161,7 +143,7 @@ The aggregate Monte Carlo results were:
 
 ### Monte Carlo simulation results
 
-<img src="/assets/images/SRM/Unit11/Monte Carlo simulation results.png" alt="Monte Carlo simulation output showing quality, availability and security probabilities" width="800">
+<img src="/assets/images/SRM/Unit11/Monte Carlo simulation results.png" alt="Monte Carlo simulation output showing quality, availability and security probabilities" width="600">
 
 **Figure 5.** Monte Carlo results from 10,000 iterations.
 
@@ -175,7 +157,7 @@ A deterministic cross-check was also completed using the most likely probability
 
 ### Deterministic cross-check
 
-<img src="/assets/images/SRM/Unit11/Python Output for the Deterministic Cross-Check.png" alt="Python output showing the deterministic cross-check of quality, availability and security probabilities" width="800">
+<img src="/assets/images/SRM/Unit11/Python Output for the Deterministic Cross-Check.png" alt="Python output showing the deterministic cross-check of quality, availability and security probabilities" width="600">
 
 **Figure 6.** The deterministic cross-check using the most likely probability values.
 
