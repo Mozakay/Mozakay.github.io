@@ -8,66 +8,84 @@ tags: [unit11, individual-assignment, digitalisation, supply-chain-risk, monte-c
 
 ## Overview
 
-This post presents evidence from my **Unit 11 Individual Assignment** for the Security and Risk Management module. The task required me to assess how the proposed digitalisation of Pampered Pets could affect product quality, product availability and supply-chain security.
+This post presents evidence from the author's **Unit 11 Individual Assignment** for the Security and Risk Management module. The task required an assessment of how the proposed digitalisation of Pampered Pets could affect product quality, product availability and supply-chain security.
 
-I approached the assignment by first defining the new operating environment created by the digital transformation. This included the online shop, international suppliers, automated warehouses, the warehouse management system (WMS), customer relationship management (CRM), logistics partners and cloud services. I then identified the risks created by these dependencies, developed a quantitative model to estimate their probabilities and used the results to prioritise practical recommendations.
+The assignment was approached by first defining the new operating environment created by the digital transformation. This included the online shop, international suppliers, automated warehouses, the warehouse management system (WMS), customer relationship management (CRM), logistics partners and cloud services. The author then identified the risks created by these dependencies, developed a quantitative model to estimate their probabilities and used the results to prioritise practical recommendations.
 
-The assignment also required a disaster recovery solution capable of supporting 24/7/365 availability, with both the Recovery Time Objective (RTO) and Recovery Point Objective (RPO) below one minute. I therefore designed an AWS active-active multi-region solution and considered the associated vendor lock-in risks.
+The assignment also required a disaster recovery solution capable of supporting 24/7/365 availability, with both the Recovery Time Objective (RTO) and Recovery Point Objective (RPO) below one minute. The author therefore designed an AWS active-active multi-region solution and considered the associated vendor lock-in risks.
 
 ---
 
-## How I Defined the Assessment Scope
+## Assignment Activity Summary
 
-I began by examining the business as a connected digital supply-chain system rather than treating digitalisation as a general technology change. This helped me identify where failures could occur and how one failure could affect several business outcomes.
-
-I divided the system into three flows:
-
-| Supply-chain flow | How I applied it |
+| Area | Summary |
 |---|---|
-| Product flow | I considered how products move from international suppliers through logistics and automated warehouses to customers. |
-| Information flow | I examined online orders, inventory records, WMS data, CRM information, supplier communication and fulfilment status. |
-| Financial flow | I included online payments, supplier invoices, transaction records and shipping costs. |
+| Assessment | Individual Executive Summary |
+| Unit | Unit 11 |
+| Business scenario | Pampered Pets post-digitalisation |
+| Main changes assessed | International suppliers, automated warehouses, online operations, WMS, CRM and cloud services |
+| Main outcomes assessed | Product quality, product availability and digital supply-chain security |
+| Quantitative method | Monte Carlo simulation with 10,000 iterations |
+| Supporting methods | Probability-impact scoring, deterministic cross-check and heat-map presentation |
+| Risk response framework | Transfer, Accept, Reduce and Avoid (TARA) |
+| DR requirement | 24/7/365 availability with RTO and RPO below one minute |
+| Recommended platform | Amazon Web Services with Amazon Aurora Global Database |
+| Main evidence | Risk model, Python outputs, quantitative results, DR architecture and final recommendations |
 
-I chose to place particular emphasis on **information-flow risks** because the digital supply chain depends on accurate, secure and integrated data. During this stage, I learned that product availability and quality are not determined only by physical stock. They can also be affected by incorrect inventory records, failed system interfaces, inaccurate warehouse data or disrupted supplier communication.
+---
+
+## How the Assessment Scope Was Defined
+
+The assessment began by examining the business as a connected digital supply-chain system rather than treating digitalisation as a general technology change. This helped the author identify where failures could occur and how one failure could affect several business outcomes.
+
+The system was divided into three flows:
+
+| Supply-chain flow | Application in the assessment |
+|---|---|
+| Product flow | The assessment considered how products move from international suppliers through logistics and automated warehouses to customers. |
+| Information flow | The assessment examined online orders, inventory records, WMS data, CRM information, supplier communication and fulfilment status. |
+| Financial flow | The assessment included online payments, supplier invoices, transaction records and shipping costs. |
+
+Particular emphasis was placed on **information-flow risks** because the digital supply chain depends on accurate, secure and integrated data. During this stage, the author learned that product availability and quality are not determined only by physical stock. They can also be affected by incorrect inventory records, failed system interfaces, inaccurate warehouse data or disrupted supplier communication.
 
 ### Post-digitalisation assessment process
 
 <img src="/assets/images/SRM/Unit11/Post-Digitalisation-Supply-Chain-Risk.png" alt="Post-digitalisation supply-chain risk and disaster recovery assessment process" width="800">
 
-**Figure 1.** The process I followed to move from the digitalisation scenario to risk modelling, prioritisation and disaster recovery recommendations.
+**Figure 1.** The process followed to move from the digitalisation scenario to risk modelling, prioritisation and disaster recovery recommendations.
 
 ---
 
-## How I Identified the Risks
+## How the Risks Were Identified
 
-I selected five risks that directly reflected the changes proposed in the scenario. My aim was to avoid creating a general list of digital risks and instead focus on risks that could realistically arise from international supply-chain expansion, warehouse automation and online operations.
+Five risks were selected because they directly reflected the changes proposed in the scenario. The aim was to avoid creating a general list of digital risks and instead focus on risks that could realistically arise from international supply-chain expansion, warehouse automation and online operations.
 
-| Risk | Why I selected it | Main business effect |
+| Risk | Reason for selection | Main business effect |
 |---|---|---|
-| R1: Inventory data inaccuracy | I included this because incorrect stock records could cause the online shop to accept orders for unavailable products. | Availability |
-| R2: System integration failure | I included this because the e-commerce platform, CRM, inventory system, WMS and logistics systems must exchange data accurately. | Availability and quality |
-| R3: Cybersecurity breach or ransomware | I included this because connected systems and third parties increase the potential attack surface. | Availability and security |
-| R4: International supplier or logistics disruption and quality variation | I included this because international expansion introduces supplier, customs, transport and storage uncertainty. | Quality and availability |
-| R5: Automated warehouse system failure | I included this because the new operating model depends on WMS, scanners, sensors, warehouse networks and automated equipment. | Availability and quality |
+| R1: Inventory data inaccuracy | This risk was included because incorrect stock records could cause the online shop to accept orders for unavailable products. | Availability |
+| R2: System integration failure | This risk was included because the e-commerce platform, CRM, inventory system, WMS and logistics systems must exchange data accurately. | Availability and quality |
+| R3: Cybersecurity breach or ransomware | This risk was included because connected systems and third parties increase the potential attack surface. | Availability and security |
+| R4: International supplier or logistics disruption and quality variation | This risk was included because international expansion introduces supplier, customs, transport and storage uncertainty. | Quality and availability |
+| R5: Automated warehouse system failure | This risk was included because the new operating model depends on WMS, scanners, sensors, warehouse networks and automated equipment. | Availability and quality |
 
-This stage improved my understanding of the difference between identifying a threat and describing its business consequence. For example, system integration failure is a technical risk, but its business effect may be an incorrect order, a delayed dispatch or a product-quality problem.
+This stage improved the author's understanding of the difference between identifying a threat and describing its business consequence. For example, system integration failure is a technical risk, but its business effect may be an incorrect order, a delayed dispatch or a product-quality problem.
 
 ---
 
-## How I Developed the Quantitative Model
+## How the Quantitative Model Was Developed
 
-After identifying the risks, I needed to estimate their probabilities. Pampered Pets did not have historical data for the proposed international digital supply chain, so I could not justify using precise single values as if they were measured frequencies.
+After identifying the risks, their probabilities needed to be estimated. Pampered Pets did not have historical data for the proposed international digital supply chain, so the use of precise single values as if they were measured frequencies could not be justified.
 
-I therefore assigned each risk:
+Each risk was therefore assigned:
 
 - a minimum probability;
 - a most likely probability;
 - a maximum probability;
 - an impact score from 1 to 5.
 
-I used triangular distributions because they allowed me to represent uncertainty while still distinguishing the most plausible value from the lower and upper estimates. The probability ranges were informed by the scenario, academic literature, professional sources and judgement.
+Triangular distributions were used because they allowed uncertainty to be represented while still distinguishing the most plausible value from the lower and upper estimates. The probability ranges were informed by the scenario, academic literature, professional sources and judgement.
 
-I then developed a Monte Carlo simulation in Python using **10,000 iterations**. In each iteration, the model sampled a probability for every risk and calculated the probability of at least one relevant quality, availability or security issue.
+The author then developed a Monte Carlo simulation in Python using **10,000 iterations**. In each iteration, the model sampled a probability for every risk and calculated the probability of at least one relevant quality, availability or security issue.
 
 The model also calculated exposure using:
 
@@ -75,11 +93,11 @@ The model also calculated exposure using:
 Exposure = Probability × Impact
 ```
 
-I used the most likely probability for the risk-priority ranking and the sampled probability ranges for the aggregate Monte Carlo outcomes.
+The most likely probability was used for the risk-priority ranking, while the sampled probability ranges were used for the aggregate Monte Carlo outcomes.
 
-### Assumptions I documented
+### Documented assumptions
 
-To make the model transparent, I recorded the following assumptions:
+To make the model transparent, the following assumptions were recorded:
 
 - the model covers the first 12 months after implementation;
 - a material event includes a failed customer order, quality deviation, online-service outage or security incident requiring formal response;
@@ -89,13 +107,13 @@ To make the model transparent, I recorded the following assumptions:
 - shared causes may cause the combined exposure to be understated or overstated;
 - impact is scored from 1 to 5 according to operational and commercial harm.
 
-One of the main lessons from this stage was that a quantitative model is not made reliable simply because it produces numerical results. The assumptions, data limitations and calculation method must also be explained so that the reader can understand how the results were produced.
+One of the main lessons from this stage was that a quantitative model is not made reliable simply because it produces numerical results. The author recognised that the assumptions, data limitations and calculation method must also be explained so that the reader can understand how the results were produced.
 
 ---
 
 ## Python Model and Reproducibility Evidence
 
-I developed and tested the model in Python, then saved the code in the repository so that the results could be reproduced.
+The model was developed and tested in Python, and the code was then saved in the repository so that the results could be reproduced.
 
 [View the Monte Carlo simulation code](/assets/code/SRM/monte_carlo_simulation.py)
 
@@ -111,11 +129,11 @@ I developed and tested the model in Python, then saved the code in the repositor
 
 **Figure 3.** Python output showing the assumptions and calculated exposure values.
 
-Creating the code helped me move beyond describing risks qualitatively. It allowed me to test how uncertainty across several risks could influence wider business outcomes.
+Creating the code helped the author move beyond describing risks qualitatively. It enabled the effect of uncertainty across several risks on wider business outcomes to be tested.
 
 ---
 
-## What the Quantitative Results Showed
+## Quantitative Results
 
 The individual risk ranking showed that inventory data inaccuracy was the highest priority.
 
@@ -131,7 +149,7 @@ The individual risk ranking showed that inventory data inaccuracy was the highes
 
 <img src="/assets/images/SRM/Unit11/Probability × impact results.png" alt="Probability multiplied by impact ranking for the five digital supply-chain risks" width="800">
 
-**Figure 4.** The probability and impact ranking I used to prioritise the five risks.
+**Figure 4.** The probability and impact ranking used to prioritise the five risks.
 
 The aggregate Monte Carlo results were:
 
@@ -147,7 +165,7 @@ The aggregate Monte Carlo results were:
 
 **Figure 5.** Monte Carlo results from 10,000 iterations.
 
-I also completed a deterministic cross-check using the most likely probability for each risk.
+A deterministic cross-check was also completed using the most likely probability for each risk.
 
 | Outcome | Deterministic result | Monte Carlo mean |
 |---|---:|---:|
@@ -161,25 +179,25 @@ I also completed a deterministic cross-check using the most likely probability f
 
 **Figure 6.** The deterministic cross-check using the most likely probability values.
 
-The cross-check did not provide independent validation, but it helped me confirm that the simulation results were consistent with the underlying assumptions. This taught me that model outputs should be checked for reasonableness rather than accepted automatically.
+The cross-check did not provide independent validation, but it helped the author confirm that the simulation results were consistent with the underlying assumptions. This demonstrated that model outputs should be checked for reasonableness rather than accepted automatically.
 
 ---
 
-## How I Interpreted the Results
+## Interpretation of the Results
 
-The most important result was the **87.9% probability of at least one availability issue**. I interpreted this as evidence that the online business would be highly dependent on several connected controls, including inventory accuracy, system integration, supplier continuity and warehouse availability.
+The most important result was the **87.9% probability of at least one availability issue**. This was interpreted as evidence that the online business would be highly dependent on several connected controls, including inventory accuracy, system integration, supplier continuity and warehouse availability.
 
-The estimated probability of at least one **quality issue was 66.9%**. I linked this result mainly to supplier or logistics variation, system integration problems and warehouse control weaknesses. This was significant because Pampered Pets depends on product reputation and expects to serve high-profile customers.
+The estimated probability of at least one **quality issue was 66.9%**. This result was linked mainly to supplier or logistics variation, system integration problems and warehouse control weaknesses. It was significant because Pampered Pets depends on product reputation and expects to serve high-profile customers.
 
-The estimated probability of at least one **security issue was 21.7%**. Although this was lower than the other outcome probabilities, I did not treat it as unimportant. The ransomware scenario had an impact score of 5 and could interrupt the online shop, WMS, order processing and access to operational data.
+The estimated probability of at least one **security issue was 21.7%**. Although this was lower than the other outcome probabilities, it was not treated as unimportant. The ransomware scenario had an impact score of 5 and could interrupt the online shop, WMS, order processing and access to operational data.
 
-This part of the activity helped me understand that probability alone should not determine business priority. A lower-probability risk may still require strong controls when its potential impact is critical.
+This part of the activity helped the author understand that probability alone should not determine business priority. A lower-probability risk may still require strong controls when its potential impact is critical.
 
 ---
 
-## How I Developed the Recommendations
+## How the Recommendations Were Developed
 
-I used the model results, exposure scores and commercial importance of each outcome to prioritise the recommendations. I then mapped the recommendations to the Transfer, Accept, Reduce and Avoid (TARA) framework.
+The model results, exposure scores and commercial importance of each outcome were used to prioritise the recommendations. The recommendations were then mapped to the Transfer, Accept, Reduce and Avoid (TARA) framework.
 
 | Priority | Recommendation | Basis | TARA response |
 |---:|---|---|---|
@@ -192,7 +210,7 @@ I used the model results, exposure scores and commercial importance of each outc
 | 7 | GDPR and data governance process | Linked to R2 and R3 data and security risks | Reduce and Avoid |
 | 8 | Vendor lock-in reduction process | Linked to cloud and DR platform dependency | Reduce |
 
-I recommended controls such as:
+The recommended controls included:
 
 - barcode scanning;
 - WMS validation;
@@ -209,15 +227,15 @@ I recommended controls such as:
 - data minimisation;
 - supplier data-processing agreements.
 
-This stage helped me understand how quantitative results can support decisions without replacing professional judgement. The model helped establish the priority order, but the final recommendations also had to consider reputation, customer trust, legal obligations and operational resilience.
+This stage helped the author understand how quantitative results can support decisions without replacing professional judgement. The model helped establish the priority order, but the final recommendations also had to consider reputation, customer trust, legal obligations and operational resilience.
 
 ---
 
-## How I Designed the Disaster Recovery Solution
+## How the Disaster Recovery Solution Was Designed
 
-The assignment specified that the online shop must remain available 24/7/365, with both RTO and RPO below one minute. I therefore ruled out cold standby, periodic restoration and manual recovery because they would not reliably achieve the required recovery window.
+The assignment specified that the online shop must remain available 24/7/365, with both RTO and RPO below one minute. Cold standby, periodic restoration and manual recovery were therefore ruled out because they would not reliably achieve the required recovery window.
 
-I designed an **AWS active-active multi-region application architecture** supported by:
+An **AWS active-active multi-region application architecture** was designed with:
 
 - two active application regions;
 - live traffic distribution;
@@ -232,19 +250,19 @@ I designed an **AWS active-active multi-region application architecture** suppor
 
 <img src="/assets/images/SRM/Unit11/disaster_recovery_architecture.png" alt="AWS active-active multi-region disaster recovery architecture designed for sub-one-minute RTO and RPO" width="800">
 
-**Figure 7.** The AWS active-active multi-region disaster recovery solution I proposed for sub-one-minute RTO and RPO.
+**Figure 7.** The proposed AWS active-active multi-region disaster recovery solution for sub-one-minute RTO and RPO.
 
-I recommended AWS for the online shop and critical supporting data services because the platform can support multi-region deployment, automated failover and near-real-time replication. I selected Amazon Aurora Global Database for the critical order and transaction database.
+AWS was recommended for the online shop and critical supporting data services because the platform can support multi-region deployment, automated failover and near-real-time replication. Amazon Aurora Global Database was selected for the critical order and transaction database.
 
-Designing this solution helped me understand that RTO and RPO are not only policy targets. They directly affect architecture, replication, monitoring, failover readiness, capacity planning and testing.
+Designing this solution helped the author understand that RTO and RPO are not only policy targets. They directly affect architecture, replication, monitoring, failover readiness, capacity planning and testing.
 
 ---
 
-## How I Addressed Vendor Lock-In and GDPR
+## How Vendor Lock-In and GDPR Were Addressed
 
-I did not treat the choice of AWS as risk-free. I recognised that reliance on one cloud provider could increase migration difficulty and switching cost.
+The choice of AWS was not treated as risk-free. The author recognised that reliance on one cloud provider could increase migration difficulty and switching cost.
 
-I therefore recommended:
+The following controls were therefore recommended:
 
 - portable backups;
 - contractual data-export rights;
@@ -254,25 +272,25 @@ I therefore recommended:
 - documented migration procedures;
 - a tested exit plan.
 
-I also linked GDPR and security controls to the digital supply-chain risks. The recommended controls included data minimisation, role-based access control and supplier data-processing agreements.
+GDPR and security controls were also linked to the digital supply-chain risks. The recommended controls included data minimisation, role-based access control and supplier data-processing agreements.
 
-This part of the assignment improved my understanding that cloud adoption creates both resilience benefits and dependency risks. A strong solution should use the platform’s capabilities while preserving the organisation’s ability to retrieve, move and govern its data.
+This part of the assignment improved the author's understanding that cloud adoption creates both resilience benefits and dependency risks. A strong solution should use the platform’s capabilities while preserving the organisation’s ability to retrieve, move and govern its data.
 
 ---
 
 ## Reflection
 
-This assignment changed the way I understand quantitative risk assessment. Before completing the activity, I mainly associated risk assessment with qualitative likelihood and impact categories. Developing the Monte Carlo model showed me how probability ranges can represent uncertainty more realistically than unsupported single-point estimates.
+This assignment changed the author's understanding of quantitative risk assessment. Before completing the activity, the author mainly associated risk assessment with qualitative likelihood and impact categories. Developing the Monte Carlo model demonstrated how probability ranges can represent uncertainty more realistically than unsupported single-point estimates.
 
-I also learned the importance of distinguishing between an individual risk and an aggregate business outcome. Each of the five risks had its own probability and impact score, but several risks contributed to the same outcome. The availability result demonstrated how inventory errors, integration failures, supplier disruption and warehouse failures could collectively create a much higher overall exposure.
+The author also learned the importance of distinguishing between an individual risk and an aggregate business outcome. Each of the five risks had its own probability and impact score, but several risks contributed to the same outcome. The availability result demonstrated how inventory errors, integration failures, supplier disruption and warehouse failures could collectively create a much higher overall exposure.
 
-Another important learning point was the need to be transparent about limitations. The model used scenario-based probabilities because historical data were unavailable. I therefore documented the assumptions, explained the role of the sources and acknowledged the approximate independence assumption. This helped me recognise that a useful model does not need to claim perfect precision, but it must explain what the results mean and what they do not mean.
+Another important learning point was the need to be transparent about limitations. The model used scenario-based probabilities because historical data were unavailable. The assumptions were therefore documented, the role of the sources was explained and the approximate independence assumption was acknowledged. This helped the author recognise that a useful model does not need to claim perfect precision, but it must explain what the results mean and what they do not mean.
 
-The deterministic cross-check also strengthened my approach to reviewing model outputs. Although it was not an independent validation method, it gave me a practical way to confirm that the simulation followed the expected pattern. In future work, I would extend this approach by testing dependencies between risks and updating the probability ranges using operational data collected after implementation.
+The deterministic cross-check also strengthened the author's approach to reviewing model outputs. Although it was not an independent validation method, it provided a practical way to confirm that the simulation followed the expected pattern. In future work, this approach could be extended by testing dependencies between risks and updating the probability ranges using operational data collected after implementation.
 
-The disaster recovery section helped me connect business requirements with technical architecture. The sub-one-minute RTO and RPO targets required more than backups. They required multi-region deployment, continuous monitoring, replication, automated failover and regular testing. This showed me how continuity objectives should influence system design from the beginning rather than being added after implementation.
+The disaster recovery section helped the author connect business requirements with technical architecture. The sub-one-minute RTO and RPO targets required more than backups. They required multi-region deployment, continuous monitoring, replication, automated failover and regular testing. This demonstrated how continuity objectives should influence system design from the beginning rather than being added after implementation.
 
-Overall, the assignment improved my ability to connect risk modelling, technical controls and business priorities. I learned that inventory accuracy, supplier assurance, cybersecurity, GDPR, disaster recovery and vendor portability are not separate concerns. They collectively protect product reputation, customer trust, online availability and long-term resilience.
+Overall, the assignment improved the author's ability to connect risk modelling, technical controls and business priorities. The author learned that inventory accuracy, supplier assurance, cybersecurity, GDPR, disaster recovery and vendor portability are not separate concerns. They collectively protect product reputation, customer trust, online availability and long-term resilience.
 
 ---
 
