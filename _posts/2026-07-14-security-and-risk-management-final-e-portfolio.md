@@ -144,52 +144,122 @@ Collaboration improved the work when it changed reasoning rather than merely div
 
 ## Critical Evaluation of Unit 11 against Unit 6
 
-The Unit 6 status document provided a proportionate qualitative baseline by linking Pampered Pets’ assets, threats and vulnerabilities to Low, Medium and High ratings. This method was accessible to a small organisation and supported initial prioritisation through NIST CSF 2.0. However, the categories compressed several judgements into a single label and did not represent the extent of uncertainty behind each likelihood assessment.
+### Overview
+
+This section evaluates how the risk assessment methodology and analytical reasoning developed from the Unit 6 status document to the Unit 11 final project. The comparison does not treat Unit 11 as a replacement for Unit 6. Instead, it examines how the initial qualitative and collaboratively developed assessment provided a foundation for a more focused, transparent and quantitatively supported analysis.
+
+Unit 6 used a qualitative, asset-based methodology structured through the National Institute of Standards and Technology Cybersecurity Framework (NIST CSF) 2.0. Unit 11 retained the underlying logic of identifying threats, vulnerabilities, likelihood, impact and controls, but changed the unit of analysis from individual assets to interconnected supply-chain flows, risk scenarios and aggregate business outcomes. The progression therefore involved a change in both the analytical method and the way risk was conceptualised.
+
+### Comparative Summary
+
+| Evaluation area | Unit 6 | Unit 11 | Development demonstrated |
+|---|---|---|---|
+| **Methodology** | Qualitative and asset-based assessment using NIST CSF 2.0 | Flow-based and scenario-based assessment combining qualitative scoping and quantitative modelling | Risk analysis moved from individual assets towards an interconnected operating system |
+| **Unit of analysis** | Assets and proposed digitalisation changes | Risk scenarios, supply-chain flows and business outcomes | The analysis considered how several systems and processes could contribute to the same outcome |
+| **Likelihood** | Low, Medium and High ratings | Minimum, most likely and maximum probability ranges | Uncertainty became more visible and explicit |
+| **Impact** | Qualitative ratings | Impact scores from 1 to 5 | Prioritisation became more differentiated, although the scores remained ordinal |
+| **Calculations** | Qualitative combination of likelihood and impact | Probability × impact exposure, Monte Carlo simulation and deterministic cross-check | The method became more transparent and reproducible |
+| **Recommendations** | Phased implementation plan | Risk-ranked recommendations linked to TARA responses | Unit 6 explained implementation sequence; Unit 11 strengthened the justification for priority |
+| **Limitations** | Methodological limitations were not developed fully | Data limitations, scenario assumptions, distributions and independence assumptions were documented | Unit 11 responded directly to the feedback received after Unit 6 |
+| **Collaboration** | Team project based on task division and integration | Individual project refined through discussion with the tutor and a colleague | Collaboration developed from shared production to informed independent judgement |
+| **Disaster recovery** | Backups, procedures and general DR planning | Active-active multi-region architecture based on measurable RTO and RPO | Continuity objectives were translated into technical design requirements |
+
+### Development from an Asset-Based to a Flow-Based Methodology
+
+Unit 6 established the initial risk assessment foundation by linking each asset or proposed digitalisation change to a threat, vulnerability, likelihood, impact, risk level, NIST CSF function and mitigation. Risks affecting the old warehouse computer, shared Wi-Fi, customer records, e-mail orders and local suppliers were classified as Low, Medium or High. This method was proportionate to the size and security maturity of Pampered Pets and produced results that could be understood by non-technical decision-makers.
+
+The assessment also demonstrated that digitalisation should not be treated automatically as a risk reduction. Existing weaknesses could be inherited and amplified by the introduction of e-commerce, cloud inventory, customer accounts and international suppliers.
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit6/Current-VS-Digitalised-Risk-Situation.png" alt="Unit 6 current and digitalised risk comparison" width="750">
 
-**Figure 18.** Unit 6 qualitative baseline used to evaluate the proposed digitalisation.
+**Figure 18.** Unit 6 qualitative baseline showing the movement from inherited current-state weaknesses to controlled digitalisation.
 
-Unit 11 extended this foundation by treating the organisation as an interconnected digital supply-chain system rather than a collection of isolated assets. Probability ranges, triangular distributions and 10,000 Monte Carlo iterations represented uncertainty more explicitly, while a deterministic cross-check supported review of the model’s internal consistency. The analysis also moved from individual risk ratings to aggregate effects on product quality, availability and security.
+However, the Unit 6 methodology remained largely asset-focused. Although this supported risk identification, it did not fully demonstrate how failures in different assets and processes could interact. Several risks were also assigned the same High rating, despite differences in their causes, urgency and potential business consequences. Low, Medium and High categories therefore supported communication but offered limited differentiation between competing priorities.
+
+Unit 11 changed the analytical perspective by treating Pampered Pets as an interconnected digital supply-chain system. The system was examined through product, information and financial flows rather than as a collection of independent technologies. Particular emphasis was placed on **information flow**, including online orders, inventory records, warehouse management system data, CRM information, supplier communication and fulfilment status.
+
+This focus was important because product quality and availability were no longer understood as outcomes determined only by physical stock and logistics. They could also be affected by inaccurate inventory records, failed interfaces, duplicated orders, delayed supplier communication, incorrect warehouse information and compromised operational data.
+
+### Influence of Collaboration and Feedback
+
+The Unit 6 report was developed collaboratively. Responsibilities were divided between the team members, research was shared and separately prepared sections were integrated into one report. This supported accountability and allowed the current business environment and proposed digitalisation to be assessed in parallel. However, separate drafting also created a need to align terminology, assumptions, referencing and analytical depth during the integration stage.
+
+The tutor feedback recognised the comprehensive coverage of the case, the identification of risk factors and assumptions, the use of recognised frameworks and the evidence of strong critique. However, it also indicated that the critical evaluation should have expanded further on the limitations and challenges associated with the applied risk assessment.
+
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit6/tutor-feedback-unit6.png" alt="Tutor feedback on the Unit 6 Security Risk Identification Report" width="750">
+
+**Figure 19.** Tutor feedback identifying the need for deeper evaluation of the limitations and challenges of the Unit 6 risk assessment.
+
+This feedback influenced the Unit 11 methodology. During the preparation of the final project, the proposed scope, risk scenarios and analytical approach were discussed with the tutor and a colleague. These discussions helped refine the assessment and encouraged a stronger focus on information-flow dependencies.
+
+The exchange of ideas did not remove individual responsibility for Unit 11. Instead, it improved the quality of the independent judgement by challenging the initial scope and clarifying which risks were most relevant to product quality, availability and supply-chain security. The development therefore demonstrates that collaboration can support independent work through critical discussion, rather than only through formal task division.
+
+### Development of Risk Identification and Quantitative Modelling
+
+Unit 11 moved from an asset-based snapshot to a flow-based and scenario-based methodology. Five risk scenarios were selected because they directly reflected the post-digitalisation operating model:
+
+1. inventory data inaccuracy;
+2. system integration failure;
+3. cybersecurity breach or ransomware;
+4. international supplier or logistics disruption and quality variation; and
+5. automated warehouse system failure.
+
+Each scenario was linked to the relevant supply-chain flow and its effect on quality, availability or security. This represented a development in analytical reasoning because it distinguished between the technical source of a risk and its wider business consequence.
+
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit11/Post-Digitalisation-Supply-Chain-Risk.png" alt="Post-digitalisation supply-chain risk and disaster recovery assessment process" width="650">
+
+**Figure 20.** Unit 11 methodology progressing from system scoping and information-flow analysis to quantitative modelling, prioritisation and disaster recovery recommendations.
+
+Unit 6 used qualitative likelihood and impact categories. Unit 11 used minimum, most likely and maximum probability estimates because Pampered Pets had no historical data for the proposed international digital supply chain. Triangular distributions represented these ranges, and 10,000 Monte Carlo iterations were used to test plausible combinations of uncertain events.
+
+The model also calculated probability × impact exposure scores and estimated the probability of at least one quality, availability or security issue. The analysis therefore moved from rating risks individually to examining how several risks could combine to affect broader business outcomes.
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit11/Monte%20Carlo%20simulation%20results.png" alt="Unit 11 aggregate Monte Carlo outcomes" width="750">
 
-**Figure 19.** Unit 11 quantitative outcomes showing the development from broad ratings to distributions and aggregate exposure.
+**Figure 21.** Unit 11 quantitative outcomes demonstrating the development from broad qualitative ratings to probability distributions and aggregate business exposure.
 
-Recovery requirements were also translated into an active-active multi-region design with measurable RTO and RPO objectives. This moved continuity planning beyond general backup recommendations towards architecture, replication, automated failover and testing.
+This numerical development improved prioritisation, but it did not produce certainty. The probability ranges were scenario-based estimates informed by literature, the business context and professional judgement. The impact scores were ordinal measures rather than direct estimates of financial loss. Exposure scores were therefore comparative prioritisation indicators, not exact expected losses.
+
+The deterministic cross-check supported review of internal consistency by comparing the simulation with calculations based on the most likely values. However, it did not provide independent empirical validation because both methods relied on the same underlying assumptions.
+
+Unit 11 also acknowledged the approximate independence assumption. Inventory inaccuracies, system integration problems and warehouse failures could share common causes, such as poor implementation, corrupted data or cloud disruption. The model could therefore understate or overstate combined exposure. Explicitly documenting these limitations represented a direct response to the Unit 6 feedback and demonstrated more critical use of the assessment method.
+
+### Development of Recommendations and Risk Treatment
+
+The recommendation approaches in the two units were complementary.
+
+Unit 6 was stronger in implementation sequencing. It recommended four phases: securing the existing environment, introducing a low-risk digital presence, adding transactional digitalisation and trialling international suppliers. This was proportionate to a small business because it prevented several high-risk changes from being implemented simultaneously.
+
+Unit 11 was stronger in analytical prioritisation. Recommendations were ranked according to probability, impact, exposure and business importance, and were linked to Transfer, Accept, Reduce and Avoid responses. Inventory accuracy received the highest priority, followed by supplier quality assurance and system integration governance.
+
+The strongest practical approach would combine both methods: Unit 11 would determine **what should receive priority**, while Unit 6 would help determine **when and in what sequence the controls should be implemented**.
+
+Both assessments could still be improved by distinguishing clearly between inherent and residual risk. Neither assessment recalculated the likelihood and impact remaining after the proposed controls. A future model could rerun the quantitative analysis using post-control probability ranges and compare the expected reduction with implementation cost.
+
+### Development of Disaster Recovery Reasoning
+
+Unit 6 identified missing backups and recovery procedures and recommended tested backups, vendor assessment and disaster recovery planning. These recommendations established a basic continuity-control foundation but did not translate recovery requirements into a detailed architecture.
+
+Unit 11 addressed a stricter requirement: 24/7/365 availability with RTO and RPO below one minute. This required an active-active multi-region design involving replication, continuous monitoring, automated traffic redirection, database failover and regular testing.
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit11/disaster_recovery_architecture.png" alt="Unit 11 active-active disaster recovery architecture" width="650">
 
-**Figure 20.** Unit 11 architecture translating continuity requirements into a technical design.
+**Figure 22.** Unit 11 architecture translating measurable continuity requirements into replication, monitoring, automated failover and testing.
 
-The later project nevertheless remained dependent on scenario-based estimates, selected distributions and an approximate independence assumption. The progression from Unit 6 to Unit 11 therefore did not replace qualitative judgement with numerical certainty. Instead, the collaboratively developed Unit 6 baseline informed a more transparent and independent approach that combined qualitative scoping, quantitative modelling and professional judgement according to the significance of the decision and the quality of available evidence.
+This represented a development from recommending recovery controls to designing a technical solution around business objectives. However, the architecture also introduced cost, complexity, specialist-skill requirements and cloud-provider dependency. Its proportionality would therefore require a formal business-impact and cost-benefit assessment.
 
+Unit 11 also recognised that a risk treatment may create a new risk. The use of AWS improved resilience but introduced vendor lock-in. Portable backups, data-export rights, open interfaces and a documented exit plan were therefore included to reduce this dependency.
 
-------
-## Critical Evaluation of the Development in Risk Assessment Methodology from Unit 6 to Unit 11
+### Overall Critical Judgement
 
-The comparison between Unit 6 and Unit 11 concerns the development of the risk assessment methodology and analytical reasoning rather than only the difference between the risks or final outputs. Unit 6 established the initial foundation through a qualitative, asset-based methodology structured around NIST CSF 2.0. Assets were linked to threats, vulnerabilities, likelihood, impact, risk level and mitigation, with risks classified as Low, Medium or High. This approach was proportionate to a small organisation and supported a shared understanding of the current and proposed digitalisation risks.
+Unit 11 demonstrated a clear methodological and analytical development from Unit 6. Unit 6 provided a proportionate and collaboratively developed qualitative baseline that identified assets, threats, vulnerabilities and control gaps. It was accessible, broad and strong in phased implementation planning, but its broad ratings did not fully expose assumptions, dependencies or differences between similarly rated risks.
 
-The Unit 6 project was completed collaboratively. Responsibilities were divided between the team members, research was shared, and the separate sections were integrated into a single report. This process supported accountability and enabled different aspects of the business to be examined. However, the methodology remained largely asset-focused, and the qualitative ratings did not always make the assumptions, dependencies or degree of confidence behind each judgement explicit.
+Unit 11 built on this foundation by analysing product, information and financial flows, with particular emphasis on information-flow risks. It selected material scenarios, represented probability through ranges, applied Monte Carlo simulation, estimated aggregate business outcomes and connected the findings to prioritised treatments and disaster recovery architecture.
 
-The tutor feedback recognised the comprehensive identification of risk factors, the application of recognised frameworks and the strength of the critique. However, it also stated that the critical evaluation should have elaborated further on the limitations and challenges associated with the applied risk assessment. This feedback became an important influence on the approach adopted in Unit 11.
+The development was influenced by both formal feedback and discussion. The Unit 6 tutor feedback identified the need for deeper consideration of methodological limitations, while the Unit 11 discussions with the tutor and a colleague helped refine the scope and strengthen the focus on information flow.
 
-<img src="/assets/images/SRM/Unit6/tutor-feedback-unit6.png" alt="Tutor feedback on the Unit 6 Security Risk Identification Report" width="750">
+Unit 11 should therefore not be presented as replacing qualitative assessment with numerical certainty. The stronger security and risk management process combines the two approaches. Qualitative asset-based analysis identifies the business context, threats, vulnerabilities and control gaps, while flow-based quantitative modelling makes uncertainty, dependencies and priority more explicit. Together, the two units demonstrate development from initial risk identification towards transparent decision support, risk treatment and resilience planning.
 
-**Figure 21.** Unit 6 tutor feedback highlighting the need for deeper evaluation of the limitations and challenges of the applied risk assessment.
-
-During the preparation of Unit 11, the proposed ideas and risk-analysis approach were discussed with the tutor and a colleague. These discussions helped refine the scope and encouraged a stronger focus on **information flow**. This was significant because the post-digitalisation business depended on accurate and secure exchanges between the online shop, inventory system, warehouse management system, CRM, logistics partners and suppliers. Product quality and availability were therefore understood not only as physical supply-chain issues, but also as outcomes that could be affected by inaccurate records, failed interfaces, delayed communication and compromised operational data.
-
-Unit 11 consequently moved from an asset-based snapshot towards a flow-based and scenario-based view of risk. The supply chain was examined through product, information and financial flows, with particular emphasis on information-flow dependencies. Five risk scenarios were then selected according to their potential effects on product quality, availability and supply-chain security.
-
-<img src="/assets/images/SRM/Unit11/Post-Digitalisation-Supply-Chain-Risk.png" alt="Post-digitalisation supply-chain risk and disaster recovery assessment process" width="650">
-
-**Figure 22.** Unit 11 methodology showing the development from system scoping and information-flow analysis to quantitative modelling, prioritisation and disaster recovery recommendations.
-
-The analytical method also developed from broad qualitative categories to a combined qualitative and quantitative process. Minimum, most likely and maximum probability estimates were used to represent uncertainty, triangular distributions were applied, and 10,000 Monte Carlo iterations were completed. A deterministic cross-check was used to test whether the results were consistent with the stated assumptions. More importantly, the limitations of the model were documented explicitly, including the absence of historical data, reliance on scenario-based estimates, the selected probability distributions and the approximate independence assumption.
-
-This represented a direct response to the Unit 6 feedback. The development was not simply from qualitative assessment to quantitative assessment, nor did numerical modelling eliminate professional judgement. Instead, the approach progressed from classifying individual risks to examining dependencies, information flows, uncertainty and aggregate business outcomes. Unit 6 provided the collaboratively developed foundation, while discussion with the tutor and a colleague helped Unit 11 apply that foundation through a more focused, transparent and critically evaluated methodology.
-------
 
 ## Final Critical Reflection
 
