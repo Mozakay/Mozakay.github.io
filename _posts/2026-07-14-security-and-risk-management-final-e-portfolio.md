@@ -134,9 +134,6 @@ The later individual project demonstrated increased independence through academi
 
 The contribution to the quantum-computing presentation focused on the introduction, the group position, the scope of the threat and the importance of the 2026–2031 preparation period. Translating an uncertain technical issue into a strategic argument strengthened communication with a non-specialist audience. The work-division evidence confirms coordinated preparation and a defined individual role.
 
-<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit12/GreatDebate/Work-division.png" alt="Work division for the quantum-computing debate" width="600">
-
-**Figure 17.** Work-division evidence identifying the contribution to the opening presentation section.
 
 ### Evaluation of Collaboration
 
@@ -170,10 +167,6 @@ Unit 6 established the initial risk assessment foundation by linking each asset 
 
 The assessment also demonstrated that digitalisation should not be treated automatically as a risk reduction. Existing weaknesses could be inherited and amplified by the introduction of e-commerce, cloud inventory, customer accounts and international suppliers.
 
-<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit6/Current-VS-Digitalised-Risk-Situation.png" alt="Unit 6 current and digitalised risk comparison" width="600">
-
-**Figure 18.** Unit 6 qualitative baseline showing the movement from inherited current-state weaknesses to controlled digitalisation.
-
 However, the Unit 6 methodology remained largely asset-focused. Although this supported risk identification, it did not fully demonstrate how failures in different assets and processes could interact. Several risks were also assigned the same High rating, despite differences in their causes, urgency and potential business consequences. Low, Medium and High categories therefore supported communication but offered limited differentiation between competing priorities.
 
 Unit 11 changed the analytical perspective by treating Pampered Pets as an interconnected digital supply-chain system. The system was examined through product, information and financial flows rather than as a collection of independent technologies. Particular emphasis was placed on **information flow**, including online orders, inventory records, warehouse management system data, CRM information, supplier communication and fulfilment status.
@@ -188,7 +181,7 @@ The tutor feedback recognised the comprehensive coverage of the case, the identi
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit6/tutor-feedback-unit6.png" alt="Tutor feedback on the Unit 6 Security Risk Identification Report" width="600">
 
-**Figure 19.** Tutor feedback identifying the need for deeper evaluation of the limitations and challenges of the Unit 6 risk assessment.
+**Figure 17.** Tutor feedback identifying the need for deeper evaluation of the limitations and challenges of the Unit 6 risk assessment.
 
 This feedback influenced the Unit 11 methodology. During the preparation of the final project, the proposed scope, risk scenarios and analytical approach were discussed with the tutor and a colleague. These discussions helped refine the assessment and encouraged a stronger focus on information-flow dependencies.
 
@@ -208,15 +201,11 @@ Each scenario was linked to the relevant supply-chain flow and its effect on qua
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit11/Post-Digitalisation-Supply-Chain-Risk.png" alt="Post-digitalisation supply-chain risk and disaster recovery assessment process" width="600">
 
-**Figure 20.** Unit 11 methodology progressing from system scoping and information-flow analysis to quantitative modelling, prioritisation and disaster recovery recommendations.
+**Figure 18.** Unit 11 methodology progressing from system scoping and information-flow analysis to quantitative modelling, prioritisation and disaster recovery recommendations.
 
 Unit 6 used qualitative likelihood and impact categories. Unit 11 used minimum, most likely and maximum probability estimates because Pampered Pets had no historical data for the proposed international digital supply chain. Triangular distributions represented these ranges, and 10,000 Monte Carlo iterations were used to test plausible combinations of uncertain events.
 
 The model also calculated probability × impact exposure scores and estimated the probability of at least one quality, availability or security issue. The analysis therefore moved from rating risks individually to examining how several risks could combine to affect broader business outcomes.
-
-<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit11/Monte%20Carlo%20simulation%20results.png" alt="Unit 11 aggregate Monte Carlo outcomes" width="600">
-
-**Figure 21.** Unit 11 quantitative outcomes demonstrating the development from broad qualitative ratings to probability distributions and aggregate business exposure.
 
 This numerical development improved prioritisation, but it did not produce certainty. The probability ranges were scenario-based estimates informed by literature, the business context and professional judgement. The impact scores were ordinal measures rather than direct estimates of financial loss. Exposure scores were therefore comparative prioritisation indicators, not exact expected losses.
 
@@ -242,10 +231,6 @@ Unit 6 identified missing backups and recovery procedures and recommended tested
 
 Unit 11 addressed a stricter requirement: 24/7/365 availability with RTO and RPO below one minute. This required an active-active multi-region design involving replication, continuous monitoring, automated traffic redirection, database failover and regular testing.
 
-<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit11/disaster_recovery_architecture.png" alt="Unit 11 active-active disaster recovery architecture" width="500">
-
-**Figure 22.** Unit 11 architecture translating measurable continuity requirements into replication, monitoring, automated failover and testing.
-
 This represented a development from recommending recovery controls to designing a technical solution around business objectives. However, the architecture also introduced cost, complexity, specialist-skill requirements and cloud-provider dependency. Its proportionality would therefore require a formal business-impact and cost-benefit assessment.
 
 Unit 11 also recognised that a risk treatment may create a new risk. The use of AWS improved resilience but introduced vendor lock-in. Portable backups, data-export rights, open interfaces and a documented exit plan were therefore included to reduce this dependency.
@@ -269,7 +254,7 @@ Effective security and risk management require more than identifying threats and
 
 Risk assessment was initially approached through assets, threats, vulnerabilities, likelihood, impact and mitigation. The human-rights discussion exposed the limits of a purely technical perspective by showing that digital systems may create exclusion, surveillance, privacy risks and harm. Peer contributions extended the analysis to retaliation, data minimisation and community protection, reinforcing the importance of fairness and stakeholder participation (Hancock et al., 2024). ICPS threat modelling also demonstrated how vulnerabilities can create cascading effects across technical components, safety and production continuity (Jbair et al., 2022).
 
-The Pampered Pets project applied this understanding to ageing technology, shared networks, customer records and manual inventory. Think Bayes and Monte Carlo simulation then introduced probability-based reasoning and representations of uncertain evidence (Downey, 2022; Metropolis and Ulam, 1949). These activities informed the post-digitalisation assessment, while social engineering, vulnerability prioritisation, cloud recovery and quantum computing extended learning into human factors, resilience and strategic communication.
+The Pampered Pets project applied this understanding to ageing technology, shared networks, customer records and manual inventory. Think Bayes and Monte Carlo simulation then introduced probability-based reasoning and representations of uncertain evidence (Downey, 2021; Metropolis and Ulam, 1949). These activities informed the post-digitalisation assessment, while social engineering, vulnerability prioritisation, cloud recovery and quantum computing extended learning into human factors, resilience and strategic communication.
 
 ### So What?
 
