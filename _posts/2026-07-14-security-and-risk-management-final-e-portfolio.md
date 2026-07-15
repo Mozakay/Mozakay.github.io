@@ -78,7 +78,7 @@ As shown in Figure 9, the [social-engineering modelling activity]({% post_url 20
 
 **Figure 9.** Unit 8 evidence distinguishing the likelihood that an attack pattern occurs from the likelihood that it succeeds.
 
-The [CVSS and SSVC discussion]({% post_url 2026-06-22-collaborative-learning-discussion-2-cvss-ssvc %}) similarly separated technical severity from contextual priority. As shown in Figure 10, peer feedback revised an initially replacement-focused position into a balanced conclusion that retained CVSS for severity communication and used SSVC for risk-informed prioritisation (Spring et al., 2020; Wunder et al., 2024).
+The [CVSS and SSVC discussion]({% post_url 2026-06-22-collaborative-learning-discussion-2-cvss-ssvc %}) similarly separated technical severity from contextual priority. As shown in Figure 10, peer feedback revised an initially replacement-focused position into a balanced conclusion that retained CVSS for severity communication and used SSVC for risk-informed prioritisation (Spring et al., 2019; Wunder et al., 2024).
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit7/Summary%20Post.png" alt="Final synthesis of the CVSS and SSVC discussion" width="600">
 
@@ -268,7 +268,7 @@ This issue became central in the post-digitalisation assessment. Historical data
 
 Individual contribution became more complex and independent. The Current Business Risk Assessment established a baseline and demonstrated research, organisation and evidence integration. However, some ratings needed fuller justification, assumptions should have been recorded earlier and more time reserved for review. Unit 11 demonstrated greater independence through academic evidence, Python modelling, prioritisation and disaster recovery design.
 
-Experience as a member of a development team produced benefits and methodological challenges. Dividing the Pampered Pets project improved accountability and reduced duplication, but separate drafting risked inconsistencies in terminology, structure and referencing. Integration was therefore essential. In the CVSS and SSVC discussion, an initial preference for replacing CVSS developed into a balanced position: CVSS retained value for severity communication, while SSVC supported contextual prioritisation (Spring et al., 2020; Wunder et al., 2024). Peer challenge therefore improved the final judgement.
+Experience as a member of a development team produced benefits and methodological challenges. Dividing the Pampered Pets project improved accountability and reduced duplication, but separate drafting risked inconsistencies in terminology, structure and referencing. Integration was therefore essential. In the CVSS and SSVC discussion, an initial preference for replacing CVSS developed into a balanced position: CVSS retained value for severity communication, while SSVC supported contextual prioritisation (Spring et al., 2019; Wunder et al., 2024). Peer challenge therefore improved the final judgement.
 
 Preparing the opening quantum-computing argument required an uncertain technical issue to be translated into a clear strategic position for a non-specialist audience. This reflected guidance that post-quantum migration requires early discovery and preparation because cryptographic dependencies cannot be replaced immediately (National Cyber Security Centre, 2025).
 
@@ -324,6 +324,6 @@ Rolfe, G., Freshwater, D. and Jasper, M. (2001) Critical Reflection for Nursing 
 
 Schmitt, A.J. and Singh, M. (2009) ‘Quantifying supply chain disruption risk using Monte Carlo and discrete-event simulation’, in Proceedings of the 2009 Winter Simulation Conference, Austin, TX, 13–16 December. Piscataway, NJ: IEEE, pp. 1237–1248. doi:10.1109/WSC.2009.5429561.
 
-Spring, J.M., Hatleback, E., Householder, A., Manion, A. and Shick, D. (2020) ‘Prioritizing vulnerability response: A stakeholder-specific vulnerability categorization (Version 1.1)’, Workshop on the Economics of Information Security (WEIS 2020), December. Available at: https://weis2020.econinfosec.org/wp-content/uploads/sites/8/2020/06/weis20-final6.pdf (Accessed: 15 July 2026).
+Spring, J.M., Hatleback, E., Householder, A.D., Manion, A. and Shick, D. (2019) Prioritizing Vulnerability Response: A Stakeholder-Specific Vulnerability Categorization. Pittsburgh, PA: Software Engineering Institute, Carnegie Mellon University. Available at: https://www.sei.cmu.edu/library/prioritizing-vulnerability-response-a-stakeholder-specific-vulnerability-categorization/ (Accessed: 15 July 2026).
 
 Wunder, J., Kurtz, A., Eichenmüller, C., Gassmann, F. and Benenson, Z. (2024) ‘Shedding light on CVSS scoring inconsistencies: A user-centric study on evaluating widespread security vulnerabilities’, in 2024 IEEE Symposium on Security and Privacy (SP), pp. 1102–1121. doi:10.1109/SP54263.2024.00058.
