@@ -27,6 +27,42 @@ The [disaster recovery activity]({% post_url 2026-06-18-unit-10-dr-solutions-des
 The evidence spans all twelve units without becoming a chronological checklist. The initial human-rights contribution, [peer responses]({% post_url 2026-05-05-collaborative-learning-discussion-1-human-rights-technology %}#peer-responses-received) and [final synthesis]({% post_url 2026-05-05-collaborative-learning-discussion-1-human-rights-technology %}#summary-post) demonstrate development across Units 1–3. Risk identification, the GDPR case and the Pampered Pets assessment provide evidence for Units 4–6. Think Bayes, Monte Carlo simulation, social-engineering modelling and the [CVSS/SSVC peer discussion and synthesis]({% post_url 2026-06-22-collaborative-learning-discussion-2-cvss-ssvc %}#summary-post) demonstrate development across Units 7–9. Disaster recovery design, the post-digitalisation individual assessment and the quantum-computing debate provide the principal evidence for Units 10–12. The linked artefacts contain discussion records, code, risk tables, meeting notes, presentation material and reflective evaluation.
 
 
+## Selected Evidence of Development
+
+The following evidence is presented directly in the final e-portfolio to demonstrate the progression from collaborative discussion and qualitative risk identification to quantitative modelling, disaster recovery design and team-based strategic communication.
+
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit1/Initial%20Post.png" alt="Initial contribution to the collaborative discussion on data, technology and human rights" width="750">
+
+**Figure 1.** Initial contribution to the collaborative discussion on data, technology and human rights.
+
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit6/Current-VS-Digitalised-Risk-Situation.png" alt="Comparison between the current and digitalised Pampered Pets risk environments" width="750">
+
+**Figure 2.** Comparison between the current-state and proposed digitalised risk environments for Pampered Pets.
+
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/SummaryofAverageSimulationOutcomes.png" alt="Summary of average Monte Carlo simulation outcomes" width="700">
+
+**Figure 3.** Monte Carlo output demonstrating how repeated simulation was used to examine uncertainty.
+
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit8/aop_asp_results.png" alt="Attack occurrence and attack success probability results" width="750">
+
+**Figure 4.** Comparison of Attack Occurrence Probability and Attack Success Probability in social-engineering scenarios.
+
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit10/dr_cloud_security_flowchart.png" alt="Cloud security, vendor dependency and disaster recovery analysis" width="650">
+
+**Figure 5.** Development from backup-focused recovery towards resilience, portability and dependency analysis.
+
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit11/Monte%20Carlo%20simulation%20results.png" alt="Unit 11 Monte Carlo results for quality, availability and security" width="750">
+
+**Figure 6.** Aggregate quality, availability and security outcomes from the Unit 11 quantitative assessment.
+
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit11/disaster_recovery_architecture.png" alt="AWS active-active multi-region disaster recovery architecture" width="650">
+
+**Figure 7.** Active-active multi-region disaster recovery architecture designed around measurable RTO and RPO requirements.
+
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit12/GreatDebate/Work-division.png" alt="Work division for the quantum-computing debate" width="750">
+
+**Figure 8.** Work-division evidence for the collaborative quantum-computing presentation.
+
 ## Individual Contribution and Collaboration
 
 The principal contribution to the Pampered Pets team project was the Current Business Risk Assessment. It identified risks associated with ageing technology, shared networks, customer information and manual inventory processes, and also involved source identification, integration of recommendations and final review. Its value was that it established the baseline against which digitalisation could be evaluated. Its limitation was that some qualitative ratings required fuller justification and earlier documentation of assumptions. The linked [meeting notes and task-coordination evidence]({% post_url 2026-06-06-pampered-pets-risk-identification-report %}#collaboration-and-meeting-evidence) show that this contribution formed part of an agreed team process rather than an isolated section of work.
