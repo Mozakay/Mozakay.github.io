@@ -36,13 +36,13 @@ As shown in Figure 3, the summary post consolidated the initial contribution and
 
 ### System Interdependencies and Legal Accountability — Units 4–5
 
-As shown in Figure 4, the [Industrial Cyber-Physical Systems activity](https://mozakay.github.io/posts/2026-05-26-risk-identification-and-modelling/) developed the analysis beyond individual assets. Jbair et al. (2022) showed that vulnerabilities may create cascading consequences across digital systems, physical processes, safety and production continuity. This challenged an asset-by-asset interpretation of risk and demonstrated the importance of dependencies, operational context and the feasibility of implementing controls in live environments.
+As shown in Figure 4, the [Industrial Cyber-Physical Systems activity]({% post_url 2026-05-26-risk-identification-and-modelling %}) developed the analysis beyond individual assets. Jbair et al. (2022) showed that vulnerabilities may create cascading consequences across digital systems, physical processes, safety and production continuity. This challenged an asset-by-asset interpretation of risk and demonstrated the importance of dependencies, operational context and the feasibility of implementing controls in live environments.
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit4/Six-Step.png" alt="Six-step threat-modelling methodology for Industrial Cyber-Physical Systems" width="600">
 
 **Figure 4.** Unit 4 threat-modelling methodology linking asset identification, attack modelling, evaluation and countermeasure design.
 
-As shown in Figure 5, the [University of Limerick GDPR case](https://mozakay.github.io/posts/2026-05-23-gdpr-case-study-university-of-limerick/) added legal and governance considerations. Weak account security and phishing controls were not only technical deficiencies because delayed detection, incomplete records and failures in breach notification also created regulatory and accountability consequences (Data Protection Commission, 2025).
+As shown in Figure 5, the [University of Limerick GDPR case]({% post_url 2026-05-23-gdpr-case-study-university-of-limerick %}) added legal and governance considerations. Weak account security and phishing controls were not only technical deficiencies because delayed detection, incomplete records and failures in breach notification also created regulatory and accountability consequences (Data Protection Commission, 2025).
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit5/gdpr_breach_flowchart.png" alt="University of Limerick GDPR breach analysis" width="600">
 
@@ -50,7 +50,7 @@ As shown in Figure 5, the [University of Limerick GDPR case](https://mozakay.git
 
 ### Qualitative Assessment and Team-Based Application — Unit 6
 
-As shown in Figure 6, the [Pampered Pets team assessment](https://mozakay.github.io/posts/2026-06-06-pampered-pets-risk-identification-report/) applied qualitative risk assessment using NIST CSF 2.0. Low, Medium and High ratings were accessible and proportionate to a small organisation, but they compressed evidence and professional judgement into broad categories. The activity demonstrated that qualitative analysis is valuable for initial scoping, although ratings require explicit evidence and assumptions to remain defensible.
+As shown in Figure 6, the [Pampered Pets team assessment]({% post_url 2026-06-06-pampered-pets-risk-identification-report %}) applied qualitative risk assessment using NIST CSF 2.0. Low, Medium and High ratings were accessible and proportionate to a small organisation, but they compressed evidence and professional judgement into broad categories. The activity demonstrated that qualitative analysis is valuable for initial scoping, although ratings require explicit evidence and assumptions to remain defensible.
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit6/Current-VS-Digitalised-Risk-Situation.png" alt="Current and digitalised Pampered Pets risk environments" width="600">
 
@@ -58,13 +58,13 @@ As shown in Figure 6, the [Pampered Pets team assessment](https://mozakay.github
 
 ### Probability, Bayesian Reasoning and Simulation — Unit 7
 
-As shown in Figure 7, the [Think Bayes activity](https://mozakay.github.io/posts/2026-06-13-think-bayes-probability-and-bayesian-updating/) developed understanding of ordinary probability, conjunctions, conditional probability and Bayesian updating. It showed that conclusions depend on how hypotheses, likelihoods and evidence-generating processes are defined (Downey, 2021).
+As shown in Figure 7, the [Think Bayes activity]({% post_url 2026-06-13-think-bayes-probability-and-bayesian-updating %}) developed understanding of ordinary probability, conjunctions, conditional probability and Bayesian updating. It showed that conclusions depend on how hypotheses, likelihoods and evidence-generating processes are defined (Downey, 2021).
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Downey/Bayesian%20Updating%20for%20the%20Trick%20Coin%20Problem.png" alt="Bayesian updating for the trick coin problem" width="600">
 
 **Figure 7.** Bayesian updating evidence showing how observed information changes the probability assigned to competing hypotheses.
 
-As shown in Figure 8, the [Monte Carlo activity](https://mozakay.github.io/posts/2026-06-13-monte-carlo-simulation-for-risk-modelling/) demonstrated how repeated random trials can represent uncertainty through a distribution of possible results rather than a single prediction (Metropolis and Ulam, 1949).
+As shown in Figure 8, the [Monte Carlo activity]({% post_url 2026-06-13-monte-carlo-simulation-for-risk-modelling %}) demonstrated how repeated random trials can represent uncertainty through a distribution of possible results rather than a single prediction (Metropolis and Ulam, 1949).
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/SummaryofAverageSimulationOutcomes.png" alt="Summary of Monte Carlo simulation outcomes" width="600">
 
@@ -72,13 +72,13 @@ As shown in Figure 8, the [Monte Carlo activity](https://mozakay.github.io/posts
 
 ### Human-Centred Threats and Contextual Prioritisation — Units 8–9
 
-As shown in Figure 9, the [social-engineering modelling activity](https://mozakay.github.io/posts/2026-06-09-modelling-social-engineering-threats/) distinguished Attack Occurrence Probability from Attack Success Probability. It demonstrated that a frequent attack may not be the most effective and that human behaviour, persuasion and organisational context cannot be represented fully through numerical values (Aijaz and Nazir, 2024).
+As shown in Figure 9, the [social-engineering modelling activity]({% post_url 2026-06-09-modelling-social-engineering-threats %}) distinguished Attack Occurrence Probability from Attack Success Probability. It demonstrated that a frequent attack may not be the most effective and that human behaviour, persuasion and organisational context cannot be represented fully through numerical values (Aijaz and Nazir, 2024).
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit8/aop_asp_results.png" alt="Attack occurrence and attack success probability results" width="600">
 
 **Figure 9.** Unit 8 evidence distinguishing the likelihood that an attack pattern occurs from the likelihood that it succeeds.
 
-The [CVSS and SSVC discussion](https://mozakay.github.io/posts/2026-06-22-collaborative-learning-discussion-2-cvss-ssvc/) similarly separated technical severity from contextual priority. As shown in Figure 10, peer feedback revised an initially replacement-focused position into a balanced conclusion that retained CVSS for severity communication and used SSVC for risk-informed prioritisation (Spring et al., 2020; Wunder et al., 2024).
+The [CVSS and SSVC discussion]({% post_url 2026-06-22-collaborative-learning-discussion-2-cvss-ssvc %}) similarly separated technical severity from contextual priority. As shown in Figure 10, peer feedback revised an initially replacement-focused position into a balanced conclusion that retained CVSS for severity communication and used SSVC for risk-informed prioritisation (Spring et al., 2020; Wunder et al., 2024).
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit7/Summary%20Post.png" alt="Final synthesis of the CVSS and SSVC discussion" width="600">
 
@@ -86,13 +86,13 @@ The [CVSS and SSVC discussion](https://mozakay.github.io/posts/2026-06-22-collab
 
 ### Resilience, Independent Application and Emerging Risk — Units 10–12
 
-As shown in Figure 11, the [disaster recovery activity](https://mozakay.github.io/posts/2026-06-18-unit-10-dr-solutions-design-and-review/) broadened recovery from backup restoration to RTO, RPO, portability, secure configuration, monitoring, vendor dependency and tested failover. It demonstrated that recovery is an operational and governance problem as well as a technical one.
+As shown in Figure 11, the [disaster recovery activity]({% post_url 2026-06-18-unit-10-dr-solutions-design-and-review %}) broadened recovery from backup restoration to RTO, RPO, portability, secure configuration, monitoring, vendor dependency and tested failover. It demonstrated that recovery is an operational and governance problem as well as a technical one.
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit10/dr_cloud_security_flowchart.png" alt="Cloud dependency and disaster recovery analysis" width="600">
 
 **Figure 11.** Unit 10 evidence connecting cloud dependency and security weaknesses with disaster-recovery performance.
 
-As shown in Figures 12 and 13, these ideas were integrated into the [Unit 11 individual assessment](https://mozakay.github.io/posts/2026-07-14-unit-11-post-digitalisation-risk-assessment/) through probability ranges, 10,000 Monte Carlo iterations, a deterministic cross-check and an active-active multi-region design.
+As shown in Figures 12 and 13, these ideas were integrated into the [Unit 11 individual assessment]({% post_url 2026-07-14-unit-11-post-digitalisation-risk-assessment %}) through probability ranges, 10,000 Monte Carlo iterations, a deterministic cross-check and an active-active multi-region design.
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit11/Monte%20Carlo%20simulation%20results.png" alt="Unit 11 Monte Carlo results" width="600">
 
@@ -102,7 +102,7 @@ As shown in Figures 12 and 13, these ideas were integrated into the [Unit 11 ind
 
 **Figure 13.** Unit 11 disaster-recovery architecture designed around measurable RTO and RPO requirements.
 
-The [quantum-computing debate](https://mozakay.github.io/posts/2026-06-22-great-debate-quantum-computing/) extended the analysis to uncertain future threats. As shown in Figure 14, the activity demonstrated that long migration lead times may justify early preparation even when the timing of a cryptographically relevant quantum computer cannot be estimated confidently.
+The [quantum-computing debate]({% post_url 2026-06-22-great-debate-quantum-computing %}) extended the analysis to uncertain future threats. As shown in Figure 14, the activity demonstrated that long migration lead times may justify early preparation even when the timing of a cryptographically relevant quantum computer cannot be estimated confidently.
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit12/GreatDebate/Work-division.png" alt="Work division for the quantum-computing debate" width="600">
 
