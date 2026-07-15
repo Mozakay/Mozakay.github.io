@@ -164,6 +164,33 @@ Recovery requirements were also translated into an active-active multi-region de
 
 The later project nevertheless remained dependent on scenario-based estimates, selected distributions and an approximate independence assumption. The progression from Unit 6 to Unit 11 therefore did not replace qualitative judgement with numerical certainty. Instead, the collaboratively developed Unit 6 baseline informed a more transparent and independent approach that combined qualitative scoping, quantitative modelling and professional judgement according to the significance of the decision and the quality of available evidence.
 
+
+------
+## Critical Evaluation of the Development in Risk Assessment Methodology from Unit 6 to Unit 11
+
+The comparison between Unit 6 and Unit 11 concerns the development of the risk assessment methodology and analytical reasoning rather than only the difference between the risks or final outputs. Unit 6 established the initial foundation through a qualitative, asset-based methodology structured around NIST CSF 2.0. Assets were linked to threats, vulnerabilities, likelihood, impact, risk level and mitigation, with risks classified as Low, Medium or High. This approach was proportionate to a small organisation and supported a shared understanding of the current and proposed digitalisation risks.
+
+The Unit 6 project was completed collaboratively. Responsibilities were divided between the team members, research was shared, and the separate sections were integrated into a single report. This process supported accountability and enabled different aspects of the business to be examined. However, the methodology remained largely asset-focused, and the qualitative ratings did not always make the assumptions, dependencies or degree of confidence behind each judgement explicit.
+
+The tutor feedback recognised the comprehensive identification of risk factors, the application of recognised frameworks and the strength of the critique. However, it also stated that the critical evaluation should have elaborated further on the limitations and challenges associated with the applied risk assessment. This feedback became an important influence on the approach adopted in Unit 11.
+
+<img src="/assets/images/SRM/Unit6/tutor-feedback-unit6.png" alt="Tutor feedback on the Unit 6 Security Risk Identification Report" width="750">
+
+**Figure 21.** Unit 6 tutor feedback highlighting the need for deeper evaluation of the limitations and challenges of the applied risk assessment.
+
+During the preparation of Unit 11, the proposed ideas and risk-analysis approach were discussed with the tutor and a colleague. These discussions helped refine the scope and encouraged a stronger focus on **information flow**. This was significant because the post-digitalisation business depended on accurate and secure exchanges between the online shop, inventory system, warehouse management system, CRM, logistics partners and suppliers. Product quality and availability were therefore understood not only as physical supply-chain issues, but also as outcomes that could be affected by inaccurate records, failed interfaces, delayed communication and compromised operational data.
+
+Unit 11 consequently moved from an asset-based snapshot towards a flow-based and scenario-based view of risk. The supply chain was examined through product, information and financial flows, with particular emphasis on information-flow dependencies. Five risk scenarios were then selected according to their potential effects on product quality, availability and supply-chain security.
+
+<img src="/assets/images/SRM/Unit11/Post-Digitalisation-Supply-Chain-Risk.png" alt="Post-digitalisation supply-chain risk and disaster recovery assessment process" width="650">
+
+**Figure 22.** Unit 11 methodology showing the development from system scoping and information-flow analysis to quantitative modelling, prioritisation and disaster recovery recommendations.
+
+The analytical method also developed from broad qualitative categories to a combined qualitative and quantitative process. Minimum, most likely and maximum probability estimates were used to represent uncertainty, triangular distributions were applied, and 10,000 Monte Carlo iterations were completed. A deterministic cross-check was used to test whether the results were consistent with the stated assumptions. More importantly, the limitations of the model were documented explicitly, including the absence of historical data, reliance on scenario-based estimates, the selected probability distributions and the approximate independence assumption.
+
+This represented a direct response to the Unit 6 feedback. The development was not simply from qualitative assessment to quantitative assessment, nor did numerical modelling eliminate professional judgement. Instead, the approach progressed from classifying individual risks to examining dependencies, information flows, uncertainty and aggregate business outcomes. Unit 6 provided the collaboratively developed foundation, while discussion with the tutor and a colleague helped Unit 11 apply that foundation through a more focused, transparent and critically evaluated methodology.
+-----
+
 ## Final Critical Reflection
 
 ### Introduction
