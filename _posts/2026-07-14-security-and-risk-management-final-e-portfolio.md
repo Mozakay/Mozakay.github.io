@@ -189,7 +189,7 @@ Unit 11 consequently moved from an asset-based snapshot towards a flow-based and
 The analytical method also developed from broad qualitative categories to a combined qualitative and quantitative process. Minimum, most likely and maximum probability estimates were used to represent uncertainty, triangular distributions were applied, and 10,000 Monte Carlo iterations were completed. A deterministic cross-check was used to test whether the results were consistent with the stated assumptions. More importantly, the limitations of the model were documented explicitly, including the absence of historical data, reliance on scenario-based estimates, the selected probability distributions and the approximate independence assumption.
 
 This represented a direct response to the Unit 6 feedback. The development was not simply from qualitative assessment to quantitative assessment, nor did numerical modelling eliminate professional judgement. Instead, the approach progressed from classifying individual risks to examining dependencies, information flows, uncertainty and aggregate business outcomes. Unit 6 provided the collaboratively developed foundation, while discussion with the tutor and a colleague helped Unit 11 apply that foundation through a more focused, transparent and critically evaluated methodology.
------
+------
 
 ## Final Critical Reflection
 
