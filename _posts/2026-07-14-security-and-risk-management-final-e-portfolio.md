@@ -8,101 +8,167 @@ tags: [final-assessment, e-portfolio, critical-analysis, collaboration, risk-man
 
 ## Portfolio Overview
 
-This e-portfolio evaluates how understanding of security and risk management developed across the module. The evidence is organised around changes in reasoning: from isolated technical threats to interconnected socio-technical systems, from broad qualitative ratings to explicit uncertainty, and from backup restoration to resilience, dependency and governance.
+This e-portfolio critically evaluates how understanding of security and risk management developed across the module. The evidence is organised by changes in reasoning rather than by a chronological list of completed units. It demonstrates movement from identifying isolated technical threats towards evaluating interconnected socio-technical systems, from using broad qualitative ratings towards representing uncertainty explicitly, and from viewing recovery as backup restoration towards understanding operational resilience, dependency and governance.
 
-It also evaluates individual and collaborative contributions and compares the qualitative *Security Risk Identification Report: Pampered Pets* with the quantitative *Post-Digitalisation Risk Assessment and Disaster Recovery Strategy*. Together, these artefacts demonstrate increased analytical independence and stronger integration of security, legal, operational and continuity considerations.
+The portfolio also evaluates individual and collaborative contributions. Particular attention is given to the progression from the qualitative *Security Risk Identification Report: Pampered Pets* to the quantitative *Post-Digitalisation Risk Assessment and Disaster Recovery Strategy*. This comparison provides evidence of increased analytical independence, more transparent treatment of assumptions and stronger integration between security, law, business continuity and operational priorities.
 
 ## Critical Development Evidenced by the Artefacts
 
-The [human-rights discussion]({% post_url 2026-05-05-collaborative-learning-discussion-1-human-rights-technology %}) challenged a mainly technical interpretation of risk. The initial contribution considered fairness and accountability, while peer responses added surveillance, retaliation, data minimisation and community protection. The final synthesis therefore moved towards a socio-technical position in which risk assessment examines who may be harmed, whose evidence is represented and how accountability is maintained (Hancock et al., 2024).
+### Socio-Technical Risk, Peer Engagement and Synthesis — Units 1–3
 
-The [Industrial Cyber-Physical Systems activity]({% post_url 2026-05-26-risk-identification-and-modelling %}) showed that assets cannot always be assessed independently because vulnerabilities may create cascading effects across digital systems, physical processes, safety and production continuity (Jbair et al., 2022). The [University of Limerick GDPR case]({% post_url 2026-05-23-gdpr-case-study-university-of-limerick %}) added a legal and governance dimension by showing that weak account security, delayed detection and inadequate breach handling can create both technical and regulatory consequences (Data Protection Commission, 2025).
+The [human-rights discussion](https://mozakay.github.io/posts/2026-05-05-collaborative-learning-discussion-1-human-rights-technology/) challenged a mainly technical interpretation of risk. The initial contribution considered data quality, fairness and accountability, but peer engagement added surveillance, retaliation, data minimisation, auditability and community protection. The final synthesis therefore developed a wider socio-technical position in which risk assessment should examine who may be harmed, whose evidence is represented and how accountability is maintained (Hancock et al., 2024).
 
-The [Pampered Pets team assessment]({% post_url 2026-06-06-pampered-pets-risk-identification-report %}) applied qualitative assessment through NIST CSF 2.0 (National Institute of Standards and Technology, 2024). Its Low, Medium and High ratings were accessible for a small organisation, but they compressed evidence and judgement into broad categories. The [Think Bayes activity]({% post_url 2026-06-13-think-bayes-probability-and-bayesian-updating %}) developed conditional-probability reasoning, while the [Monte Carlo activity]({% post_url 2026-06-13-monte-carlo-simulation-for-risk-modelling %}) demonstrated how repeated sampling can represent uncertainty through a distribution of outcomes rather than a single prediction (Downey, 2022; Metropolis and Ulam, 1949).
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit1/Initial%20Post.png" alt="Initial contribution to the human-rights discussion" width="750">
 
-The [social-engineering activity]({% post_url 2026-06-09-modelling-social-engineering-threats %}) distinguished attack occurrence from attack success and revealed the limits of representing human behaviour numerically (Aijaz and Nazir, 2024). The [CVSS and SSVC discussion]({% post_url 2026-06-22-collaborative-learning-discussion-2-cvss-ssvc %}) similarly separated technical severity from contextual priority. Peer feedback revised an initially replacement-focused position into a combined approach that retained CVSS for severity communication and used SSVC for prioritisation (Spring et al., 2020; Wunder et al., 2024).
+**Figure 1.** Unit 1 initial contribution identifying fairness, data-quality and accountability risks.
 
-The [disaster recovery activity]({% post_url 2026-06-18-unit-10-dr-solutions-design-and-review %}) broadened recovery from backup restoration to RTO, RPO, portability, monitoring, vendor dependency and tested failover. These ideas were integrated into the [Unit 11 individual assessment]({% post_url 2026-07-14-unit-11-post-digitalisation-risk-assessment %}) through probability ranges, 10,000 Monte Carlo iterations, a deterministic cross-check and an active-active multi-region design. The [quantum-computing debate]({% post_url 2026-06-22-great-debate-quantum-computing %}) then extended risk analysis to uncertain future threats where long migration lead times justify early preparation.
-
-The evidence spans all twelve units: human-rights discussion and synthesis for Units 1–3; risk identification, GDPR and Pampered Pets for Units 4–6; probability, social-engineering and CVSS/SSVC activities for Units 7–9; and disaster recovery, the individual project and quantum debate for Units 10–12. The artefacts include discussions, code, quantitative outputs, risk tables, meeting notes and presentation material.
-
-## Selected Evidence of Development
-
-The following artefacts provide direct evidence from all twelve units.
-
-<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit1/Initial%20Post.png" alt="Initial human-rights discussion contribution" width="750">
-
-**Figure 1.** Unit 1 initial discussion contribution.
+The peer evidence demonstrates that collaboration changed the analysis rather than merely confirming the initial position. Feedback introduced additional concerns about personal safety, adversarial access to sensitive data and governance controls.
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit1/peer-response-payman.png" alt="Peer response received during the human-rights discussion" width="750">
 
-**Figure 2.** Unit 2 peer-engagement evidence.
+**Figure 2.** Unit 2 peer-engagement evidence extending the initial analysis.
+
+The summary post consolidated the initial contribution and peer perspectives into a more balanced position on digital evidence, privacy, accountability and community agency.
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit1/Summary%20Post.png" alt="Final synthesis of the human-rights discussion" width="750">
 
-**Figure 3.** Unit 3 discussion synthesis.
+**Figure 3.** Unit 3 synthesis demonstrating development through collaborative discussion.
+
+### System Interdependencies and Legal Accountability — Units 4–5
+
+The [Industrial Cyber-Physical Systems activity](https://mozakay.github.io/posts/2026-05-26-risk-identification-and-modelling/) developed the analysis beyond individual assets. Jbair et al. (2022) showed that vulnerabilities may create cascading consequences across digital systems, physical processes, safety and production continuity. This challenged an asset-by-asset interpretation of risk and demonstrated the importance of dependencies, operational context and the feasibility of implementing controls in live environments.
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit4/Six-Step.png" alt="Six-step threat-modelling methodology for Industrial Cyber-Physical Systems" width="650">
 
-**Figure 4.** Unit 4 ICPS threat-modelling output.
+**Figure 4.** Unit 4 threat-modelling methodology linking asset identification, attack modelling, evaluation and countermeasure design.
 
-<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit5/gdpr_breach_flowchart.png" alt="University of Limerick GDPR breach flowchart" width="650">
+The [University of Limerick GDPR case](https://mozakay.github.io/posts/2026-05-23-gdpr-case-study-university-of-limerick/) added legal and governance considerations. Weak account security and phishing controls were not only technical deficiencies because delayed detection, incomplete records and failures in breach notification also created regulatory and accountability consequences (Data Protection Commission, 2025).
 
-**Figure 5.** Unit 5 GDPR case analysis.
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit5/gdpr_breach_flowchart.png" alt="University of Limerick GDPR breach analysis" width="650">
+
+**Figure 5.** Unit 5 evidence connecting a technical security incident with governance, notification and regulatory responsibilities.
+
+### Qualitative Assessment and Team-Based Application — Unit 6
+
+The [Pampered Pets team assessment](https://mozakay.github.io/posts/2026-06-06-pampered-pets-risk-identification-report/) applied qualitative risk assessment using NIST CSF 2.0. Low, Medium and High ratings were accessible and proportionate to a small organisation, but they compressed evidence and professional judgement into broad categories. The activity demonstrated that qualitative analysis is valuable for initial scoping, although ratings require explicit evidence and assumptions to remain defensible.
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit6/Current-VS-Digitalised-Risk-Situation.png" alt="Current and digitalised Pampered Pets risk environments" width="750">
 
-**Figure 6.** Unit 6 qualitative risk-assessment evidence.
+**Figure 6.** Unit 6 comparison of inherited current-state risks and the additional exposure created by digitalisation.
+
+### Probability, Bayesian Reasoning and Simulation — Unit 7
+
+The [Think Bayes activity](https://mozakay.github.io/posts/2026-06-13-think-bayes-probability-and-bayesian-updating/) developed understanding of ordinary probability, conjunctions, conditional probability and Bayesian updating. It showed that conclusions depend on how hypotheses, likelihoods and evidence-generating processes are defined (Downey, 2022).
+
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Downey/Bayesian%20Updating%20for%20the%20Trick%20Coin%20Problem.png" alt="Bayesian updating for the trick coin problem" width="750">
+
+**Figure 7.** Bayesian updating evidence showing how observed information changes the probability assigned to competing hypotheses.
+
+The [Monte Carlo activity](https://mozakay.github.io/posts/2026-06-13-monte-carlo-simulation-for-risk-modelling/) then demonstrated how repeated random trials can represent uncertainty through a distribution of possible results rather than a single prediction (Metropolis and Ulam, 1949).
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/SummaryofAverageSimulationOutcomes.png" alt="Summary of Monte Carlo simulation outcomes" width="700">
 
-**Figure 7.** Unit 7 probability-modelling output.
+**Figure 8.** Unit 7 simulation output demonstrating the interpretation of repeated probabilistic outcomes.
 
-<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit8/aop_asp_results.png" alt="Attack occurrence and success probability results" width="750">
+### Human-Centred Threats and Contextual Prioritisation — Units 8–9
 
-**Figure 8.** Unit 8 social-engineering modelling evidence.
+The [social-engineering modelling activity](https://mozakay.github.io/posts/2026-06-09-modelling-social-engineering-threats/) distinguished Attack Occurrence Probability from Attack Success Probability. It demonstrated that a frequent attack may not be the most effective and that human behaviour, persuasion and organisational context cannot be represented fully through numerical values (Aijaz and Nazir, 2024).
 
-<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit7/Summary%20Post.png" alt="Final CVSS and SSVC discussion synthesis" width="750">
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit8/aop_asp_results.png" alt="Attack occurrence and attack success probability results" width="750">
 
-**Figure 9.** Unit 9 CVSS/SSVC synthesis.
+**Figure 9.** Unit 8 evidence distinguishing the likelihood that an attack pattern occurs from the likelihood that it succeeds.
+
+The [CVSS and SSVC discussion](https://mozakay.github.io/posts/2026-06-22-collaborative-learning-discussion-2-cvss-ssvc/) similarly separated technical severity from contextual priority. Peer feedback revised an initially replacement-focused position into a balanced conclusion that retained CVSS for severity communication and used SSVC for risk-informed prioritisation (Spring et al., 2020; Wunder et al., 2024).
+
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit7/Summary%20Post.png" alt="Final synthesis of the CVSS and SSVC discussion" width="750">
+
+**Figure 10.** Unit 9 synthesis demonstrating how peer feedback produced a more balanced vulnerability-management position.
+
+### Resilience, Independent Application and Emerging Risk — Units 10–12
+
+The [disaster recovery activity](https://mozakay.github.io/posts/2026-06-18-unit-10-dr-solutions-design-and-review/) broadened recovery from backup restoration to RTO, RPO, portability, secure configuration, monitoring, vendor dependency and tested failover. It demonstrated that recovery is an operational and governance problem as well as a technical one.
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit10/dr_cloud_security_flowchart.png" alt="Cloud dependency and disaster recovery analysis" width="650">
 
-**Figure 10.** Unit 10 disaster-recovery analysis.
+**Figure 11.** Unit 10 evidence connecting cloud dependency and security weaknesses with disaster-recovery performance.
+
+These ideas were integrated into the [Unit 11 individual assessment](https://mozakay.github.io/posts/2026-07-14-unit-11-post-digitalisation-risk-assessment/) through probability ranges, 10,000 Monte Carlo iterations, a deterministic cross-check and an active-active multi-region design.
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit11/Monte%20Carlo%20simulation%20results.png" alt="Unit 11 Monte Carlo results" width="750">
 
-**Figure 11.** Unit 11 quantitative risk results.
+**Figure 12.** Unit 11 aggregate quality, availability and security probabilities.
+
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit11/disaster_recovery_architecture.png" alt="AWS active-active multi-region disaster recovery architecture" width="650">
+
+**Figure 13.** Unit 11 disaster-recovery architecture designed around measurable RTO and RPO requirements.
+
+The [quantum-computing debate](https://mozakay.github.io/posts/2026-06-22-great-debate-quantum-computing/) extended the analysis to uncertain future threats. The activity demonstrated that long migration lead times may justify early preparation even when the timing of a cryptographically relevant quantum computer cannot be estimated confidently.
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit12/GreatDebate/Work-division.png" alt="Work division for the quantum-computing debate" width="750">
 
-**Figure 12.** Unit 12 collaborative work-division evidence.
+**Figure 14.** Unit 12 evidence of coordinated task allocation for the collaborative debate.
+
+The evidence therefore spans all twelve units through discussions, code, risk tables, quantitative outputs, meeting records, technical designs and presentation material.
 
 ## Individual Contribution and Collaboration
 
-The principal contribution to the Pampered Pets team project was the Current Business Risk Assessment, covering ageing technology, shared networks, customer information and manual inventory processes. The contribution also included source identification, recommendation integration and final review. Its value was that it established the baseline against which digitalisation could be assessed; its limitation was that some ratings required fuller justification and earlier documentation of assumptions. The linked [meeting notes and task-coordination evidence]({% post_url 2026-06-06-pampered-pets-risk-identification-report %}#collaboration-and-meeting-evidence) demonstrate that the contribution formed part of an agreed team process.
+### Contribution to the Pampered Pets Team Project
 
-The Unit 11 project demonstrated greater independence through academic research, [Python modelling and reproducibility evidence]({% post_url 2026-07-14-unit-11-post-digitalisation-risk-assessment %}#python-model-and-reproducibility-evidence), interpretation, prioritised recommendations and disaster recovery design. In Unit 12, preparing the opening quantum-computing argument developed strategic communication for a non-specialist audience. The [meeting and work-division evidence]({% post_url 2026-06-22-great-debate-quantum-computing %}#collaboration-and-preparation-evidence) confirms coordinated preparation and a defined individual role.
+The principal contribution to the Pampered Pets team project was the Current Business Risk Assessment. It identified risks associated with ageing technology, shared networks, customer information and manual inventory processes. The contribution also included source identification, integration of recommendations and final review. Its value was that it established the baseline against which digitalisation could be evaluated. Its limitation was that some qualitative ratings required fuller justification and earlier documentation of assumptions.
 
-Collaboration added value when it changed reasoning rather than merely divided work. Human-rights peer responses broadened the analysis, while CVSS/SSVC feedback materially revised the final conclusion. Team experience also showed that early allocation improves accountability, but separate drafting can create inconsistencies in terminology, assumptions and referencing. Common standards and integration reviews were therefore necessary.
+The meeting evidence demonstrates that the contribution formed part of an agreed team process rather than an isolated section of work. The project requirements, allocation of responsibilities and internal timeline were discussed before drafting.
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit6/minutesofmeeting.png" alt="Pampered Pets meeting notes and task coordination" width="750">
 
-**Figure 13.** Unit 6 meeting notes showing project discussion, task allocation and timeline planning.
+**Figure 15.** Meeting notes showing discussion of the project requirements, task allocation and submission timeline.
+
+### Independent Contribution to the Unit 11 Project
+
+The later individual project demonstrated increased independence through academic research, Python modelling, interpretation of aggregate outcomes, prioritised recommendations and disaster recovery design. Reproducibility evidence showed that the model was executed using a documented random seed and 10,000 iterations.
+
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit11/Successful-Execution-and-Reproducibility-Settings.png" alt="Python execution and reproducibility settings" width="750">
+
+**Figure 16.** Evidence of successful Python execution, random-seed documentation and simulation settings.
+
+### Contribution to the Quantum-Computing Debate
+
+The contribution to the quantum-computing presentation focused on the introduction, the group position, the scope of the threat and the importance of the 2026–2031 preparation period. Translating an uncertain technical issue into a strategic argument strengthened communication with a non-specialist audience. The work-division evidence confirms coordinated preparation and a defined individual role.
+
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit12/GreatDebate/Work-division.png" alt="Work division for the quantum-computing debate" width="750">
+
+**Figure 17.** Work-division evidence identifying the contribution to the opening presentation section.
+
+### Evaluation of Collaboration
+
+Collaboration improved the work when it changed reasoning rather than merely divided tasks. Human-rights peer responses broadened the ethical and safety analysis, while CVSS and SSVC feedback materially revised the final conclusion. Team projects also showed that early task allocation improves accountability and reduces duplication, but separate drafting can create inconsistency in terminology, assumptions, referencing and depth. Common standards and integration reviews were therefore necessary to produce coherent outcomes.
 
 ## Critical Evaluation of Unit 11 against Unit 6
 
-The Unit 6 status document provided a proportionate qualitative baseline by linking existing assets, threats and vulnerabilities to Low, Medium and High ratings. This was accessible to a small organisation and supported initial prioritisation through NIST CSF 2.0. However, the categories compressed several judgements into one label and did not represent the extent of uncertainty behind likelihood assessments.
+The Unit 6 status document provided a proportionate qualitative baseline by linking Pampered Pets’ assets, threats and vulnerabilities to Low, Medium and High ratings. This method was accessible to a small organisation and supported initial prioritisation through NIST CSF 2.0. However, the categories compressed several judgements into a single label and did not represent the extent of uncertainty behind each likelihood assessment.
 
-Unit 11 extended this foundation by treating the organisation as an interconnected digital supply-chain system. Probability ranges, triangular distributions and 10,000 Monte Carlo iterations represented uncertainty more explicitly, while a deterministic cross-check supported review of internal consistency. The analysis also moved from individual ratings to aggregate effects on product quality, availability and security. Recovery requirements were translated into an active-active multi-region design with measurable RTO and RPO objectives.
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit6/Current-VS-Digitalised-Risk-Situation.png" alt="Unit 6 current and digitalised risk comparison" width="750">
 
-The later project nevertheless remained dependent on scenario-based estimates, selected distributions and an approximate independence assumption. Unit 11 therefore did not replace qualitative judgement with numerical certainty. Instead, it combined the collaboratively developed Unit 6 baseline with more independent quantitative modelling and professional judgement according to the significance of the decision and the quality of available evidence.
+**Figure 18.** Unit 6 qualitative baseline used to evaluate the proposed digitalisation.
+
+Unit 11 extended this foundation by treating the organisation as an interconnected digital supply-chain system rather than a collection of isolated assets. Probability ranges, triangular distributions and 10,000 Monte Carlo iterations represented uncertainty more explicitly, while a deterministic cross-check supported review of the model’s internal consistency. The analysis also moved from individual risk ratings to aggregate effects on product quality, availability and security.
+
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit11/Monte%20Carlo%20simulation%20results.png" alt="Unit 11 aggregate Monte Carlo outcomes" width="750">
+
+**Figure 19.** Unit 11 quantitative outcomes showing the development from broad ratings to distributions and aggregate exposure.
+
+Recovery requirements were also translated into an active-active multi-region design with measurable RTO and RPO objectives. This moved continuity planning beyond general backup recommendations towards architecture, replication, automated failover and testing.
+
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit11/disaster_recovery_architecture.png" alt="Unit 11 active-active disaster recovery architecture" width="650">
+
+**Figure 20.** Unit 11 architecture translating continuity requirements into a technical design.
+
+The later project nevertheless remained dependent on scenario-based estimates, selected distributions and an approximate independence assumption. The progression from Unit 6 to Unit 11 therefore did not replace qualitative judgement with numerical certainty. Instead, the collaboratively developed Unit 6 baseline informed a more transparent and independent approach that combined qualitative scoping, quantitative modelling and professional judgement according to the significance of the decision and the quality of available evidence.
 
 ## Final Critical Reflection
 
 ### Introduction
 
-Effective security and risk management require more than identifying threats and selecting controls; they depend on evidence quality, transparent assumptions and proportionate judgement. Across the module, understanding developed from a control-centred view into a socio-technical, legal and operational perspective. Rolfe, Freshwater and Jasper’s (2001) framework is used to evaluate risk understanding, contribution, collaboration and development.
+Effective security and risk management require more than identifying threats and selecting controls; they depend on evidence quality, transparent assumptions and proportionate judgement. Across the module, understanding developed from a control-centred view into a socio-technical, legal and operational perspective. Rolfe, Freshwater and Jasper’s (2001) framework is used to evaluate risk understanding, individual contribution, collaboration, and professional and personal development.
 
 ### What?
 
@@ -122,7 +188,7 @@ This issue became central in the post-digitalisation assessment. Historical data
 
 Individual contribution became more complex and independent. The Current Business Risk Assessment established a baseline and demonstrated research, organisation and evidence integration. However, some ratings needed fuller justification, assumptions should have been recorded earlier and more time reserved for review. Unit 11 demonstrated greater independence through academic evidence, Python modelling, prioritisation and disaster recovery design.
 
-Experience as a member of a development team produced benefits and methodological challenges. Dividing the Pampered Pets project improved accountability and reduced duplication, but separate drafting risked inconsistencies in terminology, structure and referencing. Integration was therefore essential. In the CVSS/SSVC discussion, an initial preference for replacing CVSS developed into a balanced position: CVSS retained value for severity communication, while SSVC supported contextual prioritisation (Spring et al., 2020; Wunder et al., 2024). Peer challenge therefore improved the final judgement.
+Experience as a member of a development team produced benefits and methodological challenges. Dividing the Pampered Pets project improved accountability and reduced duplication, but separate drafting risked inconsistencies in terminology, structure and referencing. Integration was therefore essential. In the CVSS and SSVC discussion, an initial preference for replacing CVSS developed into a balanced position: CVSS retained value for severity communication, while SSVC supported contextual prioritisation (Spring et al., 2020; Wunder et al., 2024). Peer challenge therefore improved the final judgement.
 
 Preparing the opening quantum-computing argument required an uncertain technical issue to be translated into a clear strategic position for a non-specialist audience. This reflected guidance that post-quantum migration requires early discovery and preparation because cryptographic dependencies cannot be replaced immediately (National Cyber Security Centre, 2025).
 
@@ -142,7 +208,7 @@ In professional practice, the same approach will support digital-service reviews
 
 ## Conclusion
 
-The portfolio demonstrates a shift from identifying isolated technical risks to evaluating interconnected socio-technical systems under uncertainty. Development was shown through the selection of proportionate methods, transparent assumptions, peer-informed judgement and stronger integration between controls, business requirements and stakeholder outcomes.
+The portfolio demonstrates a shift from identifying isolated technical risks to evaluating interconnected socio-technical systems under uncertainty. Development is evidenced through the selection of proportionate methods, transparent assumptions, peer-informed judgement and stronger integration between controls, business requirements and stakeholder outcomes.
 
 ## References
 
