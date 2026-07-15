@@ -18,19 +18,19 @@ The portfolio also evaluates individual and collaborative contributions. Particu
 
 The [human-rights discussion](https://mozakay.github.io/posts/2026-05-05-collaborative-learning-discussion-1-human-rights-technology/) challenged a mainly technical interpretation of risk. The initial contribution considered data quality, fairness and accountability, but peer engagement added surveillance, retaliation, data minimisation, auditability and community protection. The final synthesis therefore developed a wider socio-technical position in which risk assessment should examine who may be harmed, whose evidence is represented and how accountability is maintained (Hancock et al., 2024).
 
-<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit1/Initial%20Post.png" alt="Initial contribution to the human-rights discussion" width="750">
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit1/Initial%20Post.png" alt="Initial contribution to the human-rights discussion" width="600">
 
 **Figure 1.** Unit 1 initial contribution identifying fairness, data-quality and accountability risks.
 
 The peer evidence demonstrates that collaboration changed the analysis rather than merely confirming the initial position. Feedback introduced additional concerns about personal safety, adversarial access to sensitive data and governance controls.
 
-<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit1/peer-response-payman.png" alt="Peer response received during the human-rights discussion" width="750">
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit1/peer-response-payman.png" alt="Peer response received during the human-rights discussion" width="600">
 
 **Figure 2.** Unit 2 peer-engagement evidence extending the initial analysis.
 
 The summary post consolidated the initial contribution and peer perspectives into a more balanced position on digital evidence, privacy, accountability and community agency.
 
-<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit1/Summary%20Post.png" alt="Final synthesis of the human-rights discussion" width="750">
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit1/Summary%20Post.png" alt="Final synthesis of the human-rights discussion" width="600">
 
 **Figure 3.** Unit 3 synthesis demonstrating development through collaborative discussion.
 
@@ -38,13 +38,13 @@ The summary post consolidated the initial contribution and peer perspectives int
 
 The [Industrial Cyber-Physical Systems activity](https://mozakay.github.io/posts/2026-05-26-risk-identification-and-modelling/) developed the analysis beyond individual assets. Jbair et al. (2022) showed that vulnerabilities may create cascading consequences across digital systems, physical processes, safety and production continuity. This challenged an asset-by-asset interpretation of risk and demonstrated the importance of dependencies, operational context and the feasibility of implementing controls in live environments.
 
-<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit4/Six-Step.png" alt="Six-step threat-modelling methodology for Industrial Cyber-Physical Systems" width="650">
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit4/Six-Step.png" alt="Six-step threat-modelling methodology for Industrial Cyber-Physical Systems" width="600">
 
 **Figure 4.** Unit 4 threat-modelling methodology linking asset identification, attack modelling, evaluation and countermeasure design.
 
 The [University of Limerick GDPR case](https://mozakay.github.io/posts/2026-05-23-gdpr-case-study-university-of-limerick/) added legal and governance considerations. Weak account security and phishing controls were not only technical deficiencies because delayed detection, incomplete records and failures in breach notification also created regulatory and accountability consequences (Data Protection Commission, 2025).
 
-<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit5/gdpr_breach_flowchart.png" alt="University of Limerick GDPR breach analysis" width="650">
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit5/gdpr_breach_flowchart.png" alt="University of Limerick GDPR breach analysis" width="600">
 
 **Figure 5.** Unit 5 evidence connecting a technical security incident with governance, notification and regulatory responsibilities.
 
@@ -52,7 +52,7 @@ The [University of Limerick GDPR case](https://mozakay.github.io/posts/2026-05-2
 
 The [Pampered Pets team assessment](https://mozakay.github.io/posts/2026-06-06-pampered-pets-risk-identification-report/) applied qualitative risk assessment using NIST CSF 2.0. Low, Medium and High ratings were accessible and proportionate to a small organisation, but they compressed evidence and professional judgement into broad categories. The activity demonstrated that qualitative analysis is valuable for initial scoping, although ratings require explicit evidence and assumptions to remain defensible.
 
-<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit6/Current-VS-Digitalised-Risk-Situation.png" alt="Current and digitalised Pampered Pets risk environments" width="750">
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit6/Current-VS-Digitalised-Risk-Situation.png" alt="Current and digitalised Pampered Pets risk environments" width="600">
 
 **Figure 6.** Unit 6 comparison of inherited current-state risks and the additional exposure created by digitalisation.
 
@@ -60,13 +60,13 @@ The [Pampered Pets team assessment](https://mozakay.github.io/posts/2026-06-06-p
 
 The [Think Bayes activity](https://mozakay.github.io/posts/2026-06-13-think-bayes-probability-and-bayesian-updating/) developed understanding of ordinary probability, conjunctions, conditional probability and Bayesian updating. It showed that conclusions depend on how hypotheses, likelihoods and evidence-generating processes are defined (Downey, 2022).
 
-<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Downey/Bayesian%20Updating%20for%20the%20Trick%20Coin%20Problem.png" alt="Bayesian updating for the trick coin problem" width="750">
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Downey/Bayesian%20Updating%20for%20the%20Trick%20Coin%20Problem.png" alt="Bayesian updating for the trick coin problem" width="600">
 
 **Figure 7.** Bayesian updating evidence showing how observed information changes the probability assigned to competing hypotheses.
 
 The [Monte Carlo activity](https://mozakay.github.io/posts/2026-06-13-monte-carlo-simulation-for-risk-modelling/) then demonstrated how repeated random trials can represent uncertainty through a distribution of possible results rather than a single prediction (Metropolis and Ulam, 1949).
 
-<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/SummaryofAverageSimulationOutcomes.png" alt="Summary of Monte Carlo simulation outcomes" width="700">
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/SummaryofAverageSimulationOutcomes.png" alt="Summary of Monte Carlo simulation outcomes" width="600">
 
 **Figure 8.** Unit 7 simulation output demonstrating the interpretation of repeated probabilistic outcomes.
 
@@ -74,13 +74,13 @@ The [Monte Carlo activity](https://mozakay.github.io/posts/2026-06-13-monte-carl
 
 The [social-engineering modelling activity](https://mozakay.github.io/posts/2026-06-09-modelling-social-engineering-threats/) distinguished Attack Occurrence Probability from Attack Success Probability. It demonstrated that a frequent attack may not be the most effective and that human behaviour, persuasion and organisational context cannot be represented fully through numerical values (Aijaz and Nazir, 2024).
 
-<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit8/aop_asp_results.png" alt="Attack occurrence and attack success probability results" width="750">
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit8/aop_asp_results.png" alt="Attack occurrence and attack success probability results" width="600">
 
 **Figure 9.** Unit 8 evidence distinguishing the likelihood that an attack pattern occurs from the likelihood that it succeeds.
 
 The [CVSS and SSVC discussion](https://mozakay.github.io/posts/2026-06-22-collaborative-learning-discussion-2-cvss-ssvc/) similarly separated technical severity from contextual priority. Peer feedback revised an initially replacement-focused position into a balanced conclusion that retained CVSS for severity communication and used SSVC for risk-informed prioritisation (Spring et al., 2020; Wunder et al., 2024).
 
-<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit7/Summary%20Post.png" alt="Final synthesis of the CVSS and SSVC discussion" width="750">
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit7/Summary%20Post.png" alt="Final synthesis of the CVSS and SSVC discussion" width="600">
 
 **Figure 10.** Unit 9 synthesis demonstrating how peer feedback produced a more balanced vulnerability-management position.
 
@@ -88,23 +88,23 @@ The [CVSS and SSVC discussion](https://mozakay.github.io/posts/2026-06-22-collab
 
 The [disaster recovery activity](https://mozakay.github.io/posts/2026-06-18-unit-10-dr-solutions-design-and-review/) broadened recovery from backup restoration to RTO, RPO, portability, secure configuration, monitoring, vendor dependency and tested failover. It demonstrated that recovery is an operational and governance problem as well as a technical one.
 
-<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit10/dr_cloud_security_flowchart.png" alt="Cloud dependency and disaster recovery analysis" width="650">
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit10/dr_cloud_security_flowchart.png" alt="Cloud dependency and disaster recovery analysis" width="600">
 
 **Figure 11.** Unit 10 evidence connecting cloud dependency and security weaknesses with disaster-recovery performance.
 
 These ideas were integrated into the [Unit 11 individual assessment](https://mozakay.github.io/posts/2026-07-14-unit-11-post-digitalisation-risk-assessment/) through probability ranges, 10,000 Monte Carlo iterations, a deterministic cross-check and an active-active multi-region design.
 
-<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit11/Monte%20Carlo%20simulation%20results.png" alt="Unit 11 Monte Carlo results" width="750">
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit11/Monte%20Carlo%20simulation%20results.png" alt="Unit 11 Monte Carlo results" width="600">
 
 **Figure 12.** Unit 11 aggregate quality, availability and security probabilities.
 
-<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit11/disaster_recovery_architecture.png" alt="AWS active-active multi-region disaster recovery architecture" width="650">
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit11/disaster_recovery_architecture.png" alt="AWS active-active multi-region disaster recovery architecture" width="600">
 
 **Figure 13.** Unit 11 disaster-recovery architecture designed around measurable RTO and RPO requirements.
 
 The [quantum-computing debate](https://mozakay.github.io/posts/2026-06-22-great-debate-quantum-computing/) extended the analysis to uncertain future threats. The activity demonstrated that long migration lead times may justify early preparation even when the timing of a cryptographically relevant quantum computer cannot be estimated confidently.
 
-<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit12/GreatDebate/Work-division.png" alt="Work division for the quantum-computing debate" width="750">
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit12/GreatDebate/Work-division.png" alt="Work division for the quantum-computing debate" width="600">
 
 **Figure 14.** Unit 12 evidence of coordinated task allocation for the collaborative debate.
 
@@ -118,7 +118,7 @@ The principal contribution to the Pampered Pets team project was the Current Bus
 
 The meeting evidence demonstrates that the contribution formed part of an agreed team process rather than an isolated section of work. The project requirements, allocation of responsibilities and internal timeline were discussed before drafting.
 
-<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit6/minutesofmeeting.png" alt="Pampered Pets meeting notes and task coordination" width="750">
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit6/minutesofmeeting.png" alt="Pampered Pets meeting notes and task coordination" width="600">
 
 **Figure 15.** Meeting notes showing discussion of the project requirements, task allocation and submission timeline.
 
@@ -126,7 +126,7 @@ The meeting evidence demonstrates that the contribution formed part of an agreed
 
 The later individual project demonstrated increased independence through academic research, Python modelling, interpretation of aggregate outcomes, prioritised recommendations and disaster recovery design. Reproducibility evidence showed that the model was executed using a documented random seed and 10,000 iterations.
 
-<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit11/Successful-Execution-and-Reproducibility-Settings.png" alt="Python execution and reproducibility settings" width="750">
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit11/Successful-Execution-and-Reproducibility-Settings.png" alt="Python execution and reproducibility settings" width="600">
 
 **Figure 16.** Evidence of successful Python execution, random-seed documentation and simulation settings.
 
@@ -134,7 +134,7 @@ The later individual project demonstrated increased independence through academi
 
 The contribution to the quantum-computing presentation focused on the introduction, the group position, the scope of the threat and the importance of the 2026–2031 preparation period. Translating an uncertain technical issue into a strategic argument strengthened communication with a non-specialist audience. The work-division evidence confirms coordinated preparation and a defined individual role.
 
-<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit12/GreatDebate/Work-division.png" alt="Work division for the quantum-computing debate" width="750">
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit12/GreatDebate/Work-division.png" alt="Work division for the quantum-computing debate" width="600">
 
 **Figure 17.** Work-division evidence identifying the contribution to the opening presentation section.
 
@@ -170,7 +170,7 @@ Unit 6 established the initial risk assessment foundation by linking each asset 
 
 The assessment also demonstrated that digitalisation should not be treated automatically as a risk reduction. Existing weaknesses could be inherited and amplified by the introduction of e-commerce, cloud inventory, customer accounts and international suppliers.
 
-<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit6/Current-VS-Digitalised-Risk-Situation.png" alt="Unit 6 current and digitalised risk comparison" width="750">
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit6/Current-VS-Digitalised-Risk-Situation.png" alt="Unit 6 current and digitalised risk comparison" width="600">
 
 **Figure 18.** Unit 6 qualitative baseline showing the movement from inherited current-state weaknesses to controlled digitalisation.
 
@@ -186,7 +186,7 @@ The Unit 6 report was developed collaboratively. Responsibilities were divided b
 
 The tutor feedback recognised the comprehensive coverage of the case, the identification of risk factors and assumptions, the use of recognised frameworks and the evidence of strong critique. However, it also indicated that the critical evaluation should have expanded further on the limitations and challenges associated with the applied risk assessment.
 
-<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit6/tutor-feedback-unit6.png" alt="Tutor feedback on the Unit 6 Security Risk Identification Report" width="750">
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit6/tutor-feedback-unit6.png" alt="Tutor feedback on the Unit 6 Security Risk Identification Report" width="600">
 
 **Figure 19.** Tutor feedback identifying the need for deeper evaluation of the limitations and challenges of the Unit 6 risk assessment.
 
@@ -206,7 +206,7 @@ Unit 11 moved from an asset-based snapshot to a flow-based and scenario-based me
 
 Each scenario was linked to the relevant supply-chain flow and its effect on quality, availability or security. This represented a development in analytical reasoning because it distinguished between the technical source of a risk and its wider business consequence.
 
-<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit11/Post-Digitalisation-Supply-Chain-Risk.png" alt="Post-digitalisation supply-chain risk and disaster recovery assessment process" width="650">
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit11/Post-Digitalisation-Supply-Chain-Risk.png" alt="Post-digitalisation supply-chain risk and disaster recovery assessment process" width="600">
 
 **Figure 20.** Unit 11 methodology progressing from system scoping and information-flow analysis to quantitative modelling, prioritisation and disaster recovery recommendations.
 
@@ -214,7 +214,7 @@ Unit 6 used qualitative likelihood and impact categories. Unit 11 used minimum, 
 
 The model also calculated probability × impact exposure scores and estimated the probability of at least one quality, availability or security issue. The analysis therefore moved from rating risks individually to examining how several risks could combine to affect broader business outcomes.
 
-<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit11/Monte%20Carlo%20simulation%20results.png" alt="Unit 11 aggregate Monte Carlo outcomes" width="750">
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit11/Monte%20Carlo%20simulation%20results.png" alt="Unit 11 aggregate Monte Carlo outcomes" width="600">
 
 **Figure 21.** Unit 11 quantitative outcomes demonstrating the development from broad qualitative ratings to probability distributions and aggregate business exposure.
 
@@ -242,7 +242,7 @@ Unit 6 identified missing backups and recovery procedures and recommended tested
 
 Unit 11 addressed a stricter requirement: 24/7/365 availability with RTO and RPO below one minute. This required an active-active multi-region design involving replication, continuous monitoring, automated traffic redirection, database failover and regular testing.
 
-<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit11/disaster_recovery_architecture.png" alt="Unit 11 active-active disaster recovery architecture" width="650">
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit11/disaster_recovery_architecture.png" alt="Unit 11 active-active disaster recovery architecture" width="600">
 
 **Figure 22.** Unit 11 architecture translating measurable continuity requirements into replication, monitoring, automated failover and testing.
 
