@@ -6,10 +6,6 @@ categories: ["Security and Risk Management"]
 tags: [final-assessment, e-portfolio, artefacts, collaboration, critical-reflection, risk-management, professional-development]
 ---
 
-# Security and Risk Management Final E-Portfolio
-
-**E-Portfolio URL:** [Insert the published GitHub Pages URL here]
-
 ## Portfolio Overview
 
 This e-portfolio consolidates evidence of academic, technical and collaborative development across the Security and Risk Management module. It presents at least one artefact from each unit, identifies the student’s individual contribution to group and individual activities, evaluates the progression from the Unit 6 status document to the Unit 11 final project, and provides a critical reflection on the security and risk management process, teamwork and professional development.
