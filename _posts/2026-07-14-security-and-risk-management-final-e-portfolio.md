@@ -242,7 +242,7 @@ Unit 6 identified missing backups and recovery procedures and recommended tested
 
 Unit 11 addressed a stricter requirement: 24/7/365 availability with RTO and RPO below one minute. This required an active-active multi-region design involving replication, continuous monitoring, automated traffic redirection, database failover and regular testing.
 
-<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit11/disaster_recovery_architecture.png" alt="Unit 11 active-active disaster recovery architecture" width="600">
+<img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit11/disaster_recovery_architecture.png" alt="Unit 11 active-active disaster recovery architecture" width="500">
 
 **Figure 22.** Unit 11 architecture translating measurable continuity requirements into replication, monitoring, automated failover and testing.
 
