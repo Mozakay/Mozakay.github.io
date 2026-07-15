@@ -16,7 +16,7 @@ The portfolio also evaluates individual and collaborative contributions. Particu
 
 ### Socio-Technical Risk, Peer Engagement and Synthesis — Units 1–3
 
-The [human-rights discussion](https://mozakay.github.io/posts/2026-05-05-collaborative-learning-discussion-1-human-rights-technology/) challenged a mainly technical interpretation of risk. As shown in Figure 1, the initial contribution considered data quality, fairness and accountability, but peer engagement added surveillance, retaliation, data minimisation, auditability and community protection. The final synthesis therefore developed a wider socio-technical position in which risk assessment should examine who may be harmed, whose evidence is represented and how accountability is maintained (Hancock et al., 2024).
+The [human-rights discussion]({% post_url 2026-05-05-collaborative-learning-discussion-1-human-rights-technology %}) challenged a mainly technical interpretation of risk. As shown in Figure 1, the initial contribution considered data quality, fairness and accountability, but peer engagement added surveillance, retaliation, data minimisation, auditability and community protection. The final synthesis therefore developed a wider socio-technical position in which risk assessment should examine who may be harmed, whose evidence is represented and how accountability is maintained (Hancock et al., 2024).
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit1/Initial%20Post.png" alt="Initial contribution to the human-rights discussion" width="600">
 
