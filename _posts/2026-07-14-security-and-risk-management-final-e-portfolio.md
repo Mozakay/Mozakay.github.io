@@ -58,7 +58,7 @@ The [Pampered Pets team assessment](https://mozakay.github.io/posts/2026-06-06-p
 
 ### Probability, Bayesian Reasoning and Simulation — Unit 7
 
-The [Think Bayes activity](https://mozakay.github.io/posts/2026-06-13-think-bayes-probability-and-bayesian-updating/) developed understanding of ordinary probability, conjunctions, conditional probability and Bayesian updating. It showed that conclusions depend on how hypotheses, likelihoods and evidence-generating processes are defined (Downey, 2022).
+The [Think Bayes activity](https://mozakay.github.io/posts/2026-06-13-think-bayes-probability-and-bayesian-updating/) developed understanding of ordinary probability, conjunctions, conditional probability and Bayesian updating. It showed that conclusions depend on how hypotheses, likelihoods and evidence-generating processes are defined (Downey, 2021).
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Downey/Bayesian%20Updating%20for%20the%20Trick%20Coin%20Problem.png" alt="Bayesian updating for the trick coin problem" width="600">
 
@@ -275,7 +275,7 @@ The Pampered Pets project applied this understanding to ageing technology, share
 
 The most significant change concerned the limitations of simple risk ratings. In Pampered Pets, qualitative categories supported clear communication and were proportionate to a small organisation. NIST CSF 2.0 also linked governance, identification, protection, detection, response and recovery (National Institute of Standards and Technology, 2024). Nevertheless, Low, Medium and High ratings can conceal assumptions, distort prioritisation and imply greater certainty than the evidence supports (Cox, 2008; Duijm, 2015). Qualitative assessment therefore became credible only when its reasoning was explicit.
 
-Probability was initially understood as a single estimate attached to a risk. Monte Carlo simulation showed that uncertain inputs could be represented through ranges and distributions rather than one fixed result (Metropolis and Ulam, 1949). Think Bayes showed that probability changes with evidence and depends on how hypotheses and likelihoods are defined (Downey, 2022). Numerical presentation does not remove uncertainty unless evidence, assumptions and calculations are defensible (Hubbard and Seiersen, 2016).
+Probability was initially understood as a single estimate attached to a risk. Monte Carlo simulation showed that uncertain inputs could be represented through ranges and distributions rather than one fixed result (Metropolis and Ulam, 1949). Think Bayes showed that probability changes with evidence and depends on how hypotheses and likelihoods are defined (Downey, 2021). Numerical presentation does not remove uncertainty unless evidence, assumptions and calculations are defensible (Hubbard and Seiersen, 2016).
 
 Social-engineering modelling showed that attack occurrence and attack success are not equivalent. Attack Tree and Markov Chain models distinguished how frequently a pattern may arise from how effectively it may progress to compromise (Aijaz and Nazir, 2024). However, human behaviour, organisational culture and interaction context cannot be represented fully through probabilities. Modelling therefore had to be combined with contextual judgement.
 
@@ -307,38 +307,38 @@ The portfolio demonstrates a shift from identifying isolated technical risks to 
 
 ## References
 
-Aijaz, M. and Nazir, M. (2024) ‘Modelling and analysis of social engineering threats using the attack tree and the Markov model’, *International Journal of Information Technology*, 16(2), pp. 1231–1238.
+Aijaz, M. and Nazir, M. (2024) ‘Modelling and analysis of social engineering threats using the attack tree and the Markov model’, International Journal of Information Technology, 16(2), pp. 1231–1238. doi:10.1007/s41870-023-01540-z.
 
-Corbari, G.I., Khatod, N., Popiak, J.F. and Sinclair, P. (2024) ‘Mission Thread Analysis: Establishing a common framework in a multi-discipline domain to enhance defensive cyberspace operations’, *The Cyber Defense Review*, 9(1), pp. 37–54.
+Corbari, G.I., Khatod, N., Popiak, J.F. and Sinclair, P. (2024) ‘Mission thread analysis: Establishing a common framework in a multi-discipline domain to enhance defensive cyberspace operations’, The Cyber Defense Review, 9(1), pp. 37–54. Available at: https://cyberdefensereview.army.mil/CDR-Content/Articles/Article-View/Article/3757127/mission-thread-analysis-establishing-a-common-framework-in-a-multi-discipline-d/ (Accessed: 15 July 2026).
 
-Cox, L.A. (2008) ‘What’s wrong with risk matrices?’, *Risk Analysis*, 28(2), pp. 497–512. doi:10.1111/j.1539-6924.2008.01030.x.
+Cox, L.A. (2008) ‘What’s wrong with risk matrices?’, Risk Analysis, 28(2), pp. 497–512. doi:10.1111/j.1539-6924.2008.01030.x.
 
-Data Protection Commission (2025) *Final Decision: Inquiry concerning the University of Limerick*. Dublin: Data Protection Commission.
+Data Protection Commission (2025) Inquiry concerning the University of Limerick. DPC Reference IN-19-7-1, decision dated 10 December 2025. Available at: https://www.dataprotection.ie/en/dpc-guidance/decisions/inquiry-concerning-university-limerick (Accessed: 15 July 2026).
 
-Downey, A. (2022) *Think Bayes: Bayesian Statistics in Python*. 2nd edn. Available at: https://allendowney.github.io/ThinkBayes2/ (Accessed: 13 June 2026).
+Downey, A.B. (2021) Think Bayes: Bayesian Statistics in Python. 2nd edn. Sebastopol, CA: O’Reilly Media. Available at: https://allendowney.github.io/ThinkBayes2/ (Accessed: 15 July 2026).
 
-Duijm, N.J. (2015) ‘Recommendations on the use and design of risk matrices’, *Safety Science*, 76, pp. 21–31. doi:10.1016/j.ssci.2015.02.014.
+Duijm, N.J. (2015) ‘Recommendations on the use and design of risk matrices’, Safety Science, 76, pp. 21–31. doi:10.1016/j.ssci.2015.02.014.
 
-European Parliament and Council (2016) ‘Regulation (EU) 2016/679 of the European Parliament and of the Council’, *Official Journal of the European Union*, L119, pp. 1–88.
+European Parliament and Council of the European Union (2016) ‘Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation)’, Official Journal of the European Union, L 119, 4 May, pp. 1–88. Available at: https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng (Accessed: 15 July 2026).
 
-Hancock, J., Hui, R., Singh, J. and Mazumder, A. (2024) ‘Trouble at Sea: Data and digital technology challenges for maritime human rights concerns’, in *Proceedings of the 2024 ACM Conference on Fairness, Accountability, and Transparency*, pp. 988–1001. doi:10.1145/3630106.3658950.
+Hancock, J., Hui, R., Singh, J. and Mazumder, A. (2024) ‘Trouble at sea: Data and digital technology challenges for maritime human rights concerns’, in Proceedings of the 2024 ACM Conference on Fairness, Accountability, and Transparency, pp. 988–1001. doi:10.1145/3630106.3658950.
 
-Hubbard, D.W. and Seiersen, R. (2016) *How to Measure Anything in Cybersecurity Risk*. Hoboken, NJ: Wiley. doi:10.1002/9781119162315.
+Hubbard, D.W. and Seiersen, R. (2016) How to Measure Anything in Cybersecurity Risk. Hoboken, NJ: Wiley. doi:10.1002/9781119162315.
 
-Jbair, M., Ahmad, B., Maple, C. and Harrison, R. (2022) ‘Threat modelling for industrial cyber physical systems in the era of smart manufacturing’, *Computers in Industry*, 137, 103611. doi:10.1016/j.compind.2022.103611.
+Jbair, M., Ahmad, B., Maple, C. and Harrison, R. (2022) ‘Threat modelling for industrial cyber physical systems in the era of smart manufacturing’, Computers in Industry, 137, Article 103611. doi:10.1016/j.compind.2022.103611.
 
-Metropolis, N. and Ulam, S. (1949) ‘The Monte Carlo method’, *Journal of the American Statistical Association*, 44(247), pp. 335–341.
+Metropolis, N. and Ulam, S. (1949) ‘The Monte Carlo method’, Journal of the American Statistical Association, 44(247), pp. 335–341. doi:10.1080/01621459.1949.10483310.
 
-Moravcik, M., Segec, P., Kontsek, M. and Zidekova, L. (2024) ‘Model-driven approach to cloud-portability issue’, *Applied Sciences*, 14(20), Article 9298. doi:10.3390/app14209298.
+Moravcik, M., Segec, P., Kontsek, M. and Zidekova, L. (2024) ‘Model-driven approach to cloud-portability issue’, Applied Sciences, 14(20), Article 9298. doi:10.3390/app14209298.
 
-National Cyber Security Centre (2025) *Timelines for Migration to Post-Quantum Cryptography*. London: National Cyber Security Centre.
+National Cyber Security Centre (2025) Timelines for migration to post-quantum cryptography. 20 March. Available at: https://www.ncsc.gov.uk/guidance/pqc-migration-timelines (Accessed: 15 July 2026).
 
-National Institute of Standards and Technology (2024) *The NIST Cybersecurity Framework (CSF) 2.0*. Gaithersburg, MD: NIST.
+National Institute of Standards and Technology (2024) The NIST Cybersecurity Framework (CSF) 2.0. NIST CSWP 29. Gaithersburg, MD: National Institute of Standards and Technology. doi:10.6028/NIST.CSWP.29.
 
-Rolfe, G., Freshwater, D. and Jasper, M. (2001) *Critical Reflection for Nursing and the Helping Professions: A User’s Guide*. Basingstoke: Palgrave Macmillan.
+Rolfe, G., Freshwater, D. and Jasper, M. (2001) Critical Reflection for Nursing and the Helping Professions: A User’s Guide. Basingstoke: Palgrave Macmillan.
 
-Schmitt, A.J. and Singh, M. (2009) ‘Quantifying supply chain disruption risk using Monte Carlo and discrete-event simulation’, in *Proceedings of the 2009 Winter Simulation Conference*, Austin, TX, 13–16 December. Piscataway, NJ: IEEE, pp. 1237–1248. doi:10.1109/WSC.2009.5429561.
+Schmitt, A.J. and Singh, M. (2009) ‘Quantifying supply chain disruption risk using Monte Carlo and discrete-event simulation’, in Proceedings of the 2009 Winter Simulation Conference, Austin, TX, 13–16 December. Piscataway, NJ: IEEE, pp. 1237–1248. doi:10.1109/WSC.2009.5429561.
 
-Spring, J.M., Hatleback, E., Householder, A., Manion, A. and Shick, D. (2020) ‘Prioritizing vulnerability response: A stakeholder-specific vulnerability categorization (Version 1.1)’, *Workshop on the Economics of Information Security*.
+Spring, J.M., Hatleback, E., Householder, A., Manion, A. and Shick, D. (2020) ‘Prioritizing vulnerability response: A stakeholder-specific vulnerability categorization (Version 1.1)’, Workshop on the Economics of Information Security (WEIS 2020), December. Available at: https://weis2020.econinfosec.org/wp-content/uploads/sites/8/2020/06/weis20-final6.pdf (Accessed: 15 July 2026).
 
-Wunder, J., Kurtz, A., Eichenmüller, C., Gassmann, F. and Benenson, Z. (2024) ‘Shedding light on CVSS scoring inconsistencies: A user-centric study on evaluating widespread security vulnerabilities’, in *2024 IEEE Symposium on Security and Privacy*, pp. 1102–1121. doi:10.1109/SP54263.2024.00058.
+Wunder, J., Kurtz, A., Eichenmüller, C., Gassmann, F. and Benenson, Z. (2024) ‘Shedding light on CVSS scoring inconsistencies: A user-centric study on evaluating widespread security vulnerabilities’, in 2024 IEEE Symposium on Security and Privacy (SP), pp. 1102–1121. doi:10.1109/SP54263.2024.00058.
