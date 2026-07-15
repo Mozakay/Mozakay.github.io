@@ -261,9 +261,7 @@ The development was influenced by both formal feedback and discussion. The Unit 
 Unit 11 should therefore not be presented as replacing qualitative assessment with numerical certainty. The stronger security and risk management process combines the two approaches. Qualitative asset-based analysis identifies the business context, threats, vulnerabilities and control gaps, while flow-based quantitative modelling makes uncertainty, dependencies and priority more explicit. Together, the two units demonstrate development from initial risk identification towards transparent decision support, risk treatment and resilience planning.
 
 
-## Final Critical Reflection
-
-### Introduction
+## Critical Reflection
 
 Effective security and risk management require more than identifying threats and selecting controls; they depend on evidence quality, transparent assumptions and proportionate judgement. Across the module, understanding developed from a control-centred view into a socio-technical, legal and operational perspective. Rolfe, Freshwater and Jasper’s (2001) framework is used to evaluate risk understanding, individual contribution, collaboration, and professional and personal development.
 
