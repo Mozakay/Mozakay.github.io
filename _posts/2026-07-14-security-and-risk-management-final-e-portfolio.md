@@ -252,29 +252,29 @@ Effective security and risk management require more than identifying threats and
 
 ### What?
 
-Risk assessment was initially approached through assets, threats, vulnerabilities, likelihood, impact and mitigation. The human-rights discussion exposed the limits of a purely technical perspective by showing that digital systems may create exclusion, surveillance, privacy risks and harm. Peer contributions extended the analysis to retaliation, data minimisation and community protection, reinforcing the importance of fairness and stakeholder participation (Hancock et al., 2024). ICPS threat modelling also demonstrated how vulnerabilities can create cascading effects across technical components, safety and production continuity (Jbair et al., 2022).
+Risk assessment was initially approached through assets, threats, vulnerabilities, likelihood, impact and mitigation. The human-rights discussion, based on Hancock et al. (2024), exposed the limits of a purely technical perspective by showing that digital systems may create exclusion, surveillance, privacy risks and harm. Peer contributions extended the analysis to retaliation, data minimisation and community protection, reinforcing the importance of fairness and stakeholder participation. ICPS threat modelling also demonstrated how vulnerabilities can create cascading effects across technical components, safety and production continuity (Jbair et al., 2022).
 
 The Pampered Pets project applied this understanding to ageing technology, shared networks, customer records and manual inventory. Think Bayes and Monte Carlo simulation then introduced probability-based reasoning and representations of uncertain evidence (Downey, 2021; Metropolis and Ulam, 1949). These activities informed the post-digitalisation assessment, while social engineering, vulnerability prioritisation, cloud recovery and quantum computing extended learning into human factors, resilience and strategic communication.
 
 ### So What?
 
-The most significant change concerned the limitations of simple risk ratings. In Pampered Pets, qualitative categories supported clear communication and were proportionate to a small organisation. NIST CSF 2.0 also linked governance, identification, protection, detection, response and recovery (National Institute of Standards and Technology, 2024). Nevertheless, Low, Medium and High ratings can conceal assumptions, distort prioritisation and imply greater certainty than the evidence supports (Cox, 2008; Duijm, 2015). Qualitative assessment therefore became credible only when its reasoning was explicit.
+The most significant change concerned the limitations of simple risk ratings. In Pampered Pets, qualitative categories supported clear communication and were proportionate to a small organisation. NIST CSF 2.0 also organised cybersecurity outcomes across six Functions: Govern, Identify, Protect, Detect, Respond and Recover (National Institute of Standards and Technology, 2024). Nevertheless, Low, Medium and High ratings can conceal assumptions, distort prioritisation and imply greater certainty than the evidence supports (Cox, 2008; Duijm, 2015). Qualitative assessment therefore became credible only when its reasoning was explicit.
 
 Probability was initially understood as a single estimate attached to a risk. Monte Carlo simulation showed that uncertain inputs could be represented through ranges and distributions rather than one fixed result (Metropolis and Ulam, 1949). Think Bayes showed that probability changes with evidence and depends on how hypotheses and likelihoods are defined (Downey, 2021). Numerical presentation does not remove uncertainty unless evidence, assumptions and calculations are defensible (Hubbard and Seiersen, 2016).
 
-Social-engineering modelling showed that attack occurrence and attack success are not equivalent. Attack Tree and Markov Chain models distinguished how frequently a pattern may arise from how effectively it may progress to compromise (Aijaz and Nazir, 2024). However, human behaviour, organisational culture and interaction context cannot be represented fully through probabilities. Modelling therefore had to be combined with contextual judgement.
+Social-engineering modelling demonstrated that attack occurrence and successful compromise are not equivalent. Attack Trees mapped the alternative pathways through which an attack could progress, while Markov Chain modelling represented the probabilities of transitions between successive states (Aijaz and Nazir, 2024). The modelling exercise also indicated that probabilities alone could not fully capture the influence of human behaviour, organisational culture and interaction context. Contextual judgement was therefore required alongside the quantitative models.
 
-This issue became central in the post-digitalisation assessment. Historical data did not exist for the proposed international supply chain, so minimum, most likely and maximum estimates replaced unsupported exact frequencies. Triangular distributions, 10,000 iterations and a deterministic cross-check increased transparency, although results remained sensitive to selected ranges and the approximate independence assumption. Simulation can represent disruption uncertainty, but conclusions still depend on scenarios and input assumptions (Schmitt and Singh, 2009). Quantitative assessment was therefore understood as decision support rather than prediction.
+This issue became central in the post-digitalisation assessment. Historical data did not exist for the proposed international supply chain, so minimum, most likely and maximum estimates replaced unsupported exact frequencies. Triangular distributions, 10,000 simulation iterations (Figure 16) and a deterministic cross-check improved transparency, despite sensitivity to selected ranges and the approximate independence assumption. Simulation can represent disruption uncertainty, but conclusions still depend on scenarios and input assumptions (Schmitt and Singh, 2009). Quantitative assessment was therefore understood as decision support rather than prediction.
 
 Individual contribution became more complex and independent. The Current Business Risk Assessment established a baseline and demonstrated research, organisation and evidence integration. However, some ratings needed fuller justification, assumptions should have been recorded earlier and more time reserved for review. Unit 11 demonstrated greater independence through academic evidence, Python modelling, prioritisation and disaster recovery design.
 
-Experience as a member of a development team produced benefits and methodological challenges. Dividing the Pampered Pets project improved accountability and reduced duplication, but separate drafting risked inconsistencies in terminology, structure and referencing. Integration was therefore essential. In the CVSS and SSVC discussion, an initial preference for replacing CVSS developed into a balanced position: CVSS retained value for severity communication, while SSVC supported contextual prioritisation (Spring et al., 2019; Wunder et al., 2024). Peer challenge therefore improved the final judgement.
+Experience as a member of a development team produced benefits and methodological challenges. Dividing the Pampered Pets project improved accountability and reduced duplication, but separate drafting risked inconsistencies in terminology, structure and referencing. Integration was therefore essential. In the CVSS and SSVC discussion, an initial preference for replacing CVSS evolved into a more balanced position. CVSS remained useful for communicating technical severity, whereas SSVC enabled more contextual and stakeholder-specific prioritisation (Spring et al., 2019; Wunder et al., 2024). Peer feedback therefore strengthened the final judgement by replacing an either–or conclusion with a proportionate approach in which the two methods served complementary purposes.
 
 Preparing the opening quantum-computing argument required an uncertain technical issue to be translated into a clear strategic position for a non-specialist audience. This reflected guidance that post-quantum migration requires early discovery and preparation because cryptographic dependencies cannot be replaced immediately (National Cyber Security Centre, 2025).
 
-Professional development was evident in stronger scrutiny of whether claims, ratings and controls were supported and proportionate. The University of Limerick case showed that weak detection, records and breach notification create regulatory as well as technical consequences (Data Protection Commission, 2025; European Parliament and Council, 2016). Disaster recovery broadened to portability, monitoring, supplier dependency and operational alignment; provider dependency can constrain recovery and migration options (Corbari et al., 2024; Moravcik et al., 2024). Security decisions were therefore understood as technical and governance decisions.
+Professional development was evident in stronger scrutiny of whether claims, ratings and controls were supported and proportionate. The University of Limerick case showed that weak detection, records and breach notification create regulatory as well as technical consequences (Data Protection Commission, 2025; European Parliament and Council, 2016). Disaster recovery broadened to portability, monitoring, supplier dependency and operational alignment; provider dependency can constrain recovery and migration options (Moravcik et al., 2024). Security decisions were therefore understood as technical and governance decisions.
 
-Personal practice also changed. Uncertainty was treated as a condition to acknowledge and communicate rather than conceal through precise-looking results. This encouraged earlier planning, cautious interpretation and systematic recording of assumptions.
+Precise-looking numerical results initially appeared reassuring; however, discomfort arose when the supporting evidence was weak. This tension encouraged earlier validation, more cautious interpretation and systematic recording of assumptions. Uncertainty was consequently treated as a condition to acknowledge and communicate rather than conceal through apparently precise results.
 
 ### Now What?
 
@@ -290,33 +290,33 @@ In professional practice, the same approach will support digital-service reviews
 
 The portfolio demonstrates a shift from identifying isolated technical risks to evaluating interconnected socio-technical systems under uncertainty. Development is evidenced through the selection of proportionate methods, transparent assumptions, peer-informed judgement and stronger integration between controls, business requirements and stakeholder outcomes.
 
+
+
 ## References
 
 Aijaz, M. and Nazir, M. (2024) ‘Modelling and analysis of social engineering threats using the attack tree and the Markov model’, International Journal of Information Technology, 16(2), pp. 1231–1238. doi:10.1007/s41870-023-01540-z.
 
-Corbari, G.I., Khatod, N., Popiak, J.F. and Sinclair, P. (2024) ‘Mission thread analysis: Establishing a common framework in a multi-discipline domain to enhance defensive cyberspace operations’, The Cyber Defense Review, 9(1), pp. 37–54. Available at: https://cyberdefensereview.army.mil/CDR-Content/Articles/Article-View/Article/3757127/mission-thread-analysis-establishing-a-common-framework-in-a-multi-discipline-d/ (Accessed: 15 July 2026).
-
 Cox, L.A. (2008) ‘What’s wrong with risk matrices?’, Risk Analysis, 28(2), pp. 497–512. doi:10.1111/j.1539-6924.2008.01030.x.
 
-Data Protection Commission (2025) Inquiry concerning the University of Limerick. DPC Reference IN-19-7-1, decision dated 10 December 2025. Available at: https://www.dataprotection.ie/en/dpc-guidance/decisions/inquiry-concerning-university-limerick (Accessed: 15 July 2026).
+Data Protection Commission (2025) Inquiry concerning the University of Limerick. DPC Reference IN-19-7-1, decision dated 10 December 2025. Available at: https://www.dataprotection.ie/en/dpc-guidance/decisions/inquiry-concerning-university-limerick.
 
-Downey, A.B. (2021) Think Bayes: Bayesian Statistics in Python. 2nd edn. Sebastopol, CA: O’Reilly Media. Available at: https://allendowney.github.io/ThinkBayes2/ (Accessed: 15 July 2026).
+Downey, A.B. (2021) Think Bayes: Bayesian Statistics in Python. 2nd edn. Sebastopol, CA: O’Reilly Media. Available at: https://allendowney.github.io/ThinkBayes2.
 
 Duijm, N.J. (2015) ‘Recommendations on the use and design of risk matrices’, Safety Science, 76, pp. 21–31. doi:10.1016/j.ssci.2015.02.014.
 
-European Parliament and Council of the European Union (2016) ‘Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation)’, Official Journal of the European Union, L 119, 4 May, pp. 1–88. Available at: https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng (Accessed: 15 July 2026).
+European Parliament and Council of the European Union (2016) ‘Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation)’, Official Journal of the European Union, L 119, 4 May, pp. 1–88. Available at: https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng.
 
 Hancock, J., Hui, R., Singh, J. and Mazumder, A. (2024) ‘Trouble at sea: Data and digital technology challenges for maritime human rights concerns’, in Proceedings of the 2024 ACM Conference on Fairness, Accountability, and Transparency, pp. 988–1001. doi:10.1145/3630106.3658950.
 
 Hubbard, D.W. and Seiersen, R. (2016) How to Measure Anything in Cybersecurity Risk. Hoboken, NJ: Wiley. doi:10.1002/9781119162315.
 
-Jbair, M., Ahmad, B., Maple, C. and Harrison, R. (2022) ‘Threat modelling for industrial cyber physical systems in the era of smart manufacturing’, Computers in Industry, 137, Article 103611. doi:10.1016/j.compind.2022.103611.
+Jbair, M., Ahmad, B., Maple, C. and Harrison, R. (2022) ‘Threat modelling for industrial cyber physical systems in the era of smart manufacturing’, Computers in Industry, 137, article 103611. doi:10.1016/j.compind.2022.103611.
 
 Metropolis, N. and Ulam, S. (1949) ‘The Monte Carlo method’, Journal of the American Statistical Association, 44(247), pp. 335–341. doi:10.1080/01621459.1949.10483310.
 
-Moravcik, M., Segec, P., Kontsek, M. and Zidekova, L. (2024) ‘Model-driven approach to cloud-portability issue’, Applied Sciences, 14(20), Article 9298. doi:10.3390/app14209298.
+Moravcik, M., Segec, P., Kontsek, M. and Zidekova, L. (2024) ‘Model-driven approach to cloud-portability issue’, Applied Sciences, 14(20), article 9298. doi:10.3390/app14209298.
 
-National Cyber Security Centre (2025) Timelines for migration to post-quantum cryptography. 20 March. Available at: https://www.ncsc.gov.uk/guidance/pqc-migration-timelines (Accessed: 15 July 2026).
+National Cyber Security Centre (2025) Timelines for migration to post-quantum cryptography. 20 March. Available at: https://www.ncsc.gov.uk/guidance/pqc-migration-timelines.
 
 National Institute of Standards and Technology (2024) The NIST Cybersecurity Framework (CSF) 2.0. NIST CSWP 29. Gaithersburg, MD: National Institute of Standards and Technology. doi:10.6028/NIST.CSWP.29.
 
@@ -324,6 +324,6 @@ Rolfe, G., Freshwater, D. and Jasper, M. (2001) Critical Reflection for Nursing 
 
 Schmitt, A.J. and Singh, M. (2009) ‘Quantifying supply chain disruption risk using Monte Carlo and discrete-event simulation’, in Proceedings of the 2009 Winter Simulation Conference, Austin, TX, 13–16 December. Piscataway, NJ: IEEE, pp. 1237–1248. doi:10.1109/WSC.2009.5429561.
 
-Spring, J.M., Hatleback, E., Householder, A.D., Manion, A. and Shick, D. (2019) Prioritizing Vulnerability Response: A Stakeholder-Specific Vulnerability Categorization. Pittsburgh, PA: Software Engineering Institute, Carnegie Mellon University. Available at: https://www.sei.cmu.edu/library/prioritizing-vulnerability-response-a-stakeholder-specific-vulnerability-categorization/ (Accessed: 15 July 2026).
+Spring, J.M., Hatleback, E., Householder, A.D., Manion, A. and Shick, D. (2019) Prioritizing Vulnerability Response: A Stakeholder-Specific Vulnerability Categorization. White Paper. Pittsburgh, PA: Software Engineering Institute, Carnegie Mellon University. Available at: https://www.sei.cmu.edu/library/prioritizing-vulnerability-response-a-stakeholder-specific-vulnerability-categorization
 
 Wunder, J., Kurtz, A., Eichenmüller, C., Gassmann, F. and Benenson, Z. (2024) ‘Shedding light on CVSS scoring inconsistencies: A user-centric study on evaluating widespread security vulnerabilities’, in 2024 IEEE Symposium on Security and Privacy (SP), pp. 1102–1121. doi:10.1109/SP54263.2024.00058.
