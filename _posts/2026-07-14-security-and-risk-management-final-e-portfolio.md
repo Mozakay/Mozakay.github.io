@@ -248,7 +248,7 @@ Unit 11 should therefore not be presented as replacing qualitative assessment wi
 
 ## Critical Reflection
 
-Effective security and risk management require more than identifying threats and selecting controls; they depend on evidence quality, transparent assumptions and proportionate judgement. Across the module, understanding developed from a control-centred view into a socio-technical, legal and operational perspective. Rolfe, Freshwater and Jasper’s (2001) framework is used to evaluate risk understanding, individual contribution, collaboration, and professional and personal development.
+Effective security and risk management require more than identifying threats and selecting controls; they depend on evidence quality, transparent assumptions and proportionate judgement. Across the module, understanding developed from a control-centred view into a socio-technical, legal and operational perspective. The reflective framework developed by Rolfe, Freshwater and Jasper (2001) is used to evaluate risk understanding, individual contribution, collaboration, and professional and personal development.
 
 ### What?
 
