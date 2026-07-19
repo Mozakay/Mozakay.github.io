@@ -8,13 +8,15 @@ tags: [final-assessment, e-portfolio, critical-analysis, collaboration, risk-man
 
 ## Portfolio Overview
 
-This e-portfolio evaluates how understanding of security and risk management developed across the module. It traces progression from identifying isolated technical threats to analysing interconnected socio-technical systems, making uncertainty explicit and linking controls to business resilience. It also evidences individual contribution, collaboration and development from the qualitative Unit 6 report to the quantitative Unit 11 assessment.
+This e-portfolio critically evaluates how understanding of security and risk management developed across the module. The evidence demonstrates progression from identifying isolated technical threats to analysing interconnected socio-technical systems, from broad qualitative ratings to more explicit representations of uncertainty, and from viewing recovery as backup restoration to understanding operational resilience, dependency and governance.
+
+The portfolio also evaluates individual and collaborative contributions, with particular attention to the progression from the qualitative *Security Risk Identification Report: Pampered Pets* in Unit 6 to the quantitative *Post-Digitalisation Risk Assessment and Disaster Recovery Strategy* in Unit 11.
 
 ## Critical Development Evidenced by the Artefacts
 
 ### Units 1–3: Socio-Technical Risk and Peer Synthesis
 
-The [human-rights discussion]({% post_url 2026-05-05-collaborative-learning-discussion-1-human-rights-technology %}) progressed across an initial post, peer engagement and final synthesis. The first contribution focused on data quality, fairness and accountability, while peer feedback added surveillance, retaliation, data minimisation, auditability and community protection. Figures 1–3 therefore demonstrate both individual learning and collaborative development. The final position moved beyond protecting systems alone and recognised that risk assessment should examine who may be harmed, whose evidence is represented and how accountability is maintained (Hancock et al., 2024).
+Collaborative Learning Discussion 1 extended across Units 1–3: Figure 1 records the initial contribution, Figure 2 documents peer engagement and Figure 3 presents the final synthesis. The [human-rights discussion]({% post_url 2026-05-05-collaborative-learning-discussion-1-human-rights-technology %}) progressed from an initial focus on data quality, fairness and accountability to include surveillance, retaliation, data minimisation, auditability and community protection. Peer feedback therefore changed the analysis rather than merely confirming it. The final position moved beyond protecting systems alone and recognised that risk assessment should examine who may be harmed, whose evidence is represented and how accountability is maintained (Hancock et al., 2024).
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit1/Initial%20Post.png" alt="Initial contribution to the human-rights discussion" width="600">
 
@@ -32,7 +34,7 @@ The [human-rights discussion]({% post_url 2026-05-05-collaborative-learning-disc
 
 The [ICPS activity]({% post_url 2026-05-26-risk-identification-and-modelling %}) developed analysis beyond individual assets by showing how vulnerabilities may produce cascading technical, safety and operational consequences (Jbair et al., 2022). The [University of Limerick GDPR case]({% post_url 2026-05-23-gdpr-case-study-university-of-limerick %}) then connected weak account security and phishing controls with delayed detection, incomplete records, breach notification and regulatory accountability (Data Protection Commission, 2025).
 
-Unit 6 applied a qualitative risk-assessment approach structured through NIST CSF 2.0. The Low, Medium and High ratings were proportionate and understandable for a small organisation, but they compressed evidence and professional judgement into broad categories. Figure 6 shows how the assessment distinguished inherited current-state weaknesses from additional digitalisation exposure. The activity established the value of qualitative scoping while demonstrating that ratings require explicit evidence and assumptions to remain defensible (National Institute of Standards and Technology, 2024).
+Unit 6 applied a qualitative risk-assessment approach structured through NIST CSF 2.0. The Low, Medium and High ratings were proportionate and understandable for a small organisation, but they compressed evidence and professional judgement into broad categories. Figure 6 shows how the assessment distinguished inherited current-state weaknesses from additional digitalisation exposure. Together, Units 4–6 developed the analysis from identifying technical vulnerabilities to considering cascading operational consequences, legal accountability and the limitations of broad qualitative ratings (National Institute of Standards and Technology, 2024).
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit4/Six-Step.png" alt="Six-step threat-modelling methodology for Industrial Cyber-Physical Systems" width="600">
 
@@ -54,7 +56,9 @@ Unit 6 applied a qualitative risk-assessment approach structured through NIST CS
 
 The [Think Bayes activity]({% post_url 2026-06-13-think-bayes-probability-and-bayesian-updating %}) developed understanding of conditional probability and Bayesian updating, showing that conclusions depend on how hypotheses and evidence-generating processes are defined (Downey, 2021). The [Monte Carlo activity]({% post_url 2026-06-13-monte-carlo-simulation-for-risk-modelling %}) extended this learning by representing uncertainty through repeated trials and distributions of possible outcomes rather than one fixed prediction (Metropolis and Ulam, 1949).
 
-Social-engineering modelling distinguished Attack Occurrence Probability from Attack Success Probability and showed that frequent attacks are not necessarily the most effective. It also demonstrated that behaviour, persuasion and organisational context cannot be represented fully by numerical values (Aijaz and Nazir, 2024). The [CVSS–SSVC discussion]({% post_url 2026-06-22-collaborative-learning-discussion-2-cvss-ssvc %}) concluded in Unit 9. Peer feedback revised an initially replacement-focused position into a balanced conclusion: CVSS remained useful for communicating technical severity, while SSVC supported contextual and stakeholder-specific prioritisation (Spring et al., 2019; Wunder et al., 2024).
+The [social-engineering modelling activity]({% post_url 2026-06-09-modelling-social-engineering-threats %}) distinguished Attack Occurrence Probability from Attack Success Probability and showed that frequent attacks are not necessarily the most effective. It also demonstrated that behaviour, persuasion and organisational context cannot be represented fully by numerical values (Aijaz and Nazir, 2024). Collaborative Learning Discussion 2 began in Unit 7 and concluded through peer engagement and synthesis in Unit 9. Feedback revised an initially replacement-focused position into a balanced conclusion: CVSS remained useful for communicating technical severity, while SSVC supported contextual and stakeholder-specific prioritisation (Spring et al., 2019; Wunder et al., 2024).
+
+The probability activities introduced evidence-dependent reasoning, while the social-engineering and CVSS–SSVC activities demonstrated that numerical probability or severity cannot determine organisational priority without behavioural and operational context.
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Downey/Bayesian%20Updating%20for%20the%20Trick%20Coin%20Problem.png" alt="Bayesian updating for the trick coin problem" width="600">
 
@@ -78,9 +82,9 @@ Social-engineering modelling distinguished Attack Occurrence Probability from At
 
 ### Units 10–12: Resilience and Independent Application
 
-The [disaster-recovery activity]({% post_url 2026-06-18-unit-10-dr-solutions-design-and-review %}) broadened recovery beyond backup restoration to include RTO, RPO, portability, monitoring, secure configuration, vendor dependency and tested failover. Unit 11 integrated these ideas through probability ranges, 10,000 Monte Carlo iterations, a deterministic cross-check and an AWS multi-region architecture. Figures 12–13 evidence the aggregate results and the proposed use of Aurora Global Database replication and automated failover to support sub-one-minute RTO and RPO targets (Amazon Web Services, no date; Yadav, 2023).
+The [disaster-recovery activity]({% post_url 2026-06-18-unit-10-dr-solutions-design-and-review %}) broadened recovery beyond backup restoration to include RTO, RPO, portability, monitoring, secure configuration, vendor dependency and tested failover. The [Unit 11 individual assessment]({% post_url 2026-07-14-unit-11-post-digitalisation-risk-assessment %}) integrated these ideas through probability ranges, 10,000 Monte Carlo iterations, a deterministic cross-check and an AWS multi-region architecture. Figures 12–13 evidence the aggregate results and the proposed use of Aurora Global Database replication and automated failover to support sub-one-minute RTO and RPO targets (Amazon Web Services, no date; Yadav, 2023).
 
-The [quantum-computing debate]({% post_url 2026-06-22-great-debate-quantum-computing %}) extended the analysis to an uncertain future threat. It showed that long migration lead times may justify early preparation even when the arrival of a cryptographically relevant quantum computer cannot be predicted confidently. Figure 14 records the coordinated division of work.
+The [quantum-computing debate]({% post_url 2026-06-22-great-debate-quantum-computing %}) extended the analysis to an uncertain future threat. It showed that long migration lead times may justify early preparation even when the arrival of a cryptographically relevant quantum computer cannot be predicted confidently. The progression across Units 10–12 therefore moved from reviewing disaster-recovery principles, to applying them independently in Unit 11, and finally to considering how organisations should prepare for uncertain long-term threats. Figure 14 records the coordinated division of work.
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit10/dr_cloud_security_flowchart.png" alt="Cloud dependency and disaster recovery analysis" width="600">
 
@@ -102,41 +106,72 @@ The [quantum-computing debate]({% post_url 2026-06-22-great-debate-quantum-compu
 
 ## Individual Contribution and Collaboration
 
-The principal Unit 6 contribution was the Current Business Risk Assessment. It identified risks involving ageing technology, shared networks, customer information and manual inventory processes, and also included source identification, recommendation integration and final review. This contribution established the baseline used to distinguish inherited risks from those created by digitalisation, although some qualitative ratings required fuller justification and earlier documentation of assumptions. Figure 15 demonstrates that the contribution formed part of an agreed team process with defined responsibilities and an internal timeline.
+### Contribution to the Unit 6 Team Project
 
-Unit 11 demonstrated greater independence through academic research, Python modelling, interpretation of aggregate quality, availability and security outcomes, prioritised recommendations and disaster-recovery design. Figure 16 records the random seed and 10,000 iterations used to support reproducibility. The Unit 12 contribution covered the presentation introduction, group position, threat scope and importance of the 2026–2031 preparation period.
+The principal contribution to the Pampered Pets team project was the Current Business Risk Assessment. This involved identifying risks associated with ageing technology, shared networks, customer information and manual inventory processes, as well as locating sources, integrating recommendations and completing the final review. The contribution established the current-state baseline against which the additional risks created by digitalisation could be evaluated. However, some qualitative ratings required fuller justification and earlier documentation of assumptions.
 
-Collaboration was most valuable when it changed reasoning rather than merely dividing tasks. Human-rights peer responses broadened the ethical and safety analysis, while CVSS–SSVC feedback materially revised the final conclusion. Task allocation improved accountability and reduced duplication, but separate drafting risked inconsistent terminology, assumptions, referencing and depth. Common standards and integration reviews were therefore necessary.
+Figure 15 demonstrates that the contribution formed part of an agreed team process with defined responsibilities and an internal timeline.
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit6/minutesofmeeting.png" alt="Pampered Pets meeting notes and task coordination" width="600">
 
 **Figure 15.** Meeting notes showing discussion of the project requirements, task allocation and submission timeline.
 
+### Independent Contribution to the Unit 11 Project
+
+Unit 11 demonstrated increased analytical independence through academic research, Python modelling, interpretation of aggregate quality, availability and security outcomes, prioritised recommendations and disaster-recovery design. Figure 16 provides reproducibility evidence through the documented random seed and 10,000 simulation iterations.
+
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit11/Successful-Execution-and-Reproducibility-Settings.png" alt="Python execution and reproducibility settings" width="600">
 
 **Figure 16.** Evidence of successful Python execution, random-seed documentation and simulation settings.
 
+### Contribution to the Unit 12 Debate
+
+The contribution to the quantum-computing debate covered the presentation introduction, the group position, the scope of the threat and the importance of the 2026–2031 preparation period. This required an uncertain technical issue to be translated into a clear strategic argument for a non-specialist audience.
+
+### Evaluation of Collaboration
+
+Collaboration was most valuable when it changed the analysis rather than merely dividing tasks. Human-rights peer feedback broadened the ethical and safety discussion, while feedback in the CVSS–SSVC activity materially revised the final conclusion. Team allocation improved accountability and reduced duplication, but separately drafted sections created risks of inconsistency in terminology, assumptions and referencing. Common standards and integration reviews were therefore necessary.
+
 ## Critical Evaluation of Unit 11 against Unit 6
 
-Unit 6 provided an accessible, asset-based baseline structured through NIST CSF 2.0. It linked assets and proposed digitalisation changes to threats, vulnerabilities, likelihood, impact and controls. This approach was proportionate to Pampered Pets and strong in phased implementation planning, but several different risks received the same High rating. Its broad categories therefore offered limited differentiation and left assumptions and interdependencies less visible.
+### Comparative Summary
 
-Unit 11 retained the same risk logic while shifting the unit of analysis to product, information and financial flows, five risk scenarios and aggregate quality, availability and security outcomes. Information flow became central because inaccurate inventory, failed interfaces, supplier communication and compromised operational data could affect both product quality and availability. Figure 18 summarises this development from system scoping to modelling, prioritisation and DR design.
+| Evaluation area | Unit 6 | Unit 11 | Development demonstrated |
+|---|---|---|---|
+| **Methodology** | Qualitative and asset-based | Flow-based, scenario-based and quantitatively supported | Analysis moved from individual assets to an interconnected operating system |
+| **Likelihood** | Low, Medium and High | Minimum, most likely and maximum ranges | Uncertainty became more explicit |
+| **Calculations** | Qualitative likelihood and impact | Exposure scoring, Monte Carlo simulation and deterministic cross-check | Prioritisation became more transparent and reproducible |
+| **Recommendations** | Phased implementation | Risk-ranked treatments linked to TARA | Unit 6 supported sequencing; Unit 11 supported priority |
+| **Limitations** | Limited discussion of assumptions | Data, distribution and independence limitations documented | Unit 11 responded to Unit 6 feedback |
+| **Disaster recovery** | Backups and general recovery planning | Multi-region design based on measurable RTO and RPO | Business requirements were translated into technical design |
 
-Because historical data were unavailable, Unit 11 used minimum, most likely and maximum probability ranges, triangular distributions and 10,000 simulations. This improved transparency and prioritisation but did not create certainty: inputs remained informed by judgement, impact scores were ordinal, the deterministic cross-check relied on the same assumptions and approximate independence could misstate combined exposure. As shown in Figure 17, tutor feedback on Unit 6 prompted clearer documentation of these limitations in Unit 11.
+### Methodological Development
 
-The recommendation approaches were complementary. Unit 6 was stronger in implementation sequencing, while Unit 11 ranked recommendations by probability, impact, exposure and business importance and mapped them to TARA responses (Moran, 2014). Unit 11 also translated recovery requirements into a measurable AWS multi-region design, although stronger resilience introduced cost, complexity and vendor lock-in. Neither assessment recalculated residual risk after controls.
+Unit 6 established an accessible qualitative baseline by linking assets and proposed digitalisation changes to threats, vulnerabilities, likelihood, impact and controls. However, several materially different risks received the same High rating, which limited differentiation and left assumptions and interdependencies less visible. Unit 11 retained the same risk logic but changed the unit of analysis to product, information and financial flows, five risk scenarios and aggregate business outcomes. Information flow became central because inaccurate inventory, failed interfaces, supplier communication and compromised operational data could affect both product quality and availability.
 
-Overall, Unit 11 represented methodological development rather than replacement of qualitative analysis with numerical certainty. The strongest process combines Unit 6’s accessible scoping and phased implementation with Unit 11’s explicit uncertainty, prioritisation and resilience planning.
+### Quantitative Modelling and Limitations
+
+Because historical data were unavailable, Unit 11 used minimum, most likely and maximum probability ranges, triangular distributions and 10,000 Monte Carlo iterations. This improved transparency but did not produce certainty. The inputs remained judgement-based, impact scores were ordinal, the deterministic cross-check used the same assumptions and approximate independence could misstate combined exposure.
+
+### Recommendations, Feedback and Disaster Recovery
+
+Tutor feedback on Unit 6 identified the need for deeper evaluation of methodological limitations. Unit 11 responded by documenting data limitations, distributions and dependency assumptions more explicitly.
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit6/tutor-feedback-unit6.png" alt="Tutor feedback on the Unit 6 Security Risk Identification Report" width="600">
 
 **Figure 17.** Tutor feedback identifying the need for deeper evaluation of the limitations and challenges of the Unit 6 risk assessment.
+
+Unit 6 remained stronger in phased implementation sequencing, while Unit 11 was stronger in analytical prioritisation and mapping recommendations to TARA responses (Moran, 2014). Disaster-recovery reasoning developed from general backup and recovery recommendations to a measurable AWS multi-region design. However, improved resilience introduced cost, complexity and vendor lock-in. Neither assessment recalculated residual risk after controls.
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit11/Post-Digitalisation-Supply-Chain-Risk.png" alt="Post-digitalisation supply-chain risk and disaster recovery assessment process" width="600">
 
 **Figure 18.** Unit 11 methodology progressing from system scoping and information-flow analysis to quantitative modelling, prioritisation and disaster recovery recommendations.
 
 *Source: Adapted and extended from Stoneburner, Goguen and Feringa (2002, Figure 3-1).*
+
+### Overall Critical Judgement
+
+Overall, Unit 11 represented methodological development rather than replacement of qualitative assessment with numerical certainty. The strongest approach combines Unit 6’s accessible scoping and phased implementation with Unit 11’s explicit uncertainty, prioritisation and resilience design.
 
 ## Critical Reflection
 
