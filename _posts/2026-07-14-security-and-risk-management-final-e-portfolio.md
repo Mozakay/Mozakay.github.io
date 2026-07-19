@@ -50,7 +50,7 @@ As shown in Figure 5, the [University of Limerick GDPR case]({% post_url 2026-05
 
 ### Qualitative Assessment and Team-Based Application — Unit 6
 
-As shown in Figure 6, the [Pampered Pets team assessment]({% post_url 2026-06-06-pampered-pets-risk-identification-report %}) applied qualitative risk assessment using NIST CSF 2.0 (National Institute of Standards and Technology, 2024). The Low, Medium and High ratings were accessible and proportionate to a small organisation, but they compressed evidence and professional judgement into broad categories. The activity demonstrated that qualitative analysis is valuable for initial scoping, although ratings require explicit evidence and assumptions to remain defensible.
+As shown in Figure 6, the [Pampered Pets team assessment]({% post_url 2026-06-06-pampered-pets-risk-identification-report %}) applied a qualitative risk-assessment approach structured using NIST CSF 2.0 (National Institute of Standards and Technology, 2024). The Low, Medium and High ratings were accessible and proportionate to a small organisation, but they compressed evidence and professional judgement into broad categories. The activity demonstrated that qualitative analysis is valuable for initial scoping, although ratings require explicit evidence and assumptions to remain defensible.
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit6/Current-VS-Digitalised-Risk-Situation.png" alt="Current and digitalised Pampered Pets risk environments" width="600">
 
@@ -145,7 +145,7 @@ Collaboration improved the work when it changed reasoning rather than merely div
 
 This section evaluates how the risk assessment methodology and analytical reasoning developed from the Unit 6 status document to the Unit 11 final project. The comparison does not treat Unit 11 as a replacement for Unit 6. Instead, it examines how the initial qualitative and collaboratively developed assessment provided a foundation for a more focused, transparent and quantitatively supported analysis.
 
-Unit 6 used a qualitative, asset-based methodology structured through the National Institute of Standards and Technology Cybersecurity Framework NIST CSF 2.0 (National Institute of Standards and Technology, 2024). Unit 11 retained the underlying logic of identifying threats, vulnerabilities, likelihood, impact and controls, but changed the unit of analysis from individual assets to interconnected supply-chain flows, risk scenarios and aggregate business outcomes. The progression therefore involved a change in both the analytical method and the way risk was conceptualised.
+Unit 6 used a qualitative, asset-based methodology structured through the National Institute of Standards and Technology Cybersecurity Framework (NIST CSF) 2.0 (National Institute of Standards and Technology, 2024). Unit 11 retained the underlying logic of identifying threats, vulnerabilities, likelihood, impact and controls, but changed the unit of analysis from individual assets to interconnected supply-chain flows, risk scenarios and aggregate business outcomes. The progression therefore involved a change in both the analytical method and the way risk was conceptualised.
 
 ### Comparative Summary
 
@@ -272,7 +272,7 @@ Experience as a member of a development team produced benefits and methodologica
 
 Preparing the opening quantum-computing argument required an uncertain technical issue to be translated into a clear strategic position for a non-specialist audience. This reflected guidance that post-quantum migration requires early discovery and preparation because cryptographic dependencies cannot be replaced immediately (National Cyber Security Centre, 2025).
 
-Professional development was evident in stronger scrutiny of whether claims, ratings and controls were supported and proportionate. The University of Limerick case showed that weak detection, records and breach notification create regulatory as well as technical consequences (Data Protection Commission, 2025; European Parliament and Council, 2016). Disaster recovery broadened to portability, monitoring, supplier dependency and operational alignment; provider dependency can constrain recovery and migration options (Moravcik et al., 2024). Security decisions were therefore understood as technical and governance decisions.
+Professional development was evident in stronger scrutiny of whether claims, ratings and controls were supported and proportionate. The University of Limerick case showed that weak detection, records and breach notification create regulatory as well as technical consequences (Data Protection Commission, 2025; European Parliament and Council of the European Union, 2016). Disaster recovery broadened to portability, monitoring, supplier dependency and operational alignment; provider dependency can constrain recovery and migration options (Moravcik et al., 2024). Security decisions were therefore understood as technical and governance decisions.
 
 Precise-looking numerical results initially appeared reassuring; however, discomfort arose when the supporting evidence was weak. This tension encouraged earlier validation, more cautious interpretation and systematic recording of assumptions. Uncertainty was consequently treated as a condition to acknowledge and communicate rather than conceal through apparently precise results.
 
@@ -294,9 +294,9 @@ The portfolio demonstrates a shift from identifying isolated technical risks to 
 
 ## References
 
-Amazon Web Services (no date) *Amazon Aurora Global Database*. Available at: https://aws.amazon.com/rds/aurora/global-database/ (Accessed: 3 July 2026).
-
 Aijaz, M. and Nazir, M. (2024) ‘Modelling and analysis of social engineering threats using the attack tree and the Markov model’, *International Journal of Information Technology*, 16(2), pp. 1231–1238. doi:10.1007/s41870-023-01540-z.
+
+Amazon Web Services (no date) *Amazon Aurora Global Database*. Available at: https://aws.amazon.com/rds/aurora/global-database/ (Accessed: 3 July 2026).
 
 Cox, L.A. (2008) ‘What’s wrong with risk matrices?’, *Risk Analysis*, 28(2), pp. 497–512. doi:10.1111/j.1539-6924.2008.01030.x.
 
