@@ -50,7 +50,7 @@ As shown in Figure 5, the [University of Limerick GDPR case]({% post_url 2026-05
 
 ### Qualitative Assessment and Team-Based Application — Unit 6
 
-As shown in Figure 6, the [Pampered Pets team assessment]({% post_url 2026-06-06-pampered-pets-risk-identification-report %}) applied qualitative risk assessment using NIST CSF 2.0. Low, Medium and High ratings were accessible and proportionate to a small organisation, but they compressed evidence and professional judgement into broad categories. The activity demonstrated that qualitative analysis is valuable for initial scoping, although ratings require explicit evidence and assumptions to remain defensible.
+As shown in Figure 6, the [Pampered Pets team assessment]({% post_url 2026-06-06-pampered-pets-risk-identification-report %}) applied qualitative risk assessment using NIST CSF 2.0 (National Institute of Standards and Technology, 2024). The Low, Medium and High ratings were accessible and proportionate to a small organisation, but they compressed evidence and professional judgement into broad categories. The activity demonstrated that qualitative analysis is valuable for initial scoping, although ratings require explicit evidence and assumptions to remain defensible.
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit6/Current-VS-Digitalised-Risk-Situation.png" alt="Current and digitalised Pampered Pets risk environments" width="600">
 
@@ -92,7 +92,7 @@ As shown in Figure 11, the [disaster recovery activity]({% post_url 2026-06-18-u
 
 **Figure 11.** Unit 10 evidence connecting cloud dependency and security weaknesses with disaster-recovery performance.
 
-As shown in Figures 12 and 13, these ideas were integrated into the [Unit 11 individual assessment]({% post_url 2026-07-14-unit-11-post-digitalisation-risk-assessment %}) through probability ranges, 10,000 Monte Carlo iterations, a deterministic cross-check and an active-active multi-region design.
+As shown in Figures 12 and 13, these ideas were integrated into the [Unit 11 individual assessment]({% post_url 2026-07-14-unit-11-post-digitalisation-risk-assessment %}) through probability ranges, 10,000 Monte Carlo iterations, a deterministic cross-check and an AWS active-active multi-region architecture for the online shop and its critical supporting services. The design combined two active regions, continuous health checks, automated traffic redirection, Amazon Aurora Global Database cross-region replication and automated failover to support the required sub-one-minute RTO and RPO targets (Amazon Web Services, no date; Yadav, 2023).
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit11/Monte%20Carlo%20simulation%20results.png" alt="Unit 11 Monte Carlo results" width="600">
 
@@ -100,7 +100,7 @@ As shown in Figures 12 and 13, these ideas were integrated into the [Unit 11 ind
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit11/disaster_recovery_architecture.png" alt="AWS active-active multi-region disaster recovery architecture" width="600">
 
-**Figure 13.** Unit 11 disaster-recovery architecture designed around measurable RTO and RPO requirements.
+**Figure 13.** Unit 11 AWS active-active multi-region disaster recovery architecture for the online shop and critical supporting services, using Aurora Global Database replication and automated failover to support the sub-one-minute RTO and RPO targets.
 
 The [quantum-computing debate]({% post_url 2026-06-22-great-debate-quantum-computing %}) extended the analysis to uncertain future threats. As shown in Figure 14, the activity demonstrated that long migration lead times may justify early preparation even when the timing of a cryptographically relevant quantum computer cannot be estimated confidently.
 
@@ -145,7 +145,7 @@ Collaboration improved the work when it changed reasoning rather than merely div
 
 This section evaluates how the risk assessment methodology and analytical reasoning developed from the Unit 6 status document to the Unit 11 final project. The comparison does not treat Unit 11 as a replacement for Unit 6. Instead, it examines how the initial qualitative and collaboratively developed assessment provided a foundation for a more focused, transparent and quantitatively supported analysis.
 
-Unit 6 used a qualitative, asset-based methodology structured through the National Institute of Standards and Technology Cybersecurity Framework (NIST CSF) 2.0. Unit 11 retained the underlying logic of identifying threats, vulnerabilities, likelihood, impact and controls, but changed the unit of analysis from individual assets to interconnected supply-chain flows, risk scenarios and aggregate business outcomes. The progression therefore involved a change in both the analytical method and the way risk was conceptualised.
+Unit 6 used a qualitative, asset-based methodology structured through the National Institute of Standards and Technology Cybersecurity Framework NIST CSF 2.0 (National Institute of Standards and Technology, 2024). Unit 11 retained the underlying logic of identifying threats, vulnerabilities, likelihood, impact and controls, but changed the unit of analysis from individual assets to interconnected supply-chain flows, risk scenarios and aggregate business outcomes. The progression therefore involved a change in both the analytical method and the way risk was conceptualised.
 
 ### Comparative Summary
 
@@ -219,7 +219,7 @@ The recommendation approaches in the two units were complementary.
 
 Unit 6 was stronger in implementation sequencing. It recommended four phases: securing the existing environment, introducing a low-risk digital presence, adding transactional digitalisation and trialling international suppliers. This was proportionate to a small business because it prevented several high-risk changes from being implemented simultaneously.
 
-Unit 11 was stronger in analytical prioritisation. Recommendations were ranked according to probability, impact, exposure and business importance, and were linked to Transfer, Accept, Reduce and Avoid responses. Inventory accuracy received the highest priority, followed by supplier quality assurance and system integration governance.
+Unit 11 was stronger in analytical prioritisation. Recommendations were ranked according to probability, impact, exposure and business importance, and were mapped to the Transfer, Accept, Reduce and Avoid (TARA) risk-response categories (Moran, 2014). Inventory accuracy received the highest priority, followed by supplier quality assurance and system integration governance.
 
 The strongest practical approach would combine both methods: Unit 11 would determine **what should receive priority**, while Unit 6 would help determine **when and in what sequence the controls should be implemented**.
 
@@ -229,9 +229,9 @@ Both assessments could still be improved by distinguishing clearly between inher
 
 Unit 6 identified missing backups and recovery procedures and recommended tested backups, vendor assessment and disaster recovery planning. These recommendations established a basic continuity-control foundation but did not translate recovery requirements into a detailed architecture.
 
-Unit 11 addressed a stricter requirement: 24/7/365 availability with RTO and RPO below one minute. This required an active-active multi-region design involving replication, continuous monitoring, automated traffic redirection, database failover and regular testing.
+Unit 11 addressed a stricter requirement: 24/7/365 availability with RTO and RPO below one minute. The submitted design proposed an AWS active-active multi-region architecture for the online shop and its critical supporting services. Two regions maintained replicated services and near-real-time data synchronisation, while continuous health checks and automated failover redirected traffic if one region became unavailable. Amazon Aurora Global Database was selected for the critical order and transaction data to support cross-region replication and recovery in line with the stated RTO and RPO targets, subject to appropriate configuration, capacity planning and regular failover testing (Amazon Web Services, no date; Yadav, 2023).
 
-This represented a development from recommending recovery controls to designing a technical solution around business objectives. However, the architecture also introduced cost, complexity, specialist-skill requirements and cloud-provider dependency. Its proportionality would therefore require a formal business-impact and cost-benefit assessment.
+This represented a development from recommending general recovery controls to designing a technical solution around measurable business objectives. However, the architecture also introduced higher cost, operational complexity, specialist-skill requirements and cloud-provider dependency. Its proportionality would therefore require a formal business-impact and cost-benefit assessment.
 
 Unit 11 also recognised that a risk treatment may create a new risk. The use of AWS improved resilience but introduced vendor lock-in. Portable backups, data-export rights, open interfaces and a documented exit plan were therefore included to reduce this dependency.
 
@@ -294,36 +294,42 @@ The portfolio demonstrates a shift from identifying isolated technical risks to 
 
 ## References
 
-Aijaz, M. and Nazir, M. (2024) ‘Modelling and analysis of social engineering threats using the attack tree and the Markov model’, International Journal of Information Technology, 16(2), pp. 1231–1238. doi:10.1007/s41870-023-01540-z.
+Amazon Web Services (no date) *Amazon Aurora Global Database*. Available at: https://aws.amazon.com/rds/aurora/global-database/ (Accessed: 3 July 2026).
 
-Cox, L.A. (2008) ‘What’s wrong with risk matrices?’, Risk Analysis, 28(2), pp. 497–512. doi:10.1111/j.1539-6924.2008.01030.x.
+Aijaz, M. and Nazir, M. (2024) ‘Modelling and analysis of social engineering threats using the attack tree and the Markov model’, *International Journal of Information Technology*, 16(2), pp. 1231–1238. doi:10.1007/s41870-023-01540-z.
 
-Data Protection Commission (2025) Inquiry concerning the University of Limerick. DPC Reference IN-19-7-1, decision dated 10 December 2025. Available at: https://www.dataprotection.ie/en/dpc-guidance/decisions/inquiry-concerning-university-limerick.
+Cox, L.A. (2008) ‘What’s wrong with risk matrices?’, *Risk Analysis*, 28(2), pp. 497–512. doi:10.1111/j.1539-6924.2008.01030.x.
 
-Downey, A.B. (2021) Think Bayes: Bayesian Statistics in Python. 2nd edn. Sebastopol, CA: O’Reilly Media. Available at: https://allendowney.github.io/ThinkBayes2.
+Data Protection Commission (2025) *Inquiry concerning the University of Limerick*. DPC Reference IN-19-7-1, decision dated 10 December 2025. Available at: https://www.dataprotection.ie/en/dpc-guidance/decisions/inquiry-concerning-university-limerick (Accessed: 19 July 2026).
 
-Duijm, N.J. (2015) ‘Recommendations on the use and design of risk matrices’, Safety Science, 76, pp. 21–31. doi:10.1016/j.ssci.2015.02.014.
+Downey, A.B. (2021) *Think Bayes: Bayesian Statistics in Python*. 2nd edn. Sebastopol, CA: O’Reilly Media. Available at: https://allendowney.github.io/ThinkBayes2/ (Accessed: 19 July 2026).
 
-European Parliament and Council of the European Union (2016) ‘Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation)’, Official Journal of the European Union, L 119, 4 May, pp. 1–88. Available at: https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng.
+Duijm, N.J. (2015) ‘Recommendations on the use and design of risk matrices’, *Safety Science*, 76, pp. 21–31. doi:10.1016/j.ssci.2015.02.014.
 
-Hancock, J., Hui, R., Singh, J. and Mazumder, A. (2024) ‘Trouble at sea: Data and digital technology challenges for maritime human rights concerns’, in Proceedings of the 2024 ACM Conference on Fairness, Accountability, and Transparency, pp. 988–1001. doi:10.1145/3630106.3658950.
+European Parliament and Council of the European Union (2016) ‘Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation)’, *Official Journal of the European Union*, L 119, 4 May, pp. 1–88. Available at: https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng (Accessed: 19 July 2026).
 
-Hubbard, D.W. and Seiersen, R. (2016) How to Measure Anything in Cybersecurity Risk. Hoboken, NJ: Wiley. doi:10.1002/9781119162315.
+Hancock, J., Hui, R., Singh, J. and Mazumder, A. (2024) ‘Trouble at sea: Data and digital technology challenges for maritime human rights concerns’, in *Proceedings of the 2024 ACM Conference on Fairness, Accountability, and Transparency*, pp. 988–1001. doi:10.1145/3630106.3658950.
 
-Jbair, M., Ahmad, B., Maple, C. and Harrison, R. (2022) ‘Threat modelling for industrial cyber physical systems in the era of smart manufacturing’, Computers in Industry, 137, article 103611. doi:10.1016/j.compind.2022.103611.
+Hubbard, D.W. and Seiersen, R. (2016) *How to Measure Anything in Cybersecurity Risk*. Hoboken, NJ: Wiley. doi:10.1002/9781119162315.
 
-Metropolis, N. and Ulam, S. (1949) ‘The Monte Carlo method’, Journal of the American Statistical Association, 44(247), pp. 335–341. doi:10.1080/01621459.1949.10483310.
+Jbair, M., Ahmad, B., Maple, C. and Harrison, R. (2022) ‘Threat modelling for industrial cyber physical systems in the era of smart manufacturing’, *Computers in Industry*, 137, Article 103611. doi:10.1016/j.compind.2022.103611.
 
-Moravcik, M., Segec, P., Kontsek, M. and Zidekova, L. (2024) ‘Model-driven approach to cloud-portability issue’, Applied Sciences, 14(20), article 9298. doi:10.3390/app14209298.
+Metropolis, N. and Ulam, S. (1949) ‘The Monte Carlo method’, *Journal of the American Statistical Association*, 44(247), pp. 335–341. doi:10.1080/01621459.1949.10483310.
 
-National Cyber Security Centre (2025) Timelines for migration to post-quantum cryptography. 20 March. Available at: https://www.ncsc.gov.uk/guidance/pqc-migration-timelines.
+Moran, A. (2014) *Agile Risk Management*. Cham: Springer International Publishing. doi:10.1007/978-3-319-05008-9.
 
-National Institute of Standards and Technology (2024) The NIST Cybersecurity Framework (CSF) 2.0. NIST CSWP 29. Gaithersburg, MD: National Institute of Standards and Technology. doi:10.6028/NIST.CSWP.29.
+Moravcik, M., Segec, P., Kontsek, M. and Zidekova, L. (2024) ‘Model-driven approach to cloud-portability issue’, *Applied Sciences*, 14(20), Article 9298. doi:10.3390/app14209298.
 
-Rolfe, G., Freshwater, D. and Jasper, M. (2001) Critical Reflection for Nursing and the Helping Professions: A User’s Guide. Basingstoke: Palgrave Macmillan.
+National Cyber Security Centre (2025) *Timelines for migration to post-quantum cryptography*. 20 March. Available at: https://www.ncsc.gov.uk/guidance/pqc-migration-timelines (Accessed: 19 July 2026).
 
-Schmitt, A.J. and Singh, M. (2009) ‘Quantifying supply chain disruption risk using Monte Carlo and discrete-event simulation’, in Proceedings of the 2009 Winter Simulation Conference, Austin, TX, 13–16 December. Piscataway, NJ: IEEE, pp. 1237–1248. doi:10.1109/WSC.2009.5429561.
+National Institute of Standards and Technology (2024) *The NIST Cybersecurity Framework (CSF) 2.0*. NIST CSWP 29. Gaithersburg, MD: National Institute of Standards and Technology. doi:10.6028/NIST.CSWP.29.
 
-Spring, J.M., Hatleback, E., Householder, A.D., Manion, A. and Shick, D. (2019) Prioritizing Vulnerability Response: A Stakeholder-Specific Vulnerability Categorization. White Paper. Pittsburgh, PA: Software Engineering Institute, Carnegie Mellon University. Available at: https://www.sei.cmu.edu/library/prioritizing-vulnerability-response-a-stakeholder-specific-vulnerability-categorization
+Rolfe, G., Freshwater, D. and Jasper, M. (2001) *Critical Reflection for Nursing and the Helping Professions: A User’s Guide*. Basingstoke: Palgrave Macmillan.
 
-Wunder, J., Kurtz, A., Eichenmüller, C., Gassmann, F. and Benenson, Z. (2024) ‘Shedding light on CVSS scoring inconsistencies: A user-centric study on evaluating widespread security vulnerabilities’, in 2024 IEEE Symposium on Security and Privacy (SP), pp. 1102–1121. doi:10.1109/SP54263.2024.00058.
+Schmitt, A.J. and Singh, M. (2009) ‘Quantifying supply chain disruption risk using Monte Carlo and discrete-event simulation’, in *Proceedings of the 2009 Winter Simulation Conference*, Austin, TX, 13–16 December. Piscataway, NJ: IEEE, pp. 1237–1248. doi:10.1109/WSC.2009.5429561.
+
+Spring, J.M., Hatleback, E., Householder, A.D., Manion, A. and Shick, D. (2019) *Prioritizing Vulnerability Response: A Stakeholder-Specific Vulnerability Categorization*. White Paper. Pittsburgh, PA: Software Engineering Institute, Carnegie Mellon University. Available at: https://www.sei.cmu.edu/library/prioritizing-vulnerability-response-a-stakeholder-specific-vulnerability-categorization/ (Accessed: 19 July 2026).
+
+Wunder, J., Kurtz, A., Eichenmüller, C., Gassmann, F. and Benenson, Z. (2024) ‘Shedding light on CVSS scoring inconsistencies: A user-centric study on evaluating widespread security vulnerabilities’, in *2024 IEEE Symposium on Security and Privacy (SP)*, pp. 1102–1121. doi:10.1109/SP54263.2024.00058.
+
+Yadav, G. (2023) ‘Architectural approaches to disaster recovery and high availability in SAP HANA Cloud’, *International Journal of Scientific Research and Modern Technology*, 2(8), pp. 81–91. doi:10.38124/ijsrmt.v2i8.854.
