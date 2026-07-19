@@ -108,9 +108,7 @@ The [quantum-computing debate]({% post_url 2026-06-22-great-debate-quantum-compu
 
 ### Contribution to the Unit 6 Team Project
 
-The principal contribution to the Pampered Pets team project was the Current Business Risk Assessment. This involved identifying risks associated with ageing technology, shared networks, customer information and manual inventory processes, as well as locating sources, integrating recommendations and completing the final review. The contribution established the current-state baseline against which the additional risks created by digitalisation could be evaluated. However, some qualitative ratings required fuller justification and earlier documentation of assumptions.
-
-Figure 15 demonstrates that the contribution formed part of an agreed team process with defined responsibilities and an internal timeline.
+The principal contribution to the Pampered Pets team project was the Current Business Risk Assessment. This involved identifying risks associated with ageing technology, shared networks, customer information and manual inventory processes, as well as locating sources, integrating recommendations and completing the final review. The contribution established the current-state baseline against which the additional risks created by digitalisation could be evaluated. However, some qualitative ratings required fuller justification and earlier documentation of assumptions. Figure 15 demonstrates that the contribution formed part of an agreed team process with defined responsibilities and an internal timeline.
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit6/minutesofmeeting.png" alt="Pampered Pets meeting notes and task coordination" width="600">
 
@@ -169,9 +167,7 @@ Unit 6 remained stronger in phased implementation sequencing, while Unit 11 was 
 
 *Source: Adapted and extended from Stoneburner, Goguen and Feringa (2002, Figure 3-1).*
 
-### Overall Critical Judgement
 
-Overall, Unit 11 represented methodological development rather than replacement of qualitative assessment with numerical certainty. The strongest approach combines Unit 6’s accessible scoping and phased implementation with Unit 11’s explicit uncertainty, prioritisation and resilience design.
 
 ## Critical Reflection
 
@@ -215,7 +211,7 @@ In professional practice, the same approach will support digital-service reviews
 
 ## Conclusion
 
-The portfolio demonstrates a shift from identifying isolated technical risks to evaluating interconnected socio-technical systems under uncertainty. Development is evidenced through the selection of proportionate methods, transparent assumptions, peer-informed judgement and stronger integration between controls, business requirements and stakeholder outcomes.
+The portfolio demonstrates progression from isolated technical risks to interconnected socio-technical systems under uncertainty. Unit 11 developed, rather than replaced, Unit 6 by combining qualitative scoping and phased implementation with explicit uncertainty, prioritisation and resilience design. This development was supported by transparent assumptions, peer-informed judgement and stronger alignment between controls and business requirements.
 
 
 
