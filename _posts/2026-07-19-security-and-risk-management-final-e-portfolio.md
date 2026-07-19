@@ -114,6 +114,20 @@ Because historical data were unavailable, Unit 11 used probability ranges, trian
 
 Unit 6 was stronger in implementation sequencing; Unit 11 was stronger in risk-ranked TARA responses and measurable DR design (Moran, 2014). The AWS solution strengthened resilience but introduced cost, complexity and vendor lock-in. Neither assessment recalculated residual risk after controls. Overall, the strongest process combines Unit 6’s qualitative scoping with Unit 11’s explicit uncertainty, prioritisation and resilience planning.
 
+### Comparative Summary
+
+| Evaluation area | Unit 6 | Unit 11 | Development demonstrated |
+|---|---|---|---|
+| **Methodology** | Qualitative and asset-based assessment using NIST CSF 2.0 | Flow-based and scenario-based assessment combining qualitative scoping and quantitative modelling | Risk analysis moved from individual assets towards an interconnected operating system |
+| **Unit of analysis** | Assets and proposed digitalisation changes | Risk scenarios, supply-chain flows and business outcomes | The analysis considered how several systems and processes could contribute to the same outcome |
+| **Likelihood** | Low, Medium and High ratings | Minimum, most likely and maximum probability ranges | Uncertainty became more visible and explicit |
+| **Impact** | Qualitative ratings | Impact scores from 1 to 5 | Prioritisation became more differentiated, although the scores remained ordinal |
+| **Calculations** | Qualitative combination of likelihood and impact | Probability × impact exposure, Monte Carlo simulation and deterministic cross-check | The method became more transparent and reproducible |
+| **Recommendations** | Phased implementation plan | Risk-ranked recommendations linked to TARA responses | Unit 6 explained implementation sequence; Unit 11 strengthened the justification for priority |
+| **Limitations** | Methodological limitations were not developed fully | Data limitations, scenario assumptions, distributions and independence assumptions were documented | Unit 11 responded directly to the feedback received after Unit 6 |
+| **Collaboration** | Team project based on task division and integration | Individual project refined through discussion with the tutor and a colleague | Collaboration developed from shared production to informed independent judgement |
+| **Disaster recovery** | Backups, procedures and general DR planning | Active-active multi-region architecture based on measurable RTO and RPO | Continuity objectives were translated into technical design requirements |
+
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit6/tutor-feedback-unit6.png" alt="Tutor feedback on the Unit 6 Security Risk Identification Report" width="600">
 
 **Figure 17.** Tutor feedback identifying the need for deeper evaluation of the limitations and challenges of the Unit 6 risk assessment.
