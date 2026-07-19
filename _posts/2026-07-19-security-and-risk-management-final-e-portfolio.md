@@ -153,7 +153,7 @@ Because historical data were unavailable, Unit 11 used minimum, most likely and 
 
 ### Recommendations, Feedback and Disaster Recovery
 
-Tutor feedback on Unit 6 identified the need for deeper evaluation of methodological limitations. Unit 11 responded by documenting data limitations, distributions and dependency assumptions more explicitly.
+Tutor feedback on Unit 6 identified the need for deeper evaluation of methodological limitations. During the development of Unit 11, discussions with the tutor and a colleague helped refine the assessment scope and strengthened the focus on information-flow dependencies. The final analytical decisions remained an individual responsibility, but the feedback prompted clearer documentation of data limitations, probability distributions and dependency assumptions.
 
 <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/SRM/Unit6/tutor-feedback-unit6.png" alt="Tutor feedback on the Unit 6 Security Risk Identification Report" width="600">
 
