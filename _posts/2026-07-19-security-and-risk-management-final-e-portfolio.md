@@ -136,12 +136,15 @@ Collaboration was most valuable when it changed the analysis rather than merely 
 
 | Evaluation area | Unit 6 | Unit 11 | Development demonstrated |
 |---|---|---|---|
-| **Methodology** | Qualitative and asset-based | Flow-based, scenario-based and quantitatively supported | Analysis moved from individual assets to an interconnected operating system |
+| **Methodology** | Qualitative, asset-based assessment | Flow-based, scenario-based assessment supported by quantitative modelling | Analysis moved from individual assets to an interconnected operating system |
 | **Likelihood** | Low, Medium and High | Minimum, most likely and maximum ranges | Uncertainty became more explicit |
 | **Calculations** | Qualitative likelihood and impact | Exposure scoring, Monte Carlo simulation and deterministic cross-check | Prioritisation became more transparent and reproducible |
 | **Recommendations** | Phased implementation | Risk-ranked treatments linked to TARA | Unit 6 supported sequencing; Unit 11 supported priority |
 | **Limitations** | Limited discussion of assumptions | Data, distribution and independence limitations documented | Unit 11 responded to Unit 6 feedback |
 | **Disaster recovery** | Backups and general recovery planning | Multi-region design based on measurable RTO and RPO | Business requirements were translated into technical design |
+| **Unit of analysis** | Assets and proposed digitalisation changes | Supply-chain flows, risk scenarios and business outcomes | Analysis moved from independent components to interconnected dependencies |
+| **Impact** | Qualitative ratings | Impact scores from 1 to 5 | Prioritisation became more differentiated, although the scores remained ordinal |
+| **Collaboration** | Team project based on task division and integration | Individual project refined through discussion with the tutor and a colleague | Collaboration developed from shared production to feedback-informed independent judgement |
 
 ### Methodological Development
 
