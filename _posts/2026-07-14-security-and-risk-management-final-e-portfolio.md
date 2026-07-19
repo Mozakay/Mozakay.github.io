@@ -191,11 +191,11 @@ The exchange of ideas did not remove individual responsibility for Unit 11. Inst
 
 Unit 11 moved from an asset-based snapshot to a flow-based and scenario-based methodology. Five risk scenarios were selected because they directly reflected the post-digitalisation operating model:
 
-1. inventory data inaccuracy;
-2. system integration failure;
-3. cybersecurity breach or ransomware;
-4. international supplier or logistics disruption and quality variation; and
-5. automated warehouse system failure.
+1. inventory data inaccuracy
+2. system integration failure
+3. cybersecurity breach or ransomware
+4. international supplier or logistics disruption and quality variation
+5. automated warehouse system failure
 
 As shown in Figure 18, each scenario was linked to the relevant supply-chain flow and its effect on quality, availability or security. This represented a development in analytical reasoning because it distinguished between the technical source of a risk and its wider business consequence.
 
