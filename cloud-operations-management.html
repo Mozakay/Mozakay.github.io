@@ -312,47 +312,6 @@ banner: "/assets/images/banners/new-background.jpg"
   </section>
 
 
-  <section class="module-section">
-
-    <h2>Learning Outcomes</h2>
-
-    <p>
-      On successful completion of the module, the learning outcomes require the
-      ability to:
-    </p>
-
-    <div class="learning-outcome">
-      <strong>LO1 — Cloud Computing Fundamentals</strong><br>
-      Identify and understand the fundamental concepts that underpin cloud
-      computing.
-    </div>
-
-    <div class="learning-outcome">
-      <strong>LO2 — Cloud Solutions</strong><br>
-      Identify and understand different cloud solutions and deployment
-      approaches.
-    </div>
-
-    <div class="learning-outcome">
-      <strong>LO3 — Cloud Services and Tools</strong><br>
-      Identify, configure, and implement different levels of cloud services and
-      associated tools.
-    </div>
-
-    <div class="learning-outcome">
-      <strong>LO4 — Resilient Cloud Solutions</strong><br>
-      Critically determine appropriate methodologies, tools, and techniques for
-      developing and implementing resilient cloud solutions.
-    </div>
-
-    <div class="learning-outcome">
-      <strong>LO5 — Standards and Procedures</strong><br>
-      Articulate and identify relevant standards and procedures used when
-      implementing cloud computing services and infrastructure.
-    </div>
-
-  </section>
-
 
   <!-- Find the post associated with each Learning Journey group -->
 
@@ -806,60 +765,46 @@ banner: "/assets/images/banners/new-background.jpg"
 
   </section>
 
+  <section class="module-section">
 
-  <h2 class="artefacts-title">
-    Evidence &amp; Artefacts
-  </h2>
+    <h2>Learning Outcomes</h2>
 
-  <p class="artefacts-intro">
-    The artefacts below provide evidence of practical implementation, academic
-    analysis, problem solving, and reflection completed throughout the module.
-    Each artefact demonstrates specific aspects of the module learning outcomes
-    and the progressive development of cloud computing skills.
-  </p>
+    <p>
+      On successful completion of the module, the learning outcomes require the
+      ability to:
+    </p>
 
+    <div class="learning-outcome">
+      <strong>LO1 — Cloud Computing Fundamentals</strong><br>
+      Identify and understand the fundamental concepts that underpin cloud
+      computing.
+    </div>
 
-  <div class="artefacts-list">
+    <div class="learning-outcome">
+      <strong>LO2 — Cloud Solutions</strong><br>
+      Identify and understand different cloud solutions and deployment
+      approaches.
+    </div>
 
-    {% assign found_cloud = false %}
+    <div class="learning-outcome">
+      <strong>LO3 — Cloud Services and Tools</strong><br>
+      Identify, configure, and implement different levels of cloud services and
+      associated tools.
+    </div>
 
-    {% for post in site.posts %}
+    <div class="learning-outcome">
+      <strong>LO4 — Resilient Cloud Solutions</strong><br>
+      Critically determine appropriate methodologies, tools, and techniques for
+      developing and implementing resilient cloud solutions.
+    </div>
 
-      {% if post.categories contains "Cloud Operations and Management" %}
+    <div class="learning-outcome">
+      <strong>LO5 — Standards and Procedures</strong><br>
+      Articulate and identify relevant standards and procedures used when
+      implementing cloud computing services and infrastructure.
+    </div>
 
-        {% assign found_cloud = true %}
-
-        <article class="artefact-card">
-
-          <h3>
-            <a href="{{ post.url | relative_url }}">
-              {{ post.title }}
-            </a>
-          </h3>
-
-          <div class="artefact-date">
-            {{ post.date | date: "%B %d, %Y" }}
-          </div>
-
-          <p class="artefact-excerpt">
-            {{ post.excerpt | strip_html | truncate: 200 }}
-          </p>
-
-        </article>
-
-      {% endif %}
-
-    {% endfor %}
-
-
-    {% if found_cloud == false %}
-
-      <div class="empty-message">
-        Evidence and artefacts will be added progressively as the module develops.
-      </div>
-
-    {% endif %}
-
-  </div>
+  </section>
+  
 
 </div>
