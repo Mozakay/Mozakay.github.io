@@ -118,27 +118,23 @@ The peer discussion also strengthened my critical evaluation. Rather than focusi
 
 I analysed two different aspects of cloud design. The first focused on ROCCA and TOGAF as a structured approach to government cloud adoption. The second evaluated Terraform as an Infrastructure as Code tool for multi-cloud provisioning.
 
-I also participated in peer discussion by presenting my analysis and then reviewing feedback from classmates who challenged or extended different parts of my argument.
+I also participated in peer discussion by presenting my analysis and then reviewing feedback from classmates who challenged or extended different parts of my argument. This required me to compare different technical perspectives, evaluate the strengths and limitations of the approaches discussed, and reconsider some of my original assumptions.
 
 ### So What?
 
-The most important development was learning that a technically strong solution still needs to be evaluated within its organisational and operational context.
+The most important development was learning that a technically strong solution still needs to be evaluated within its organisational and operational context. This strengthened my ability to critically evaluate cloud adoption frameworks and Infrastructure as Code tools rather than focusing only on their technical advantages.
 
-The Unit 2 feedback made me more aware that planning success and long-term implementation success are not the same thing. The Unit 3 feedback made me more aware that Terraform's strengths, particularly state awareness and multi-cloud provisioning, also introduce responsibilities around collaboration, management and operational capability.
+The Unit 2 feedback made me more aware that planning success and long-term implementation success are not the same thing. This improved my ability to compare cloud technologies within specific organisational contexts and to evaluate the strength of the evidence supporting a conclusion.
 
-The different peer comments were useful because they did not simply repeat the same point. Payman focused on collaborative state management, Joseph introduced operational, licensing and maintenance concerns, and Stelios reinforced context-specific tool selection. Together, these comments broadened the original analysis.
+The Unit 3 feedback made me more aware that Terraform's strengths, particularly state awareness and multi-cloud provisioning, also introduce responsibilities around collaboration, management and operational capability. The different peer comments were useful because they did not simply repeat the same point. Payman focused on collaborative state management, Joseph introduced operational, licensing and maintenance concerns, and Stelios reinforced context-specific tool selection.
+
+Engaging with these different perspectives developed my academic discussion skills and helped me understand the value of peer feedback in technical decision-making. Rather than treating alternative views as separate comments, I used them to refine my own analysis and develop a more balanced evaluation of cloud technologies.
 
 ### Now What?
 
-In future cloud evaluations, I will make a clearer distinction between technical capability, organisational suitability and evidence of long-term effectiveness. I will also use peer discussion more deliberately as a way of testing my assumptions rather than only as confirmation of my original position.
+In future cloud evaluations, I will make a clearer distinction between technical capability, organisational suitability and evidence of long-term effectiveness. I will also continue to evaluate both strengths and limitations rather than relying on a single technical advantage when comparing cloud technologies.
 
-## Skills Developed
-
-- Critical evaluation of cloud adoption frameworks and Infrastructure as Code tools.
-- Comparison of cloud technologies within specific organisational contexts.
-- Evaluation of strengths, limitations and evidence rather than relying on a single technical advantage.
-- Academic discussion and engagement with peer feedback.
-- Reflection on how alternative perspectives can improve technical decision-making.
+I will use peer discussion more deliberately as a way of testing my assumptions, identifying issues that I may not have considered initially, and improving the quality of my technical judgement. This experience showed me that reflection on alternative perspectives can strengthen both critical analysis and professional decision-making.
 
 ## References
 
@@ -154,8 +150,3 @@ Quattrocchi, G. and Tamburri, D.A. (2023) ‘Infrastructure as Code’, *IEEE So
 
 Regvart, D., Vlahović, I. and Balković, M. (2026) ‘A controlled comparative evaluation of Infrastructure as Code tools: Deployment performance and maintainability across Terraform, Pulumi, and AWS CloudFormation’, *Applied Sciences*, 16(6), 2971. https://doi.org/10.3390/app16062971.
 
-### Sources Referenced in Peer Feedback
-
-Brikman, Y. (2022) *Terraform: Up & Running: Writing Infrastructure as Code*. 3rd edn. Sebastopol, CA: O’Reilly Media.
-
-Capstone IT Solutions (2024) *Challenges of Working with Terraform and How to Overcome Them*. Capstone IT.
