@@ -6,7 +6,7 @@ banner: "/assets/images/banners/new-background.jpg"
 
 <style>
   .custom-home {
-    max-width: 980px;
+    max-width: 1180px;
     margin: 0 auto;
     padding: 40px 20px 70px;
   }
@@ -34,7 +34,7 @@ banner: "/assets/images/banners/new-background.jpg"
 
   .module-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 22px;
   }
 
@@ -75,7 +75,13 @@ banner: "/assets/images/banners/new-background.jpg"
     color: #2563eb;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 950px) {
+    .module-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 650px) {
     .module-grid {
       grid-template-columns: 1fr;
     }
@@ -91,7 +97,7 @@ banner: "/assets/images/banners/new-background.jpg"
   <section class="home-intro">
     <h1>My e-Portfolio</h1>
     <p>
-      This e-Portfolio is organised by module. Select a module to view its summary, learning outcomes, and related posts.
+      This e-Portfolio is organised by module. Select a module to explore its learning outcomes, evidence, artefacts, and critical reflections.
     </p>
   </section>
 
@@ -109,6 +115,14 @@ banner: "/assets/images/banners/new-background.jpg"
       <h2>Advance OOP</h2>
       <p>
         Object-oriented programming, design patterns, refactoring, testing, architecture, and secure software development.
+      </p>
+      <span class="module-link">View module →</span>
+    </a>
+
+    <a class="module-box" href="{{ '/cloud-operations-and-management.html' | relative_url }}">
+      <h2>Cloud Operations and Management</h2>
+      <p>
+        Cloud architecture, automation, Azure, cloud-native technologies, resilience, serverless computing, and AI.
       </p>
       <span class="module-link">View module →</span>
     </a>
