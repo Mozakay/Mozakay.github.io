@@ -360,10 +360,12 @@ banner: "/assets/images/banners/new-background.jpg"
   {% assign journey_units_2_3 = nil %}
   {% assign journey_units_4_5 = nil %}
   {% assign journey_unit_6 = nil %}
-  {% assign journey_units_7_8 = nil %}
+  {% assign journey_unit_7 = nil %}
+  {% assign journey_unit_8 = nil %}
   {% assign journey_unit_9 = nil %}
   {% assign journey_unit_10 = nil %}
-  {% assign journey_units_11_12 = nil %}
+  {% assign journey_unit_11 = nil %}
+  {% assign journey_unit_12 = nil %}
 
   {% for post in site.posts %}
 
@@ -381,8 +383,11 @@ banner: "/assets/images/banners/new-background.jpg"
       {% elsif post.journey_group == "unit-6" %}
         {% assign journey_unit_6 = post %}
 
-      {% elsif post.journey_group == "units-7-8" %}
-        {% assign journey_units_7_8 = post %}
+      {% elsif post.journey_group == "unit-7" %}
+        {% assign journey_unit_7 = post %}
+
+      {% elsif post.journey_group == "unit-8" %}
+        {% assign journey_unit_8 = post %}
 
       {% elsif post.journey_group == "unit-9" %}
         {% assign journey_unit_9 = post %}
@@ -390,8 +395,11 @@ banner: "/assets/images/banners/new-background.jpg"
       {% elsif post.journey_group == "unit-10" %}
         {% assign journey_unit_10 = post %}
 
-      {% elsif post.journey_group == "units-11-12" %}
-        {% assign journey_units_11_12 = post %}
+      {% elsif post.journey_group == "unit-11" %}
+        {% assign journey_unit_11 = post %}
+
+      {% elsif post.journey_group == "unit-12" %}
+        {% assign journey_unit_12 = post %}
 
       {% endif %}
 
@@ -566,21 +574,21 @@ banner: "/assets/images/banners/new-background.jpg"
       {% endif %}
 
 
-      <!-- UNITS 7–8 -->
+      <!-- UNIT 7 -->
 
-      {% if journey_units_7_8 %}
+      {% if journey_unit_7 %}
 
       <a class="journey-item"
-         href="{{ journey_units_7_8.url | relative_url }}">
+         href="{{ journey_unit_7.url | relative_url }}">
 
-        <span class="unit-label">Units 7–8</span>
+        <span class="unit-label">Unit 7</span>
 
-        <h3>Security, Compliance and Resilience</h3>
+        <h3>Cloud Security and Compliance</h3>
 
         <p>
-          Cloud security, regulatory compliance, disaster recovery, business
-          continuity, recovery objectives, and evaluation of cloud-based
-          resilience strategies.
+          Cloud security challenges and solutions, compliance with GDPR,
+          ISO/IEC 27001 and other regulations, and tools for securing
+          cloud environments.
         </p>
 
       </a>
@@ -589,14 +597,52 @@ banner: "/assets/images/banners/new-background.jpg"
 
       <div class="journey-item">
 
-        <span class="unit-label">Units 7–8</span>
+        <span class="unit-label">Unit 7</span>
 
-        <h3>Security, Compliance and Resilience</h3>
+        <h3>Cloud Security and Compliance</h3>
 
         <p>
-          Cloud security, regulatory compliance, disaster recovery, business
-          continuity, recovery objectives, and evaluation of cloud-based
-          resilience strategies.
+          Cloud security challenges and solutions, compliance with GDPR,
+          ISO/IEC 27001 and other regulations, and tools for securing
+          cloud environments.
+        </p>
+
+      </div>
+
+      {% endif %}
+
+
+      <!-- UNIT 8 -->
+
+      {% if journey_unit_8 %}
+
+      <a class="journey-item"
+         href="{{ journey_unit_8.url | relative_url }}">
+
+        <span class="unit-label">Unit 8</span>
+
+        <h3>Disaster Recovery and Business Continuity</h3>
+
+        <p>
+          Disaster recovery in the cloud, business continuity strategies,
+          cloud-based recovery tools and solutions, and evaluation of
+          recovery effectiveness.
+        </p>
+
+      </a>
+
+      {% else %}
+
+      <div class="journey-item">
+
+        <span class="unit-label">Unit 8</span>
+
+        <h3>Disaster Recovery and Business Continuity</h3>
+
+        <p>
+          Disaster recovery in the cloud, business continuity strategies,
+          cloud-based recovery tools and solutions, and evaluation of
+          recovery effectiveness.
         </p>
 
       </div>
@@ -616,9 +662,9 @@ banner: "/assets/images/banners/new-background.jpg"
         <h3>Cloud Migration and Integration</h3>
 
         <p>
-          Migration of legacy systems and data to cloud environments, integration
-          challenges, migration tools, and strategies for reducing operational
-          disruption.
+          Migration of legacy systems and data to cloud environments,
+          integration challenges, migration tools, and strategies for
+          reducing operational disruption.
         </p>
 
       </a>
@@ -632,9 +678,9 @@ banner: "/assets/images/banners/new-background.jpg"
         <h3>Cloud Migration and Integration</h3>
 
         <p>
-          Migration of legacy systems and data to cloud environments, integration
-          challenges, migration tools, and strategies for reducing operational
-          disruption.
+          Migration of legacy systems and data to cloud environments,
+          integration challenges, migration tools, and strategies for
+          reducing operational disruption.
         </p>
 
       </div>
@@ -679,44 +725,83 @@ banner: "/assets/images/banners/new-background.jpg"
 
       {% endif %}
 
+<!-- UNIT 11 -->
 
-      <!-- UNITS 11–12 -->
+{% if journey_unit_11 %}
 
-      {% if journey_units_11_12 %}
+<a class="journey-item"
+   href="{{ journey_unit_11.url | relative_url }}">
 
-      <a class="journey-item"
-         href="{{ journey_units_11_12.url | relative_url }}">
+  <span class="unit-label">Unit 11</span>
 
-        <span class="unit-label">Units 11–12</span>
+  <h3>AI and Cloud Computing</h3>
 
-        <h3>AI and Future Cloud Technologies</h3>
+  <p>
+    Integration of artificial intelligence with cloud platforms,
+    AI-driven cloud services, machine learning, automation,
+    optimisation, security, data analysis, and decision-making.
+  </p>
 
-        <p>
-          Integration of artificial intelligence with cloud platforms and
-          evaluation of future developments involving AI, Blockchain, Quantum
-          Computing, automation, and emerging cloud technologies.
-        </p>
+</a>
 
-      </a>
+{% else %}
 
-      {% else %}
+<div class="journey-item">
 
-      <div class="journey-item">
+  <span class="unit-label">Unit 11</span>
 
-        <span class="unit-label">Units 11–12</span>
+  <h3>AI and Cloud Computing</h3>
 
-        <h3>AI and Future Cloud Technologies</h3>
+  <p>
+    Integration of artificial intelligence with cloud platforms,
+    AI-driven cloud services, machine learning, automation,
+    optimisation, security, data analysis, and decision-making.
+  </p>
 
-        <p>
-          Integration of artificial intelligence with cloud platforms and
-          evaluation of future developments involving AI, Blockchain, Quantum
-          Computing, automation, and emerging cloud technologies.
-        </p>
+</div>
 
-      </div>
+{% endif %}
 
-      {% endif %}
 
+<!-- UNIT 12 -->
+
+{% if journey_unit_12 %}
+
+<a class="journey-item"
+   href="{{ journey_unit_12.url | relative_url }}">
+
+  <span class="unit-label">Unit 12</span>
+
+  <h3>Final e-Portfolio and Future Trends</h3>
+
+  <p>
+    Final critical reflection on learning progression, professional
+    development, skills gained throughout the module, and future
+    developments in cloud computing, including AI, Blockchain,
+    and Quantum Computing.
+  </p>
+
+</a>
+
+{% else %}
+
+<div class="journey-item">
+
+  <span class="unit-label">Unit 12</span>
+
+  <h3>Final e-Portfolio and Future Trends</h3>
+
+  <p>
+    Final critical reflection on learning progression, professional
+    development, skills gained throughout the module, and future
+    developments in cloud computing, including AI, Blockchain,
+    and Quantum Computing.
+  </p>
+
+</div>
+
+{% endif %}
+      
     </div>
 
   </section>
