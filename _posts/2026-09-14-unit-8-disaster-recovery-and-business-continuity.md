@@ -3,7 +3,7 @@ layout: post
 title: "Unit 8: Disaster Recovery Plan for a Cloud-Based Infrastructure on Microsoft Azure"
 categories: ["Cloud Operations and Management"]
 unit: 8
-journey_group: "units-7-8"
+journey_group: "units-8"
 ---
 
 ## Context and Purpose
