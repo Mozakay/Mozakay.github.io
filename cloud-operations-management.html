@@ -118,10 +118,6 @@ banner: "/assets/images/banners/new-background.jpg"
       border-color 0.2s ease;
   }
 
-  a.journey-item {
-    cursor: pointer;
-  }
-
   a.journey-item:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
@@ -131,11 +127,6 @@ banner: "/assets/images/banners/new-background.jpg"
 
   a.journey-item:hover h3 {
     color: #2563eb;
-  }
-
-  .journey-item.unavailable {
-    opacity: 0.72;
-    cursor: default;
   }
 
   .journey-item h3 {
@@ -156,18 +147,6 @@ banner: "/assets/images/banners/new-background.jpg"
     color: #2563eb;
     text-transform: uppercase;
     letter-spacing: 0.4px;
-  }
-
-  .journey-status {
-    display: inline-block;
-    margin-top: 11px;
-    font-size: 12px;
-    font-weight: 700;
-    color: #64748b;
-  }
-
-  a.journey-item .journey-status {
-    color: #2563eb;
   }
 
   .artefacts-title {
@@ -299,7 +278,6 @@ banner: "/assets/images/banners/new-background.jpg"
     </p>
 
     <ul>
-
       <li>
         Understanding cloud architecture, frameworks, and the fundamental
         principles of cloud services.
@@ -329,7 +307,6 @@ banner: "/assets/images/banners/new-background.jpg"
         Considering the wider impact of cloud technologies on equality,
         diversity, inclusion, and professional practice.
       </li>
-
     </ul>
 
   </section>
@@ -377,49 +354,44 @@ banner: "/assets/images/banners/new-background.jpg"
   </section>
 
 
-  <!-- ====================================================== -->
-  <!-- FIND POSTS FOR EACH UNIT                                -->
-  <!-- ====================================================== -->
+  <!-- Find the post associated with each Learning Journey group -->
+
+  {% assign journey_unit_1 = nil %}
+  {% assign journey_units_2_3 = nil %}
+  {% assign journey_units_4_5 = nil %}
+  {% assign journey_unit_6 = nil %}
+  {% assign journey_units_7_8 = nil %}
+  {% assign journey_unit_9 = nil %}
+  {% assign journey_unit_10 = nil %}
+  {% assign journey_units_11_12 = nil %}
 
   {% for post in site.posts %}
 
     {% if post.categories contains "Cloud Operations and Management" %}
 
-      {% if post.unit == 1 and unit1_post == nil %}
-        {% assign unit1_post = post %}
+      {% if post.journey_group == "unit-1" %}
+        {% assign journey_unit_1 = post %}
 
-      {% elsif post.unit == 2 and unit2_post == nil %}
-        {% assign unit2_post = post %}
+      {% elsif post.journey_group == "units-2-3" %}
+        {% assign journey_units_2_3 = post %}
 
-      {% elsif post.unit == 3 and unit3_post == nil %}
-        {% assign unit3_post = post %}
+      {% elsif post.journey_group == "units-4-5" %}
+        {% assign journey_units_4_5 = post %}
 
-      {% elsif post.unit == 4 and unit4_post == nil %}
-        {% assign unit4_post = post %}
+      {% elsif post.journey_group == "unit-6" %}
+        {% assign journey_unit_6 = post %}
 
-      {% elsif post.unit == 5 and unit5_post == nil %}
-        {% assign unit5_post = post %}
+      {% elsif post.journey_group == "units-7-8" %}
+        {% assign journey_units_7_8 = post %}
 
-      {% elsif post.unit == 6 and unit6_post == nil %}
-        {% assign unit6_post = post %}
+      {% elsif post.journey_group == "unit-9" %}
+        {% assign journey_unit_9 = post %}
 
-      {% elsif post.unit == 7 and unit7_post == nil %}
-        {% assign unit7_post = post %}
+      {% elsif post.journey_group == "unit-10" %}
+        {% assign journey_unit_10 = post %}
 
-      {% elsif post.unit == 8 and unit8_post == nil %}
-        {% assign unit8_post = post %}
-
-      {% elsif post.unit == 9 and unit9_post == nil %}
-        {% assign unit9_post = post %}
-
-      {% elsif post.unit == 10 and unit10_post == nil %}
-        {% assign unit10_post = post %}
-
-      {% elsif post.unit == 11 and unit11_post == nil %}
-        {% assign unit11_post = post %}
-
-      {% elsif post.unit == 12 and unit12_post == nil %}
-        {% assign unit12_post = post %}
+      {% elsif post.journey_group == "units-11-12" %}
+        {% assign journey_units_11_12 = post %}
 
       {% endif %}
 
@@ -435,8 +407,7 @@ banner: "/assets/images/banners/new-background.jpg"
     <p>
       The module progresses from fundamental cloud concepts towards increasingly
       advanced implementation, resilience, automation, and emerging technologies.
-      Select an available unit below to view the corresponding portfolio artefact
-      and evidence of learning.
+      The stages below provide a structured overview of this development.
     </p>
 
 
@@ -445,553 +416,304 @@ banner: "/assets/images/banners/new-background.jpg"
 
       <!-- UNIT 1 -->
 
-      {% if unit1_post %}
+      {% if journey_unit_1 %}
 
-        <a class="journey-item"
-           href="{{ unit1_post.url | relative_url }}">
+      <a class="journey-item"
+         href="{{ journey_unit_1.url | relative_url }}">
 
-          <span class="unit-label">Unit 1</span>
+        <span class="unit-label">Unit 1</span>
 
-          <h3>Introduction to Cloud Fundamentals and Services</h3>
+        <h3>Cloud Foundations and Service Models</h3>
 
-          <p>
-            Introduction to cloud computing, IaaS, PaaS, SaaS, major cloud
-            providers, and the benefits and challenges associated with cloud
-            adoption.
-          </p>
+        <p>
+          Introduction to cloud computing, IaaS, PaaS, SaaS, major cloud
+          providers, and the benefits and challenges associated with cloud
+          adoption.
+        </p>
 
-          <span class="journey-status">
-            View Unit 1 →
-          </span>
-
-        </a>
+      </a>
 
       {% else %}
 
-        <div class="journey-item unavailable">
+      <div class="journey-item">
 
-          <span class="unit-label">Unit 1</span>
+        <span class="unit-label">Unit 1</span>
 
-          <h3>Introduction to Cloud Fundamentals and Services</h3>
+        <h3>Cloud Foundations and Service Models</h3>
 
-          <p>
-            Introduction to cloud computing, IaaS, PaaS, SaaS, major cloud
-            providers, and the benefits and challenges associated with cloud
-            adoption.
-          </p>
+        <p>
+          Introduction to cloud computing, IaaS, PaaS, SaaS, major cloud
+          providers, and the benefits and challenges associated with cloud
+          adoption.
+        </p>
 
-          <span class="journey-status">
-            Artefact to be added
-          </span>
-
-        </div>
+      </div>
 
       {% endif %}
 
 
+      <!-- UNITS 2–3 -->
 
-      <!-- UNIT 2 -->
+      {% if journey_units_2_3 %}
 
-      {% if unit2_post %}
+      <a class="journey-item"
+         href="{{ journey_units_2_3.url | relative_url }}">
 
-        <a class="journey-item"
-           href="{{ unit2_post.url | relative_url }}">
+        <span class="unit-label">Units 2–3</span>
 
-          <span class="unit-label">Unit 2</span>
+        <h3>Cloud Architecture, Frameworks and Design</h3>
 
-          <h3>Understanding Cloud Architecture and Implementing Different Frameworks</h3>
+        <p>
+          Exploration of cloud architecture, TOGAF, SDLC, Infrastructure as Code,
+          cloud design tools, automation, and the emerging role of AI in cloud
+          management.
+        </p>
 
-          <p>
-            Cloud architecture, TOGAF, SDLC, Infrastructure as Code,
-            and tools for automating cloud infrastructure.
-          </p>
-
-          <span class="journey-status">
-            View Unit 2 →
-          </span>
-
-        </a>
+      </a>
 
       {% else %}
 
-        <div class="journey-item unavailable">
+      <div class="journey-item">
 
-          <span class="unit-label">Unit 2</span>
+        <span class="unit-label">Units 2–3</span>
 
-          <h3>Understanding Cloud Architecture and Implementing Different Frameworks</h3>
+        <h3>Cloud Architecture, Frameworks and Design</h3>
 
-          <p>
-            Cloud architecture, TOGAF, SDLC, Infrastructure as Code,
-            and tools for automating cloud infrastructure.
-          </p>
+        <p>
+          Exploration of cloud architecture, TOGAF, SDLC, Infrastructure as Code,
+          cloud design tools, automation, and the emerging role of AI in cloud
+          management.
+        </p>
 
-          <span class="journey-status">
-            Artefact to be added
-          </span>
-
-        </div>
+      </div>
 
       {% endif %}
 
 
+      <!-- UNITS 4–5 -->
 
-      <!-- UNIT 3 -->
+      {% if journey_units_4_5 %}
 
-      {% if unit3_post %}
+      <a class="journey-item"
+         href="{{ journey_units_4_5.url | relative_url }}">
 
-        <a class="journey-item"
-           href="{{ unit3_post.url | relative_url }}">
+        <span class="unit-label">Units 4–5</span>
 
-          <span class="unit-label">Unit 3</span>
+        <h3>Cloud Management and Cloud-Native Technologies</h3>
 
-          <h3>Cloud Design Tools</h3>
+        <p>
+          Practical development using scripting, Microsoft Azure, GUI-based
+          management tools, the 12-Factor App methodology, containers, and
+          Kubernetes.
+        </p>
 
-          <p>
-            Artificial Intelligence in cloud computing, AI-based automation,
-            optimisation, data management, cloud security, and infrastructure
-            monitoring.
-          </p>
-
-          <span class="journey-status">
-            View Unit 3 →
-          </span>
-
-        </a>
+      </a>
 
       {% else %}
 
-        <div class="journey-item unavailable">
+      <div class="journey-item">
 
-          <span class="unit-label">Unit 3</span>
+        <span class="unit-label">Units 4–5</span>
 
-          <h3>Cloud Design Tools</h3>
+        <h3>Cloud Management and Cloud-Native Technologies</h3>
 
-          <p>
-            Artificial Intelligence in cloud computing, AI-based automation,
-            optimisation, data management, cloud security, and infrastructure
-            monitoring.
-          </p>
+        <p>
+          Practical development using scripting, Microsoft Azure, GUI-based
+          management tools, the 12-Factor App methodology, containers, and
+          Kubernetes.
+        </p>
 
-          <span class="journey-status">
-            Artefact to be added
-          </span>
-
-        </div>
+      </div>
 
       {% endif %}
-
-
-
-      <!-- UNIT 4 -->
-
-      {% if unit4_post %}
-
-        <a class="journey-item"
-           href="{{ unit4_post.url | relative_url }}">
-
-          <span class="unit-label">Unit 4</span>
-
-          <h3>Cloud Native Technology Part 1</h3>
-
-          <p>
-            Scripting, Bash, GUI-based cloud management tools,
-            Microsoft Azure, and infrastructure automation.
-          </p>
-
-          <span class="journey-status">
-            View Unit 4 →
-          </span>
-
-        </a>
-
-      {% else %}
-
-        <div class="journey-item unavailable">
-
-          <span class="unit-label">Unit 4</span>
-
-          <h3>Cloud Native Technology Part 1</h3>
-
-          <p>
-            Scripting, Bash, GUI-based cloud management tools,
-            Microsoft Azure, and infrastructure automation.
-          </p>
-
-          <span class="journey-status">
-            Artefact to be added
-          </span>
-
-        </div>
-
-      {% endif %}
-
-
-
-      <!-- UNIT 5 -->
-
-      {% if unit5_post %}
-
-        <a class="journey-item"
-           href="{{ unit5_post.url | relative_url }}">
-
-          <span class="unit-label">Unit 5</span>
-
-          <h3>Cloud Native Technology Part 2</h3>
-
-          <p>
-            Cloud-native technologies, the 12-Factor App methodology,
-            containers, Kubernetes, Minikube, and scalable cloud applications.
-          </p>
-
-          <span class="journey-status">
-            View Unit 5 →
-          </span>
-
-        </a>
-
-      {% else %}
-
-        <div class="journey-item unavailable">
-
-          <span class="unit-label">Unit 5</span>
-
-          <h3>Cloud Native Technology Part 2</h3>
-
-          <p>
-            Cloud-native technologies, the 12-Factor App methodology,
-            containers, Kubernetes, Minikube, and scalable cloud applications.
-          </p>
-
-          <span class="journey-status">
-            Artefact to be added
-          </span>
-
-        </div>
-
-      {% endif %}
-
 
 
       <!-- UNIT 6 -->
 
-      {% if unit6_post %}
+      {% if journey_unit_6 %}
 
-        <a class="journey-item"
-           href="{{ unit6_post.url | relative_url }}">
+      <a class="journey-item"
+         href="{{ journey_unit_6.url | relative_url }}">
 
-          <span class="unit-label">Unit 6</span>
+        <span class="unit-label">Unit 6</span>
 
-          <h3>Hybrid Cloud Solutions</h3>
+        <h3>Hybrid, Fog and Edge Computing</h3>
 
-          <p>
-            Hybrid cloud architecture, Fog and Edge Computing,
-            multi-cloud management, and strategies for reducing vendor lock-in.
-          </p>
+        <p>
+          Design of hybrid cloud environments, exploration of Fog and Edge
+          Computing, and evaluation of multi-cloud challenges including vendor
+          lock-in.
+        </p>
 
-          <span class="journey-status">
-            View Unit 6 →
-          </span>
-
-        </a>
+      </a>
 
       {% else %}
 
-        <div class="journey-item unavailable">
+      <div class="journey-item">
 
-          <span class="unit-label">Unit 6</span>
+        <span class="unit-label">Unit 6</span>
 
-          <h3>Hybrid Cloud Solutions</h3>
+        <h3>Hybrid, Fog and Edge Computing</h3>
 
-          <p>
-            Hybrid cloud architecture, Fog and Edge Computing,
-            multi-cloud management, and strategies for reducing vendor lock-in.
-          </p>
+        <p>
+          Design of hybrid cloud environments, exploration of Fog and Edge
+          Computing, and evaluation of multi-cloud challenges including vendor
+          lock-in.
+        </p>
 
-          <span class="journey-status">
-            Artefact to be added
-          </span>
-
-        </div>
+      </div>
 
       {% endif %}
 
 
+      <!-- UNITS 7–8 -->
 
-      <!-- UNIT 7 -->
+      {% if journey_units_7_8 %}
 
-      {% if unit7_post %}
+      <a class="journey-item"
+         href="{{ journey_units_7_8.url | relative_url }}">
 
-        <a class="journey-item"
-           href="{{ unit7_post.url | relative_url }}">
+        <span class="unit-label">Units 7–8</span>
 
-          <span class="unit-label">Unit 7</span>
+        <h3>Security, Compliance and Resilience</h3>
 
-          <h3>Cloud Security and Compliance</h3>
+        <p>
+          Cloud security, regulatory compliance, disaster recovery, business
+          continuity, recovery objectives, and evaluation of cloud-based
+          resilience strategies.
+        </p>
 
-          <p>
-            Cloud security controls, regulatory compliance, GDPR,
-            ISO/IEC 27001, risk assessment, and cloud security management.
-          </p>
-
-          <span class="journey-status">
-            View Unit 7 →
-          </span>
-
-        </a>
+      </a>
 
       {% else %}
 
-        <div class="journey-item unavailable">
+      <div class="journey-item">
 
-          <span class="unit-label">Unit 7</span>
+        <span class="unit-label">Units 7–8</span>
 
-          <h3>Cloud Security and Compliance</h3>
+        <h3>Security, Compliance and Resilience</h3>
 
-          <p>
-            Cloud security controls, regulatory compliance, GDPR,
-            ISO/IEC 27001, risk assessment, and cloud security management.
-          </p>
+        <p>
+          Cloud security, regulatory compliance, disaster recovery, business
+          continuity, recovery objectives, and evaluation of cloud-based
+          resilience strategies.
+        </p>
 
-          <span class="journey-status">
-            Artefact to be added
-          </span>
-
-        </div>
+      </div>
 
       {% endif %}
-
-
-
-      <!-- UNIT 8 -->
-
-      {% if unit8_post %}
-
-        <a class="journey-item"
-           href="{{ unit8_post.url | relative_url }}">
-
-          <span class="unit-label">Unit 8</span>
-
-          <h3>Disaster Recovery and Business Continuity</h3>
-
-          <p>
-            Disaster recovery planning, business continuity,
-            recovery objectives, backup and restoration,
-            and cloud resilience.
-          </p>
-
-          <span class="journey-status">
-            View Unit 8 →
-          </span>
-
-        </a>
-
-      {% else %}
-
-        <div class="journey-item unavailable">
-
-          <span class="unit-label">Unit 8</span>
-
-          <h3>Disaster Recovery and Business Continuity</h3>
-
-          <p>
-            Disaster recovery planning, business continuity,
-            recovery objectives, backup and restoration,
-            and cloud resilience.
-          </p>
-
-          <span class="journey-status">
-            Artefact to be added
-          </span>
-
-        </div>
-
-      {% endif %}
-
 
 
       <!-- UNIT 9 -->
 
-      {% if unit9_post %}
+      {% if journey_unit_9 %}
 
-        <a class="journey-item"
-           href="{{ unit9_post.url | relative_url }}">
+      <a class="journey-item"
+         href="{{ journey_unit_9.url | relative_url }}">
 
-          <span class="unit-label">Unit 9</span>
+        <span class="unit-label">Unit 9</span>
 
-          <h3>Cloud Migration and Integration Strategies</h3>
+        <h3>Cloud Migration and Integration</h3>
 
-          <p>
-            Cloud migration strategies, legacy-system integration,
-            database migration, migration tools, and approaches
-            for minimising operational disruption.
-          </p>
+        <p>
+          Migration of legacy systems and data to cloud environments, integration
+          challenges, migration tools, and strategies for reducing operational
+          disruption.
+        </p>
 
-          <span class="journey-status">
-            View Unit 9 →
-          </span>
-
-        </a>
+      </a>
 
       {% else %}
 
-        <div class="journey-item unavailable">
+      <div class="journey-item">
 
-          <span class="unit-label">Unit 9</span>
+        <span class="unit-label">Unit 9</span>
 
-          <h3>Cloud Migration and Integration Strategies</h3>
+        <h3>Cloud Migration and Integration</h3>
 
-          <p>
-            Cloud migration strategies, legacy-system integration,
-            database migration, migration tools, and approaches
-            for minimising operational disruption.
-          </p>
+        <p>
+          Migration of legacy systems and data to cloud environments, integration
+          challenges, migration tools, and strategies for reducing operational
+          disruption.
+        </p>
 
-          <span class="journey-status">
-            Artefact to be added
-          </span>
-
-        </div>
+      </div>
 
       {% endif %}
-
 
 
       <!-- UNIT 10 -->
 
-      {% if unit10_post %}
+      {% if journey_unit_10 %}
 
-        <a class="journey-item"
-           href="{{ unit10_post.url | relative_url }}">
+      <a class="journey-item"
+         href="{{ journey_unit_10.url | relative_url }}">
 
-          <span class="unit-label">Unit 10</span>
+        <span class="unit-label">Unit 10</span>
 
-          <h3>Advanced Cloud Technologies: Serverless Computing</h3>
+        <h3>Serverless Computing</h3>
 
-          <p>
-            Function-as-a-Service, OpenFaaS, AWS Lambda,
-            Azure Functions, serverless architecture, scalability,
-            and infrastructure abstraction.
-          </p>
+        <p>
+          Exploration of Function-as-a-Service, serverless architecture,
+          OpenFaaS, AWS Lambda, Azure Functions, scalability, and
+          infrastructure abstraction.
+        </p>
 
-          <span class="journey-status">
-            View Unit 10 →
-          </span>
-
-        </a>
+      </a>
 
       {% else %}
 
-        <div class="journey-item unavailable">
+      <div class="journey-item">
 
-          <span class="unit-label">Unit 10</span>
+        <span class="unit-label">Unit 10</span>
 
-          <h3>Advanced Cloud Technologies: Serverless Computing</h3>
+        <h3>Serverless Computing</h3>
 
-          <p>
-            Function-as-a-Service, OpenFaaS, AWS Lambda,
-            Azure Functions, serverless architecture, scalability,
-            and infrastructure abstraction.
-          </p>
+        <p>
+          Exploration of Function-as-a-Service, serverless architecture,
+          OpenFaaS, AWS Lambda, Azure Functions, scalability, and
+          infrastructure abstraction.
+        </p>
 
-          <span class="journey-status">
-            Artefact to be added
-          </span>
-
-        </div>
+      </div>
 
       {% endif %}
 
 
+      <!-- UNITS 11–12 -->
 
-      <!-- UNIT 11 -->
+      {% if journey_units_11_12 %}
 
-      {% if unit11_post %}
+      <a class="journey-item"
+         href="{{ journey_units_11_12.url | relative_url }}">
 
-        <a class="journey-item"
-           href="{{ unit11_post.url | relative_url }}">
+        <span class="unit-label">Units 11–12</span>
 
-          <span class="unit-label">Unit 11</span>
+        <h3>AI and Future Cloud Technologies</h3>
 
-          <h3>AI and Cloud Computing</h3>
+        <p>
+          Integration of artificial intelligence with cloud platforms and
+          evaluation of future developments involving AI, Blockchain, Quantum
+          Computing, automation, and emerging cloud technologies.
+        </p>
 
-          <p>
-            AI-driven cloud services, machine learning,
-            automation, optimisation, security, decision-making,
-            and intelligent cloud infrastructure.
-          </p>
-
-          <span class="journey-status">
-            View Unit 11 →
-          </span>
-
-        </a>
+      </a>
 
       {% else %}
 
-        <div class="journey-item unavailable">
+      <div class="journey-item">
 
-          <span class="unit-label">Unit 11</span>
+        <span class="unit-label">Units 11–12</span>
 
-          <h3>AI and Cloud Computing</h3>
+        <h3>AI and Future Cloud Technologies</h3>
 
-          <p>
-            AI-driven cloud services, machine learning,
-            automation, optimisation, security, decision-making,
-            and intelligent cloud infrastructure.
-          </p>
+        <p>
+          Integration of artificial intelligence with cloud platforms and
+          evaluation of future developments involving AI, Blockchain, Quantum
+          Computing, automation, and emerging cloud technologies.
+        </p>
 
-          <span class="journey-status">
-            Artefact to be added
-          </span>
-
-        </div>
-
-      {% endif %}
-
-
-
-      <!-- UNIT 12 -->
-
-      {% if unit12_post %}
-
-        <a class="journey-item"
-           href="{{ unit12_post.url | relative_url }}">
-
-          <span class="unit-label">Unit 12</span>
-
-          <h3>Future Trends in Cloud Computing</h3>
-
-          <p>
-            Artificial Intelligence, Blockchain, Quantum Computing,
-            emerging cloud technologies, and future developments
-            in cloud operations.
-          </p>
-
-          <span class="journey-status">
-            View Unit 12 →
-          </span>
-
-        </a>
-
-      {% else %}
-
-        <div class="journey-item unavailable">
-
-          <span class="unit-label">Unit 12</span>
-
-          <h3>Future Trends in Cloud Computing</h3>
-
-          <p>
-            Artificial Intelligence, Blockchain, Quantum Computing,
-            emerging cloud technologies, and future developments
-            in cloud operations.
-          </p>
-
-          <span class="journey-status">
-            Artefact to be added
-          </span>
-
-        </div>
+      </div>
 
       {% endif %}
 
@@ -1005,10 +727,10 @@ banner: "/assets/images/banners/new-background.jpg"
   </h2>
 
   <p class="artefacts-intro">
-    The artefacts below provide evidence of practical implementation,
-    academic analysis, problem solving, and reflection completed throughout
-    the module. Each artefact demonstrates specific aspects of the module
-    learning outcomes and the progressive development of cloud computing skills.
+    The artefacts below provide evidence of practical implementation, academic
+    analysis, problem solving, and reflection completed throughout the module.
+    Each artefact demonstrates specific aspects of the module learning outcomes
+    and the progressive development of cloud computing skills.
   </p>
 
 
