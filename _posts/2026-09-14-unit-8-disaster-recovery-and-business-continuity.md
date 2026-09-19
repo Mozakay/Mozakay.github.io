@@ -20,11 +20,11 @@ For this project, a DR environment was built on Microsoft Azure using Restic 0.1
 
 Figure 1 presents the logical DR architecture. The protected workload was deployed on an Ubuntu Server 24.04 LTS Azure Virtual Machine named vm-dr-app in the Austria East region. The VM contained the application data under /srv/cloudapp, the PostgreSQL database drdb, and the Restic client. Network access was provided through an Azure Public IP and controlled using the Network Security Group vm-dr-app-nsg, with SSH used for controlled administration. The implemented Azure resources are confirmed by the Azure Resource Visualizer in Figure 2.
 
-<img src="{{ '/assets/images/COM/unit8/pic%201.png' | relative_url }}" alt="Figure 1: DR Architecture Design" width="700">
+<img src="{{ '/assets/images/COM/unit8/pic%201.png' | relative_url }}" alt="Figure 1: DR Architecture Design" width="500">
 
 *Figure 1: DR Architecture Design*
 
-<img src="{{ '/assets/images/COM/unit8/Pic%202.png' | relative_url }}" alt="Figure 2: Actual Azure Deployment" width="700">
+<img src="{{ '/assets/images/COM/unit8/Pic%202.png' | relative_url }}" alt="Figure 2: Actual Azure Deployment" width="500">
 
 *Figure 2: Actual Azure Deployment*
 
@@ -34,7 +34,7 @@ The protected content consisted of application files and a PostgreSQL database d
 
 For the production design, an hourly backup interval is proposed, giving a target RPO of 60 minutes. Daily, weekly or monthly retention could also be applied depending on organisational requirements. In this implementation, the snapshots were triggered manually within an accelerated test period; therefore, the experiment validates the recovery process rather than an automated hourly schedule.
 
-<img src="{{ '/assets/images/COM/unit8/pic3.png' | relative_url }}" alt="Figure 3: Backup state and post-backup data before failure" width="700">
+<img src="{{ '/assets/images/COM/unit8/pic3.png' | relative_url }}" alt="Figure 3: Backup state and post-backup data before failure" width="500">
 
 *Figure 3: Backup state and post-backup data before failure*
 
@@ -44,7 +44,7 @@ A ransomware-style destructive data-loss scenario was simulated. At 06:02:30 UTC
 
 The test was designed to represent a realistic data-loss incident, where both application files and database data become unavailable at the same time. Yun et al. (2017) highlight the importance of recoverable historical copies in ransomware scenarios because recovery requires returning data to a known-good state rather than simply restoring system availability.
 
-<img src="{{ '/assets/images/COM/unit8/pic4.png' | relative_url }}" alt="Figure 4: Failure simulation" width="700">
+<img src="{{ '/assets/images/COM/unit8/pic4.png' | relative_url }}" alt="Figure 4: Failure simulation" width="500">
 
 *Figure 4: Failure simulation*
 
@@ -54,17 +54,17 @@ Recovery began at 06:04:30 UTC. Restic first identified the latest valid snapsho
 
 Figure 5 records the recovery operation. Restic restored 1,475 files/directories representing 24.416 MiB, while the application-level file count returned to 1,471 files. The PostgreSQL dump contained in the restored snapshot was then used to reconstruct the database. Figure 6 confirms that the orders table was successfully restored with exactly 252,700 records. Recovery was completed at 06:06:19 UTC.
 
-<img src="{{ '/assets/images/COM/unit8/pic5.png' | relative_url }}" alt="Figure 5: Recovery from latest Restic snapshot" width="700">
+<img src="{{ '/assets/images/COM/unit8/pic5.png' | relative_url }}" alt="Figure 5: Recovery from latest Restic snapshot" width="500">
 
 *Figure 5: Recovery from latest Restic snapshot*
 
-<img src="{{ '/assets/images/COM/unit8/pic6.png' | relative_url }}" alt="Figure 6: Database restored to 252,700" width="700">
+<img src="{{ '/assets/images/COM/unit8/pic6.png' | relative_url }}" alt="Figure 6: Database restored to 252,700" width="500">
 
 *Figure 6: Database restored to 252,700*
 
 Finally, restic check was executed to verify repository integrity. Figure 7 shows that all three snapshots were checked successfully and that “no errors were found.” This final check confirmed that the repository was still healthy after the recovery test.
 
-<img src="{{ '/assets/images/COM/unit8/pic7.png' | relative_url }}" alt="Figure 7: Repository integrity check" width="700">
+<img src="{{ '/assets/images/COM/unit8/pic7.png' | relative_url }}" alt="Figure 7: Repository integrity check" width="500">
 
 *Figure 7: Repository integrity check*
 
@@ -117,18 +117,15 @@ I reviewed the figures and the RTO/RPO table, and the overall numbering, caption
 
 Mendonça, J., Lima, R. and Andrade, E. (2020) ‘Evaluating and modelling solutions for disaster recovery’, International Journal of Grid and Utility Computing, 11(5), pp. 683–704. DOI: 10.1504/IJGUC.2020.110055.
 
-Microsoft (2026a) Azure storage disaster recovery planning and failover. Microsoft Learn.
-
-Microsoft (2026b) Azure Storage redundancy. Microsoft Learn.
-
-Swanson, M., Bowen, P., Phillips, A.W., Gallup, D. and Lynes, D. (2010) Contingency Planning Guide for Federal Information Systems. NIST SP 800-34 Rev. 1.
-
-Yun, J., Hur, J., Shin, Y. and Koo, D. (2017) ‘CLDSafe: An efficient file backup system in cloud storage against ransomware’, IEICE Transactions on Information and Systems, E100-D(9), pp. 2228
-
-### References:
-
 Microsoft (2026a) Azure storage disaster recovery planning and failover. Microsoft Learn. Available at: https://learn.microsoft.com/en-us/azure/storage/common/storage-disaster-recovery-guidance (Accessed: 19 September 2026).
 
 Microsoft (2026b) Azure Storage redundancy. Microsoft Learn. Available at: https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy (Accessed: 19 September 2026).
 
 Microsoft (2026c) Monitoring and reporting solutions for Azure Backup. Microsoft Learn. Available at: https://learn.microsoft.com/en-us/azure/backup/monitoring-and-alerts-overview (Accessed: 19 September 2026).
+
+Swanson, M., Bowen, P., Phillips, A.W., Gallup, D. and Lynes, D. (2010) Contingency Planning Guide for Federal Information Systems. NIST SP 800-34 Rev. 1.
+
+Yun, J., Hur, J., Shin, Y. and Koo, D. (2017) ‘CLDSafe: An efficient file backup system in cloud storage against ransomware’, IEICE Transactions on Information and Systems, E100-D(9), pp. 2228
+
+
+
