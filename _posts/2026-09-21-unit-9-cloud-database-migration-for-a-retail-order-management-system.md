@@ -17,7 +17,7 @@ This practical migration considered the database component of a **Retail Order M
 The source environment consisted of MySQL 8.0.46 running locally and a database named retail_db. Four relational tables represented the principal entities of the retail system: customers, products, orders and order_items. Prior to migration, the database contained eight customers, six products, eight orders and eleven order items. These values established a measurable baseline against which the cloud database could subsequently be validated, as demonstrated in **Figure 1**.
 
 <figure>
-  <img src="{{ '/assets/images/COM/unit9/part1/Figure 1 Local MySQL source database and pre-migration record counts.png' | relative_url }}" alt="Figure 1. Local MySQL source database and pre-migration record counts.">
+  <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/COM/unit9/part1/Figure%201%20Local%20MySQL%20source%20database%20and%20pre-migration%20record%20counts.png" alt="Figure 1. Local MySQL source database and pre-migration record counts.">
   <figcaption><em>Figure 1. Local MySQL source database and pre-migration record counts.</em></figcaption>
 </figure>
 
@@ -34,7 +34,7 @@ The initial export used the --single-transaction option. This decision was parti
 This approach therefore supported two objectives simultaneously. First, it improved **data consistency** because related records were exported from a transactionally consistent point in time. Secondly, it reduced **operational disruption**, as the database did not have to remain unavailable while the initial bulk export was produced. The resulting retail_backup.sql file was checked for both file size and SQL content before restoration. As shown in **Figure 2**, the backup was generated from the local retail_db database and contained valid database definitions and records.
 
 <figure>
-  <img src="{{ '/assets/images/COM/unit9/part1/Figure 2 Initial consistent backup created and verified using mysqldump..png' | relative_url }}" alt="Figure 2. Initial consistent backup created and verified using mysqldump.">
+  <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/COM/unit9/part1/Figure%202%20Initial%20consistent%20backup%20created%20and%20verified%20using%20mysqldump..png" alt="Figure 2. Initial consistent backup created and verified using mysqldump.">
   <figcaption><em>Figure 2. Initial consistent backup created and verified using mysqldump.</em></figcaption>
 </figure>
 
@@ -47,7 +47,7 @@ An empty retail_db database was created on Azure and the logical backup was rest
 The target was not considered valid merely because the import completed without an error. Instead, the restored database was compared against the source baseline. The four expected tables were present, and record counts were eight customers, six products, eight orders and eleven order items. These values exactly matched the source state captured before migration, as illustrated in **Figure 3**.
 
 <figure>
-  <img src="{{ '/assets/images/COM/unit9/part1/Figure 3 Azure MySQL database after the initial restore, showing matching record counts..png' | relative_url }}" alt="Figure 3. Azure MySQL database after the initial restore, showing matching record counts.">
+  <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/COM/unit9/part1/Figure%203%20Azure%20MySQL%20database%20after%20the%20initial%20restore%2C%20showing%20matching%20record%20counts..png" alt="Figure 3. Azure MySQL database after the initial restore, showing matching record counts.">
   <figcaption><em>Figure 3. Azure MySQL database after the initial restore, showing matching record counts.</em></figcaption>
 </figure>
 
@@ -84,7 +84,7 @@ These observations reflect wider empirical research. Gholami et al. (2017) found
 After final synchronisation, the cloud database contained nine customers, six products, ten orders and fourteen order items, matching the updated local database. Validation was then extended beyond row counts by checking for the new customer, orders 9 and 10, and order items 12 to 14. As shown in **Figure 4**, all expected post-backup records were present in the Azure database.
 
 <figure>
-  <img src="{{ '/assets/images/COM/unit9/part1/Figure 4 Final validation of the Azure MySQL database after final synchronisation..png' | relative_url }}" alt="Figure 4. Final validation of the Azure MySQL database after final synchronisation.">
+  <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/COM/unit9/part1/Figure%204%20Final%20validation%20of%20the%20Azure%20MySQL%20database%20after%20final%20synchronisation..png" alt="Figure 4. Final validation of the Azure MySQL database after final synchronisation.">
   <figcaption><em>Figure 4. Final validation of the Azure MySQL database after final synchronisation.</em></figcaption>
 </figure>
 
@@ -102,18 +102,18 @@ The approach therefore demonstrates the principal learning outcomes of Unit 9 by
 
 ## References
 
-Beserra, P.V., Camara, A., Ximenes, R., Albuquerque, A.B. and Mendonça, N.C. (2012) ‘Cloudstep: A step-by-step decision process to support legacy application migration to the cloud’, *2012 IEEE 6th International Workshop on the Maintenance and Evolution of Service-Oriented and Cloud-Based Systems (MESOCA)*, pp. 7–16. doi: [10.1109/MESOCA.2012.6392602](https://doi.org/10.1109/MESOCA.2012.6392602).
+Beserra, P.V., Camara, A., Ximenes, R., Albuquerque, A.B. and Mendonça, N.C. (2012) ‘Cloudstep: A step-by-step decision process to support legacy application migration to the cloud’, in *2012 IEEE 6th International Workshop on the Maintenance and Evolution of Service-Oriented and Cloud-Based Systems (MESOCA)*, pp. 7–16. Available at: https://doi.org/10.1109/MESOCA.2012.6392602 (Accessed: 21 September 2026).
 
-Gholami, M.F., Daneshgar, F., Low, G. and Beydoun, G. (2016) ‘Cloud migration process: A survey, evaluation framework, and open challenges’, *Journal of Systems and Software*, 120, pp. 31–69. doi: [10.1016/j.jss.2016.06.068](https://doi.org/10.1016/j.jss.2016.06.068).
+Gholami, M.F., Daneshgar, F., Low, G. and Beydoun, G. (2016) ‘Cloud migration process: A survey, evaluation framework, and open challenges’, *Journal of Systems and Software*, 120, pp. 31–69. Available at: https://doi.org/10.1016/j.jss.2016.06.068 (Accessed: 21 September 2026).
 
-Gholami, M.F., Daneshgar, F., Beydoun, G. and Rabhi, F. (2017) ‘Challenges in migrating legacy software systems to the cloud—An empirical study’, *Information Systems*, 67, pp. 100–113. doi: [10.1016/j.is.2017.03.008](https://doi.org/10.1016/j.is.2017.03.008).
+Gholami, M.F., Daneshgar, F., Beydoun, G. and Rabhi, F. (2017) ‘Challenges in migrating legacy software systems to the cloud—An empirical study’, *Information Systems*, 67, pp. 100–113. Available at: https://doi.org/10.1016/j.is.2017.03.008 (Accessed: 21 September 2026).
 
-Jamshidi, P., Ahmad, A. and Pahl, C. (2013) ‘Cloud migration research: A systematic review’, *IEEE Transactions on Cloud Computing*, 1(2), pp. 142–157. doi: [10.1109/TCC.2013.10](https://doi.org/10.1109/TCC.2013.10).
+Jamshidi, P., Ahmad, A. and Pahl, C. (2013) ‘Cloud migration research: A systematic review’, *IEEE Transactions on Cloud Computing*, 1(2), pp. 142–157. Available at: https://doi.org/10.1109/TCC.2013.10 (Accessed: 21 September 2026).
 
-Khajeh-Hosseini, A., Greenwood, D. and Sommerville, I. (2010) ‘Cloud migration: A case study of migrating an enterprise IT system to IaaS’, *2010 IEEE 3rd International Conference on Cloud Computing*, pp. 450–457. doi: [10.1109/CLOUD.2010.37](https://doi.org/10.1109/CLOUD.2010.37).
+Khajeh-Hosseini, A., Greenwood, D. and Sommerville, I. (2010) ‘Cloud migration: A case study of migrating an enterprise IT system to IaaS’, in *2010 IEEE 3rd International Conference on Cloud Computing*, pp. 450–457. Available at: https://doi.org/10.1109/CLOUD.2010.37 (Accessed: 21 September 2026).
 
-Khajeh-Hosseini, A., Greenwood, D.S., Smith, J.W. and Sommerville, I. (2012) ‘The Cloud Adoption Toolkit: Supporting cloud adoption decisions in the enterprise’, *Software: Practice and Experience*, 42(4), pp. 447–465. doi: [10.1002/spe.1072](https://doi.org/10.1002/spe.1072).
+Khajeh-Hosseini, A., Greenwood, D.S., Smith, J.W. and Sommerville, I. (2012) ‘The Cloud Adoption Toolkit: Supporting cloud adoption decisions in the enterprise’, *Software: Practice and Experience*, 42(4), pp. 447–465. Available at: https://doi.org/10.1002/spe.1072 (Accessed: 21 September 2026).
 
-Microsoft (2026) *Migrate using dump and restore: Azure Database for MySQL – Flexible Server*. Microsoft Learn. Available at: [https://learn.microsoft.com/en-us/azure/mysql/flexible-server/concepts-migrate-dump-restore](https://learn.microsoft.com/en-us/azure/mysql/flexible-server/concepts-migrate-dump-restore) (Accessed: 21 September 2026).
+Microsoft (2026) *Migrate using dump and restore: Azure Database for MySQL – Flexible Server*. Microsoft Learn. Available at: https://learn.microsoft.com/en-us/azure/mysql/flexible-server/concepts-migrate-dump-restore (Accessed: 21 September 2026).
 
-Oracle (2026) *MySQL 8.0 Reference Manual: mysqldump — A database backup program*. Available at: [https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html) (Accessed: 21 September 2026).
+Oracle (2026) *MySQL 8.0 Reference Manual: mysqldump — A database backup program*. Available at: https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html (Accessed: 21 September 2026).
