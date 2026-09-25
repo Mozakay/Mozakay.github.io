@@ -48,6 +48,7 @@ Figure 1 demonstrates successful command-line provisioning of the Azure virtual 
 </figure>
 
 
+
 The exercise demonstrates a fundamental Infrastructure as a Service principle: networking infrastructure can be logically defined without directly configuring physical switches, routers or cabling. The VNet establishes a logical network boundary, while subnetting provides segmentation within the allocated address space. Therefore, cloud abstraction simplifies infrastructure deployment but does not remove the requirement to understand conventional networking concepts such as CIDR addressing, segmentation and resource dependencies.
 
 A significant advantage of the CLI approach was **repeatability**. Unlike manual portal configuration, command-based deployment can be reproduced, reviewed and incorporated into automation workflows. This improves consistency and reduces repetitive administrative activity. However, automation also introduces an important limitation: a command can be syntactically correct and successfully executed while still representing a poor architectural decision. An inappropriate CIDR range, region or subnet design could therefore be deployed consistently at scale. Successful provisioning should consequently not be interpreted as proof of secure or optimal design.
