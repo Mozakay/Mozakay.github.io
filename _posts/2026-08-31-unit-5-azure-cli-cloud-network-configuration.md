@@ -41,7 +41,7 @@ az network vnet show \
 Figure 1 demonstrates successful command-line provisioning of the Azure virtual network.
 
 <figure>
-  <img src="{{ '/assets/images/COM/unit5/figure1-vnet-creation.png' | relative_url }}"
+  <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/COM/unit5/figure1-vnet-creation.png"
        alt="Figure 1. Successful creation of an Azure Virtual Network and subnet using Azure CLI."
        width="500">
   <figcaption><em>Figure 1. Successful creation of an Azure Virtual Network and subnet using Azure CLI.</em></figcaption>
@@ -54,7 +54,7 @@ A significant advantage of the CLI approach was **repeatability**. Unlike manual
 This distinction made validation an important part of the exercise. Rather than relying only on the initial provisioning response, `az network vnet show` was used to interrogate the deployed resource. Figure 2 confirmed that `unit5-vnet` was deployed in Qatar Central with the intended `10.0.0.0/16` address space, that `unit5-subnet` used `10.0.1.0/24`, and that the provisioning state was `Succeeded`.
 
 <figure>
-  <img src="{{ '/assets/images/COM/unit5/figure2-vnet-verification.png' | relative_url }}"
+  <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/COM/unit5/figure2-vnet-verification.png"
        alt="Figure 2. Verification of the Azure Virtual Network and subnet configuration using Azure CLI."
        width="500">
   <figcaption><em>Figure 2. Verification of the Azure Virtual Network and subnet configuration using Azure CLI.</em></figcaption>
@@ -81,5 +81,3 @@ Buyya, R., Yeo, C.S., Venugopal, S., Broberg, J. and Brandic, I. (2009) ‘Cloud
 Hashizume, K., Rosado, D.G., Fernández-Medina, E. and Fernandez, E.B. (2013) ‘An analysis of security issues for cloud computing’, *Journal of Internet Services and Applications*, 4, Article 5. https://doi.org/10.1186/1869-0238-4-5.
 
 Microsoft (2026) *az network vnet*. Microsoft Learn. Available at: https://learn.microsoft.com/en-us/cli/azure/network/vnet (Accessed: 25 September 2026).
-
-
