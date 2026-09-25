@@ -323,7 +323,8 @@ banner: "/assets/images/banners/new-background.jpg"
   {% assign journey_unit_8 = nil %}
   {% assign journey_unit_9 = nil %}
   {% assign journey_unit_10 = nil %}
-  {% assign journey_unit_11 = nil %}
+  {% assign journey_unit_11_part_1 = nil %}
+  {% assign journey_unit_11_part_2 = nil %}
   {% assign journey_unit_12 = nil %}
 
   {% for post in site.posts %}
@@ -354,8 +355,11 @@ banner: "/assets/images/banners/new-background.jpg"
       {% elsif post.journey_group == "unit-10" %}
         {% assign journey_unit_10 = post %}
 
-      {% elsif post.journey_group == "unit-11" %}
-        {% assign journey_unit_11 = post %}
+      {% elsif post.journey_group == "unit-11-part-1" %}
+        {% assign journey_unit_11_part_1 = post %}
+
+      {% elsif post.journey_group == "unit-11-part-2" %}
+        {% assign journey_unit_11_part_2 = post %}
 
       {% elsif post.journey_group == "unit-12" %}
         {% assign journey_unit_12 = post %}
@@ -684,21 +688,21 @@ banner: "/assets/images/banners/new-background.jpg"
 
       {% endif %}
 
-<!-- UNIT 11 -->
+<!-- UNIT 11 · PART 1 -->
 
-{% if journey_unit_11 %}
+{% if journey_unit_11_part_1 %}
 
 <a class="journey-item"
-   href="{{ journey_unit_11.url | relative_url }}">
+   href="{{ journey_unit_11_part_1.url | relative_url }}">
 
-  <span class="unit-label">Unit 11</span>
+  <span class="unit-label">Unit 11 · Part 1</span>
 
-  <h3>AI and Cloud Computing</h3>
+  <h3>{{ journey_unit_11_part_1.title }}</h3>
 
   <p>
-    Integration of artificial intelligence with cloud platforms,
-    AI-driven cloud services, machine learning, automation,
-    optimisation, security, data analysis, and decision-making.
+    Practical AI model development using TensorFlow and Keras, including
+    CIFAR-10 image recognition, model training, evaluation, containerisation,
+    and deployment to Microsoft Azure.
   </p>
 
 </a>
@@ -707,14 +711,52 @@ banner: "/assets/images/banners/new-background.jpg"
 
 <div class="journey-item">
 
-  <span class="unit-label">Unit 11</span>
+  <span class="unit-label">Unit 11 · Part 1</span>
 
-  <h3>AI and Cloud Computing</h3>
+  <h3>TensorFlow and Keras</h3>
 
   <p>
-    Integration of artificial intelligence with cloud platforms,
-    AI-driven cloud services, machine learning, automation,
-    optimisation, security, data analysis, and decision-making.
+    Practical AI model development using TensorFlow and Keras, including
+    CIFAR-10 image recognition, model training, evaluation, containerisation,
+    and deployment to Microsoft Azure.
+  </p>
+
+</div>
+
+{% endif %}
+
+
+<!-- UNIT 11 · PART 2 -->
+
+{% if journey_unit_11_part_2 %}
+
+<a class="journey-item"
+   href="{{ journey_unit_11_part_2.url | relative_url }}">
+
+  <span class="unit-label">Unit 11 · Part 2</span>
+
+  <h3>{{ journey_unit_11_part_2.title }}</h3>
+
+  <p>
+    The second Unit 11 practical activity, documenting the implementation,
+    evidence, evaluation, and critical reflection for the AI and cloud
+    computing topic.
+  </p>
+
+</a>
+
+{% else %}
+
+<div class="journey-item">
+
+  <span class="unit-label">Unit 11 · Part 2</span>
+
+  <h3>AI and Cloud Computing – Part 2</h3>
+
+  <p>
+    The second Unit 11 practical activity, documenting the implementation,
+    evidence, evaluation, and critical reflection for the AI and cloud
+    computing topic.
   </p>
 
 </div>
