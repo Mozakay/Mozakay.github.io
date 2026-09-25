@@ -14,7 +14,7 @@ This activity implemented a convolutional neural network (CNN) for image recogni
 
 Figure 1 confirms that TensorFlow 2.20.0 was successfully configured and that the CIFAR-10 dataset was loaded with 50,000 training and 10,000 test images. CIFAR-10 contains 60,000 colour images of 32 × 32 pixels distributed across ten mutually exclusive classes, making it suitable for a controlled image-classification experiment (Krizhevsky, 2009). TensorFlow was appropriate because it supports machine-learning computation across heterogeneous computing environments and was designed for large-scale training and inference workloads (Abadi et al., 2016). However, CIFAR-10 remains a relatively small and highly standardised benchmark. Consequently, performance on this dataset cannot be assumed to generalise directly to higher-resolution, imbalanced or operational image data.
 
-![Figure 1. TensorFlow environment and CIFAR-10 dataset successfully loaded.](/assets/images/COM/unit11/part1/figure-1-tensorflow-cifar10.png)
+<p align="center"><img src="/assets/images/COM/unit11/part1/figure-1-tensorflow-cifar10.png" alt="Figure 1. TensorFlow environment and CIFAR-10 dataset successfully loaded." width="600"></p>
 
 *Figure 1. TensorFlow environment and CIFAR-10 dataset successfully loaded.*
 
@@ -24,7 +24,7 @@ Figure 2 demonstrates that the CNN learned progressively across ten epochs. Trai
 
 However, validation accuracy increased more slowly during the later epochs, rising only from **74.90% at epoch six to 76.78% at epoch ten**. This pattern suggests diminishing gains under the existing training configuration, although longer training was not tested and therefore cannot be ruled out as potentially beneficial. Higher training accuracy should not itself be interpreted as improved generalisation. Data augmentation, regularisation, dropout, learning-rate scheduling or architectural refinement could potentially improve performance on unseen data. Such improvements would nevertheless need to be balanced against computational and memory requirements, since efficient deep-learning design involves trade-offs between predictive performance, throughput, resource consumption and computational complexity (Sze et al., 2017).
 
-![Figure 2. CNN model training and validation performance over 10 epochs.](/assets/images/COM/unit11/part1/figure-2-cnn-training-validation.png)
+<p align="center"><img src="/assets/images/COM/unit11/part1/figure-2-cnn-training-validation.png" alt="Figure 2. CNN model training and validation performance over 10 epochs." width="600"></p>
 
 *Figure 2. CNN model training and validation performance over 10 epochs.*
 
@@ -34,7 +34,7 @@ Figure 3 provides a stronger assessment of generalisation by evaluating the mode
 
 Nevertheless, neither the overall accuracy nor one successful example is sufficient to demonstrate comprehensive model reliability. Although CIFAR-10 is balanced across its ten classes, aggregate accuracy can still conceal class-specific weaknesses. A stronger evaluation would therefore include a confusion matrix, per-class precision and recall, repeated experiments using controlled random seeds and analysis of incorrectly classified images. Furthermore, the reported 79.62% confidence should not automatically be interpreted as a calibrated probability of correctness. Confidence calibration would need to be evaluated separately before such scores could be relied upon for risk-sensitive decisions.
 
-![Figure 3. Final model test accuracy and sample image prediction.](/assets/images/COM/unit11/part1/figure-3-test-accuracy-prediction.png)
+<p align="center"><img src="/assets/images/COM/unit11/part1/figure-3-test-accuracy-prediction.png" alt="Figure 3. Final model test accuracy and sample image prediction." width="450"></p>
 
 *Figure 3. Final model test accuracy and sample image prediction.*
 
@@ -48,7 +48,7 @@ Importantly, the initial deployment did not succeed. Azure reported an unsupport
 
 The deployed application was then tested operationally. A request to the `/health` endpoint returned `{"status":"healthy"}`, confirming that the service was running and responding. Figure 4 records the subsequent live inference test against the deployed `/predict` endpoint. The remote Azure deployment classified the uploaded test image as **cat with 79.62% reported confidence**, matching the local prediction shown in Figure 3. This provides practical evidence that model serialisation, containerisation and cloud deployment preserved the inference behaviour of the trained model.
 
-![Figure 4. Successful image prediction using the deployed CIFAR-10 model on Azure Container Apps.](/assets/images/COM/unit11/part1/figure-4-azure-container-apps-prediction.png)
+<p align="center"><img src="/assets/images/COM/unit11/part1/figure-4-azure-container-apps-prediction.png" alt="Figure 4. Successful image prediction using the deployed CIFAR-10 model on Azure Container Apps." width="700"></p>
 
 *Figure 4. Successful image prediction using the deployed CIFAR-10 model on Azure Container Apps.*
 
