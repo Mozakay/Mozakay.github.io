@@ -317,7 +317,9 @@ banner: "/assets/images/banners/new-background.jpg"
 
   {% assign journey_unit_1 = nil %}
   {% assign journey_units_2_3 = nil %}
-  {% assign journey_units_4_5 = nil %}
+  {% assign journey_unit_4 = nil %}
+  {% assign journey_unit_5 = nil %}
+  {% assign journey_units_4_5_legacy = nil %}
   {% assign journey_unit_6 = nil %}
   {% assign journey_unit_7 = nil %}
   {% assign journey_unit_8 = nil %}
@@ -337,8 +339,14 @@ banner: "/assets/images/banners/new-background.jpg"
       {% elsif post.journey_group == "units-2-3" %}
         {% assign journey_units_2_3 = post %}
 
+      {% elsif post.journey_group == "unit-4" %}
+        {% assign journey_unit_4 = post %}
+
+      {% elsif post.journey_group == "unit-5" %}
+        {% assign journey_unit_5 = post %}
+
       {% elsif post.journey_group == "units-4-5" %}
-        {% assign journey_units_4_5 = post %}
+        {% assign journey_units_4_5_legacy = post %}
 
       {% elsif post.journey_group == "unit-6" %}
         {% assign journey_unit_6 = post %}
@@ -369,6 +377,10 @@ banner: "/assets/images/banners/new-background.jpg"
     {% endif %}
 
   {% endfor %}
+
+  {% if journey_unit_4 == nil and journey_units_4_5_legacy %}
+    {% assign journey_unit_4 = journey_units_4_5_legacy %}
+  {% endif %}
 
 
   <section class="module-section">
@@ -461,21 +473,20 @@ banner: "/assets/images/banners/new-background.jpg"
       {% endif %}
 
 
-      <!-- UNITS 4–5 -->
+      <!-- UNIT 4 -->
 
-      {% if journey_units_4_5 %}
+      {% if journey_unit_4 %}
 
       <a class="journey-item"
-         href="{{ journey_units_4_5.url | relative_url }}">
+         href="{{ journey_unit_4.url | relative_url }}">
 
-        <span class="unit-label">Units 4–5</span>
+        <span class="unit-label">Unit 4</span>
 
-        <h3>Cloud Management and Cloud-Native Technologies</h3>
+        <h3>Cloud Native Technology Part 1</h3>
 
         <p>
-          Practical development using scripting, Microsoft Azure, GUI-based
-          management tools, the 12-Factor App methodology, containers, and
-          Kubernetes.
+          Practical development using scripting, Microsoft Azure, and GUI-based
+          cloud management tools.
         </p>
 
       </a>
@@ -484,14 +495,49 @@ banner: "/assets/images/banners/new-background.jpg"
 
       <div class="journey-item">
 
-        <span class="unit-label">Units 4–5</span>
+        <span class="unit-label">Unit 4</span>
 
-        <h3>Cloud Management and Cloud-Native Technologies</h3>
+        <h3>Cloud Native Technology Part 1</h3>
 
         <p>
-          Practical development using scripting, Microsoft Azure, GUI-based
-          management tools, the 12-Factor App methodology, containers, and
-          Kubernetes.
+          Practical development using scripting, Microsoft Azure, and GUI-based
+          cloud management tools.
+        </p>
+
+      </div>
+
+      {% endif %}
+
+
+      <!-- UNIT 5 -->
+
+      {% if journey_unit_5 %}
+
+      <a class="journey-item"
+         href="{{ journey_unit_5.url | relative_url }}">
+
+        <span class="unit-label">Unit 5</span>
+
+        <h3>Cloud Native Technology Part 2</h3>
+
+        <p>
+          Cloud-native development using the 12-Factor App methodology,
+          containers, and Kubernetes.
+        </p>
+
+      </a>
+
+      {% else %}
+
+      <div class="journey-item">
+
+        <span class="unit-label">Unit 5</span>
+
+        <h3>Cloud Native Technology Part 2</h3>
+
+        <p>
+          Cloud-native development using the 12-Factor App methodology,
+          containers, and Kubernetes.
         </p>
 
       </div>
