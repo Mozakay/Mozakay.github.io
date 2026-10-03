@@ -19,7 +19,7 @@ The module showed that these definitions are starting points rather than decisio
 In Unit 1, the comparison of AWS and Google Cloud concluded that neither provider is universally superior; suitability depends on control requirements, workload behaviour and total cost (Alkhatib, Shaheen and Albustanji, 2025). Units 2 and 3 moved the analysis towards architecture. The ROCCA and TOGAF study supported a phased hybrid strategy, yet tutor feedback (Figure 1a) confirmed that it evidenced planning value rather than long-term outcomes (Anggraini, Binariswanto and Legowo, 2019). Similarly, I had treated Terraform's declarative, state-aware design (Özdoğan, Ceran and Üstündağ, 2023) as a technical strength until peer feedback (Figure 1b) framed state as a governance issue of remote storage, locking and access control. The group Azure Resource Manager report extended this to hybrid governance through Azure Arc (Microsoft, 2025; 2026b). Consequently, the Horizon Retail strategy adopts hybrid placement rather than indiscriminate full-cloud migration, accepting added connectivity, identity and governance complexity (Ali et al., 2025). Cloud adoption therefore depends on architecture, governance and integration, not provider selection alone.
 
 <figure>
-  <img src="{{ '/assets/images/COM/unit23/unit-2-post-to-me.png' | relative_url }}" alt="Peer feedback on the Unit 2 ROCCA and TOGAF discussion" width="800">
+  <img src="/assets/images/COM/unit23/unit-2-post-to-me.png" alt="Peer feedback on the Unit 2 ROCCA and TOGAF discussion" width="800">
   <figcaption><em>Figure 1a. Tutor feedback on the ROCCA and TOGAF discussion (Unit 2).</em></figcaption>
 </figure>
 
