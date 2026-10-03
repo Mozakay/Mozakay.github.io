@@ -14,7 +14,7 @@ This practical activity demonstrates a cloud operations proof of concept (PoC) f
 
 The PoC was intentionally limited to technical validation rather than production deployment. The wider hybrid-cloud architecture shown below represents the recommended production direction and clearly separates implemented capabilities from proposed services.
 
-![Figure 1. Horizon Retail hybrid cloud architecture](/assets/images/COM/unit12/part1/01-hybrid-architecture.png)
+![Figure 1. Horizon Retail hybrid cloud architecture](/assets/images/COM/unit11/part1/01-hybrid-architecture.png)
 
 *Figure 1. Horizon Retail hybrid cloud architecture showing the validated PoC and proposed production design.*
 
