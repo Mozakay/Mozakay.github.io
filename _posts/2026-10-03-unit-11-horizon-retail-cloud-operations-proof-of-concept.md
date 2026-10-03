@@ -15,7 +15,7 @@ This practical activity demonstrates a cloud operations proof of concept (PoC) f
 The PoC was intentionally limited to technical validation rather than production deployment. The wider hybrid-cloud architecture shown below represents the recommended production direction and clearly separates implemented capabilities from proposed services.
 
 <p align="center">
-  <img src="/assets/images/COM/unit11/part2/01-hybrid-architecture.png" alt="Figure 1. Horizon Retail hybrid cloud architecture" width="850">
+  <img src="/assets/images/COM/unit11/part2/01-hybrid-architecture.png" alt="Figure 1. Horizon Retail hybrid cloud architecture" width="750">
 </p>
 
 *Figure 1. Horizon Retail hybrid cloud architecture showing the validated PoC and proposed production design.*
@@ -25,7 +25,7 @@ The PoC was intentionally limited to technical validation rather than production
 Terraform was used to provision and manage the Azure infrastructure declaratively. The configuration defined the Horizon Retail Linux virtual machine, network-interface association and SSH configuration, while the Terraform state confirmed management of the reused subnet, virtual machine, NIC, NSG association, public IP address and resource group.
 
 <p align="center">
-  <img src="/assets/images/COM/unit11/part2/02-terraform-iac.png" alt="Figure 2. Terraform Infrastructure as Code" width="750">
+  <img src="/assets/images/COM/unit11/part2/02-terraform-iac.png" alt="Figure 2. Terraform Infrastructure as Code" width="650">
 </p>
 
 *Figure 2. Terraform Infrastructure as Code definition and managed Azure resources.*
@@ -37,7 +37,7 @@ This demonstrates repeatable infrastructure provisioning rather than reliance on
 The deployed Azure environment included the Horizon Retail virtual machine, managed operating-system disk, network interface, public IP address and Network Security Group.
 
 <p align="center">
-  <img src="/assets/images/COM/unit11/part2/03-azure-resources.png" alt="Figure 3. Azure resources" width="550">
+  <img src="/assets/images/COM/unit11/part2/03-azure-resources.png" alt="Figure 3. Azure resources" width="400">
 </p>
 
 *Figure 3. Azure infrastructure visualiser showing the Horizon Retail VM and supporting resources.*
