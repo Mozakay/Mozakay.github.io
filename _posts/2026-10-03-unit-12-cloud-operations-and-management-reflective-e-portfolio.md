@@ -19,12 +19,12 @@ The module showed that these definitions are starting points rather than decisio
 In Unit 1, the comparison of AWS and Google Cloud concluded that neither provider is universally superior; suitability depends on control requirements, workload behaviour and total cost (Alkhatib, Shaheen and Albustanji, 2025). Units 2 and 3 moved the analysis towards architecture. The ROCCA and TOGAF study supported a phased hybrid strategy, yet tutor feedback (Figure 1a) confirmed that it evidenced planning value rather than long-term outcomes (Anggraini, Binariswanto and Legowo, 2019). Similarly, I had treated Terraform's declarative, state-aware design (Özdoğan, Ceran and Üstündağ, 2023) as a technical strength until peer feedback (Figure 1b) framed state as a governance issue of remote storage, locking and access control. The group Azure Resource Manager report extended this to hybrid governance through Azure Arc (Microsoft, 2025; 2026b). Consequently, the Horizon Retail strategy adopts hybrid placement rather than indiscriminate full-cloud migration, accepting added connectivity, identity and governance complexity (Ali et al., 2025). Cloud adoption therefore depends on architecture, governance and integration, not provider selection alone.
 
 <figure>
-  <img src="/assets/images/COM/unit23/unit-2-post-to-me.png" alt="Peer feedback on the Unit 2 ROCCA and TOGAF discussion" width="800">
+  <img src="/assets/images/COM/unit23/unit-2-post-to-me.png" alt="Peer feedback on the Unit 2 ROCCA and TOGAF discussion" width="600">
   <figcaption><em>Figure 1a. Tutor feedback on the ROCCA and TOGAF discussion (Unit 2).</em></figcaption>
 </figure>
 
 <figure>
-  <img src="/assets/images/COM/unit23/unit3post1.png" alt="Peer feedback on Terraform state management" width="800">
+  <img src="/assets/images/COM/unit23/unit3post1.png" alt="Peer feedback on Terraform state management" width="600">
   <figcaption><em>Figure 1b. Peer feedback on Terraform state management (Unit 3).</em></figcaption>
 </figure>
 
@@ -33,23 +33,23 @@ In Unit 1, the comparison of AWS and Google Cloud concluded that neither provide
 Initially, I treated successful provisioning as the achievement. In Unit 5, Azure CLI created a resource group, a virtual network (10.0.0.0/16) and a subnet (10.0.1.0/24) in Qatar Central, and `az network vnet show` returned a Succeeded state (Figure 2). However, this proved only that Azure accepted the request, not that the design was secure or appropriate, because a repeatable command can repeat a poor decision at scale (Hashizume et al., 2013). The Horizon proof of concept applied this lesson: Terraform provisioned the virtual machine, Ansible configured Nginx (ok=5, changed=3, failed=0), and Azure Monitor recorded approximately 2.93% average CPU utilisation (Figure 3). Terraform thus handled provisioning and Ansible configuration management. Student-subscription constraints required an existing subnet to be reused, so automation did not remove provider limits, and the CPU figure demonstrated telemetry rather than enterprise capacity (Microsoft, 2023). My sequence became create, automate, verify, configure, observe and interpret. Automation replaces manual administration but increases the importance of version control, testing and review (Kumara et al., 2021).
 
 <figure>
-  <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/COM/unit5/figure2-vnet-verification.png" alt="Verification of the Azure Virtual Network and subnet configuration using Azure CLI" width="500">
+  <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/COM/unit5/figure2-vnet-verification.png" alt="Verification of the Azure Virtual Network and subnet configuration using Azure CLI" width="600">
   <figcaption><em>Figure 2. Azure CLI verification of the virtual network and subnet (Unit 5).</em></figcaption>
 </figure>
 
 
 <figure>
-  <img src="/assets/images/COM/unit11/part2/02-terraform-iac.png" alt="Terraform Infrastructure as Code" width="650">
+  <img src="/assets/images/COM/unit11/part2/02-terraform-iac.png" alt="Terraform Infrastructure as Code" width="550">
   <figcaption><em>Figure 3a. Terraform definition and managed Azure resources (Unit 11, Part 2).</em></figcaption>
 </figure>
 
 <figure>
-  <img src="/assets/images/COM/unit11/part2/04-ansible-config.png" alt="Ansible configuration" width="750">
+  <img src="/assets/images/COM/unit11/part2/04-ansible-config.png" alt="Ansible configuration" width="550">
   <figcaption><em>Figure 3b. Automated configuration of the Horizon Retail VM using Ansible (Unit 11, Part 2).</em></figcaption>
 </figure>
 
 <figure>
-  <img src="/assets/images/COM/unit11/part2/06-azure-monitor.png" alt="Azure Monitor CPU utilisation" width="750">
+  <img src="/assets/images/COM/unit11/part2/06-azure-monitor.png" alt="Azure Monitor CPU utilisation" width="650">
   <figcaption><em>Figure 3c. Azure Monitor CPU utilisation for the Horizon Retail virtual machine (Unit 11, Part 2).</em></figcaption>
 </figure>
 
@@ -58,12 +58,12 @@ Initially, I treated successful provisioning as the achievement. In Unit 5, Azur
 Docker initially appeared primarily as a portability mechanism, but the security audit demonstrated that containerisation introduces runtime, network and configuration responsibilities that must be assessed independently of the host (Martin et al., 2018). The first OpenVAS scan did not identify the target host; instead of accepting that result, I changed the Alive Test setting and repeated the scan, which reported two low-severity findings (score 2.6). Manual review then identified more significant exposures: MongoDB listening on 0.0.0.0:27017 with an unrestricted network security group rule, no authenticated identity in the connection status, HTTP without TLS and pending updates (Figure 4). These indicate exposure and authentication-assurance concerns rather than compromise, as no external access test was performed. A “no findings” result is therefore not evidence of security, because scanner scope and configuration limit it (Kritikos et al., 2019). The NIST SP 800-30 healthcare assessment and Horizon risk analysis then shifted my focus to likelihood, impact, treatment and residual risk (NIST, 2012). Cloud security requires continuous governance, identity management, secure configuration and risk-based prioritisation (Torkura et al., 2021).
 
 <figure>
-  <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/COM/unit7/part1/Figure%208%20OpenVAS%20Full%20and%20Fast%20scan%20completed%20successfully%20with%20a%20Low%20severity%20score%20of%202.6..png" alt="OpenVAS Full and Fast scan completed with a Low severity score of 2.6" width="700">
+  <img src="/assets/images/COM/unit7/part1/Figure%208%20OpenVAS%20Full%20and%20Fast%20scan%20completed%20successfully%20with%20a%20Low%20severity%20score%20of%202.6..png" alt="OpenVAS Full and Fast scan completed with a Low severity score of 2.6" width="700">
   <figcaption><em>Figure 4a. OpenVAS scan completed with a low-severity score of 2.6 (Unit 7).</em></figcaption>
 </figure>
 
 <figure>
-  <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/COM/unit7/part1/Figure%2012%20MongoDB%20configuration%20and%20connection%20status%20showing%20successful%20access%20with%20no%20authenticated%20users%20or%20roles..png" alt="MongoDB configuration and connection status showing no authenticated users or roles" width="700">
+  <img src="/assets/images/COM/unit7/part1/Figure%2012%20MongoDB%20configuration%20and%20connection%20status%20showing%20successful%20access%20with%20no%20authenticated%20users%20or%20roles..png" alt="MongoDB configuration and connection status showing no authenticated users or roles" width="700">
   <figcaption><em>Figure 4b. MongoDB connection status showing no authenticated users or roles (Unit 7).</em></figcaption>
 </figure>
 
