@@ -22,7 +22,7 @@ The PoC was intentionally limited to technical validation rather than production
 
 Terraform was used to provision and manage the Azure infrastructure declaratively. The configuration defined the Horizon Retail Linux virtual machine, network-interface association and SSH configuration, while the Terraform state confirmed management of the reused subnet, virtual machine, NIC, NSG association, public IP address and resource group.
 
-![Figure 2. Terraform Infrastructure as Code](/assets/images/COM/unit12/part1/02-terraform-iac.png)
+![Figure 2. Terraform Infrastructure as Code](/assets/images/COM/unit11/part1/02-terraform-iac.png)
 
 *Figure 2. Terraform Infrastructure as Code definition and managed Azure resources.*
 
@@ -32,7 +32,7 @@ This demonstrates repeatable infrastructure provisioning rather than reliance on
 
 The deployed Azure environment included the Horizon Retail virtual machine, managed operating-system disk, network interface, public IP address and Network Security Group.
 
-![Figure 3. Azure resources](/assets/images/COM/unit12/part1/03-azure-resources.png)
+![Figure 3. Azure resources](/assets/images/COM/unit11/part1/03-azure-resources.png)
 
 *Figure 3. Azure infrastructure visualiser showing the Horizon Retail VM and supporting resources.*
 
@@ -42,7 +42,7 @@ The PoC reused an existing subnet because of Azure for Students constraints. Thi
 
 Ansible was used after provisioning to configure the operating system and web service. The playbook updated the package cache, installed Nginx, confirmed that the service was running and deployed the Horizon Retail test page.
 
-![Figure 4. Ansible configuration](/assets/images/COM/unit12/part1/04-ansible-config.png)
+![Figure 4. Ansible configuration](/assets/images/COM/unit11/part1/04-ansible-config.png)
 
 *Figure 4. Successful automated configuration of the Horizon Retail VM using Ansible.*
 
@@ -52,7 +52,7 @@ The final execution completed successfully with **ok=5**, **changed=3**, **unrea
 
 The deployed Nginx service was accessed through the Azure VM public IP address, confirming that the Terraform-provisioned infrastructure and Ansible configuration worked together correctly.
 
-![Figure 5. Web service verification](/assets/images/COM/unit12/part1/05-web-verification.png)
+![Figure 5. Web service verification](/assets/images/COM/unit11/part1/05-web-verification.png)
 
 *Figure 5. Operational verification of the Horizon Retail web service.*
 
@@ -62,7 +62,7 @@ The browser displayed **Not secure** because the PoC used HTTP for validation. T
 
 Azure Monitor was used to validate operational telemetry for the virtual machine. The displayed 30-minute interval recorded approximately **2.93% average CPU utilisation**.
 
-![Figure 6. Azure Monitor CPU utilisation](/assets/images/COM/unit12/part1/06-azure-monitor.png)
+![Figure 6. Azure Monitor CPU utilisation](/assets/images/COM/unit11/part1/06-azure-monitor.png)
 
 *Figure 6. Azure Monitor CPU utilisation for the Horizon Retail virtual machine.*
 
