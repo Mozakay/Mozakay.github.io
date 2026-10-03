@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Unit 12: Horizon Retail Group Cloud Operations Proof of Concept"
+title: "Unit 11: Horizon Retail Group Cloud Operations Proof of Concept"
 categories: ["Cloud Operations and Management"]
-unit: 12
-journey_group: "unit-11-part-1"
+unit: 11
+journey_group: "unit-11-part-2"
 ---
 
 ## Introduction
