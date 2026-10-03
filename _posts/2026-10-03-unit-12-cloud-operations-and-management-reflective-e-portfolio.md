@@ -58,14 +58,15 @@ Initially, I treated successful provisioning as the achievement. In Unit 5, Azur
 Docker initially appeared primarily as a portability mechanism, but the security audit demonstrated that containerisation introduces runtime, network and configuration responsibilities that must be assessed independently of the host (Martin et al., 2018). The first OpenVAS scan did not identify the target host; instead of accepting that result, I changed the Alive Test setting and repeated the scan, which reported two low-severity findings (score 2.6). Manual review then identified more significant exposures: MongoDB listening on 0.0.0.0:27017 with an unrestricted network security group rule, no authenticated identity in the connection status, HTTP without TLS and pending updates (Figure 4). These indicate exposure and authentication-assurance concerns rather than compromise, as no external access test was performed. A “no findings” result is therefore not evidence of security, because scanner scope and configuration limit it (Kritikos et al., 2019). The NIST SP 800-30 healthcare assessment and Horizon risk analysis then shifted my focus to likelihood, impact, treatment and residual risk (NIST, 2012). Cloud security requires continuous governance, identity management, secure configuration and risk-based prioritisation (Torkura et al., 2021).
 
 <figure>
-  <img src="/assets/images/COM/unit7/part1/Figure%208%20OpenVAS%20Full%20and%20Fast%20scan%20completed%20successfully%20with%20a%20Low%20severity%20score%20of%202.6..png" alt="OpenVAS Full and Fast scan completed with a Low severity score of 2.6" width="700">
+  <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/COM/unit7/part1/Figure%208%20OpenVAS%20Full%20and%20Fast%20scan%20completed%20successfully%20with%20a%20Low%20severity%20score%20of%202.6..png" alt="Figure 8. OpenVAS Full and Fast scan completed successfully with a Low severity score of 2.6.">
   <figcaption><em>Figure 4a. OpenVAS scan completed with a low-severity score of 2.6 (Unit 7).</em></figcaption>
 </figure>
 
 <figure>
-  <img src="/assets/images/COM/unit7/part1/Figure%2012%20MongoDB%20configuration%20and%20connection%20status%20showing%20successful%20access%20with%20no%20authenticated%20users%20or%20roles..png" alt="MongoDB configuration and connection status showing no authenticated users or roles" width="700">
+  <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/COM/unit7/part1/Figure%2012%20MongoDB%20configuration%20and%20connection%20status%20showing%20successful%20access%20with%20no%20authenticated%20users%20or%20roles..png" alt="Figure 12. MongoDB configuration and connection status showing successful access with no authenticated users or roles.">
   <figcaption><em>Figure 4b. MongoDB connection status showing no authenticated users or roles (Unit 7).</em></figcaption>
 </figure>
+
 
 ### 2.4 From Backup to Disaster Recovery and Business Continuity
 
