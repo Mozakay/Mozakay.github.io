@@ -24,7 +24,7 @@ In Unit 1, the comparison of AWS and Google Cloud concluded that neither provide
 </figure>
 
 <figure>
-  <img src="{{ '/assets/images/COM/unit23/unit3post1.png' | relative_url }}" alt="Peer feedback on Terraform state management" width="800">
+  <img src="/assets/images/COM/unit23/unit3post1.png" alt="Peer feedback on Terraform state management" width="800">
   <figcaption><em>Figure 1b. Peer feedback on Terraform state management (Unit 3).</em></figcaption>
 </figure>
 
