@@ -63,7 +63,7 @@ Docker initially appeared primarily as a portability mechanism, but the security
 </figure>
 
 <figure>
-  <img src="{{ '/assets/images/COM/unit7/part1/Figure%2012%20MongoDB%20configuration%20and%20connection%20status%20showing%20successful%20access%20with%20no%20authenticated%20users%20or%20roles..png' | relative_url }}" alt="Figure 12. MongoDB configuration and connection status showing successful access with no authenticated users or roles." width="700">
+  <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/COM/unit7/part1/Figure%2012%20MongoDB%20configuration%20and%20connection%20status%20showing%20successful%20access%20with%20no%20authenticated%20users%20or%20roles..png" alt="Figure 12. MongoDB configuration and connection status showing successful access with no authenticated users or roles.">
   <figcaption><em>Figure 4b. MongoDB connection status showing no authenticated users or roles (Unit 7).</em></figcaption>
 </figure>
 
