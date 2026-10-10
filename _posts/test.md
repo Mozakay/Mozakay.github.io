@@ -8,15 +8,15 @@ journey_group: "unit-12"
 
 ## 1. Introduction
 
-This e-Portfolio consolidates the Cloud Operations and Management module and traces a change in how I evaluate cloud computing. I initially understood the subject through service models: Infrastructure as a Service (IaaS) gives customers the greatest control, Platform as a Service (PaaS) transfers runtime management to the provider, and Software as a Service (SaaS) delivers a complete application (Nadeem, 2022). I understood deployment types through location and control, as public, private and hybrid clouds (Mell and Grance, 2011).
+This e-Portfolio traces a change in how I evaluate cloud computing. Infrastructure as a Service (IaaS) gives customers the greatest infrastructure control; Platform as a Service (PaaS) transfers runtime management to the provider; Software as a Service (SaaS) delivers an application (Nadeem, 2022). Public, private and hybrid deployment models frame decisions about hosting and control (Mell and Grance, 2011).
 
-The module showed that these definitions are starting points rather than decisions. Selecting, automating, securing, migrating and recovering services required evidence about workload requirements, governance and operational constraints. The portfolio therefore reflects on five technical themes: strategy, automation, security and risk, recovery and continuity, and migration with production readiness. These draw on practical work in Azure, Docker, OpenVAS, Restic, MySQL, OpenFaaS and TensorFlow, and on the Horizon Retail Group scenario, with an additional reflection on ethical, social and professional responsibilities. A recurring principle is that successful deployment is not the same as production readiness; implemented work is therefore distinguished throughout from proposed design. Together, the themes address fundamental concepts (LO1), different cloud solutions (LO2), configuration and implementation (LO3) and the critical selection of methods for resilient solutions (LO4).
+Five technical themes connect Azure, Docker, OpenVAS, Restic, MySQL, OpenFaaS, TensorFlow and Horizon Retail activities, alongside ethical, social and professional reflection. They address fundamental concepts (LO1), different cloud solutions (LO2), configuration and implementation (LO3), and critical selection of methods for resilience (LO4). The evidence list links artefacts to these outcomes.
 
 ## 2. Weekly Reflections
 
 ### 2.1 From Cloud Service Selection to Cloud Strategy
 
-In Unit 1, the comparison of AWS and Google Cloud concluded that neither provider is universally superior; suitability depends on control requirements, workload behaviour and total cost (Alkhatib, Shaheen and Albustanji, 2025). Units 2 and 3 moved the analysis towards architecture. The ROCCA and TOGAF study supported a phased hybrid strategy, yet tutor feedback (Figure 1a) confirmed that it evidenced planning value rather than long-term outcomes (Anggraini, Binariswanto and Legowo, 2019). Similarly, I had treated Terraform's declarative, state-aware design (Özdoğan, Ceran and Üstündağ, 2023) as a technical strength until peer feedback (Figure 1b) framed state as a governance issue of remote storage, locking and access control. The group Azure Resource Manager report extended this to hybrid governance through Azure Arc (Microsoft, 2025; 2026b). Consequently, the Horizon Retail strategy adopts hybrid placement rather than indiscriminate full-cloud migration, accepting added connectivity, identity and governance complexity (Ali et al., 2025). Cloud adoption therefore depends on architecture, governance and integration, not provider selection alone.
+In Unit 1, comparing AWS and Google Cloud showed that suitability depends on control, workload behaviour and total cost (Alkhatib, Shaheen and Albustanji, 2025). Units 2–3 moved my analysis towards architecture. The ROCCA and TOGAF study supported phased hybrid adoption, but tutor feedback clarified that planning value did not establish long-term outcomes (Figure 1a; Anggraini, Binariswanto and Legowo, 2019). Terraform's declarative, state-aware design initially appeared mainly a technical strength (Özdoğan, Ceran and Üstündağ, 2023); peer feedback highlighted remote storage, locking and access control as governance responsibilities (Figure 1b). The group ARM report extended this reasoning to Azure Arc (Microsoft, 2025; 2026b). Consequently, my Horizon strategy accepts hybrid connectivity and identity complexity rather than assuming cloud migration is universally beneficial (Ali et al., 2025).
 
 <figure>
   <img src="/assets/images/COM/unit23/unit-2-post-to-me.png" alt="Peer feedback on the Unit 2 ROCCA and TOGAF discussion" width="600">
@@ -30,13 +30,12 @@ In Unit 1, the comparison of AWS and Google Cloud concluded that neither provide
 
 ### 2.2 From Provisioning to Controlled and Verifiable Cloud Operations
 
-Initially, I treated successful provisioning as the achievement. In Unit 5, Azure CLI created a resource group, a virtual network (10.0.0.0/16) and a subnet (10.0.1.0/24) in Qatar Central, and `az network vnet show` returned a Succeeded state (Figure 2). However, this proved only that Azure accepted the request, not that the design was secure or appropriate, because a repeatable command can repeat a poor decision at scale (Hashizume et al., 2013). The Horizon proof of concept applied this lesson: Terraform provisioned the virtual machine, Ansible configured Nginx (ok=5, changed=3, failed=0), and Azure Monitor recorded approximately 2.93% average CPU utilisation (Figure 3). Terraform thus handled provisioning and Ansible configuration management. Student-subscription constraints required an existing subnet to be reused, so automation did not remove provider limits, and the CPU figure demonstrated telemetry rather than enterprise capacity (Microsoft, 2023). My sequence became create, automate, verify, configure, observe and interpret. Automation replaces manual administration but increases the importance of version control, testing and review (Kumara et al., 2021).
+Initially, successful provisioning appeared to be the achievement. Unit 5 created and verified a Qatar Central VNet (10.0.0.0/16) and subnet (10.0.1.0/24) using Azure CLI (Figure 2). A Succeeded state confirmed deployment, not secure design (Hashizume et al., 2013). Horizon extended this lesson: Terraform provisioned infrastructure, Ansible configured Nginx (ok=5, changed=3, failed=0), and Azure Monitor recorded approximately 2.93% average CPU utilisation (Figure 3). Subscription constraints required subnet reuse; automation did not remove provider limits. The CPU result demonstrated telemetry, not enterprise capacity (Microsoft, 2023). My operational sequence became create, automate, verify, configure, observe and interpret, with version control and review needed to prevent repeated configuration errors (Kumara et al., 2021).
 
 <figure>
   <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/COM/unit5/figure2-vnet-verification.png" alt="Verification of the Azure Virtual Network and subnet configuration using Azure CLI" width="600">
   <figcaption><em>Figure 2. Azure CLI verification of the virtual network and subnet (Unit 5).</em></figcaption>
 </figure>
-
 
 <figure>
   <img src="/assets/images/COM/unit11/part2/02-terraform-iac.png" alt="Terraform Infrastructure as Code" width="550">
@@ -55,7 +54,7 @@ Initially, I treated successful provisioning as the achievement. In Unit 5, Azur
 
 ### 2.3 From Security Assessment to Risk-Based Cloud Governance
 
-Docker initially appeared primarily as a portability mechanism, but the security audit demonstrated that containerisation introduces runtime, network and configuration responsibilities that must be assessed independently of the host (Martin et al., 2018). The first OpenVAS scan did not identify the target host; instead of accepting that result, I changed the Alive Test setting and repeated the scan, which reported two low-severity findings (score 2.6). Manual review then identified more significant exposures: MongoDB listening on 0.0.0.0:27017 with an unrestricted network security group rule, no authenticated identity in the connection status, HTTP without TLS and pending updates (Figure 4). These indicate exposure and authentication-assurance concerns rather than compromise, as no external access test was performed. A “no findings” result is therefore not evidence of security, because scanner scope and configuration limit it (Kritikos et al., 2019). The NIST SP 800-30 healthcare assessment and Horizon risk analysis then shifted my focus to likelihood, impact, treatment and residual risk (NIST, 2012). Cloud security requires continuous governance, identity management, secure configuration and risk-based prioritisation (Torkura et al., 2021).
+Docker initially appeared primarily a portability mechanism; the audit exposed runtime and network responsibilities (Martin et al., 2018). When OpenVAS failed to identify the host, I changed the Alive Test setting and repeated the scan, obtaining two low-severity findings (score 2.6). Manual review identified MongoDB listening on 0.0.0.0:27017 with an unrestricted NSG rule, no authenticated identity in the connection status, HTTP without TLS and pending updates (Figure 4). These indicated exposure and authentication-assurance concerns, not proven compromise. Scanner scope limits a “no findings” result (Kritikos et al., 2019). The healthcare NIST assessment and Horizon analysis then shifted my decisions towards likelihood, impact, treatment and residual risk (NIST, 2012). I learned to combine scanning with configuration review and continuous governance (Torkura et al., 2021).
 
 <figure>
   <img src="{{ '/assets/images/COM/unit7/Figure 8 OpenVAS Full and Fast scan completed successfully with a Low severity score of 2.6..png' | relative_url }}" alt="Figure 8. OpenVAS Full and Fast scan completed successfully with a Low severity score of 2.6." width="700">
@@ -67,10 +66,9 @@ Docker initially appeared primarily as a portability mechanism, but the security
   <figcaption><em>Figure 4b. MongoDB connection status showing no authenticated users or roles (Unit 7).</em></figcaption>
 </figure>
 
-
 ### 2.4 From Backup to Disaster Recovery and Business Continuity
 
-I initially associated resilience with possessing backups. In Unit 8, Restic stored encrypted snapshots in Azure Blob Storage, separate from the virtual machine, protecting application files and a PostgreSQL database. A simulated incident deleted the files and dropped the orders table. Restoring the latest valid snapshot recovered 252,700 orders and the application files, and the integrity check reported no errors (Figure 5). Recovery took 3 minutes 49 seconds against a 30-minute target, but 180 orders and six files created after the final snapshot were lost. The 69-second interval between snapshot and incident was an observed recovery-point gap, not the recovery point objective; the proposed production objective is 60 minutes, requiring automated, monitored hourly backups, whereas these snapshots were manual. The operator also knew of the failure, so the timing excludes realistic detection. Backup is therefore not disaster recovery, and disaster recovery is not business continuity; each requires defined objectives and tested recovery (Swanson et al., 2010; Mendonça, Lima and Andrade, 2020). Modern cloud resilience is judged by measured, repeatable recovery.
+I initially associated resilience with possessing backups. Unit 8 used encrypted Restic snapshots in Azure Blob Storage to protect PostgreSQL and application files. After simulated deletion, restoration recovered 252,700 orders and the application files; the integrity check reported no errors (Figure 5). Recovery took 3 minutes 49 seconds against a 30-minute target, but 180 orders and six files created after the snapshot were lost. The 69-second snapshot-to-incident interval was an observed recovery-point gap, not target RPO. The proposed 60-minute production RPO requires automated, monitored hourly backups; the exercise used manual snapshots. Timing also excluded realistic incident detection. I therefore distinguish backups, disaster recovery and business continuity through defined objectives and tested recovery, rather than treating restoration success as complete resilience (Swanson et al., 2010; Mendonça, Lima and Andrade, 2020).
 
 <figure>
   <img src="{{ '/assets/images/COM/unit8/pic5.png' | relative_url }}" alt="Recovery from latest Restic snapshot" width="500">
@@ -84,7 +82,11 @@ I initially associated resilience with possessing backups. In Unit 8, Restic sto
 
 ### 2.5 From Migration Strategy to Production Readiness
 
-Migration initially appeared to be data copying. In Unit 9, a local MySQL 8.0.46 database was migrated to Azure Database for MySQL Flexible Server using mysqldump with `--single-transaction` and TLS. After the bulk restore matched baseline row counts, new source transactions created a deliberate gap; a maintenance window, delta synchronisation and record-level checks then established cutover readiness (Figure 6). The delta covered inserts only, so it was not production change-data-capture; continuous updates and deletions would require binary-log replication or an equivalent (Oracle, 2026). Migration is therefore a controlled service transition (Jamshidi, Ahmad and Pahl, 2013). In Unit 10, OpenFaaS on Kubernetes deployed and invoked a Python function (Figure 7), showing that serverless abstracts infrastructure management without eliminating it; cold starts and monitoring were not measured (Baldini et al., 2017; Shafiei, Khonsari and Mousavi, 2022). In Unit 11, a CIFAR-10 neural network (training 80.47%, validation 76.78%, test 75.89%) reached Azure Container Apps through Azure Container Registry only after Azure rejected the original image and it was rebuilt with Docker Buildx using OCI-compatible media types (Figure 8). The /health and /predict endpoints worked (sample confidence 79.62%), yet latency, concurrency, security and class-level reliability remained untested. Deployment is therefore one component of operational readiness; modern cloud operations integrate automation, containers, serverless, AI, monitoring and governance.
+Migration initially appeared to be data copying. Unit 9 moved MySQL 8.0.46 to Azure MySQL Flexible Server using mysqldump with `--single-transaction` and TLS. After bulk restoration, new transactions created a gap; maintenance, delta synchronisation and record-level checks established cutover readiness (Figure 6). The insert-only delta excluded updates and deletions, requiring replication or equivalent change capture for production (Oracle, 2026). Migration became a controlled service transition in my understanding (Jamshidi, Ahmad and Pahl, 2013).
+
+Unit 10 deployed and invoked a Python function through OpenFaaS on Kubernetes (Figure 7). Serverless abstracted execution infrastructure, but self-hosted platform operation remained; cold starts were unmeasured (Baldini et al., 2017; Shafiei, Khonsari and Mousavi, 2022).
+
+Unit 11's CIFAR-10 model achieved training 80.47%, validation 76.78% and test 75.89% accuracy. Deployment through ACR to Container Apps required rebuilding the rejected image with Docker Buildx and OCI-compatible media types (Figure 8). Working /health and /predict endpoints and sample confidence of 79.62% demonstrated functional inference, not measured latency, concurrency, security or class-level reliability. These exercises shifted my focus from deployment completion to operational readiness.
 
 <figure>
   <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/COM/unit9/part1/Figure%204%20Final%20validation%20of%20the%20Azure%20MySQL%20database%20after%20final%20synchronisation..png" alt="Final validation of the Azure MySQL database after final synchronisation" width="700">
@@ -103,39 +105,35 @@ Migration initially appeared to be data copying. In Unit 9, a local MySQL 8.0.46
 
 ### 2.6 Ethical, Social and Professional Reflection
 
-Reflecting on these activities also changed how I judge responsible cloud operation. **Ethically**, reviewing the Horizon NSG configuration showed why infrastructure deployment must be accompanied by access-control verification (Figures 3–4). Verdet et al. (2025) examine security-policy adoption in Terraform projects, while Khalil, Khreishah and Azeem (2014) identify privacy and security concerns in shared cloud environments. I would therefore review permissions and deployment constraints before release. Al-Qahtani and Abu-Shanab (2021) link security, privacy and trust to cloud-user satisfaction at Hamad Medical Corporation in Qatar; however, satisfaction does not verify technical security. I would combine user feedback with technical checks.
+My Reflective Report connected technical learning to responsibility. **Ethically**, configuration review showed why access checks should precede release. Terraform security-policy research and cloud privacy risks reinforce this responsibility (Verdet et al., 2025; Khalil, Khreishah and Azeem, 2014). Al-Qahtani and Abu-Shanab (2021) link security, privacy and trust to cloud-user satisfaction in Qatar; satisfaction nevertheless cannot verify technical security.
 
-**Socially**, the recovery exercise demonstrated that restoring a service does not recover every lost transaction (Figure 5). Armbrust et al. (2010) identify availability and data lock-in as cloud-adoption challenges. My reflection extended this concern to users with limited connectivity or digital skills: technical availability alone does not ensure equitable access. Using a small VM and destroying temporary resources encouraged proportionate provisioning, but this cannot demonstrate environmental sustainability; future decisions require measured demand and resource use.
+**Socially**, restoration left some transactions lost (Figure 5), highlighting consequences beyond service availability. Outages and data lock-in constrain cloud adoption (Armbrust et al., 2010); limited connectivity or digital skills can also exclude users. A small VM and resource destruction encouraged proportionate provisioning, but did not establish environmental sustainability.
 
-**Professionally**, the CPU screenshot evidenced telemetry, not service availability (Figure 3c). I would require recovery testing and application monitoring before recommending production use. Comparing service and deployment models also showed that hybrid control introduces complexity, while managed services reduce maintenance without removing accountability (Mell and Grance, 2011). My future decisions should therefore balance workload sensitivity, continuity, cost and organisational capability.
+**Professionally**, I would combine user feedback, access verification, recovery testing and application monitoring. Hybrid control adds complexity, while managed services reduce maintenance without removing accountability (Mell and Grance, 2011). My decisions should balance sensitivity, continuity, cost and organisational capability.
 
 ## 3. Skills Development
 
-Skills are presented as capabilities, each linking application, evidence, challenge and professional significance (Table 1).
-
 **Table 1. Skills development by capability group**
 
-| Capability | Practical application and evidence | Challenge and learning | Professional significance |
-|---|---|---|---|
-| Infrastructure automation | Azure CLI created and verified a resource group, VNet and subnet; Terraform provisioned the Horizon virtual machine (Standard_B1s); Ansible configured Nginx (Figures 2–3). | Student-subscription limits forced reuse of a subnet. I learned to treat verification, not command success, as evidence, and to separate provisioning from configuration. | Repeatable, auditable delivery. |
-| Networking and cloud infrastructure | Defined 10.0.0.0/16 and 10.0.1.0/24 address spaces; applied NSG rules; reached the scanner interface through an SSH tunnel; deployed MySQL in UAE North. | Qatar Central was unavailable for the MySQL deployment under the subscription. Region and network design proved to be architectural decisions constrained by provider policy. | Network exposure and data location are governance matters. |
-| Security and risk | Ran OpenVAS; inspected Docker settings (privileged=false, no explicit user); mapped findings to ISO/IEC 27001:2022 controls; assessed a healthcare deployment using NIST SP 800-30 (Figure 4). | The first scan failed to identify the host, and manual review exposed risks the scan missed. | Interpreting scanner output and prioritising risk. |
-| Resilience and migration | Restic with Azure Blob recovered PostgreSQL and files in 3 minutes 49 seconds; mysqldump migration used a consistent snapshot, delta synchronisation and validation (Figures 5–6). | Backup frequency determined data loss (180 orders); the delta method excluded updates and deletions. | Setting recovery objectives and cutover evidence. |
-| Cloud-native and intelligent operations | Docker, Kubernetes and OpenFaaS delivered a Python function; TensorFlow/Keras trained a CNN deployed through Azure Container Registry to Azure Container Apps; Azure Monitor collected telemetry (Figures 3, 7–8). | Azure rejected the original image format until it was rebuilt with OCI-compatible media types; latency and concurrency were not measured. | Questioning workloads beyond functional success. |
+| Capability | Application and evidence | Learning and professional significance |
+|---|---|---|
+| Infrastructure automation | CLI verification; Terraform VM; Ansible Nginx (Figures 2–3). | Separate provisioning from configuration; review reproducible changes. |
+| Networking | CIDR design, NSG rules, SSH tunnel; MySQL in UAE North. | Subscription policy constrained region selection; location and exposure require governance. |
+| Security and risk | OpenVAS, Docker inspection and ISO/IEC 27001:2022 mapping; NIST healthcare assessment (Figure 4). | Combine scanner findings with manual checks and risk prioritisation. |
+| Recovery and migration | Restic restoration; consistent MySQL export, synchronisation and validation (Figures 5–6). | Measure recovery and data loss; recognise incomplete change capture. |
+| Cloud-native and AI operations | Kubernetes/OpenFaaS function; TensorFlow/Keras, ACR and Container Apps (Figures 7–8). | Resolve image compatibility; distinguish functional success from performance assurance. |
 
-The most important skill developed was evidence-based operational judgement rather than mastery of one tool. Independent practical tasks were complemented by the co-authored group report on Azure Resource Manager, which applied similar reasoning to hybrid design.
+### 3.1 Individual Contribution to Unit 6 Group Report A
+
+My self-evaluation records that I initiated the group, helped coordinate meetings and task allocation, completed my work on time and consolidated contributions. I reviewed section consistency and identified infrastructure-design changes needed to align the report with our scenario. Group Report A documents the shared ARM analysis; the Team Contract records participation, while Peer Evaluation Group1 Moza records my reported contribution. I learned that task allocation alone does not ensure cohesion: shared assumptions and cross-review matter. In future cloud projects, I will introduce earlier section-review checkpoints before final integration.
 
 ## 4. Application to Industry: Horizon Retail Group
 
-Horizon Retail Group, a hypothetical retailer with approximately 150 stores and a growing e-commerce channel, provided the principal context for integrating the module. Its business problem is to absorb variable demand, integrate stores and suppliers securely, maintain trading during disruption and use data for decisions. From a cloud engineering and project management perspective, the central questions are which workloads should move, in what sequence and on what evidence.
+Horizon Retail Group, a hypothetical retailer with approximately 150 stores and growing e-commerce, integrates the module's learning around demand peaks, secure integration, trading continuity and data-informed decisions.
 
-Selected point-of-sale, inventory and operational functions should remain local, because a fully centralised model would increase store dependence on continuous network connectivity. Azure would host central applications, automation, monitoring, data and analytics (Figure 9). Azure elasticity suits e-commerce demand peaks, whereas local capability supports continuity during network disruption. This hybrid design is proposed rather than implemented, and it adds connectivity, identity and governance complexity (Ali et al., 2025).
+Selected point-of-sale and inventory functions remain local to reduce WAN dependence; Azure would host central applications, automation, monitoring and analytics (Figure 9). This proposed hybrid design accepts additional identity and connectivity complexity (Ali et al., 2025). Following Unit 9, I would progress through PoC, limited pilot and staged rollout with synchronisation and cutover validation; continuous transactions require more complete change capture than my insert-only delta. One Standard_B1s VM validates a mechanism, not enterprise readiness (Microsoft, 2023).
 
-A big-bang migration is inappropriate. Following Unit 9, a proof of concept should precede a limited pilot, measurement and staged rollout, with bulk transfer, synchronisation, validation and cutover planning; continuous retail transactions would require change-data-capture rather than the simplified delta used in the exercise. The validated chain (Terraform, Azure, Ansible, Nginx and Azure Monitor) demonstrates technical feasibility only, and one Standard_B1s virtual machine does not establish readiness for approximately 150 stores (Microsoft, 2023).
-
-Proposed controls include HTTPS/TLS, a web application firewall, Microsoft Entra ID, role-based access control, private endpoints, Key Vault and central logging, because the public HTTP and SSH used in the proof of concept suited testing only. Azure Backup and Site Recovery are likewise proposals; workload-specific recovery objectives, validated through recovery testing as in Unit 8, should justify their cost (Microsoft, 2026a; 2026c). AI forecasting using Azure SQL Database and Blob Storage should follow data ownership, quality and governance, and should initially augment human planning (Fildes, Ma and Kolassa, 2022). Autoscaling and right-sizing should follow measured demand because capacity also carries cost (Gill and Chana, 2016).
-
-Pilot success should be judged by availability, response time, incident rates, recovery performance, cost per workload and operational supportability. Production readiness therefore means demonstrated, supportable performance against agreed criteria, not completed deployment.
+Proposed HTTPS/TLS, WAF, Entra ID, RBAC, private endpoints, Key Vault and logging address the testing environment's exposure. Azure Backup and Site Recovery remain proposals requiring workload-specific recovery objectives and tests (Microsoft, 2026a; 2026c). AI forecasting should follow data quality, ownership and human oversight (Fildes, Ma and Kolassa, 2022). Autoscaling and right-sizing require measured demand and cost evaluation (Gill and Chana, 2016). Pilot acceptance should assess availability, latency, incident rates, recovery, cost and supportability.
 
 <figure>
   <img src="/assets/images/COM/unit11/part2/01-hybrid-architecture.png" alt="Horizon Retail hybrid cloud architecture" width="750">
@@ -144,17 +142,17 @@ Pilot success should be judged by availability, response time, incident rates, r
 
 ## 5. Future Learning Goals
 
-The following goals arise from limitations identified in the practical work and from the Weeks 10–12 topics of serverless computing, AI and cloud computing, and emerging technologies.
+These goals address practical limitations and Weeks 10–12 trends; their criteria are proposed learning targets.
 
-**Goal 1: production-grade infrastructure as code and DevOps.** The Horizon proof of concept demonstrated repeatability but not state governance, testing or rollback. Within three months, I will refactor the Terraform configuration into modules with remote state and locking, then add a pipeline with policy checks, testing and rollback (Kumara et al., 2021).
+**Goal 1: infrastructure as code and DevOps.** Within three months, I will deliver modular Terraform with remote state, locking and a policy-checking pipeline (Kumara et al., 2021). Success means reproducible deployment, rejection of a deliberately unsafe configuration and a documented recovery procedure.
 
-**Goal 2: observability and site reliability engineering.** Azure Monitor validated telemetry, not capacity, and the OpenFaaS and Container Apps deployments lacked latency, cold-start and concurrency measurements. I will define service level indicators and objectives for both, then run load and failure tests with alerting, including missed-backup alerts, to support capacity planning (Microsoft, 2023).
+**Goal 2: observability and reliability.** Within two months, I will produce an OpenFaaS/Container Apps load-test report and monitoring dashboard covering latency, cold starts and errors (Microsoft, 2023). Success means documented SLIs/SLOs and tested alerts for a service breach and missed backup.
 
-**Goal 3: AI-assisted cloud operations.** Building on Unit 11, I will compare predictive scaling and anomaly detection with reactive autoscaling on one workload (Lorido-Botran, Miguel-Alonso and Lozano, 2014), assessing reliability, model drift, bias, transparency and human oversight, because AI should augment deterministic controls rather than replace them.
+**Goal 3: AI-assisted operations.** Within four months, I will compare predictive scaling or anomaly detection with a reactive baseline (Lorido-Botran, Miguel-Alonso and Lozano, 2014). The deliverable is a reproducible experiment measuring cost, response time and false alerts. Success means explaining whether AI improves the baseline, including drift and human oversight; a negative result remains informative.
 
-**Goal 4: edge and emerging technologies.** Edge computing could support offline store operation and lower latency but would enlarge the patching, monitoring and security surface across approximately 150 locations (Shi et al., 2016); I will test one store-level workload to measure that overhead. Blockchain remains conceptual, as I implemented nothing, and merits consideration only where a genuine distributed-trust requirement exists, such as supply-chain traceability. Quantum cloud is long-term research for logistics and inventory optimisation, not a production dependency (Golec et al., 2024).
+**Goal 4: edge and emerging technologies.** Within six months, I will prototype one store workload (Shi et al., 2016). Success means demonstrated offline operation, reconnection synchronisation and measured patching/monitoring overhead. I will also produce a feasibility note comparing blockchain traceability with a conventional database and quantum optimisation with classical approaches (Golec et al., 2024). Success means an evidence-based adoption or deferral decision, not presumed technological advantage.
 
-Overall, the module moved my practice from comparing services towards evaluating strategy, automation, migration, security, resilience and emerging technologies as one operational lifecycle, judged by evidence rather than successful deployment.
+The module has connected strategy, automation, security, recovery and emerging technologies into an operational lifecycle judged by evidence.
 
 ## 6. References
 
@@ -222,3 +220,31 @@ Verdet, A. et al. (2025) 'Assessing the adoption of security policies by develop
 
 Özdoğan, E., Ceran, O. and Üstündağ, M.T. (2023) 'Systematic analysis of Infrastructure as Code technologies', *Gazi University Journal of Science Part A: Engineering and Innovation*, 10(4), pp. 452–471. doi: 10.54287/gujsa.1373305.
 
+## Attachment List: Evidence and Learning Outcomes
+
+Original posts retain the fuller technical evidence. Group documents are supplied separately.
+
+| Artefact | Learning demonstrated | Outcomes |
+|---|---|---|
+| [Unit 1 comparison][u1] | Service responsibilities and workload selection. | LO1–2 |
+| [Units 2–3; Figure 1][u23] | Architecture, adoption and feedback-informed IaC selection. | LO2, LO4 |
+| [Unit 5; Figure 2][u5] | Verified CLI networking. | LO1, LO3 |
+| Unit 6: Group Report A, Team Contract, Peer Evaluation | ARM analysis and individual responsibility (§3.1). | LO1–2 |
+| [Unit 7; Figure 4][u7] | Scanning and configuration-risk interpretation. | LO3–4 |
+| [Unit 8; Figure 5][u8] | Tested restoration and recovery limitations. | LO3–4 |
+| [Unit 9; Figure 6][u9] | Migration, synchronisation and validation. | LO3–4 |
+| [Unit 10; Figure 7][u10] | Kubernetes-supported function deployment. | LO2–3 |
+| [Unit 11 AI; Figure 8][ai] | Model evaluation and containerised inference. | LO3–4 |
+| [Horizon PoC; Figures 3, 9][poc] | Automation, telemetry and proposed hybrid resilience. | LO2–4 |
+| Reflective Report; §2.6 | Ethical, social and professional judgement. | LO1–2, LO4 |
+| Table 1 | Practical capability development. | LO3–4 |
+
+[u1]: https://mozakay.github.io/cloud%20operations%20and%20management/2026/08/06/unit-1-comparing-the-service-models-of-aws-and-google-cloud.html
+[u23]: https://mozakay.github.io/cloud%20operations%20and%20management/2026/08/17/units-2-3-cloud-architecture-frameworks-and-design.html
+[u5]: https://mozakay.github.io/cloud%20operations%20and%20management/2026/08/31/unit-5-azure-cli-cloud-network-configuration.html
+[u7]: https://mozakay.github.io/cloud%20operations%20and%20management/2026/09/08/unit-7-security-audit-of-a-docker-based-cloud-application.html
+[u8]: https://mozakay.github.io/cloud%20operations%20and%20management/2026/09/14/unit-8-disaster-recovery-and-business-continuity.html
+[u9]: https://mozakay.github.io/cloud%20operations%20and%20management/2026/09/18/unit-9-cloud-database-migration-for-a-retail-order-management-system.html
+[u10]: https://mozakay.github.io/cloud%20operations%20and%20management/2026/09/21/unit-10-implementing-a-serverless-function-using-openfaas.html
+[ai]: https://mozakay.github.io/cloud%20operations%20and%20management/2026/09/25/unit-11-part-1-formative-activity-tensorflow-and-keras.html
+[poc]: https://mozakay.github.io/cloud%20operations%20and%20management/2026/10/03/unit-11-horizon-retail-cloud-operations-proof-of-concept.html
