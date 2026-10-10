@@ -222,17 +222,3 @@ Verdet, A. et al. (2025) 'Assessing the adoption of security policies by develop
 
 Özdoğan, E., Ceran, O. and Üstündağ, M.T. (2023) 'Systematic analysis of Infrastructure as Code technologies', *Gazi University Journal of Science Part A: Engineering and Innovation*, 10(4), pp. 452–471. doi: 10.54287/gujsa.1373305.
 
-## Attachment List: Figures and Table
-
-| Item | Caption | Source post |
-|---|---|---|
-| Figure 1 | (a) Tutor feedback on the ROCCA and TOGAF discussion; (b) peer feedback on Terraform state management | Units 2–3 |
-| Figure 2 | Azure CLI verification of the virtual network and subnet | Unit 5 |
-| Figure 3 | (a) Terraform definition; (b) Ansible configuration; (c) Azure Monitor CPU utilisation | Unit 11, Part 2 |
-| Figure 4 | (a) OpenVAS low-severity score of 2.6; (b) MongoDB connection status with no authenticated users | Unit 7 |
-| Figure 5 | (a) Recovery from the latest Restic snapshot; (b) orders table restored to 252,700 records | Unit 8 |
-| Figure 6 | Final validation of the Azure MySQL database after synchronisation | Unit 9 |
-| Figure 7 | Successful invocation of the OpenFaaS function | Unit 10 |
-| Figure 8 | Prediction from the model deployed on Azure Container Apps | Unit 11, Part 1 |
-| Figure 9 | Horizon Retail hybrid architecture: validated proof of concept and proposed production design | Unit 11, Part 2 |
-| Table 1 | Skills development by capability group | Section 3 |
