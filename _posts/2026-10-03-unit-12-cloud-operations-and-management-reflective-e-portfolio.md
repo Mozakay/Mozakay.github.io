@@ -41,6 +41,7 @@ The resulting judgement shifted from whether an IaC tool could reproduce infrast
 *Critical question: When does a functioning container or serverless deployment become an operable service?*
 
 Early service-model comparisons explained reduced infrastructure management, but not how platform responsibility persists. In Unit 5, a Flask application was containerised with Docker, deployed on Minikube through Kubernetes Deployment and NodePort Service definitions, and increased from two to three replicas. This verified replica configuration, not automatic scaling, faster responses or fault tolerance (Unit 5 discussion).
+
 Unit 10 extended the work to OpenFaaS: Kubernetes components ran, a Python greeting function was deployed, and invocation produced the intended response (Figure 2). Payman’s subsequent questions about registry credentials, CI/CD and function monitoring changed the success criterion. As Shafiei, Khonsari and Mousavi (2022) discuss, serverless reduces direct server administration without resolving all monitoring and security challenges. The new judgement separates functional invocation from secure, observable operation. A professional deployment would require image and secret controls, latency and error metrics, and concurrent-load tests before claiming elasticity.
 
 
@@ -60,7 +61,9 @@ Unit 10 extended the work to OpenFaaS: Kubernetes components ran, a Python greet
 *Critical question: What security risks remain undetected when vulnerability-scanner results are treated as evidence of safety?*
 
 Initial security assessment emphasised vulnerability severity. In Unit 7, Nginx and MongoDB containers on an Azure Ubuntu VM were assessed using OpenVAS from a separate VM. The first scan failed to discover the target; adjusting the Alive Test enabled assessment, revealing two low-severity findings (2.6) involving SSH MAC algorithms and TCP timestamps (Unit 7 GitHub, original Figures 8–10). This demonstrated that scan results depend on correct discovery and adequate coverage.
-More significantly, manual inspection revealed MongoDB bound to 0.0.0.0:27017, while Azure NSG rules permitted unrestricted inbound access; enforced database authentication was not demonstrated (Figure 3). These findings indicated potential exposure, not proven compromise. Scanner coverage, network reachability and authentication assess distinct security controls, consistent with the configuration and access-control concerns discussed by Ali, Khan and Vasilakos (2015).
+
+More significantly, manual inspection showed Docker published MongoDB on 0.0.0.0:27017, while Azure NSG rules permitted unrestricted inbound access; enforced database authentication was not demonstrated (Figure 3). These findings indicated potential exposure, not proven compromise. Scanner coverage, network reachability and authentication assess distinct security controls, consistent with the configuration and access-control concerns discussed by Ali, Khan and Vasilakos (2015).
+
 The resulting judgement shifted from interpreting scanner severity to evaluating layered security assurance. The separate NIST-based healthcare risk assessment extended this understanding through likelihood-and-impact evaluation, although its recommended controls were not implemented. Production remediation would require restricting database and SSH access, verifying authentication, applying updates and rescanning.
 
 <figure>
@@ -79,7 +82,9 @@ The resulting judgement shifted from interpreting scanner severity to evaluating
 *Critical question: Which recovery objectives were demonstrated, and which remained unverified?*
 
 Initially, RTO and RPO were treated as planning targets. In Unit 8, three manually triggered Restic snapshots protected application files and a PostgreSQL dump in Azure Blob Storage. After 180 orders and six files were added without another backup, files and the orders table were deliberately deleted. Restoration recovered 252,700 orders in 3 minutes 49 seconds, meeting the 30-minute RTO, but the later records and files remained lost (Figure 4).
-NIST guidance emphasises recovery testing (Swanson et al., 2010); however, this simulation demonstrated only one recovery scenario. The 69-second snapshot-to-incident interval was an observed gap, not proof of the proposed 60-minute RPO: hourly backups were never automated. Subsequent discussion clarified this distinction; the 24.416 MiB restore could not establish production performance.
+
+NIST guidance emphasises recovery testing (Swanson et al., 2010); however, this simulation demonstrated only one recovery scenario. The 69-second snapshot-to-incident interval was an observed gap, not proof of the proposed 60-minute RPO: hourly backups were never automated. Subsequent discussion clarified this distinction; restoring 24.416 MiB of files and directories could not establish production performance.
+
 The resulting judgement shifted from equating restoration with continuity to requiring repeatable evidence of acceptable downtime and data loss. Production assurance would need automated scheduling, missed-backup alerts and periodic recovery tests.
 
 <figure>
