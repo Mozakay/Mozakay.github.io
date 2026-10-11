@@ -165,23 +165,28 @@ Future learning targets governed IaC, reliability, controlled migration and just
 
 ---
 
+
 ## References
 
 Abadi, M. *et al.* (2016) ‘TensorFlow: A system for large-scale machine learning’, *Proceedings of the 12th USENIX Symposium on Operating Systems Design and Implementation (OSDI 16)*. Savannah, GA: USENIX Association, pp. 265–283. Available at: https://www.usenix.org/conference/osdi16/technical-sessions/presentation/abadi (Accessed: 11 October 2026).
+
+Al-Qahtani, F. and Abu-Shanab, E.A. (2021) ‘End user satisfaction with cloud computing: The case of Hamad Medical Corporation in Qatar’, *International Journal of Healthcare Information Systems and Informatics*, 16(4), pp. 1–23. Available at: https://doi.org/10.4018/IJHISI.295821.
 
 Ali, M., Khan, S.U. and Vasilakos, A.V. (2015) ‘Security in cloud computing: Opportunities and challenges’, *Information Sciences*, 305, pp. 357–383. Available at: https://doi.org/10.1016/j.ins.2015.01.025.
 
 Anggraini, N., Binariswanto and Legowo, N. (2019) ‘Cloud computing adoption strategic planning using ROCCA and TOGAF 9.2: A study in government agency’, *Procedia Computer Science*, 161, pp. 1316–1324. Available at: https://doi.org/10.1016/j.procs.2019.11.247.
 
+Armbrust, M. *et al.* (2010) ‘A view of cloud computing’, *Communications of the ACM*, 53(4), pp. 50–58. Available at: https://doi.org/10.1145/1721654.1721672.
+
 Gholami, M.F. *et al.* (2017) ‘Challenges in migrating legacy software systems to the cloud: An empirical study’, *Information Systems*, 67, pp. 100–113. Available at: https://doi.org/10.1016/j.is.2017.03.008.
+
+Jamshidi, P., Ahmad, A. and Pahl, C. (2013) ‘Cloud migration research: A systematic review’, *IEEE Transactions on Cloud Computing*, 1(2), pp. 142–157. Available at: https://doi.org/10.1109/TCC.2013.10.
 
 Kumara, I. *et al.* (2021) ‘The do’s and don’ts of infrastructure code: A systematic gray literature review’, *Information and Software Technology*, 137, Article 106593. Available at: https://doi.org/10.1016/j.infsof.2021.106593.
 
 Mell, P. and Grance, T. (2011) *The NIST Definition of Cloud Computing*. NIST Special Publication 800-145. Gaithersburg, MD: National Institute of Standards and Technology. Available at: https://doi.org/10.6028/NIST.SP.800-145.
 
 Notaro, P., Cardoso, J. and Gerndt, M. (2021) ‘A survey of AIOps methods for failure management’, *ACM Transactions on Intelligent Systems and Technology*, 12(6), Article 81. Available at: https://doi.org/10.1145/3483424.
-
-Preskill, J. (2018) ‘Quantum computing in the NISQ era and beyond’, *Quantum*, 2, Article 79. Available at: https://doi.org/10.22331/q-2018-08-06-79.
 
 Rahman, A., Mahdavi-Hezaveh, R. and Williams, L. (2019) ‘A systematic mapping study of infrastructure as code research’, *Information and Software Technology*, 108, pp. 65–77. Available at: https://doi.org/10.1016/j.infsof.2018.12.004.
 
@@ -191,23 +196,4 @@ Shi, W. *et al.* (2016) ‘Edge computing: Vision and challenges’, *IEEE Inter
 
 Swanson, M. *et al.* (2010) *Contingency Planning Guide for Federal Information Systems*. NIST Special Publication 800-34, Revision 1. Gaithersburg, MD: National Institute of Standards and Technology. Available at: https://doi.org/10.6028/NIST.SP.800-34r1.
 
-## Evidence and Figure Register
 
-Table 1 summarises verified skills and their limitations; Section 5 explains the evidence-based learning roadmap in analytical prose.
-
-The following are student-authored or course discussion artefacts, not peer-reviewed scientific publications. Their inclusion supports practical reflection. Formal self-/peer-referencing should follow the tutor's instructions under the University of Essex Online referencing guide.
-
-| Portfolio evidence | Original uploaded Markdown or document | Demonstration and limitation |
-| --- | --- | --- |
-| Unit 1 baseline | `2026-08-06-unit-1-comparing-the-service-models-of-aws-and-google-cloud (1).md` | Service-model comparison, not provider benchmark |
-| Figure 1 | `2026-08-17-units-2-3-cloud-architecture-frameworks-and-design(1).md`, original Figures 2–3; original Figure 1 discussed in prose | Terraform and tutor feedback on adoption evidence |
-| Unit 5 Kubernetes discussion | `Discussion Unit 5.jpeg`, 24 August 2026 | Flask/Docker/Minikube and replica configuration, not load testing |
-| Unit 5 command provisioning | `2026-08-31-unit-5-azure-cli-cloud-network-configuration.md`, original Figures 1–2 | Azure CLI VNet and subnet creation/verification |
-| Figure 2 | `2026-09-21-unit-10-implementing-a-serverless-function-using-openfaas.md`, original Figures 5–6 | Deployment and invocation, not secure scaling |
-| Figure 3 | `2026-09-08-unit-7-security-audit-of-a-docker-based-cloud-application.md`, original Figures 8 and 3 | OpenVAS versus exposed NSG configuration |
-| Figure 4 | `2026-09-14-unit-8-disaster-recovery-and-business-continuity.md`, original Figure 6 and Table 1 | Measured recovery; manual scheduling limitation |
-| Figure 5 | `2026-09-18-unit-9-cloud-database-migration-for-a-retail-order-management-system.md`, original Figure 4 | Data validation, not live application cutover |
-| Figure 6 and 8 | `2026-10-03-unit-11-horizon-retail-cloud-operations-proof-of-concept (2).md`, original Figures 4, 6 and 1 | PoC versus proposed production design |
-| Figure 7 | `2026-09-25-unit-11-part-1-formative-activity-tensorflow-and-keras (2).md`, original Figure 4 | AI inference, not retail forecasting validation |
-| Group collaboration | `Peer Evaluation Group1 Moza(1).docx`, p. 5; `Team Contract.docx`; `Development Team Project - Azure (1).docx` | Individual self-reported contribution versus proposed group design |
-| Reflective context | `Reflective Report(1).docx` | Ethical, social and operational judgements |
