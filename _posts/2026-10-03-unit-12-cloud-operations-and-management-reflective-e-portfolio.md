@@ -168,12 +168,16 @@ Goal 4: Evidence-led innovation (months 9–12). CNN inference did not establish
 
 
 
-| Timeline | Official Learning Resource | Practical Evidence of Development |
-|---|---|---|
-| **0–3 months** | HashiCorp: [Store remote state](https://developer.hashicorp.com/terraform/tutorials/azure-get-started/azure-remote) | Secure state configuration and policy-checking demonstration |
-| **3–6 months** | Microsoft Learn: [Deploy and configure Azure Monitor](https://learn.microsoft.com/en-us/training/paths/deploy-configure-azure-monitor/) | Service monitoring, backup alerts and repeated recovery tests |
-| **6–9 months** | Microsoft Learn: [Choose a tool to migrate data to Azure Database for MySQL](https://learn.microsoft.com/en-us/training/modules/choose-tool-to-migrate-data-to-azure-database-for-mysql/) | Documented replication, cutover and rollback rehearsal |
-| **9–12 months** | Microsoft Learn: [Monitor AI workloads on Azure](https://learn.microsoft.com/en-us/training/paths/monitor-ai-workloads-on-azure/); [Azure Container Apps observability](https://learn.microsoft.com/en-us/azure/container-apps/observability) | Comparative AI monitoring evaluation and edge feasibility assessment |
+
+| Timeline | Official Learning Resource | Practical Evidence of Development | Official Learning Link |
+|---|---|---|---|
+| **0–3 months** | HashiCorp: Terraform Remote State Tutorials | Secure state configuration and policy-checking demonstration | [HashiCorp Training](https://developer.hashicorp.com/terraform/tutorials/azure-get-started/azure-remote) |
+| **3–6 months** | Microsoft Learn: Deploy and Configure Azure Monitor | Service monitoring, backup alerts and repeated recovery tests | [Microsoft Learn](https://learn.microsoft.com/en-us/training/paths/deploy-configure-azure-monitor/) |
+| **6–9 months** | Microsoft Learn: Choose a Tool to Migrate Data to Azure Database for MySQL | Documented replication, cutover and rollback rehearsal | [Microsoft Learn](https://learn.microsoft.com/en-us/training/modules/choose-tool-to-migrate-data-to-azure-database-for-mysql/) |
+| **9–12 months** | Microsoft Learn: Monitor AI Workloads on Azure; Azure Container Apps observability documentation | Comparative AI monitoring evaluation and edge feasibility assessment | [AI Monitoring](https://learn.microsoft.com/en-us/training/paths/monitor-ai-workloads-on-azure/) / [Container Apps](https://learn.microsoft.com/en-us/azure/container-apps/observability) |
+
+*Note: Training resources and practical activities are proposed. The practical exercises are independently planned and are not necessarily included in the official training.*
+
 
 
 ## 6. Conclusion
