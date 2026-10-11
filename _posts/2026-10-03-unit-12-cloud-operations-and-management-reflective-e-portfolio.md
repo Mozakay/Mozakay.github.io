@@ -58,10 +58,15 @@ More significantly, manual inspection revealed MongoDB bound to 0.0.0.0:27017, w
 The resulting judgement shifted from interpreting scanner severity to evaluating layered security assurance. The separate NIST-based healthcare risk assessment extended this understanding through likelihood-and-impact evaluation, although its recommended controls were not implemented. Production remediation would require restricting database and SSH access, verifying authentication, applying updates and rescanning.
 
 <figure>
-  <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/COM/unit7/part1/Figure%208%20OpenVAS%20Full%20and%20Fast%20scan%20completed%20successfully%20with%20a%20Low%20severity%20score%20of%202.6..png" alt="Completed OpenVAS scan displaying severity 2.6" width="650">
-  <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/COM/unit7/part1/Figure%203%20Azure%20Network%20Security%20Group%20inbound%20rules%20allowing%20SSH%2C%20HTTP%20and%20MongoDB%20traffic..png" alt="Azure network security rules permitting broad inbound access" width="650">
-  <figcaption><em>Figure 3. Low vulnerability severity did not establish secure network configuration or authentication assurance. Source: Unit 7 Docker Security Audit GitHub activity, original Figures 8 and 3.</em></figcaption>
+  <img src="{{ '/assets/images/COM/unit7/Figure8.png' | relative_url }}" alt="OpenVAS scan showing a low severity score of 2.6" width="650">
+  <figcaption><em>Figure 3a. OpenVAS identified low-severity vulnerabilities (2.6), but the scan did not establish overall system security. Source: Unit 7 Docker Security Audit GitHub activity, original Figure 8.</em></figcaption>
 </figure>
+
+<figure>
+  <img src="{{ '/assets/images/COM/unit7/Figure3.png' | relative_url }}" alt="Azure NSG inbound rules allowing unrestricted SSH and MongoDB traffic" width="650">
+  <figcaption><em>Figure 3b. Azure NSG rules permitted unrestricted inbound access to SSH and MongoDB, revealing configuration risks beyond the scanner findings. Source: Unit 7 Docker Security Audit GitHub activity, original Figure 3.</em></figcaption>
+</figure>
+
 
 ### 2.4 Disaster Recovery: Does Restore Success Demonstrate Continuity? (Unit 8)
 
@@ -97,11 +102,17 @@ Unit 11 revisited the Unit 3 Terraform evaluation through implementation: Terraf
 
 Linking this PoC to Unit 9's INSERT-only delta and untested cutover exposed a further gap: deployable architecture does not establish a safe transition for existing applications and data. Rahman, Mahdavi-Hezaveh and Williams (2019) examine IaC research, but provisioning cannot establish migration readiness. Judgement shifted towards evaluating dependencies, synchronisation, cutover and rollback alongside security, load and failure testing. The broader hybrid architecture remained proposed, not implemented.
 
+
 <figure>
   <img src="/assets/images/COM/unit11/part2/04-ansible-config.png" alt="Successful Ansible configuration results" width="650">
-  <img src="/assets/images/COM/unit11/part2/06-azure-monitor.png" alt="Azure Monitor CPU telemetry for small proof of concept" width="650">
-  <figcaption><em>Figure 6. Ansible and CPU evidence verify a limited PoC, not production readiness. Source: Unit 11 GitHub, original Figures 4 and 6.</em></figcaption>
+  <figcaption><em>Figure 6a. Ansible successfully configured Nginx (ok=5, changed=3, failed=0), demonstrating automated configuration, not production readiness. Source: Unit 11 Horizon Retail GitHub activity, original Figure 4.</em></figcaption>
 </figure>
+
+<figure>
+  <img src="/assets/images/COM/unit11/part2/06-azure-monitor.png" alt="Azure Monitor CPU telemetry for small proof of concept" width="650">
+  <figcaption><em>Figure 6b. Azure Monitor recorded approximately 2.93% average CPU utilisation over 30 minutes, demonstrating telemetry collection, not production capacity or resilience. Source: Unit 11 Horizon Retail GitHub activity, original Figure 6.</em></figcaption>
+</figure>
+
 
 ## 3. Skills Development, Independent Work and Collaboration
 
@@ -146,7 +157,7 @@ Goal 2: Operational reliability (months 3–6). OpenFaaS invocation, CPU reading
 Goal 3: Controlled migration (months 6–9). Unit 9’s INSERT-only delta excluded UPDATE/DELETE changes and application cutover. A staged MySQL lab will test replication, cutover, rollback and record verification. Findings will guide Horizon Retail migration planning (Gholami et al., 2017).
 Goal 4: Evidence-led innovation (months 9–12). CNN inference did not establish AI-assisted operations; proposed edge architecture remained untested. The student will compare anomaly monitoring with fixed thresholds and pilot offline store operation against cloud-only processing. Cost and human oversight will guide decisions; blockchain and quantum remain research topics until practical value is demonstrated (Notaro, Cardoso and Gerndt, 2021; Shi et al., 2016).
 
-### Table 2. Proposed Training and Practical Development Plan
+**Table 2. Proposed Training and Practical Development Plan**
 
 | Timeline | Official Learning Resource | Practical Evidence of Development |
 |---|---|---|
