@@ -12,130 +12,136 @@ journey_group: "unit-12"
 
 ## 1. Introduction
 
-The Unit 1 comparison of AWS and Google Cloud addressed Infrastructure, Platform and Software as a Service (IaaS, PaaS and SaaS) mainly through responsibility, control and pricing. NIST also identifies public, private, community and hybrid deployment models, selected according to workload and organisational conditions (Mell and Grance, 2011). Later activities shifted the central question from **whether a cloud resource could be deployed** to **what operational evidence justified relying on it**.
+A cloud deployment can report **Succeeded** while remaining insecure, difficult to recover or unsuitable for its intended workload. This is not a paradox: provisioning verifies a resource state, whereas operational assurance requires evidence of security, resilience and business fitness. That distinction frames this portfolio.
 
-This portfolio evaluates six connected learning episodes against cloud fundamentals (LO1), solution selection (LO2), implementation (LO3) and critical design of resilient solutions (LO4). Artefacts, feedback and research trace changing knowledge, skills and judgement. Successful tests are distinguished throughout from untested assumptions and proposed production architectures.
+Unit 1 compared AWS and Google Cloud through IaaS, PaaS and SaaS, showing how control and customer responsibility differ; public, private and hybrid models also change workload placement (Mell and Grance, 2011). Azure experiments exposed consequences of those choices, from VM hardening to managed databases and proposed hybrid integration. Six reflections trace the development from evaluating architectures to implementing, testing and questioning them. Each links an artefact to cloud fundamentals (LO1), solution selection (LO2), practical configuration (LO3) or resilient design judgement (LO4), without treating a proof of concept as a production system.
 
 ## 2. Critical Weekly Reflections
 
-### 2.1 Architectural Frameworks and Governed Infrastructure as Code (Units 2–3 | LO2, LO4)
+### 2.1 Architecture and IaC: Capability or Organisational Suitability? (Units 2–3; LO1, LO2, LO4)
 
-**Previous understanding and task.** The Unit 2 work initially valued ROCCA and TOGAF because staged cloud adoption could align technical decisions with organisational architecture. Analysing an Indonesian government-agency case supported a phased roadmap, but the tutor's feedback questioned whether evidence of planning also established long-term governance and operational performance (Units 2–3 GitHub, original Figure 1). The underlying study evaluated strategic planning, not sustained resilience across multiple agencies (Anggraini, Binariswanto and Legowo, 2019).
+*Critical question: Can a credible roadmap or powerful IaC tool justify adoption without operational evidence?*
 
-**Evidence and changed judgement.** In Unit 3, Terraform was initially preferred for declarative reuse and multi-cloud provisioning. Payman's comments introduced remote-state access and locking; Joseph questioned specialist expertise and maintenance overhead (Figure 1). These comments exposed how IaC can repeat unsafe configurations. Research on IaC documents the importance of maintainability and disciplined practices (Kumara *et al.*, 2021). The student's judgement consequently shifted towards assessing governance maturity and demonstrated outcomes, not merely architectural coherence. A professional rollout would require protected state, reviewed plans, change approval and post-deployment validation.
+The ROCCA–TOGAF analysis favoured phased government-cloud adoption because it aligned technology with enterprise needs. However, tutor feedback distinguished the case study's planning value from unproven long-term governance and resilience (Units 2–3 GitHub, original Figure 1). Anggraini, Binariswanto and Legowo (2019) investigated strategic planning, not sustained multi-agency outcomes. The judgement changed: architectural coherence was insufficient without later operational verification.
+
+In Unit 3, Terraform's declarative reuse and multi-cloud reach initially dominated comparison. Payman's feedback exposed remote-state locking and access requirements; Joseph questioned specialist skills and maintenance overhead (Figure 1). Such governance concerns align with documented IaC practice limitations (Kumara *et al.*, 2021). Crucially, **this evaluation was revisited in Unit 11**, where Terraform and Ansible were implemented rather than merely compared. That later PoC confirmed a provisioning workflow, but still did not test secured team state or policy gates. Future selection must therefore weigh organisational capacity, validated deployment and enforceable controls, not portability alone.
 
 <figure>
   <img src="{{ '/assets/images/COM/unit23/unit3post1.png' | relative_url }}" alt="Payman's feedback about Terraform state management and locking" width="650">
   <img src="{{ '/assets/images/COM/unit23/unit3post2.png' | relative_url }}" alt="Joseph's feedback about IaC operational overhead and skills" width="650">
-  <figcaption><em>Figure 1. Feedback changed the selection criteria for Terraform from technical capability to governable operation. Source: Units 2–3 GitHub activity, original Figures 2–3.</em></figcaption>
+  <figcaption><em>Figure 1. Feedback changed the selection criteria for Terraform from technical capability to governable operation. Source: Units 2–3 GitHub activity, original Figures 2–3 (LO1, LO2, LO4).</em></figcaption>
 </figure>
+### 2.2 Cloud-Native Services: Does Abstraction Remove Responsibility? (Units 5 and 10; LO2–LO4)
 
-### 2.2 Container Orchestration and Serverless Responsibility (Units 5 and 10 | LO2–LO4)
+*Critical question: When does a functioning container or serverless deployment become an operable service?*
 
-**Previous understanding and task.** Earlier comparisons explained why managed services reduce some infrastructure responsibilities, but did not demonstrate orchestration. In the Unit 5 discussion, the student created a Flask application, containerised it with Docker and deployed it through Minikube using Kubernetes Deployment and NodePort Service definitions. A change from two to three replicas demonstrated controller-managed scaling, **not** measured fault tolerance or improved response times (Unit 5 discussion, 24 August 2026).
+Early service-model comparisons explained reduced infrastructure management, but not how platform responsibility persists. In Unit 5, a Flask application was containerised with Docker, deployed on Minikube through Kubernetes Deployment and NodePort Service definitions, and increased from two to three replicas. This verified replica configuration, **not** faster responses or fault tolerance (Unit 5 discussion).
 
-**Evidence and changed judgement.** In Unit 10, Kubernetes nodes and OpenFaaS components were checked, a Python function was deployed, and invocation returned the intended greeting (Figure 2). Initially, successful invocation was the main criterion. Payman's feedback then raised image-registry permissions, credentials, CI/CD and monitoring complexity. Consistent with serverless research, abstraction reduces direct server administration without eliminating platform, security or performance responsibilities (Shafiei, Khonsari and Mousavi, 2022). This changed the operational judgement from *function works* to *function is controlled and measurable*. Future approval would require secured images and secrets, plus latency, error-rate and cold-start tests under concurrent requests.
+Unit 10 extended the work to OpenFaaS: Kubernetes components ran, a Python greeting function was deployed, and invocation produced the intended response (Figure 2). Payman's subsequent questions about registry credentials, CI/CD and function monitoring changed the success criterion. As Shafiei, Khonsari and Mousavi (2022) discuss, serverless reduces direct server administration without resolving all monitoring and security challenges. The new judgement separates *functional invocation* from *secure, observable operation*. A professional deployment would require image and secret controls, latency and error metrics, and concurrent-load tests before claiming elasticity.
 
 <figure>
   <img src="{{ '/assets/images/COM/unit10/pic%205.png' | relative_url }}" alt="OpenFaaS function successfully deployed" width="600">
   <img src="{{ '/assets/images/COM/unit10/pic%206.png' | relative_url }}" alt="OpenFaaS function invoked successfully" width="600">
-  <figcaption><em>Figure 2. Deployment acceptance and successful function invocation establish functionality, not production security or elasticity. Source: Unit 10 OpenFaaS GitHub activity, original Figures 5–6.</em></figcaption>
+  <figcaption><em>Figure 2. Deployment acceptance and successful function invocation establish functionality, not production security or elasticity. Source: Unit 10 OpenFaaS GitHub activity, original Figures 5–6 (LO2, LO3).</em></figcaption>
 </figure>
+### 2.3 Cloud Security: What Can a Low Scanner Score Actually Prove? (Unit 7; LO1, LO3, LO4)
 
-### 2.3 Security Scanning versus Configuration Assurance (Unit 7 | LO3, LO4)
+*Critical question: Is a low vulnerability score meaningful when cloud configuration creates another exposure path?*
 
-**Previous understanding and task.** The student initially regarded vulnerability severity as an important security indicator. Nginx and MongoDB containers were configured on an Azure Ubuntu VM and examined using OpenVAS from another VM. The initial scan failed to detect its target; setting the Alive Test to 'Consider Hosts as Alive' enabled assessment. Two low-severity findings (2.6) concerned SSH algorithms and TCP timestamps (Unit 7 GitHub, original Figures 8–10).
+The initial emphasis was on vulnerability-scanner severity. Nginx and MongoDB containers ran on an Azure Ubuntu VM, assessed from a separate OpenVAS VM. The first scan failed to discover the host; changing the Alive Test enabled scanning and produced two low-severity findings, each scored **2.6** (Unit 7 GitHub, original Figures 7–10).
 
-**Interpretation and changed judgement.** The stronger finding came from manual configuration inspection: MongoDB was published on TCP/27017 and NSG rules permitted unrestricted inbound connections; enforced database authentication was not established by the inspected evidence (Figure 3). This does **not** establish unauthorised access, nor does the low scanner score certify safety. Scanner coverage, firewall reachability and application authentication answer different questions. Security research similarly identifies access-control and configuration risks (Ali, Khan and Vasilakos, 2015). Judgement therefore shifted from severity scores to layered assurance. Professional remediation would close public database access, restrict SSH, verify authentication and privileges, apply updates and rescan; the separate healthcare risk assessment supplied a structured NIST-based way to prioritise such treatments, not evidence that they were implemented.
+Yet manual inspection revealed MongoDB published on TCP/27017 and an NSG rule admitting unrestricted inbound sources; enforced authentication was not demonstrated (Figure 3). The findings are not contradictory: scanner signatures, network reachability and application identity test different controls. Nor do these screenshots prove external compromise. Cloud-security research identifies configuration and access control as distinct risks (Ali, Khan and Vasilakos, 2015). This shifted judgement from accepting scanner severity to combining vulnerability results with network and authentication assurance. The complementary NIST-based healthcare risk assessment helped structure likelihood and impact, but its recommended controls were **not** implemented. In production, database exposure would be removed, identity verified and remedial changes rescanned.
 
 <figure>
   <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/COM/unit7/part1/Figure%208%20OpenVAS%20Full%20and%20Fast%20scan%20completed%20successfully%20with%20a%20Low%20severity%20score%20of%202.6..png" alt="Completed OpenVAS scan displaying severity 2.6" width="650">
   <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/COM/unit7/part1/Figure%203%20Azure%20Network%20Security%20Group%20inbound%20rules%20allowing%20SSH%2C%20HTTP%20and%20MongoDB%20traffic..png" alt="Azure network security rules permitting broad inbound access" width="650">
-  <figcaption><em>Figure 3. A low vulnerability score did not establish safe network exposure. Source: Unit 7 Docker Security Audit GitHub activity, original Figures 8 and 3.</em></figcaption>
+  <figcaption><em>Figure 3. A low vulnerability score did not establish safe network exposure. Source: Unit 7 Docker Security Audit GitHub activity, original Figures 8 and 3 (LO3, LO4).</em></figcaption>
 </figure>
+### 2.4 Disaster Recovery: Does Restore Success Demonstrate Continuity? (Unit 8; LO3, LO4)
 
-### 2.4 Disaster Recovery: Recovery Targets versus Measured Loss (Unit 8 | LO3, LO4)
+*Critical question: Which recovery objectives were measured, and which remained untested promises?*
 
-**Previous understanding and task.** Initially, RTO and RPO were understood as planning targets. The Restic exercise made them testable: an Ubuntu VM in Austria East backed up application files and a PostgreSQL dump to Azure Blob Storage in Qatar Central. After three manually triggered snapshots, six files and 180 orders were added without another backup. Files were then deleted and the database orders table dropped to simulate destructive failure (Unit 8 GitHub, original Figures 3–4).
+Initially, RTO and RPO served as planning targets. The Restic exercise made the distinction concrete: application files and a PostgreSQL dump were backed up from an Azure VM to Blob Storage, then files and the orders table were deliberately deleted. The latest snapshot restored **252,700 orders in 3 minutes 49 seconds**, meeting the **30-minute RTO**. However, **180 later orders and six files** remained lost (Figure 4).
 
-**Evidence, limitation and changed judgement.** Restoration recovered 252,700 orders and protected files in **3 minutes 49 seconds**, within the **30-minute RTO** (Figure 4). The later 180 orders and six files were correctly unrecoverable. The **69-second** snapshot-to-incident interval was an *observed gap*, while **60 minutes** was the proposed operational RPO; an hourly schedule was never automated. Subsequent discussion clarified this difference. NIST contingency guidance stresses planning and testing recovery arrangements (Swanson *et al.*, 2010). Professional judgement therefore changed from accepting a successful restore to requiring measurable downtime, tolerable lost transactions, monitored scheduling and repeated recovery tests under representative load. The small 24.416 MiB backup cannot establish enterprise recovery performance.
+NIST contingency guidance treats recovery testing as necessary evidence (Swanson *et al.*, 2010), yet this single simulation validated only one restoration path. The **69-second** gap between snapshot and incident was observed, while the **60-minute RPO** was a target for a schedule never automated; the subsequent discussion clarified that distinction. Detection delay and performance under representative production load were also untested. The judgement therefore moved from *a backup exists* to *acceptable downtime and data loss must be demonstrated repeatedly*. Future operations require scheduled backups, failure alerts and measured recovery exercises, not confidence inferred from one successful command.
 
 <figure>
   <img src="{{ '/assets/images/COM/unit8/pic6.png' | relative_url }}" alt="PostgreSQL orders restored to 252700 records" width="600">
-  <figcaption><em>Figure 4. Database restoration confirms the latest protected state, not recovery of post-snapshot records. Source: Unit 8 Disaster Recovery GitHub activity, original Figure 6 and Table 1.</em></figcaption>
+  <figcaption><em>Figure 4. Database restoration confirms the latest protected state, not recovery of post-snapshot records. Source: Unit 8 Disaster Recovery GitHub activity, original Figure 6 and Table 1 (LO3, LO4).</em></figcaption>
 </figure>
+### 2.5 Database Migration: Is a Successful Import a Successful Transition? (Unit 9; LO2–LO4)
 
-### 2.5 Database Migration as a Controlled Transition (Unit 9 | LO2–LO4)
+*Critical question: What remains unresolved after a database is copied accurately?*
 
-**Previous understanding and task.** Migration was initially judged by data transfer. A local MySQL 8.0.46 retail database was exported using `mysqldump --single-transaction` and restored to Azure Database for MySQL 8.4. Counts initially matched for customers, products, orders and order items. The snapshot-based export supported consistent InnoDB data without a prolonged write freeze, but subsequent source changes were not carried into the initial target.
+Migration was initially evaluated through completed transfer. Unit 9 used `mysqldump --single-transaction` to move local MySQL **8.0.46** into Azure MySQL **8.4**; all four table counts matched the original snapshot. But the live source then acquired new transactions, increasing customers **8→9**, orders **8→10** and order items **11→14**. A controlled INSERT-only delta and record checks reconciled the cloud database (Figure 5).
 
-**Evidence, limitation and changed judgement.** New transactions increased customers **8→9**, orders **8→10** and order items **11→14**. A controlled pause, INSERT-only delta transfer and record-level checks reconciled the Azure target (Figure 5). This exceeded basic import validation but excluded application redirection and UPDATE/DELETE capture. Subscription restrictions also required UAE North instead of the preferred Qatar Central region. Migration research recognises technical, organisational and dependency challenges (Gholami *et al.*, 2017). The student's judgement shifted from *database copied* to *transition controlled*: future migration strategies would define compatibility checks, change-data capture, cutover, rollback, acceptable downtime and post-cutover verification before retiring the source.
+Jamshidi, Ahmad and Pahl (2013) distinguish migration planning, execution and evaluation. The practical result supports that distinction: initial consistency did not preserve ongoing consistency. Moreover, an INSERT-only delta does not capture UPDATE/DELETE changes, and no application connection cutover or rollback was executed. Qatar Central subscription restrictions also led to UAE North, demonstrating deployment constraints without implying a legal residency rule. The revised judgement makes **dependency mapping, change capture, cutover, rollback and acceptable downtime** prerequisites for migration approval. This insight becomes central again when assessing the Horizon Retail architecture in Reflection 6.
 
 <figure>
   <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/COM/unit9/part1/Figure%204%20Final%20validation%20of%20the%20Azure%20MySQL%20database%20after%20final%20synchronisation..png" alt="Final Azure MySQL table and record validation following delta synchronisation" width="680">
-  <figcaption><em>Figure 5. Final reconciliation demonstrates data consistency in the limited migration test, not full application cutover. Source: Unit 9 MySQL Migration GitHub activity, original Figure 4.</em></figcaption>
+  <figcaption><em>Figure 5. Final reconciliation demonstrates data consistency in the limited migration test, not full application cutover. Source: Unit 9 MySQL Migration GitHub activity, original Figure 4 (LO2, LO3, LO4).</em></figcaption>
 </figure>
+### 2.6 Integrated Operations: When Does a PoC Justify Production Adoption? (Unit 11; LO2–LO4)
 
-### 2.6 IaC, Observability and the Missing Migration Strategy (Unit 11 | LO3, LO4)
+*Critical question: What evidence is missing between automated deployment and a safe 150-store transition?*
 
-**Previous understanding and task.** The Horizon Retail proof of concept initially concentrated on proving that a cloud deployment workflow could function. Terraform provisioned and managed Azure resources, Ansible configured Nginx and a public page was verified; Azure Monitor then collected VM telemetry. Ansible reported `ok=5`, `changed=3` and `failed=0`, while average CPU utilisation was approximately **2.93%** over 30 minutes (Figure 6).
+Unit 11 put the earlier Unit 3 IaC evaluation into practice: Terraform provisioned Azure resources, Ansible configured Nginx and browser verification established service reachability. Ansible reported `ok=5`, `changed=3`, `failed=0`; Azure Monitor recorded around **2.93% average CPU** over 30 minutes (Figure 6). This supported operational integration, **not** production capacity or high availability. The single Standard_B1s VM, reused subnet and HTTP test endpoint limited any broader claim.
 
-**Interpretation and changed judgement.** These outputs validated deployment and telemetry, not 150-store capacity or availability. The reused subnet, Standard_B1s VM and HTTP endpoint made the production limitations tangible. This also prompted a further change in judgement: **a deployable target architecture is incomplete without a migration strategy for existing applications, data and operational processes**. The Unit 9 experience showed why dependencies, reconciliation, cutover and rollback must enter architecture decisions early, rather than after infrastructure deployment. IaC scholarship supports repeatability but acknowledges potential defects in infrastructure code (Rahman, Mahdavi-Hezaveh and Williams, 2019). Future approval would require governed state, HTTPS, representative load and failure testing, an integration plan and measurable migration acceptance criteria. The wider hybrid diagram remains a **proposal**, not a deployed or validated enterprise environment.
+Rahman, Mahdavi-Hezaveh and Williams (2019) describe IaC practice, but repeatability alone cannot validate resilience or organisational suitability. Connecting this PoC to Unit 9 prompted a further change in judgement: **deployment architecture needs a migration strategy**, because existing applications, data and processes must reach the new environment safely. The future decision therefore requires governed state, HTTPS, load and failure tests, integration dependencies, synchronisation, verified cutover and rollback. The illustrated hybrid services remain **proposed**, not deployed. This completes the progression from selecting a tool in Unit 3 to evaluating an operational transition in Unit 11.
 
 <figure>
   <img src="/assets/images/COM/unit11/part2/04-ansible-config.png" alt="Successful Ansible configuration results" width="650">
   <img src="/assets/images/COM/unit11/part2/06-azure-monitor.png" alt="Azure Monitor CPU telemetry for small proof of concept" width="650">
-  <figcaption><em>Figure 6. Automated configuration and CPU telemetry demonstrate a working PoC, not production-scale resilience. Source: Unit 11 Horizon Retail GitHub activity, original Figures 4 and 6.</em></figcaption>
+  <figcaption><em>Figure 6. Automated configuration and CPU telemetry demonstrate a working PoC, not production-scale resilience. Source: Unit 11 Horizon Retail GitHub activity, original Figures 4 and 6 (LO3, LO4).</em></figcaption>
 </figure>
-
 ## 3. Skills Development, Independent Work and Collaboration
 
-Technical development progressed from Azure CLI configuration to Terraform provisioning, Ansible configuration and evidence-based operational testing. Table 1 summarises what each skill demonstrated and where judgement changed.
+Skills advanced from command-based Azure CLI verification towards declarative Terraform provisioning, Ansible configuration and evidence-led operational evaluation. Table 1 synthesises tested competencies without repeating the six reflections.
 
-**Table 1. Skills developed and evidence of professional judgement**
+**Table 1. Skills development linked to evidence and judgement**
 
-| Capability | Verified practical evidence | Professional judgement |
+| Capability | Practical evidence | Professional judgement |
 | --- | --- | --- |
-| **IaC and monitoring** | Azure CLI VNet/subnet; Terraform and Ansible (`ok=5`, `changed=3`); Azure Monitor CPU **2.93%** | Deployment and CPU telemetry do not establish secure configuration or capacity (LO3–LO4). |
-| **Containers, serverless and AI** | Flask on Minikube; OpenFaaS invoked; CNN accuracy **75.89%**; Buildx resolved image rejection | Functionality does not demonstrate safe delivery, workload scaling or model reliability (LO2–LO4). |
-| **Security and risk** | OpenVAS **2.6**; NSG/MongoDB configuration inspection | Low scanner severity does not establish low overall risk (LO3–LO4). |
-| **Recovery and migration** | Restic recovery **3:49**, with 180 later orders lost; MySQL delta synchronisation validated | RTO, data loss and cutover readiness require different tests (LO3–LO4). |
+| **Provisioning and configuration** | Azure CLI VNet/subnet; Terraform/Ansible (`ok=5`, `changed=3`); Azure Monitor | Successful commands and CPU telemetry do not establish capacity or governance (LO3–LO4). |
+| **Containers and AI** | Flask/Minikube; OpenFaaS invocation; CNN **75.89%** accuracy; Buildx fixed Azure image rejection | Deployment is distinct from measured performance and model reliability (LO2–LO4). |
+| **Security** | OpenVAS **2.6** versus exposed NSG/MongoDB settings | Security requires configuration and identity assurance beyond scanning (LO3–LO4). |
+| **Recovery and migration** | Restic **3:49**; lost post-snapshot orders; MySQL delta validation | Restore success and data transfer demand separate continuity/cutover tests (LO3–LO4). |
 
-Independent troubleshooting involved correcting OpenVAS host discovery, rebuilding the incompatible Azure container image and adapting to subscription constraints (Figure 7). Group Report A assessed a **proposed**, not deployed, ARM architecture. The student's self-evaluation records organising work, consolidating contributions and identifying inconsistencies in a teammate's infrastructure design, without claiming authorship of that design. Late cross-review prompted a specific improvement: assign reviewers and integration checkpoints earlier. This connected technical accountability with collaborative architectural governance.
+Independent troubleshooting included fixing host discovery, rebuilding an incompatible container image for Azure Container Apps (Figure 7), and adapting to subscription restrictions. TensorFlow supported the Unit 11 CNN workflow (Abadi *et al.*, 2016), but **75.89% test accuracy** did not establish real-world model reliability.
+
+Group Report A assessed a **proposed Azure Resource Manager architecture**. The student's self-evaluation documents forming the team, coordinating work, consolidating sections and identifying inconsistencies in Benjamin's infrastructure design; the design itself was his contribution. Comparing sections with the shared scenario exposed a collaboration weakness: late cross-review. Earlier architecture assumptions, named reviewers and intermediate integration checks would be necessary in future team deployments.
 
 <figure>
   <img src="/assets/images/COM/unit11/part1/figure-4-azure-container-apps-prediction.png" alt="CNN inference successfully served by Azure Container Apps" width="700">
-  <figcaption><em>Figure 7. Azure inference demonstrates deployment troubleshooting and basic functional testing. Source: Unit 11 TensorFlow and Keras GitHub activity, original Figure 4.</em></figcaption>
+  <figcaption><em>Figure 7. Azure inference demonstrates deployment troubleshooting and basic functional testing. Source: Unit 11 TensorFlow and Keras GitHub activity, original Figure 4 (LO2, LO3).</em></figcaption>
 </figure>
-
 ## 4. Critical Application to Retail: Horizon Retail Group
 
-The hypothetical retailer's **150 stores and e-commerce channel** require continuous checkout, consistent stock and order data, peak-demand capacity and recoverability. A public-cloud-only placement could make store transactions overly dependent on WAN availability, whereas an entirely local estate would retain infrastructure management and limit elastic capacity. A **selective hybrid** approach therefore appears proportionate: continuity-critical processing stays near stores, while Azure supports central applications, data integration and analytics. However, dual-environment identity, connectivity, data synchronisation and cost create additional risks requiring explicit ownership (Figure 8).
+Horizon Retail's hypothetical **150 stores and e-commerce channel** face fluctuating demand, transaction consistency and WAN-dependent operations. Fully public hosting could simplify central management but interrupt local trading during connectivity failure; fully on-premises infrastructure preserves local processing at the cost of elastic peak capacity and maintenance. A **selective hybrid design** is defensible for keeping continuity-critical work near stores while placing central applications and analytics on Azure (Figure 8). Edge principles support locality for latency-sensitive processing (Shi *et al.*, 2016), although 150 distributed endpoints increase patching, monitoring and connectivity costs.
 
-Practical results constrain this recommendation. Unit 9 demonstrates that an initial database import can leave stock and order data stale, so a retail migration must use suitable change capture, reconciled cutover and rollback. Unit 7 demonstrates that exposed ports and unverified authentication cannot be excused by a low vulnerability score. Unit 8 demonstrates that an available backup does not guarantee preservation of transactions since the last snapshot. The Unit 11 CPU result cannot justify capacity sizing without throughput, latency, error-rate, failover and total-cost measurements.
+The choice also depends on service models. A VM permits OS-level control but retains patching and security responsibilities; managed PaaS reduces platform administration while limiting customisation. Neither is automatically cheaper: network links, synchronisation, cloud consumption and local support need a workload-level cost comparison, not extrapolation from the **2.93% CPU** PoC.
 
-An AI demand-forecasting pilot remains plausible, but CIFAR-10 test accuracy supplies **no** evidence of forecast quality on sales data. Baseline forecasting, data quality and monitoring would need independent evaluation. Similarly, subscription-based regional restrictions encountered in Azure testing cannot by themselves establish legal data-residency requirements. The student's ethical reflection identified another constraint: operational uptime does not guarantee equitable access during connectivity disruption. Consequently, the professionally defensible recommendation is a staged **architecture-and-migration programme** with explicit security, resilience, cost, accessibility and business acceptance gates, rather than immediate wholesale adoption.
+Practical evidence qualifies the proposal. The MySQL test demonstrates why changing retail orders require controlled migration and reliable replication; the OpenVAS audit challenges permissive database access; Restic shows that later transactions can remain unrecovered. Empirical migration research highlights the dependencies and organisational risks of moving legacy systems (Gholami *et al.*, 2017); the retail plan therefore requires reconciled cutover, rollback, recovery targets and business acceptance tests. The CIFAR-10 deployment proves AI inference mechanics, **not** demand-forecast accuracy; any forecasting pilot needs actual retail data and benchmark results. The Reflective Report also distinguishes uptime from equitable access under weak connectivity. Consequently, adoption should proceed through a staged pilot with measured latency, failure recovery, security, cost and accessibility, rather than assuming a working hybrid diagram is a production-ready solution.
 
 <figure>
   <img src="/assets/images/COM/unit11/part2/01-hybrid-architecture.png" alt="Horizon Retail proposed hybrid cloud solution with PoC distinguished from future components" width="750">
-  <figcaption><em>Figure 8. Horizon Retail architecture distinguishes the implemented technical PoC from the proposed hybrid production services. Source: Unit 11 Horizon Retail GitHub activity, original Figure 1.</em></figcaption>
+  <figcaption><em>Figure 8. Horizon Retail architecture distinguishes the implemented technical PoC from the proposed hybrid production services. Source: Unit 11 Horizon Retail GitHub activity, original Figure 1 (LO2, LO4).</em></figcaption>
 </figure>
-
 ## 5. Future Learning Goals
 
-Four goals translate the limitations revealed in practical work into measurable development, while addressing serverless, AI and emerging technologies from Weeks 10–12.
+The roadmap below derives each goal from a limitation exposed in practice and from serverless, AI and emerging technologies covered in Weeks 10–12.
 
-**Goal 1: Governed Infrastructure as Code and DevOps (months 0–3).** The Horizon Retail PoC established provisioning, not safe team-based changes; Unit 3 feedback exposed state-management responsibilities. The next development stage will introduce reusable Terraform modules, protected remote state, locking and a CI/CD pipeline with policy checks (Kumara *et al.*, 2021). Success requires reproducing the deployment and demonstrating rejection of an unsafe NSG rule, rather than merely completing a pipeline.
+**Goal 1: Governed IaC and DevOps (months 0–3).** The Terraform–Ansible PoC did not test remote-state governance or team approval, precisely the gaps raised in Unit 3. Development will cover Terraform modules, encrypted remote state, locking and CI/CD policy checks (Kumara *et al.*, 2021). Success means reproducing the environment and rejecting a deliberately unsafe NSG change.
 
-**Goal 2: Observability and resilience engineering (months 3–6).** Azure Monitor recorded CPU but not service quality; OpenFaaS lacked latency and concurrency tests, while Restic backups were manual. The student will define latency, error-rate and availability indicators, test increasing loads, automate backup alerts and repeat restoration. Evidence must establish whether the proposed 30-minute RTO and 60-minute RPO are achieved across trials (Shafiei, Khonsari and Mousavi, 2022; Swanson *et al.*, 2010).
+**Goal 2: Observability and recovery assurance (months 3–6).** CPU telemetry, working OpenFaaS invocation and manual Restic snapshots did not establish service-level reliability. The next lab will set availability, latency and error objectives, test concurrent requests, alert on missed backups and repeat restores. Results must show whether **30-minute RTO** and **60-minute RPO** targets hold across trials (Swanson *et al.*, 2010).
 
-**Goal 3: AI-assisted operations (months 6–9).** The CNN deployment proved inference, not predictive resource management. The student will compare anomaly detection and predictive scaling against threshold-based controls on one workload. Cost, latency, false alerts and model drift will determine whether AI adds operational value; human review will remain necessary for high-impact actions (Notaro, Cardoso and Gerndt, 2021).
+**Goal 3: AI-assisted operations (months 6–9).** The CNN established model deployment, not resource optimisation. A controlled experiment will compare predictive scaling and anomaly detection with threshold-based alternatives, evaluating latency, false alerts, cost and drift; human approval remains necessary for consequential actions (Notaro, Cardoso and Gerndt, 2021).
 
-**Goal 4: Edge and emerging technologies (months 9–12).** A store-level edge pilot will measure checkout continuity, latency and management overhead during degraded connectivity (Shi *et al.*, 2016). Blockchain will be considered only if multi-party traceability outperforms a conventional auditable database. Quantum cloud remains a research option for specialised optimisation, not an immediate retail dependency given current technical limitations (Preskill, 2018). Each assessment will end in a justified adoption or deferral decision.
+**Goal 4: Edge and emerging technologies (months 9–12).** One store-level edge pilot will test local transaction continuity and management overhead during degraded connectivity (Shi *et al.*, 2016). Blockchain will be assessed only for a justified multi-party traceability requirement; quantum cloud remains exploratory specialised optimisation, not an immediate retail dependency (Preskill, 2018). Each study must end with evidence supporting adoption **or deferral**, not novelty alone.
 
 ## 6. Conclusion
 
-Across the module, operational judgement developed from explaining and deploying cloud services to asking what evidence justifies trusting them. Peer criticism, incomplete security assurance, recoverable but lost transactions, migration drift and an unscaled PoC each exposed a different limit. The resulting professional standard is not deployment success alone, but **governed, measurable and business-appropriate operation**.
+Across the module, judgement progressed from comparing services to verifying what their results actually establish. State-governance feedback informed later Terraform practice; insecure exposure challenged scanner scores; recovered snapshots revealed lost transactions; and successful automation exposed the missing migration strategy. The professional outcome is a conditional, evidence-based standard for **secure, resilient and business-appropriate cloud operation**.
 
 ---
 
@@ -167,14 +173,14 @@ Swanson, M. *et al.* (2010) *Contingency Planning Guide for Federal Information 
 
 ## Evidence and Figure Register
 
-**Table:** Table 1 summarises verified skills and their limitations; Section 5 explains the evidence-based learning roadmap in analytical prose.
+Table 1 summarises verified skills and their limitations; Section 5 explains the evidence-based learning roadmap in analytical prose.
 
 The following are student-authored or course discussion artefacts, not peer-reviewed scientific publications. Their inclusion supports practical reflection. Formal self-/peer-referencing should follow the tutor's instructions under the University of Essex Online referencing guide.
 
 | Portfolio evidence | Original uploaded Markdown or document | Demonstration and limitation |
 | --- | --- | --- |
 | Unit 1 baseline | `2026-08-06-unit-1-comparing-the-service-models-of-aws-and-google-cloud (1).md` | Service-model comparison, not provider benchmark |
-| Figure 1 | `2026-08-17-units-2-3-cloud-architecture-frameworks-and-design(1).md`, original Figures 2–3 | Terraform feedback and governance requirements |
+| Figure 1 | `2026-08-17-units-2-3-cloud-architecture-frameworks-and-design(1).md`, original Figures 2–3; original Figure 1 discussed in prose | Terraform and tutor feedback on adoption evidence |
 | Unit 5 Kubernetes discussion | `Discussion Unit 5.jpeg`, 24 August 2026 | Flask/Docker/Minikube and replica configuration, not load testing |
 | Unit 5 command provisioning | `2026-08-31-unit-5-azure-cli-cloud-network-configuration.md`, original Figures 1–2 | Azure CLI VNet and subnet creation/verification |
 | Figure 2 | `2026-09-21-unit-10-implementing-a-serverless-function-using-openfaas.md`, original Figures 5–6 | Deployment and invocation, not secure scaling |
