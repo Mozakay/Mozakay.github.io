@@ -121,20 +121,17 @@ An AI demand-forecasting pilot remains plausible, but CIFAR-10 test accuracy sup
   <figcaption><em>Figure 8. Horizon Retail architecture distinguishes the implemented technical PoC from the proposed hybrid production services. Source: Unit 11 Horizon Retail GitHub activity, original Figure 1.</em></figcaption>
 </figure>
 
-## 5. Future Learning Goals: Roadmap
+## 5. Future Learning Goals
 
-Each phase in Table 2 responds to an untested capability from the practical work. **Milestones require observable results, not course completion.**
+Four goals translate the limitations revealed in practical work into measurable development, while addressing serverless, AI and emerging technologies from Weeks 10–12.
 
-**Table 2. Twelve-month learning roadmap**
+**Goal 1: Governed Infrastructure as Code and DevOps (months 0–3).** The Horizon Retail PoC established provisioning, not safe team-based changes; Unit 3 feedback exposed state-management responsibilities. The next development stage will introduce reusable Terraform modules, protected remote state, locking and a CI/CD pipeline with policy checks (Kumara *et al.*, 2021). Success requires reproducing the deployment and demonstrating rejection of an unsafe NSG rule, rather than merely completing a pipeline.
 
-| Phase | Action | Measurable milestone |
-| --- | --- | --- |
-| **Months 0–3: Governed IaC** | Secure Terraform remote state; add locking, code review and CI/CD policy checks | Redeploy a second environment; block an unsafe NSG change. |
-| **Months 3–6: Reliability** | Benchmark Kubernetes/OpenFaaS and automate Restic backups and alerts | Record latency, errors and cold starts; verify **RTO ≤30 min** and **RPO ≤60 min** across repeated tests. |
-| **Months 6–9: AIOps** | Compare predictive scaling and anomaly detection with threshold-based controls | Report cost, latency, resource use and false alerts against a baseline. |
-| **Months 9–12: Emerging cloud** | Pilot one edge retail workload; assess blockchain and quantum use cases | Measure degraded-connectivity behaviour; issue evidence-based adoption or deferral decisions. |
+**Goal 2: Observability and resilience engineering (months 3–6).** Azure Monitor recorded CPU but not service quality; OpenFaaS lacked latency and concurrency tests, while Restic backups were manual. The student will define latency, error-rate and availability indicators, test increasing loads, automate backup alerts and repeat restoration. Evidence must establish whether the proposed 30-minute RTO and 60-minute RPO are achieved across trials (Shafiei, Khonsari and Mousavi, 2022; Swanson *et al.*, 2010).
 
-Results, including failed tests, will be reviewed quarterly. Blockchain and quantum applications remain feasibility questions rather than assumed production requirements; the most suitable solution must justify its operational cost and complexity.
+**Goal 3: AI-assisted operations (months 6–9).** The CNN deployment proved inference, not predictive resource management. The student will compare anomaly detection and predictive scaling against threshold-based controls on one workload. Cost, latency, false alerts and model drift will determine whether AI adds operational value; human review will remain necessary for high-impact actions (Notaro, Cardoso and Gerndt, 2021).
+
+**Goal 4: Edge and emerging technologies (months 9–12).** A store-level edge pilot will measure checkout continuity, latency and management overhead during degraded connectivity (Shi *et al.*, 2016). Blockchain will be considered only if multi-party traceability outperforms a conventional auditable database. Quantum cloud remains a research option for specialised optimisation, not an immediate retail dependency given current technical limitations (Preskill, 2018). Each assessment will end in a justified adoption or deferral decision.
 
 ## 6. Conclusion
 
@@ -156,15 +153,21 @@ Kumara, I. *et al.* (2021) ‘The do’s and don’ts of infrastructure code: A 
 
 Mell, P. and Grance, T. (2011) *The NIST Definition of Cloud Computing*. NIST Special Publication 800-145. Gaithersburg, MD: National Institute of Standards and Technology. Available at: https://doi.org/10.6028/NIST.SP.800-145.
 
+Notaro, P., Cardoso, J. and Gerndt, M. (2021) ‘A survey of AIOps methods for failure management’, *ACM Transactions on Intelligent Systems and Technology*, 12(6), Article 81. Available at: https://doi.org/10.1145/3483424.
+
+Preskill, J. (2018) ‘Quantum computing in the NISQ era and beyond’, *Quantum*, 2, Article 79. Available at: https://doi.org/10.22331/q-2018-08-06-79.
+
 Rahman, A., Mahdavi-Hezaveh, R. and Williams, L. (2019) ‘A systematic mapping study of infrastructure as code research’, *Information and Software Technology*, 108, pp. 65–77. Available at: https://doi.org/10.1016/j.infsof.2018.12.004.
 
 Shafiei, H., Khonsari, A. and Mousavi, P. (2022) ‘Serverless computing: A survey of opportunities, challenges, and applications’, *ACM Computing Surveys*, 54(11s), Article 239, pp. 1–32. Available at: https://doi.org/10.1145/3510611.
+
+Shi, W. *et al.* (2016) ‘Edge computing: Vision and challenges’, *IEEE Internet of Things Journal*, 3(5), pp. 637–646. Available at: https://doi.org/10.1109/JIOT.2016.2579198.
 
 Swanson, M. *et al.* (2010) *Contingency Planning Guide for Federal Information Systems*. NIST Special Publication 800-34, Revision 1. Gaithersburg, MD: National Institute of Standards and Technology. Available at: https://doi.org/10.6028/NIST.SP.800-34r1.
 
 ## Evidence and Figure Register
 
-**Tables:** Table 1 summarises verified skills and their limitations; Table 2 sets evidence-based learning milestones.
+**Table:** Table 1 summarises verified skills and their limitations; Section 5 explains the evidence-based learning roadmap in analytical prose.
 
 The following are student-authored or course discussion artefacts, not peer-reviewed scientific publications. Their inclusion supports practical reflection. Formal self-/peer-referencing should follow the tutor's instructions under the University of Essex Online referencing guide.
 
