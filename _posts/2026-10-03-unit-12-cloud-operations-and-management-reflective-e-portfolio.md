@@ -57,7 +57,7 @@ The resulting judgement shifted from interpreting scanner severity to evaluating
 <figure>
   <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/COM/unit7/part1/Figure%208%20OpenVAS%20Full%20and%20Fast%20scan%20completed%20successfully%20with%20a%20Low%20severity%20score%20of%202.6..png" alt="Completed OpenVAS scan displaying severity 2.6" width="650">
   <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/COM/unit7/part1/Figure%203%20Azure%20Network%20Security%20Group%20inbound%20rules%20allowing%20SSH%2C%20HTTP%20and%20MongoDB%20traffic..png" alt="Azure network security rules permitting broad inbound access" width="650">
-  <figcaption><em>Low vulnerability severity did not establish secure network configuration or authentication assurance. Source: Unit 7 Docker Security Audit GitHub activity, original Figures 8 and 3.</em></figcaption>
+  <figcaption><em>Figure 3. Low vulnerability severity did not establish secure network configuration or authentication assurance. Source: Unit 7 Docker Security Audit GitHub activity, original Figures 8 and 3.</em></figcaption>
 </figure>
 
 ### 2.4 Disaster Recovery: Does Restore Success Demonstrate Continuity? (Unit 8)
@@ -73,7 +73,7 @@ The resulting judgement shifted from equating restoration with continuity to req
   <figcaption><em>Figure 4. Restoration recovered the protected state, not post-snapshot changes. Source: Unit 8 GitHub activity, original Figure 6 and Table 1.</em></figcaption>
 </figure>
 
-### 2.5 Database Migration: Is a Successful Import a Successful Transition? (Unit 9; LO2–LO4)
+### 2.5 Database Migration: Is a Successful Import a Successful Transition? (Unit 9)
 
 *Critical question: What remains unresolved after a database is copied accurately?*
 
@@ -83,7 +83,7 @@ The key lesson was that initial consistency does not guarantee ongoing data cons
 
 <figure>
   <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/COM/unit9/part1/Figure%204%20Final%20validation%20of%20the%20Azure%20MySQL%20database%20after%20final%20synchronisation..png" alt="Final Azure MySQL table and record validation following delta synchronisation" width="680">
-  <figcaption><em>Final reconciliation confirms test-level data consistency, not application cutover. Source: Unit 9 GitHub, original Figure 4.</em></figcaption>
+  <figcaption><em>Figure 5. Final reconciliation confirms test-level data consistency, not application cutover. Source: Unit 9 GitHub, original Figure 4.</em></figcaption>
 </figure>
 
 ### 2.6 Integrated Operations: Does a Working PoC Establish Production Readiness? (Unit 11, revisiting Units 3 and 9)
@@ -121,6 +121,7 @@ Group Report A assessed a **proposed Azure Resource Manager architecture**. The 
   <img src="/assets/images/COM/unit11/part1/figure-4-azure-container-apps-prediction.png" alt="CNN inference successfully served by Azure Container Apps" width="700">
   <figcaption><em>Figure 7. Azure inference demonstrates deployment troubleshooting and basic functional testing. Source: Unit 11 TensorFlow and Keras GitHub activity, original Figure 4 (LO2, LO3).</em></figcaption>
 </figure>
+
 ## 4. Critical Application to Retail: Horizon Retail Group
 
 Horizon Retail's hypothetical **150 stores and e-commerce channel** face fluctuating demand, transaction consistency and WAN-dependent operations. Fully public hosting could simplify central management but interrupt local trading during connectivity failure; fully on-premises infrastructure preserves local processing at the cost of elastic peak capacity and maintenance. A **selective hybrid design** is defensible for keeping continuity-critical work near stores while placing central applications and analytics on Azure (Figure 8). Edge principles support locality for latency-sensitive processing (Shi *et al.*, 2016), although 150 distributed endpoints increase patching, monitoring and connectivity costs.
@@ -134,18 +135,13 @@ Consequently, adoption should proceed through a staged pilot with measured laten
   <img src="/assets/images/COM/unit11/part2/01-hybrid-architecture.png" alt="Horizon Retail proposed hybrid cloud solution with PoC distinguished from future components" width="750">
   <figcaption><em>Figure 8. Horizon Retail architecture distinguishes the implemented technical PoC from the proposed hybrid production services. Source: Unit 11 Horizon Retail GitHub activity, original Figure 1 (LO2, LO4).</em></figcaption>
 </figure>
+
 ## 5. Future Learning Goals
 
-The roadmap below derives each goal from a limitation exposed in practice and from serverless, AI and emerging technologies covered in Weeks 10–12.
-
-**Goal 1: Governed IaC and DevOps (months 0–3).** The Terraform–Ansible PoC did not test remote-state governance or team approval, precisely the gaps raised in Unit 3. Development will cover Terraform modules, encrypted remote state, locking and CI/CD policy checks (Kumara *et al.*, 2021). Success means reproducing the environment and rejecting a deliberately unsafe NSG change.
-
-**Goal 2: Observability and recovery assurance (months 3–6).** CPU telemetry, working OpenFaaS invocation and manual Restic snapshots did not establish service-level reliability. The next lab will set availability, latency and error objectives, test concurrent requests, alert on missed backups and repeat restores. Results must show whether **30-minute RTO** and **60-minute RPO** targets hold across trials (Swanson *et al.*, 2010).
-
-**Goal 3: AI-assisted operations (months 6–9).** The CNN established model deployment, not resource optimisation. A controlled experiment will compare predictive scaling and anomaly detection with threshold-based alternatives, evaluating latency, false alerts, cost and drift; human approval remains necessary for consequential actions (Notaro, Cardoso and Gerndt, 2021).
-
-**Goal 4: Edge and emerging technologies (months 9–12).** One store-level edge pilot will test local transaction continuity and management overhead during degraded connectivity (Shi *et al.*, 2016). Blockchain will be assessed only for a justified multi-party traceability requirement; quantum cloud remains exploratory specialised optimisation, not an immediate retail dependency (Preskill, 2018). Each study must end with evidence supporting adoption **or deferral**, not novelty alone.
-
+Goal 1: Governed IaC (months 0–3). Unit 3 feedback, Unit 7 exposure and the Horizon PoC revealed untested state and policy governance. HashiCorp tutorials will guide remote state locking, reviews and policy checks. Success requires rejecting an unsafe NSG change (Kumara et al., 2021).
+Goal 2: Operational reliability (months 3–6). OpenFaaS invocation, CPU readings and manual Restic backups did not establish reliability. Azure Monitor training will support latency, error-rate and concurrent-load tests, plus backup alerts and repeated restores against proposed 30-minute RTO and 60-minute RPO targets (Swanson et al., 2010).
+Goal 3: Controlled migration (months 6–9). Unit 9’s INSERT-only delta excluded UPDATE/DELETE changes and application cutover. A staged MySQL lab will test replication, cutover, rollback and record verification. Findings will guide Horizon Retail migration planning (Gholami et al., 2017).
+Goal 4: Evidence-led innovation (months 9–12). CNN inference did not establish AI-assisted operations; proposed edge architecture remained untested. The student will compare anomaly monitoring with fixed thresholds and pilot offline store operation against cloud-only processing. Cost and human oversight will guide decisions; blockchain and quantum remain research topics until practical value is demonstrated (Notaro, Cardoso and Gerndt, 2021; Shi et al., 2016).
 
 ### Table 2. Proposed Training and Practical Development Plan
 
