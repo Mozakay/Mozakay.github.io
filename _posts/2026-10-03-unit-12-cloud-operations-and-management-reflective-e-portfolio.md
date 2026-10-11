@@ -8,7 +8,7 @@ journey_group: "unit-12"
 
 # From Cloud Deployment to Evidence-Based Operational Judgement
 
-*Cloud Operations and Management | Unit 12 Reflective e-Portfolio*
+Cloud Operations and Management | Unit 12 Reflective e-Portfolio
 
 ## 1. Introduction
 
