@@ -27,11 +27,14 @@ The initial ROCCA–TOGAF analysis valued phased government-cloud adoption for a
 Terraform was initially favoured for declarative reuse and multi-cloud portability. Payman's feedback highlighted remote-state access and locking, while Joseph questioned specialist expertise and maintenance overhead (Figure 1). These concerns aligned with IaC maintainability challenges discussed by Kumara et al. (2021). Crucially, Unit 11 provided an opportunity to revisit this judgement: Terraform provisioned Azure resources, and Ansible configured Nginx successfully. Nevertheless, the PoC did not validate secure collaborative state management, policy enforcement or production readiness.
 The resulting judgement shifted from whether an IaC tool could reproduce infrastructure to whether that infrastructure could be securely governed, independently verified and maintained. Consequently, production adoption would require protected state, reviewed deployment plans, enforceable policy checks and post-deployment validation, none of which was fully established by the PoC.
 
-<figure>
-  <img src="{{ '/assets/images/COM/unit23/unit3post1.png' | relative_url }}" alt="Payman's feedback about Terraform state management and locking" width="650">
-  <img src="{{ '/assets/images/COM/unit23/unit3post2.png' | relative_url }}" alt="Joseph's feedback about IaC operational overhead and skills" width="650">
-  <figcaption><em>Figure 1. Peer feedback exposed governance and maintenance considerations beyond Terraform's technical capabilities. Source: Units 2–3 GitHub activity, original Figures 2–3.</em></figcaption>
-</figure>
+<img src="{{ '/assets/images/COM/unit23/unit3post1.png' | relative_url }}" alt="Payman's feedback on Terraform remote state, access control and locking" width="650">
+
+*Figure 1a. Payman's feedback highlighted remote-state access and locking as governance requirements for collaborative Terraform use. Source: Units 2–3 GitHub activity, original Figure 2.*
+
+<img src="{{ '/assets/images/COM/unit23/unit3post2.png' | relative_url }}" alt="Joseph's feedback on Terraform operational overhead and specialist expertise" width="650">
+
+*Figure 1b. Joseph's feedback identified specialist expertise and maintenance overhead as organisational constraints on Terraform adoption. Source: Units 2–3 GitHub activity, original Figure 3.*
+
 
 ### 2.2 Cloud-Native Services: Does Abstraction Remove Responsibility? (Unit 5, extended in Unit 10)
 
