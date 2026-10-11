@@ -32,6 +32,7 @@ The resulting judgement shifted from whether an IaC tool could reproduce infrast
   <img src="{{ '/assets/images/COM/unit23/unit3post2.png' | relative_url }}" alt="Joseph's feedback about IaC operational overhead and skills" width="650">
   <figcaption><em>Figure 1. Peer feedback exposed governance and maintenance considerations beyond Terraform's technical capabilities. Source: Units 2–3 GitHub activity, original Figures 2–3.</em></figcaption>
 </figure>
+
 ### 2.2 Cloud-Native Services: Does Abstraction Remove Responsibility? (Unit 5, extended in Unit 10)
 
 *Critical question: When does a functioning container or serverless deployment become an operable service?*
@@ -44,6 +45,7 @@ Unit 10 extended the work to OpenFaaS: Kubernetes components ran, a Python greet
   <img src="{{ '/assets/images/COM/unit10/pic%206.png' | relative_url }}" alt="OpenFaaS function invoked successfully" width="600">
   <figcaption><em>Figure 2. Deployment acceptance and successful function invocation establish functionality, not production security or elasticity. Source: Unit 10 OpenFaaS GitHub activity, original Figures 5–6 (LO2, LO3).</em></figcaption>
 </figure>
+
 ### 2.3 Cloud Security: Can a Low Scanner Score Establish Security Assurance? (Unit 7)
 
 *Critical question: What security risks remain undetected when vulnerability-scanner results are treated as evidence of safety?*
@@ -57,6 +59,7 @@ The resulting judgement shifted from interpreting scanner severity to evaluating
   <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/COM/unit7/part1/Figure%203%20Azure%20Network%20Security%20Group%20inbound%20rules%20allowing%20SSH%2C%20HTTP%20and%20MongoDB%20traffic..png" alt="Azure network security rules permitting broad inbound access" width="650">
   <figcaption><em>Low vulnerability severity did not establish secure network configuration or authentication assurance. Source: Unit 7 Docker Security Audit GitHub activity, original Figures 8 and 3.</em></figcaption>
 </figure>
+
 ### 2.4 Disaster Recovery: Does Restore Success Demonstrate Continuity? (Unit 8)
 
 *Critical question: Which recovery objectives were demonstrated, and which remained unverified?*
@@ -69,6 +72,7 @@ The resulting judgement shifted from equating restoration with continuity to req
   <img src="{{ '/assets/images/COM/unit8/pic6.png' | relative_url }}" alt="PostgreSQL orders restored to 252700 records" width="600">
   <figcaption><em>Figure 4. Restoration recovered the protected state, not post-snapshot changes. Source: Unit 8 GitHub activity, original Figure 6 and Table 1.</em></figcaption>
 </figure>
+
 ### 2.5 Database Migration: Is a Successful Import a Successful Transition? (Unit 9; LO2–LO4)
 
 *Critical question: What remains unresolved after a database is copied accurately?*
@@ -81,6 +85,7 @@ The key lesson was that initial consistency does not guarantee ongoing data cons
   <img src="https://raw.githubusercontent.com/Mozakay/Mozakay.github.io/main/assets/images/COM/unit9/part1/Figure%204%20Final%20validation%20of%20the%20Azure%20MySQL%20database%20after%20final%20synchronisation..png" alt="Final Azure MySQL table and record validation following delta synchronisation" width="680">
   <figcaption><em>Final reconciliation confirms test-level data consistency, not application cutover. Source: Unit 9 GitHub, original Figure 4.</em></figcaption>
 </figure>
+
 ### 2.6 Integrated Operations: Does a Working PoC Establish Production Readiness? (Unit 11, revisiting Units 3 and 9)
 
 *Critical question: What evidence separates deployment success from production readiness?*
@@ -94,6 +99,7 @@ Linking this PoC to Unit 9's INSERT-only delta and untested cutover exposed a fu
   <img src="/assets/images/COM/unit11/part2/06-azure-monitor.png" alt="Azure Monitor CPU telemetry for small proof of concept" width="650">
   <figcaption><em>Figure 6. Ansible and CPU evidence verify a limited PoC, not production readiness. Source: Unit 11 GitHub, original Figures 4 and 6.</em></figcaption>
 </figure>
+
 ## 3. Skills Development, Independent Work and Collaboration
 
 Skills advanced from command-based Azure CLI verification towards declarative Terraform provisioning, Ansible configuration and evidence-led operational evaluation. Table 1 synthesises tested competencies without repeating the six reflections.
