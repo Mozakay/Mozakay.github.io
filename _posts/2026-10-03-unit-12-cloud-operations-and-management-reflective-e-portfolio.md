@@ -43,11 +43,17 @@ The resulting judgement shifted from whether an IaC tool could reproduce infrast
 Early service-model comparisons explained reduced infrastructure management, but not how platform responsibility persists. In Unit 5, a Flask application was containerised with Docker, deployed on Minikube through Kubernetes Deployment and NodePort Service definitions, and increased from two to three replicas. This verified replica configuration, not automatic scaling, faster responses or fault tolerance (Unit 5 discussion).
 Unit 10 extended the work to OpenFaaS: Kubernetes components ran, a Python greeting function was deployed, and invocation produced the intended response (Figure 2). Payman’s subsequent questions about registry credentials, CI/CD and function monitoring changed the success criterion. As Shafiei, Khonsari and Mousavi (2022) discuss, serverless reduces direct server administration without resolving all monitoring and security challenges. The new judgement separates functional invocation from secure, observable operation. A professional deployment would require image and secret controls, latency and error metrics, and concurrent-load tests before claiming elasticity.
 
+
 <figure>
   <img src="{{ '/assets/images/COM/unit10/pic%205.png' | relative_url }}" alt="OpenFaaS function successfully deployed" width="600">
-  <img src="{{ '/assets/images/COM/unit10/pic%206.png' | relative_url }}" alt="OpenFaaS function invoked successfully" width="600">
-  <figcaption><em>Figure 2. Deployment acceptance and successful function invocation establish functionality, not production security or elasticity. Source: Unit 10 OpenFaaS GitHub activity, original Figures 5–6 (LO2, LO3).</em></figcaption>
+  <figcaption><em>Figure 2a. OpenFaaS successfully accepted the Python function deployment, demonstrating deployment functionality rather than production readiness. Source: Unit 10 OpenFaaS GitHub activity, original Figure 5.</em></figcaption>
 </figure>
+
+<figure>
+  <img src="{{ '/assets/images/COM/unit10/pic%206.png' | relative_url }}" alt="OpenFaaS function invoked successfully" width="600">
+  <figcaption><em>Figure 2b. Successful invocation of the Python greeting function confirmed functional execution, not production security, performance or elasticity. Source: Unit 10 OpenFaaS GitHub activity, original Figure 6.</em></figcaption>
+</figure>
+
 
 ### 2.3 Cloud Security: Can a Low Scanner Score Establish Security Assurance? (Unit 7)
 
