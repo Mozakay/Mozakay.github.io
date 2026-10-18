@@ -853,6 +853,120 @@ banner: "/assets/images/banners/new-background.jpg"
 
   </section>
 
+
+<style>
+  .outcomes-section {
+    padding: 30px;
+  }
+
+  .outcomes-intro {
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 24px;
+  }
+
+  .outcomes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .outcome-card {
+    background: #f8fafc;
+    border: 1px solid #e5eaf1;
+    border-radius: 12px;
+    padding: 20px;
+  }
+
+  .outcome-number {
+    display: inline-block;
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .outcome-card h3 {
+    font-size: 16px;
+    color: #1e293b;
+    margin: 0 0 8px;
+  }
+
+  .outcome-card p {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .outcome-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .reflection-panel {
+    margin-top: 30px;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 28px;
+  }
+
+  .reflection-label {
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .reflection-panel h3 {
+    font-size: 21px;
+    line-height: 1.4;
+    color: #1e293b;
+    margin: 0 0 18px;
+  }
+
+  .reflection-content {
+    background: #f8fafc;
+    border: 1px solid #e5eaf1;
+    border-radius: 14px;
+    padding: 26px;
+  }
+
+  .reflection-content p {
+    color: #475569;
+    font-size: 15px;
+    line-height: 1.95;
+    margin: 0 0 18px;
+  }
+
+  .reflection-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 700px) {
+    .outcomes-section {
+      padding: 22px;
+    }
+
+    .outcomes-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .outcome-card:last-child {
+      grid-column: auto;
+    }
+
+    .reflection-content {
+      padding: 20px;
+    }
+  }
+</style>
+
+<section class="module-section outcomes-section">
+
+  <h2>Learning Outcomes</h2>
+
   <p class="outcomes-intro">
     On successful completion of the module, the learning
     outcomes require the ability to:
@@ -967,7 +1081,9 @@ banner: "/assets/images/banners/new-background.jpg"
 
     </div>
 
-  </section>
+  </div>
+
+</section>
   
 
 </div>
