@@ -52,6 +52,7 @@ The Group 1 Team Contract established expectations for shared responsibility, we
 
 The central development in judgement is the distinction between **an architecturally coherent proposal and a validated operational solution**. Future use of this approach would connect design decisions to testable criteria: controlled deployments across environments, verifiable Azure-to-on-premises connectivity, appropriate identity permissions, and monitored reliability and cost. The unit's wider theme includes fog and edge computing, and the report references hybrid cloud-to-edge orchestration research (Ullah et al., 2021). Nevertheless, Group Report A did **not** design or implement a distinct fog or edge component. Treating that as a boundary of the submitted evidence, rather than retrospectively claiming experience, preserves the reflection's academic integrity.
 
+
 ## References
 
 Mell, P. and Grance, T. (2011) *The NIST Definition of Cloud Computing*. NIST Special Publication 800-145. Gaithersburg, MD: National Institute of Standards and Technology. https://doi.org/10.6028/NIST.SP.800-145
