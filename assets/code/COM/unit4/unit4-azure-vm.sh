@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Unit 4: Provision an Azure Ubuntu VM, configure Nginx and verify operation.
-# Azure CLI / Bash | Target region: India South Central
+# Azure CLI / Bash, Target region: India South Central
 set -euo pipefail
 
 RG="unit4-rg-india"
@@ -14,7 +14,7 @@ log() { printf '[%s] %s\n' "$(date +%H:%M:%S)" "$*"; }
 command -v az >/dev/null || { echo 'Azure CLI is required.' >&2; exit 1; }
 az account show --output none || { echo 'Please sign in to Azure.' >&2; exit 1; }
 
-# Keep the previous Unit 4 VM if it already exists; do not recreate it.
+# Check whether the virtual machine already exists.
 if az vm show --resource-group "$RG" --name "$VM" --output none 2>/dev/null; then
   log "Existing VM found: $VM (no new resources will be created)."
 else
