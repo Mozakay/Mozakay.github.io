@@ -12,7 +12,8 @@ A cloud deployment can report *Succeeded* while remaining insecure, difficult to
 
 Initial comparisons of AWS and Google Cloud explored how IaaS, PaaS and SaaS distribute control and responsibility, while public, private and hybrid models influence workload placement (Zhang et al., 2010). However, practical implementation, technical failures and peer feedback challenged the assumption that selecting appropriate technologies and deploying them successfully constituted sufficient evidence of their suitability. Security assessments exposed risks beyond automated scan results, recovery testing revealed data loss despite successful restoration, and infrastructure automation demonstrated functionality without establishing production readiness.
 
-Across six interconnected reflections, these experiences reveal a progression from evaluating what cloud technologies can deliver to critically examining what their observed results actually demonstrate. This development establishes evidence-based professional judgement as essential to decisions concerning security, resilience, migration and operational suitability.
+Across six interconnected reflections, these experiences reveal a progression from evaluating the capabilities of cloud technologies to critically assessing the extent to which practical outcomes substantiate their claimed benefits. This development establishes evidence-based professional judgement as essential to decisions concerning security, resilience, migration and operational suitability.
+
 
 ## 2. Critical Weekly Reflections
 
