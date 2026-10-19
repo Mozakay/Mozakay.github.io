@@ -1,16 +1,14 @@
 ---
 layout: post
-title: "Unit 4 Formative Activity: Bash Automation for Azure Cloud Operations"
+title: "Formative Activity: Bash Automation for Azure Cloud Operations"
 categories: ["Cloud Operations and Management"]
 unit: 4
 journey_group: "unit-4"
 ---
 
-## Aim
 
-Develop and execute a Bash-based Azure workflow to provision an Ubuntu virtual machine, configure the Nginx web server, and run basic operational verification commands.
 
-## Explanation (500 words)
+## Bash Scripting for Automated Cloud Operations in Microsoft Azure
 
 Bash scripting supports cloud infrastructure provisioning, system configuration and routine operational checks, reflecting the flexibility of virtualised resource allocation discussed by Buyya et al. (2009). This activity demonstrates Bash and Azure Command-Line Interface (CLI) operations on an Ubuntu virtual machine. The deployment uses resource group `unit4-rg-india`, virtual machine `unit4-vm`, the India South Central region and the `Standard_B1s` instance size. Figure 1 records successful virtual machine provisioning, while Figure 2 demonstrates an active Nginx service and a successful local HTTP response.
 
